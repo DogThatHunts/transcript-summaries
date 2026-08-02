@@ -1,0 +1,451 @@
+/* style.css — shared template for all published summaries.
+   Generalized from the original dry_fasting_summary.css prototype: same
+   palette and hero/footer treatment, but built around plain markdown-derived
+   content (h2/h3/p/ul/ol/blockquote/strong) instead of bespoke per-post divs,
+   so it applies to every summary without hand design.
+
+   Phase-1 polish (2026-08-02): the markup is still exactly what the markdown
+   library emits — no new classes, no renderer/test changes — but the .content
+   body now reads like an edited article (lead paragraph, drop-cap, accent
+   section ticks, pull-quote blockquotes, custom list markers) rather than
+   plain prose. */
+
+:root {
+    --bg: #faf9f6;
+    --bg-warm: #f5f0e8;
+    --insight-bg: #fff8f0;
+    --text: #2c2c2c;
+    --text-light: #6b6b6b;
+    --accent: #c17f4e;
+    --accent-dark: #a06a3f;
+    --accent-soft: #e8d5c0;
+    --border: #e0d8ce;
+    --shadow: rgba(0, 0, 0, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 17px;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 50%, #3a2e22 100%);
+    color: #fff;
+    padding: 100px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(193, 127, 78, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(193, 127, 78, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(193, 127, 78, 0.4);
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 30px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-thumb {
+    width: 100%;
+    max-width: 760px;
+    border-radius: 12px;
+    display: block;
+    margin: 40px auto 0;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Layout */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.back-link {
+    padding-top: 32px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.back-link a {
+    color: var(--accent-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover { text-decoration: underline; }
+
+/* --------------------------------------------------------------------------
+   Markdown-derived article body
+   Every rule below targets a plain element the markdown library emits, so the
+   styling applies to any summary with no per-post work.
+   -------------------------------------------------------------------------- */
+.content {
+    padding: 40px 0 60px;
+}
+
+/* Section headings get a short accent tick above them — echoes the prototype's
+   hand-built .section-label without needing that markup. */
+.content h1, .content h2, .content h3, .content h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+    margin: 48px 0 18px;
+}
+
+.content h2::before {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 16px;
+}
+
+.content h1:first-child, .content h2:first-child,
+.content h3:first-child, .content h4:first-child {
+    margin-top: 0;
+}
+
+.content h1 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); }
+.content h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); }
+.content h3 { font-size: 1.25rem; }
+.content h4 { font-size: 1.08rem; color: var(--text-light); }
+
+.content p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+/* Lead paragraph + drop-cap: the first paragraph reads as an intro. */
+.content > p:first-of-type {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.content > p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 0.82;
+    float: left;
+    margin: 6px 12px 0 0;
+    color: var(--accent);
+}
+
+.content strong { color: var(--text); font-weight: 600; }
+.content em { color: var(--text); }
+
+/* Custom list markers in the accent colour. */
+.content ul, .content ol {
+    margin: 12px 0 24px;
+    padding-left: 0;
+    list-style: none;
+    color: var(--text-light);
+}
+
+.content li {
+    position: relative;
+    padding-left: 1.6em;
+    margin-bottom: 12px;
+}
+
+.content ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0.15em;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.content ol { counter-reset: item; }
+
+.content ol > li {
+    counter-increment: item;
+}
+
+.content ol > li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--accent);
+}
+
+.content li > ul, .content li > ol { margin: 10px 0 6px; }
+
+/* Blockquote as a pull-quote callout with an oversized opening mark. */
+.content blockquote {
+    position: relative;
+    background: var(--insight-bg);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px 24px 30px;
+    margin: 32px 0;
+    border-radius: 0 14px 14px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.content blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.15em;
+    left: 0.12em;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    line-height: 1;
+    color: var(--accent-soft);
+    pointer-events: none;
+}
+
+.content blockquote p { color: var(--text); }
+.content blockquote p:last-child { margin-bottom: 0; }
+
+.content a {
+    color: var(--accent-dark);
+    text-decoration-color: var(--accent-soft);
+    text-underline-offset: 3px;
+}
+
+.content a:hover { text-decoration-color: var(--accent); }
+
+.content code {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-size: 0.9em;
+}
+
+.content pre {
+    background: #1e1e1e;
+    color: #f5f0e8;
+    padding: 20px 22px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 26px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.content pre code { background: none; border: none; padding: 0; color: inherit; }
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 30px auto;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 26px 0;
+    font-size: 0.95rem;
+}
+
+.content th, .content td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.content th {
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 2px solid var(--accent-soft);
+}
+
+.content td { color: var(--text-light); }
+
+/* Horizontal rule as a centred ornament rather than a bare line. */
+.content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    margin: 48px 0;
+    position: relative;
+}
+
+.content hr::after {
+    content: '\00A7';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    padding: 0 14px;
+    color: var(--accent-soft);
+    font-size: 1rem;
+}
+
+/* Source footer */
+.source-footer {
+    background: #1a1a1a;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 48px 24px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.source-footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.source-footer a:hover { text-decoration: underline; }
+
+.source-footer .meta {
+    font-size: 0.85rem;
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Index page
+   -------------------------------------------------------------------------- */
+.hero-index { padding-bottom: 70px; }
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 56px 0 80px;
+}
+
+@media (min-width: 640px) {
+    .posts-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 44px var(--shadow);
+    border-color: var(--accent-soft);
+}
+
+.post-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.post-card-body { padding: 22px 22px 24px; }
+
+.post-card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.post-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.post-card .meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .hero { padding: 70px 20px 56px; }
+    body { font-size: 16px; }
+    .content > p:first-of-type { font-size: 1.12rem; }
+    .content > p:first-of-type::first-letter { font-size: 3rem; }
+}
