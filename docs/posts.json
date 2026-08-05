@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-tariffs-v-income-tax-if-you-don-t-watch-this-you-ll-get-screwed-by-1250",
-    "title": "Dave Champion | Tariffs v Income Tax. If you don't watch this, you'll get screwed by the govt.",
-    "content_type": "reading",
-    "word_count": 4851,
-    "thumbnail_url": "https://img.youtube.com/vi/G3pADpcj4CQ/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=G3pADpcj4CQ",
-    "published_at": "2026-08-04T18:20:37.502301+00:00"
-  },
-  {
     "slug": "dave-champion-the-corporate-transparency-act-does-not-apply-to-you-1251",
     "title": "Dave Champion | The Corporate Transparency Act Does NOT Apply To You!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/z41AhImlEU8/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=z41AhImlEU8",
     "published_at": "2026-08-05T12:53:18.122356+00:00"
+  },
+  {
+    "slug": "dave-champion-tariffs-v-income-tax-if-you-don-t-watch-this-you-ll-get-screwed-by-1250",
+    "title": "Dave Champion | Tariffs v Income Tax. If you don't watch this, you'll get screwed by the govt.",
+    "content_type": "reading",
+    "word_count": 4851,
+    "thumbnail_url": "https://img.youtube.com/vi/G3pADpcj4CQ/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=G3pADpcj4CQ",
+    "published_at": "2026-08-05T12:53:23.289180+00:00"
   }
 ]
