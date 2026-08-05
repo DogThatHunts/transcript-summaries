@@ -567,15 +567,6 @@
     "published_at": "2026-08-05T12:51:54.729774+00:00"
   },
   {
-    "slug": "dave-champion-the-truth-about-sales-tax-your-business-likely-doesn-t-need-to-col-1233",
-    "title": "Dave Champion | The Truth About Sales Tax: Your Business Likely Doesn't Need To Collect It!",
-    "content_type": "reading",
-    "word_count": 5699,
-    "thumbnail_url": "https://img.youtube.com/vi/PxJeDU5b3yE/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=PxJeDU5b3yE",
-    "published_at": "2026-08-05T12:51:58.932348+00:00"
-  },
-  {
     "slug": "dave-champion-nefarious-tricks-gimmicks-irs-uses-so-you-can-t-understand-tax-law-1234",
     "title": "Dave Champion | Nefarious Tricks & Gimmicks IRS Uses So You Can't Understand Tax Law. Now You Can!",
     "content_type": "reading",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/erTkSM7kOOI/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=erTkSM7kOOI",
     "published_at": "2026-08-05T23:34:36.752831+00:00"
+  },
+  {
+    "slug": "dave-champion-the-truth-about-sales-tax-your-business-likely-doesn-t-need-to-col-1233",
+    "title": "Dave Champion | The Truth About Sales Tax: Your Business Likely Doesn't Need To Collect It!",
+    "content_type": "reading",
+    "word_count": 5699,
+    "thumbnail_url": "https://img.youtube.com/vi/PxJeDU5b3yE/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=PxJeDU5b3yE",
+    "published_at": "2026-08-05T23:34:39.961146+00:00"
   }
 ]
