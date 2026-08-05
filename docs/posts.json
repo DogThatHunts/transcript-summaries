@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-lawyer-gets-schooled-about-income-tax-law-by-non-lawyer-1225",
-    "title": "Dave Champion | Lawyer Gets Schooled About Income Tax Law By Non-lawyer!",
-    "content_type": "reading",
-    "word_count": 6881,
-    "thumbnail_url": "https://img.youtube.com/vi/JsY8KhxzVBQ/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=JsY8KhxzVBQ",
-    "published_at": "2026-08-04T14:17:38.511520+00:00"
-  },
-  {
     "slug": "dave-champion-it-s-so-easy-to-see-that-the-income-tax-doesn-t-apply-to-most-amer-1226",
     "title": "Dave Champion | It's So Easy To See That The Income Tax Doesn't Apply To Most Americans!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/erTkSM7kOOI/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=erTkSM7kOOI",
     "published_at": "2026-08-05T12:51:12.206464+00:00"
+  },
+  {
+    "slug": "dave-champion-lawyer-gets-schooled-about-income-tax-law-by-non-lawyer-1225",
+    "title": "Dave Champion | Lawyer Gets Schooled About Income Tax Law By Non-lawyer!",
+    "content_type": "reading",
+    "word_count": 6881,
+    "thumbnail_url": "https://img.youtube.com/vi/JsY8KhxzVBQ/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=JsY8KhxzVBQ",
+    "published_at": "2026-08-05T12:51:17.580981+00:00"
   }
 ]
