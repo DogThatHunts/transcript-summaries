@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-the-corporate-transparency-act-does-not-apply-to-you-1251",
-    "title": "Dave Champion | The Corporate Transparency Act Does NOT Apply To You!",
-    "content_type": "reading",
-    "word_count": 4436,
-    "thumbnail_url": "https://img.youtube.com/vi/sPtFwFOhgyo/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=sPtFwFOhgyo",
-    "published_at": "2026-08-04T18:50:43.503169+00:00"
-  },
-  {
     "slug": "dave-champion-scotus-rules-that-ordinary-americans-do-not-owe-income-tax-1252",
     "title": "Dave Champion | SCOTUS rules that ordinary Americans do NOT owe income tax!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/G3pADpcj4CQ/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=G3pADpcj4CQ",
     "published_at": "2026-08-05T12:53:23.289180+00:00"
+  },
+  {
+    "slug": "dave-champion-the-corporate-transparency-act-does-not-apply-to-you-1251",
+    "title": "Dave Champion | The Corporate Transparency Act Does NOT Apply To You!",
+    "content_type": "reading",
+    "word_count": 4436,
+    "thumbnail_url": "https://img.youtube.com/vi/sPtFwFOhgyo/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=sPtFwFOhgyo",
+    "published_at": "2026-08-05T12:53:27.799397+00:00"
   }
 ]
