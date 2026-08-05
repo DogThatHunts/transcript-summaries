@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-prove-government-is-telling-the-truth-and-win-50-000-1230",
-    "title": "Dave Champion | Prove Government Is Telling The Truth And Win $50,000!!!",
-    "content_type": "reading",
-    "word_count": 4521,
-    "thumbnail_url": "https://img.youtube.com/vi/DlMEG9j7NPs/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=DlMEG9j7NPs",
-    "published_at": "2026-08-04T14:18:01.560721+00:00"
-  },
-  {
     "slug": "dave-champion-how-the-irs-bamboozles-you-the-irs-s-definition-scam-exposed-1231",
     "title": "Dave Champion | How The IRS Bamboozles You. The IRS's \"Definition\" SCAM Exposed!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/vpBYkPYGgJk/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=vpBYkPYGgJk",
     "published_at": "2026-08-05T12:51:39.313928+00:00"
+  },
+  {
+    "slug": "dave-champion-prove-government-is-telling-the-truth-and-win-50-000-1230",
+    "title": "Dave Champion | Prove Government Is Telling The Truth And Win $50,000!!!",
+    "content_type": "reading",
+    "word_count": 4521,
+    "thumbnail_url": "https://img.youtube.com/vi/DlMEG9j7NPs/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=DlMEG9j7NPs",
+    "published_at": "2026-08-05T12:51:44.762416+00:00"
   }
 ]
