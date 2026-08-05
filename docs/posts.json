@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-never-fear-an-irs-criminal-case-easily-explained-1243",
-    "title": "Dave Champion | Never Fear An IRS Criminal Case! Easily Explained.",
-    "content_type": "reading",
-    "word_count": 6850,
-    "thumbnail_url": "https://img.youtube.com/vi/EQzFKVYrdDM/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=EQzFKVYrdDM",
-    "published_at": "2026-08-04T14:18:51.156595+00:00"
-  },
-  {
     "slug": "dave-champion-the-secret-reason-the-irs-can-never-replace-its-archaic-mainframes-1245",
     "title": "Dave Champion | The SECRET Reason The IRS Can NEVER Replace Its Archaic Mainframes and What That Says About The Tax",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/NSgx1lvfW88/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=NSgx1lvfW88",
     "published_at": "2026-08-05T12:52:40.672631+00:00"
+  },
+  {
+    "slug": "dave-champion-never-fear-an-irs-criminal-case-easily-explained-1243",
+    "title": "Dave Champion | Never Fear An IRS Criminal Case! Easily Explained.",
+    "content_type": "reading",
+    "word_count": 6850,
+    "thumbnail_url": "https://img.youtube.com/vi/EQzFKVYrdDM/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=EQzFKVYrdDM",
+    "published_at": "2026-08-05T12:52:45.445601+00:00"
   }
 ]
