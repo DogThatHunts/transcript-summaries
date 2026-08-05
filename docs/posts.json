@@ -504,15 +504,6 @@
     "published_at": "2026-08-05T12:51:06.604414+00:00"
   },
   {
-    "slug": "dave-champion-why-a-national-sales-tax-can-never-be-constitutionally-enacted-1224",
-    "title": "Dave Champion | Why A National Sales Tax Can Never Be Constitutionally Enacted.",
-    "content_type": "reading",
-    "word_count": 4217,
-    "thumbnail_url": "https://img.youtube.com/vi/erTkSM7kOOI/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=erTkSM7kOOI",
-    "published_at": "2026-08-05T12:51:12.206464+00:00"
-  },
-  {
     "slug": "dave-champion-lawyer-gets-schooled-about-income-tax-law-by-non-lawyer-1225",
     "title": "Dave Champion | Lawyer Gets Schooled About Income Tax Law By Non-lawyer!",
     "content_type": "reading",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/2fQqoYDFMEM/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=2fQqoYDFMEM",
     "published_at": "2026-08-05T23:34:33.532064+00:00"
+  },
+  {
+    "slug": "dave-champion-why-a-national-sales-tax-can-never-be-constitutionally-enacted-1224",
+    "title": "Dave Champion | Why A National Sales Tax Can Never Be Constitutionally Enacted.",
+    "content_type": "reading",
+    "word_count": 4217,
+    "thumbnail_url": "https://img.youtube.com/vi/erTkSM7kOOI/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=erTkSM7kOOI",
+    "published_at": "2026-08-05T23:34:36.752831+00:00"
   }
 ]
