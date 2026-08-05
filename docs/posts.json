@@ -414,15 +414,6 @@
     "published_at": "2026-08-04T16:49:56.436714+00:00"
   },
   {
-    "slug": "dave-champion-your-employer-is-literally-stealing-your-money-1246",
-    "title": "Dave Champion | Your EMPLOYER is literally STEALING YOUR MONEY!",
-    "content_type": "reading",
-    "word_count": 3682,
-    "thumbnail_url": "https://img.youtube.com/vi/KU9tOaE144I/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=KU9tOaE144I",
-    "published_at": "2026-08-04T18:20:29.126598+00:00"
-  },
-  {
     "slug": "dave-champion-end-your-fear-of-the-irs-forever-1247",
     "title": "Dave Champion | END Your FEAR Of The IRS Forever!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/Ath6dkD3r8U/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=Ath6dkD3r8U",
     "published_at": "2026-08-05T12:52:55.320849+00:00"
+  },
+  {
+    "slug": "dave-champion-your-employer-is-literally-stealing-your-money-1246",
+    "title": "Dave Champion | Your EMPLOYER is literally STEALING YOUR MONEY!",
+    "content_type": "reading",
+    "word_count": 3682,
+    "thumbnail_url": "https://img.youtube.com/vi/KU9tOaE144I/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=KU9tOaE144I",
+    "published_at": "2026-08-05T12:53:00.786019+00:00"
   }
 ]
