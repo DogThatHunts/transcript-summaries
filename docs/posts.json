@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-it-s-so-easy-to-see-that-the-income-tax-doesn-t-apply-to-most-amer-1226",
-    "title": "Dave Champion | It's So Easy To See That The Income Tax Doesn't Apply To Most Americans!",
-    "content_type": "reading",
-    "word_count": 5538,
-    "thumbnail_url": "https://img.youtube.com/vi/KhdiEMum9XQ/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=KhdiEMum9XQ",
-    "published_at": "2026-08-04T14:17:43.523510+00:00"
-  },
-  {
     "slug": "dave-champion-famous-income-tax-convictions-you-will-learn-so-much-you-never-kne-1227",
     "title": "Dave Champion | Famous Income Tax Convictions. You Will Learn So Much You Never Knew About The Income Tax Scam!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/JsY8KhxzVBQ/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=JsY8KhxzVBQ",
     "published_at": "2026-08-05T12:51:17.580981+00:00"
+  },
+  {
+    "slug": "dave-champion-it-s-so-easy-to-see-that-the-income-tax-doesn-t-apply-to-most-amer-1226",
+    "title": "Dave Champion | It's So Easy To See That The Income Tax Doesn't Apply To Most Americans!",
+    "content_type": "reading",
+    "word_count": 5538,
+    "thumbnail_url": "https://img.youtube.com/vi/KhdiEMum9XQ/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=KhdiEMum9XQ",
+    "published_at": "2026-08-05T12:51:23.885179+00:00"
   }
 ]
