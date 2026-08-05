@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-welcome-to-my-channel-what-you-can-expect-1229",
-    "title": "Dave Champion | Welcome To My Channel! What You Can Expect.",
-    "content_type": "short",
-    "word_count": 483,
-    "thumbnail_url": "https://img.youtube.com/vi/vpBYkPYGgJk/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=vpBYkPYGgJk",
-    "published_at": "2026-08-04T14:17:57.122235+00:00"
-  },
-  {
     "slug": "dave-champion-prove-government-is-telling-the-truth-and-win-50-000-1230",
     "title": "Dave Champion | Prove Government Is Telling The Truth And Win $50,000!!!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/VQ4HXrkpF3g/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=VQ4HXrkpF3g",
     "published_at": "2026-08-05T12:51:34.189917+00:00"
+  },
+  {
+    "slug": "dave-champion-welcome-to-my-channel-what-you-can-expect-1229",
+    "title": "Dave Champion | Welcome To My Channel! What You Can Expect.",
+    "content_type": "short",
+    "word_count": 483,
+    "thumbnail_url": "https://img.youtube.com/vi/vpBYkPYGgJk/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=vpBYkPYGgJk",
+    "published_at": "2026-08-05T12:51:39.313928+00:00"
   }
 ]
