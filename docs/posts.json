@@ -801,15 +801,6 @@
     "published_at": "2026-08-05T12:53:46.923131+00:00"
   },
   {
-    "slug": "dave-champion-how-i-plan-to-live-a-physically-robust-life-well-into-the-130-year-1256",
-    "title": "Dave Champion | How I plan to live a physically robust life well into the 130-year range! You can too.",
-    "content_type": "conversation",
-    "word_count": 13286,
-    "thumbnail_url": "https://img.youtube.com/vi/e1cY3oKySnE/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=e1cY3oKySnE",
-    "published_at": "2026-08-05T12:53:51.532493+00:00"
-  },
-  {
     "slug": "kl-the-great-deception-w-dr-kl-beneficiary-lesson-1-2022-1263",
     "title": "KL | The Great Deception w Dr. KL Beneficiary (Lesson #1 2022)",
     "content_type": "conversation",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/KhdiEMum9XQ/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=KhdiEMum9XQ",
     "published_at": "2026-08-05T20:19:24.147474+00:00"
+  },
+  {
+    "slug": "dave-champion-how-i-plan-to-live-a-physically-robust-life-well-into-the-130-year-1256",
+    "title": "Dave Champion | How I plan to live a physically robust life well into the 130-year range! You can too.",
+    "content_type": "conversation",
+    "word_count": 13286,
+    "thumbnail_url": "https://img.youtube.com/vi/e1cY3oKySnE/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=e1cY3oKySnE",
+    "published_at": "2026-08-05T20:19:27.838108+00:00"
   }
 ]
