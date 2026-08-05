@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-how-i-plan-to-live-a-physically-robust-life-well-into-the-130-year-1256",
-    "title": "Dave Champion | How I plan to live a physically robust life well into the 130-year range! You can too.",
-    "content_type": "conversation",
-    "word_count": 13286,
-    "thumbnail_url": "https://img.youtube.com/vi/e1cY3oKySnE/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=e1cY3oKySnE",
-    "published_at": "2026-08-05T00:35:07.983052+00:00"
-  },
-  {
     "slug": "he-cracked-every-layer-of-reality-and-became-a-target-1272",
     "title": "He Cracked Every Layer of Reality\u2026 And Became a Target",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/kaZGDJk4j-4/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=kaZGDJk4j-4",
     "published_at": "2026-08-05T12:53:46.923131+00:00"
+  },
+  {
+    "slug": "dave-champion-how-i-plan-to-live-a-physically-robust-life-well-into-the-130-year-1256",
+    "title": "Dave Champion | How I plan to live a physically robust life well into the 130-year range! You can too.",
+    "content_type": "conversation",
+    "word_count": 13286,
+    "thumbnail_url": "https://img.youtube.com/vi/e1cY3oKySnE/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=e1cY3oKySnE",
+    "published_at": "2026-08-05T12:53:51.532493+00:00"
   }
 ]
