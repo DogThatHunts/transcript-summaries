@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-nefarious-tricks-gimmicks-irs-uses-so-you-can-t-understand-tax-law-1234",
-    "title": "Dave Champion | Nefarious Tricks & Gimmicks IRS Uses So You Can't Understand Tax Law. Now You Can!",
-    "content_type": "reading",
-    "word_count": 6421,
-    "thumbnail_url": "https://img.youtube.com/vi/9wDcGP_aMAE/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=9wDcGP_aMAE",
-    "published_at": "2026-08-04T14:18:21.963712+00:00"
-  },
-  {
     "slug": "dave-champion-here-s-your-kryptonite-against-the-irs-1235",
     "title": "Dave Champion | Here\u2019s your kryptonite against the IRS!",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/PxJeDU5b3yE/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=PxJeDU5b3yE",
     "published_at": "2026-08-05T12:51:58.932348+00:00"
+  },
+  {
+    "slug": "dave-champion-nefarious-tricks-gimmicks-irs-uses-so-you-can-t-understand-tax-law-1234",
+    "title": "Dave Champion | Nefarious Tricks & Gimmicks IRS Uses So You Can't Understand Tax Law. Now You Can!",
+    "content_type": "reading",
+    "word_count": 6421,
+    "thumbnail_url": "https://img.youtube.com/vi/9wDcGP_aMAE/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=9wDcGP_aMAE",
+    "published_at": "2026-08-05T12:52:02.988298+00:00"
   }
 ]
