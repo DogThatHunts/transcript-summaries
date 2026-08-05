@@ -405,15 +405,6 @@
     "published_at": "2026-08-04T02:45:34.435618+00:00"
   },
   {
-    "slug": "dave-champion-how-the-irs-commits-computer-fraud-to-ensnare-you-into-a-tax-you-d-1237",
-    "title": "Dave Champion | How The IRS Commits Computer Fraud To Ensnare You Into A Tax You Don't Owe!",
-    "content_type": "reading",
-    "word_count": 4897,
-    "thumbnail_url": "https://img.youtube.com/vi/CA9LgS4GD-4/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=CA9LgS4GD-4",
-    "published_at": "2026-08-04T14:18:36.240735+00:00"
-  },
-  {
     "slug": "dave-champion-why-rfk-jr-is-failing-at-making-america-healthy-again-1238",
     "title": "Dave Champion | Why RFK Jr Is Failing At Making America Healthy Again?",
     "content_type": "reading",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/6bD8wy9lGiY/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=6bD8wy9lGiY",
     "published_at": "2026-08-05T12:52:11.784347+00:00"
+  },
+  {
+    "slug": "dave-champion-how-the-irs-commits-computer-fraud-to-ensnare-you-into-a-tax-you-d-1237",
+    "title": "Dave Champion | How The IRS Commits Computer Fraud To Ensnare You Into A Tax You Don't Owe!",
+    "content_type": "reading",
+    "word_count": 4897,
+    "thumbnail_url": "https://img.youtube.com/vi/CA9LgS4GD-4/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=CA9LgS4GD-4",
+    "published_at": "2026-08-05T12:52:16.036654+00:00"
   }
 ]
