@@ -810,15 +810,6 @@
     "published_at": "2026-08-05T12:53:56.700186+00:00"
   },
   {
-    "slug": "dave-champion-it-s-so-easy-to-see-that-the-income-tax-doesn-t-apply-to-most-amer-1226",
-    "title": "Dave Champion | It's So Easy To See That The Income Tax Doesn't Apply To Most Americans!",
-    "content_type": "reading",
-    "word_count": 5538,
-    "thumbnail_url": "https://img.youtube.com/vi/KhdiEMum9XQ/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=KhdiEMum9XQ",
-    "published_at": "2026-08-05T20:19:24.147474+00:00"
-  },
-  {
     "slug": "dave-champion-how-i-plan-to-live-a-physically-robust-life-well-into-the-130-year-1256",
     "title": "Dave Champion | How I plan to live a physically robust life well into the 130-year range! You can too.",
     "content_type": "conversation",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/e1cY3oKySnE/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=e1cY3oKySnE",
     "published_at": "2026-08-05T20:19:27.838108+00:00"
+  },
+  {
+    "slug": "dave-champion-it-s-so-easy-to-see-that-the-income-tax-doesn-t-apply-to-most-amer-1226",
+    "title": "Dave Champion | It's So Easy To See That The Income Tax Doesn't Apply To Most Americans!",
+    "content_type": "reading",
+    "word_count": 5538,
+    "thumbnail_url": "https://img.youtube.com/vi/KhdiEMum9XQ/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=KhdiEMum9XQ",
+    "published_at": "2026-08-05T20:38:41.582908+00:00"
   }
 ]
