@@ -450,15 +450,6 @@
     "published_at": "2026-08-04T20:21:06.358994+00:00"
   },
   {
-    "slug": "dave-champion-incredible-interview-why-income-tax-doesn-t-apply-to-you-1249",
-    "title": "Dave Champion | Incredible Interview: Why Income Tax Doesn't Apply To You!",
-    "content_type": "conversation",
-    "word_count": 25357,
-    "thumbnail_url": "https://img.youtube.com/vi/z41AhImlEU8/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=z41AhImlEU8",
-    "published_at": "2026-08-05T00:35:04.193520+00:00"
-  },
-  {
     "slug": "dave-champion-how-i-plan-to-live-a-physically-robust-life-well-into-the-130-year-1256",
     "title": "Dave Champion | How I plan to live a physically robust life well into the 130-year range! You can too.",
     "content_type": "conversation",
@@ -817,5 +808,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/t8yDymDJd0o/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=t8yDymDJd0o",
     "published_at": "2026-08-05T12:53:13.753044+00:00"
+  },
+  {
+    "slug": "dave-champion-incredible-interview-why-income-tax-doesn-t-apply-to-you-1249",
+    "title": "Dave Champion | Incredible Interview: Why Income Tax Doesn't Apply To You!",
+    "content_type": "conversation",
+    "word_count": 25357,
+    "thumbnail_url": "https://img.youtube.com/vi/z41AhImlEU8/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=z41AhImlEU8",
+    "published_at": "2026-08-05T12:53:18.122356+00:00"
   }
 ]
