@@ -20,10 +20,11 @@
         background: radial-gradient(circle at 30% 50%, rgba(47, 109, 179, 0.14) 0%, transparent 50%),
                     radial-gradient(circle at 70% 50%, rgba(47, 109, 179, 0.08) 0%, transparent 40%);
       }
-      .content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
-      .content th, .content td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border); }
+      .content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+      .content th, .content td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
       .content th { color: var(--accent-dark); border-bottom: 2px solid var(--accent-soft); }
       .content tr:hover td { background: var(--insight-bg); }
+      .content td a { word-break: break-all; }
     </style>
 </head>
 <body>
@@ -51,6 +52,7 @@ publisher uses when autolinking citations — see <code>publisher/citations.py</
 <th>Source link</th>
 <th>Type</th>
 <th>Cited in (rows)</th>
+<th>URL</th>
 </tr>
 </thead>
 <tbody>
@@ -59,66 +61,77 @@ publisher uses when autolinking citations — see <code>publisher/citations.py</
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+1928%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1217, 1226</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+1928%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+1928%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 2090</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2090%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1247</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2090%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2090%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 2109</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2109%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1217</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2109%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2109%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 2313</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2313%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1217</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2313%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2313%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 2401</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2401%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1217</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2401%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2401%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 2815</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2815%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1217, 1247</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2815%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2815%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 2988</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2988%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1217</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2988%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+2988%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 4707</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+4707%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1253</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+4707%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+4707%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 6500</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+6500%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1217</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+6500%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+6500%22;a=srchls;lmt=ft</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 8734</strong></td>
 <td><a target="_blank" rel="noopener" href="https://www.irs.gov/pub/irs-regs/td8734.txt">irs.gov</a></td>
 <td>IRS direct (.txt)</td>
 <td>1217, 1234, 1239, 1247, 1249, 1254</td>
+<td><a target="_blank" rel="noopener" href="https://www.irs.gov/pub/irs-regs/td8734.txt">https://www.irs.gov/pub/irs-regs/td8734.txt</a></td>
 </tr>
 <tr>
 <td><strong>T.D. 8881</strong></td>
 <td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+8881%22;a=srchls;lmt=ft">search</a></td>
 <td>HathiTrust search</td>
 <td>1234, 1239, 1243, 1247, 1249, 1254</td>
+<td><a target="_blank" rel="noopener" href="https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+8881%22;a=srchls;lmt=ft">https://babel.hathitrust.org/cgi/ls?q1=%22Treasury+Decision+8881%22;a=srchls;lmt=ft</a></td>
 </tr>
 </tbody>
 </table>
