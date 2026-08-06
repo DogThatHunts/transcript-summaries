@@ -576,15 +576,6 @@
     "published_at": "2026-08-05T20:38:44.975873+00:00"
   },
   {
-    "slug": "dave-champion-incredible-interview-why-income-tax-doesn-t-apply-to-you-1249",
-    "title": "Dave Champion | Incredible Interview: Why Income Tax Doesn't Apply To You!",
-    "content_type": "conversation",
-    "word_count": 25357,
-    "thumbnail_url": "https://img.youtube.com/vi/z41AhImlEU8/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=z41AhImlEU8",
-    "published_at": "2026-08-05T23:34:47.007244+00:00"
-  },
-  {
     "slug": "dave-champion-scotus-rules-that-ordinary-americans-do-not-owe-income-tax-1252",
     "title": "Dave Champion | SCOTUS rules that ordinary Americans do NOT owe income tax!",
     "content_type": "reading",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/N6pPZOQd0X8/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=N6pPZOQd0X8",
     "published_at": "2026-08-06T00:38:05.065939+00:00"
+  },
+  {
+    "slug": "dave-champion-incredible-interview-why-income-tax-doesn-t-apply-to-you-1249",
+    "title": "Dave Champion | Incredible Interview: Why Income Tax Doesn't Apply To You!",
+    "content_type": "conversation",
+    "word_count": 25357,
+    "thumbnail_url": "https://img.youtube.com/vi/z41AhImlEU8/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=z41AhImlEU8",
+    "published_at": "2026-08-06T00:38:08.153846+00:00"
   }
 ]
