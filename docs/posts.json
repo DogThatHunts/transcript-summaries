@@ -477,15 +477,6 @@
     "published_at": "2026-08-05T12:51:39.313928+00:00"
   },
   {
-    "slug": "dave-champion-nefarious-tricks-gimmicks-irs-uses-so-you-can-t-understand-tax-law-1234",
-    "title": "Dave Champion | Nefarious Tricks & Gimmicks IRS Uses So You Can't Understand Tax Law. Now You Can!",
-    "content_type": "reading",
-    "word_count": 6421,
-    "thumbnail_url": "https://img.youtube.com/vi/9wDcGP_aMAE/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=9wDcGP_aMAE",
-    "published_at": "2026-08-05T12:52:02.988298+00:00"
-  },
-  {
     "slug": "dave-champion-financial-institutions-require-you-to-commit-perjury-to-open-an-ac-1236",
     "title": "Dave Champion | Financial Institutions REQUIRE You to Commit PERJURY to Open An Account!",
     "content_type": "conversation",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/PxJeDU5b3yE/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=PxJeDU5b3yE",
     "published_at": "2026-08-06T00:37:21.394184+00:00"
+  },
+  {
+    "slug": "dave-champion-nefarious-tricks-gimmicks-irs-uses-so-you-can-t-understand-tax-law-1234",
+    "title": "Dave Champion | Nefarious Tricks & Gimmicks IRS Uses So You Can't Understand Tax Law. Now You Can!",
+    "content_type": "reading",
+    "word_count": 6421,
+    "thumbnail_url": "https://img.youtube.com/vi/9wDcGP_aMAE/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=9wDcGP_aMAE",
+    "published_at": "2026-08-06T00:37:30.714732+00:00"
   }
 ]
