@@ -459,15 +459,6 @@
     "published_at": "2026-08-05T12:39:16.145749+00:00"
   },
   {
-    "slug": "dave-champion-this-meeting-went-really-bad-for-the-irs-1223",
-    "title": "Dave Champion | This Meeting Went Really Bad For the IRS!",
-    "content_type": "reading",
-    "word_count": 2750,
-    "thumbnail_url": "https://img.youtube.com/vi/NX6_s-_IiLE/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=NX6_s-_IiLE",
-    "published_at": "2026-08-05T12:51:06.604414+00:00"
-  },
-  {
     "slug": "dave-champion-lawyer-gets-schooled-about-income-tax-law-by-non-lawyer-1225",
     "title": "Dave Champion | Lawyer Gets Schooled About Income Tax Law By Non-lawyer!",
     "content_type": "reading",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/2fQqoYDFMEM/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=2fQqoYDFMEM",
     "published_at": "2026-08-06T00:36:52.157547+00:00"
+  },
+  {
+    "slug": "dave-champion-this-meeting-went-really-bad-for-the-irs-1223",
+    "title": "Dave Champion | This Meeting Went Really Bad For the IRS!",
+    "content_type": "reading",
+    "word_count": 2750,
+    "thumbnail_url": "https://img.youtube.com/vi/NX6_s-_IiLE/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=NX6_s-_IiLE",
+    "published_at": "2026-08-06T00:36:55.426658+00:00"
   }
 ]
