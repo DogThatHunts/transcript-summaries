@@ -486,15 +486,6 @@
     "published_at": "2026-08-05T12:52:20.578549+00:00"
   },
   {
-    "slug": "dave-champion-the-truth-about-crypto-and-income-tax-you-don-t-owe-any-1239",
-    "title": "Dave Champion | The Truth About Crypto and Income Tax. You Don\u2019t Owe Any!",
-    "content_type": "reading",
-    "word_count": 5318,
-    "thumbnail_url": "https://img.youtube.com/vi/KWbw9wSlt_0/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=KWbw9wSlt_0",
-    "published_at": "2026-08-05T12:52:26.785463+00:00"
-  },
-  {
     "slug": "dave-champion-dr-champion-answers-important-questions-about-health-and-ketosis-1240",
     "title": "Dave Champion | Dr. Champion Answers Important Questions About Health and Ketosis",
     "content_type": "conversation",
@@ -826,5 +817,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/CA9LgS4GD-4/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=CA9LgS4GD-4",
     "published_at": "2026-08-06T00:37:40.417036+00:00"
+  },
+  {
+    "slug": "dave-champion-the-truth-about-crypto-and-income-tax-you-don-t-owe-any-1239",
+    "title": "Dave Champion | The Truth About Crypto and Income Tax. You Don\u2019t Owe Any!",
+    "content_type": "reading",
+    "word_count": 5318,
+    "thumbnail_url": "https://img.youtube.com/vi/KWbw9wSlt_0/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=KWbw9wSlt_0",
+    "published_at": "2026-08-06T00:37:43.859346+00:00"
   }
 ]
