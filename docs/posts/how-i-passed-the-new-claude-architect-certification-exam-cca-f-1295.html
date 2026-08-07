@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>How I passed the NEW Claude Architect Certification Exam (CCA-F)
+</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>How I passed the NEW Claude Architect Certification Exam (CCA-F)
+</h1>
+        <p class="hero-subtitle">A comprehensive guide to passing Anthropic&#x27;s Claude Certified Architect exam in two days, covering topic weightings, scenario analysis, and a structured prep strategy.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+        <img class="hero-thumb" src="https://img.youtube.com/vi/kY9z4hiH4nk/maxresdefault.jpg" alt="How I passed the NEW Claude Architect Certification Exam (CCA-F)
+">
+
+        <article class="content">
+<h2>Why the Anthropic Claude certification matters</h2>
+<p>The Claude Certified Architect exam is the first official AI certification released by a frontier model lab. Beyond validating real-world AI architecture expertise to prospective employers, achieving this certification serves as a prerequisite for organizations seeking to become official Anthropic cloud implementation partners.</p>
+<h2>Exam structure, topics, and question format</h2>
+<p>The exam consists of 60 multiple-choice questions administered over 120 minutes (approximately two minutes per question). Questions are structured around four selected scenario modules out of six potential real-world domain templates, such as AI support agents or automated coding pipelines.</p>
+<p>The curriculum is weighted across five key domains:
+* <strong>Agentic architecture and orchestration (27%)</strong>: Multi-agent workflows, coordinator-sub-agent communication, and error handling.
+* <strong>Claude Code configuration and workflows (20%)</strong>: CI/CD integration, continuous review pipelines, and local development setups.
+* <strong>Prompt engineering and structured output (20%)</strong>: System prompts, formatting constraints, and output validation.
+* <strong>Tool design and MCP integration (18%)</strong>: Model Context Protocol servers, tool definitions, and external API invocation.
+* <strong>Context management and reliability (15%)</strong>: Context window optimization, rate limits, and fallback strategies.</p>
+<p>Exam questions function like technical reading comprehension problems, testing critical thinking alongside specific micro-technical facts from Anthropic's documentation.</p>
+<h2>Scenario question analysis and architectural patterns</h2>
+<p>Analyzing sample scenarios highlights key architectural principles emphasized by the exam:</p>
+<ul>
+<li><strong>Code review pipeline optimization</strong>: When continuous integration passes fail to catch cross-file bugs or output inconsistent feedback on large pull requests, the solution is to separate analysis into focused steps. Individual files should be scanned for local bugs first, followed by a distinct integration pass to evaluate cross-file data flow.</li>
+<li><strong>Sub-agent error handling</strong>: When specialized sub-agents encounter bad inputs (such as corrupted or password-protected files), transient errors should be handled locally within the sub-agent. Forcing top-level coordinator agents to manage routine sub-agent exceptions creates unnecessary orchestration overhead.</li>
+<li><strong>Ensuring execution sequence integrity</strong>: To prevent agents from bypassing crucial verification steps (such as calling order lookups using unverified customer names), prompt instructions or few-shot examples are insufficient. Hard programmatic prerequisites must be enforced in code to block downstream actions until verification completes.</li>
+</ul>
+<h2>Two-day preparation roadmap and resource guide</h2>
+<p>Because Anthropic enforces a six-month waiting period after a failed attempt, candidates should follow a structured study strategy rather than relying solely on official introductory courses.</p>
+<ol>
+<li><strong>Complete core Skilljar courses (~8 hours)</strong>: Focus on <em>Claude Code in Action</em>, <em>Introduction to Model Context Protocol</em>, <em>Introduction to Agent Skills</em>, and <em>Building with the Claude API</em>. Reviewing videos and notes is typically sufficient without running all Jupyter notebooks.</li>
+<li><strong>Deep-dive into the official study guide</strong>: Memorize micro-technical facts, edge-case behaviors, and API constraints detailed in the official Anthropic documentation.</li>
+<li><strong>Practice question decomposition on CertSafari</strong>: Work through 50 to 80 scenario questions to get accustomed to identifying core architectural trade-offs in wordy questions.</li>
+<li><strong>Master the official practice exam</strong>: Complete the official mock test and repeat it until achieving a score of at least 90%. Note that the actual exam is roughly one-third harder than the official practice test.</li>
+<li><strong>Review common traps and take additional mock exams</strong>: Review domain-specific pitfalls and complete full-length mock exams on specialized prep platforms before scheduling the proctored test.</li>
+</ol>
+<p>Source: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=kY9z4hiH4nk">How I passed the NEW Claude Architect Certification Exam (CCA-F)</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://www.youtube.com/watch?v=kY9z4hiH4nk" target="_blank" rel="noopener">How I passed the NEW Claude Architect Certification Exam (CCA-F)
+</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
