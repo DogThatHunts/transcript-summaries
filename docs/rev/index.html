@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE-V series — thematic index</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* style.css — shared template for all published summaries.
+   Generalized from the original dry_fasting_summary.css prototype: same
+   palette and hero/footer treatment, but built around plain markdown-derived
+   content (h2/h3/p/ul/ol/blockquote/strong) instead of bespoke per-post divs,
+   so it applies to every summary without hand design.
+
+   Phase-1 polish (2026-08-02): the markup is still exactly what the markdown
+   library emits — no new classes, no renderer/test changes — but the .content
+   body now reads like an edited article (lead paragraph, drop-cap, accent
+   section ticks, pull-quote blockquotes, custom list markers) rather than
+   plain prose. */
+
+:root {
+    --bg: #faf9f6;
+    --bg-warm: #f5f0e8;
+    --insight-bg: #fff8f0;
+    --text: #2c2c2c;
+    --text-light: #6b6b6b;
+    --accent: #c17f4e;
+    --accent-dark: #a06a3f;
+    --accent-soft: #e8d5c0;
+    --border: #e0d8ce;
+    --shadow: rgba(0, 0, 0, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 17px;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 50%, #3a2e22 100%);
+    color: #fff;
+    padding: 100px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(193, 127, 78, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(193, 127, 78, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(193, 127, 78, 0.4);
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 30px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-thumb {
+    width: 100%;
+    max-width: 760px;
+    border-radius: 12px;
+    display: block;
+    margin: 40px auto 0;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Layout */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.back-link {
+    padding-top: 32px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.back-link a {
+    color: var(--accent-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover { text-decoration: underline; }
+
+/* --------------------------------------------------------------------------
+   Markdown-derived article body
+   Every rule below targets a plain element the markdown library emits, so the
+   styling applies to any summary with no per-post work.
+   -------------------------------------------------------------------------- */
+.content {
+    padding: 40px 0 60px;
+}
+
+/* Section headings get a short accent tick above them — echoes the prototype's
+   hand-built .section-label without needing that markup. */
+.content h1, .content h2, .content h3, .content h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+    margin: 48px 0 18px;
+}
+
+.content h2::before {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 16px;
+}
+
+.content h1:first-child, .content h2:first-child,
+.content h3:first-child, .content h4:first-child {
+    margin-top: 0;
+}
+
+.content h1 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); }
+.content h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); }
+.content h3 { font-size: 1.25rem; }
+.content h4 { font-size: 1.08rem; color: var(--text-light); }
+
+.content p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+/* Lead paragraph + drop-cap: the first paragraph reads as an intro. */
+.content > p:first-of-type {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.content > p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 0.82;
+    float: left;
+    margin: 6px 12px 0 0;
+    color: var(--accent);
+}
+
+.content strong { color: var(--text); font-weight: 600; }
+.content em { color: var(--text); }
+
+/* Custom list markers in the accent colour. */
+.content ul, .content ol {
+    margin: 12px 0 24px;
+    padding-left: 0;
+    list-style: none;
+    color: var(--text-light);
+}
+
+.content li {
+    position: relative;
+    padding-left: 1.6em;
+    margin-bottom: 12px;
+}
+
+.content ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0.15em;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.content ol { counter-reset: item; }
+
+.content ol > li {
+    counter-increment: item;
+}
+
+.content ol > li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--accent);
+}
+
+.content li > ul, .content li > ol { margin: 10px 0 6px; }
+
+/* Blockquote as a pull-quote callout with an oversized opening mark. */
+.content blockquote {
+    position: relative;
+    background: var(--insight-bg);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px 24px 30px;
+    margin: 32px 0;
+    border-radius: 0 14px 14px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.content blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.15em;
+    left: 0.12em;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    line-height: 1;
+    color: var(--accent-soft);
+    pointer-events: none;
+}
+
+.content blockquote p { color: var(--text); }
+.content blockquote p:last-child { margin-bottom: 0; }
+
+.content a {
+    color: var(--accent-dark);
+    text-decoration-color: var(--accent-soft);
+    text-underline-offset: 3px;
+}
+
+.content a:hover { text-decoration-color: var(--accent); }
+
+.content code {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-size: 0.9em;
+}
+
+.content pre {
+    background: #1e1e1e;
+    color: #f5f0e8;
+    padding: 20px 22px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 26px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.content pre code { background: none; border: none; padding: 0; color: inherit; }
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 30px auto;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 26px 0;
+    font-size: 0.95rem;
+}
+
+.content th, .content td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.content th {
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 2px solid var(--accent-soft);
+}
+
+.content td { color: var(--text-light); }
+
+/* Horizontal rule as a centred ornament rather than a bare line. */
+.content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    margin: 48px 0;
+    position: relative;
+}
+
+.content hr::after {
+    content: '\00A7';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    padding: 0 14px;
+    color: var(--accent-soft);
+    font-size: 1rem;
+}
+
+/* Source footer */
+.source-footer {
+    background: #1a1a1a;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 48px 24px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.source-footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.source-footer a:hover { text-decoration: underline; }
+
+.source-footer .meta {
+    font-size: 0.85rem;
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Index page
+   -------------------------------------------------------------------------- */
+.hero-index { padding-bottom: 70px; }
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 56px 0 80px;
+}
+
+@media (min-width: 640px) {
+    .posts-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 44px var(--shadow);
+    border-color: var(--accent-soft);
+}
+
+.post-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.post-card-body { padding: 22px 22px 24px; }
+
+.post-card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.post-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.post-card .meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .hero { padding: 70px 20px 56px; }
+    body { font-size: 16px; }
+    .content > p:first-of-type { font-size: 1.12rem; }
+    .content > p:first-of-type::first-letter { font-size: 3rem; }
+}
+
+.content table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.95rem; }
+.content th, .content td { border: 1px solid #e2e2e2; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+.content th { background: #f7f5f0; font-weight: 600; }
+.content tr:nth-child(even) td { background: #fbfaf7; }
+.content img { display:block; max-width: 560px; width: 100%; height: auto; margin: 0.4rem 0 1.6rem;
+  border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.content h3 { margin-top: 2rem; }
+</style></head>
+<body>
+<header class="hero"><div class="hero-tag">Digest</div><h1>RE-V series — thematic index</h1>
+<p class="hero-subtitle">A synthesized digest of 18 videos from the RE-V series on the U.S. housing market and economy. Warnings and forecasts below are attributed claims from the videos and the outlets they cite, not verified predictions.</p><div class="hero-line"></div></header>
+<div class="container"><article class="content">
+<p>The RE-V video series presents a portrait of a U.S. housing market in structural decline, characterised by a four-year demand depression, widespread builder inventory overhang, rising mortgage distress, and a historic bifurcation between coastal and Sunbelt markets. While some segments (luxury, Northeast) remain resilient, the broader narrative is one of price correction, demographic headwinds, and a fundamental reset in affordability expectations.</p>
+<hr />
+<h2>Home prices and inventory dynamics</h2>
+<p>Homebuilders are reporting the highest inventory levels since the 2008–2009 financial crisis. D.R. Horton and Lennar, the nation's two largest builders (accounting for ~25% of the market), have cut prices aggressively—Lennar by 25% from peak, bringing prices to pre-pandemic levels. Months of supply on builder lots reached 9–10 months as of mid-2026, compared to a long-term average of 5.8 months. The videos document individual listings with 40–48% declines from recent peaks, particularly in Florida, Texas, and Georgia.</p>
+<p>Realtor.com reported the biggest decline in listing prices since 2017 (down 2.5% year-over-year in mid-2026), while Redfin reported median sale prices still near record highs—a divergence attributed to a skew toward luxury transactions. J.P. Morgan's June 2026 report noted that roughly half of U.S. states now show declining home values year-over-year, concentrated in the Sunbelt and Mountain West.</p>
+<p>Inventory is not uniformly distributed. The Northeast and Midwest remain tight; the South and West face surging supply. Months of supply for homes under construction reached 15 months nationally, and for homes not yet started, 21 months—unprecedented levels signalling collapsed future demand.</p>
+<hr />
+<h2>Mortgage stress and credit deterioration</h2>
+<p>FHA mortgage delinquencies reached 13.7–15.2% as of mid-2026, the highest since 2011–2012, despite an official unemployment rate of 4.2%. Conventional mortgage delinquencies rose to 4.4% in Q1 2026, the highest in seven to eight years. The Mortgage Bankers Association reported that FHA loans, which now comprise 45% of D.R. Horton's originations (up from 24% in 2022), carry debt-to-income ratios of 44%—above the 2006–2007 bubble peak of 39%.</p>
+<p>Credit card delinquencies spiked to 13% (90+ days past due), matching 2008–2009 levels. Bank of America reported credit card spending surged 6.3% year-over-year in June 2026, the largest jump in four years, with average card rates at 21%. Personal savings rates fell to 2.6% in April 2026, near historic lows, suggesting consumers are spending borrowed money to maintain consumption.</p>
+<p>Foreclosure filings rose 14% year-over-year, the largest spike since the pandemic began. The surge is concentrated in recent vintage mortgages (2022–2026), reflecting buyers who took on 6–7% rates at peak prices. Fannie Mae and Freddie Mac reported multifamily mortgage delinquencies at their highest since 2009–2010.</p>
+<hr />
+<h2>Jobs, consumer spending, and economic resilience</h2>
+<p>Labor force participation fell to 61.5% in June 2026, the lowest in 50 years outside the COVID era. The labor force shrank by 720,000 in June alone. Wage growth (3.8% year-over-year) significantly trails spending growth (6.3%), indicating consumers are drawing down savings and increasing debt rather than earning their way to higher consumption.</p>
+<p>The videos note that consumer spending remains resilient in nominal terms (68% of GDP), but this resilience is fragile: it is increasingly dependent on stock market wealth effects. With the S&amp;P 500 trading at a 41 cyclically adjusted price-to-earnings ratio (second only to 1999), any correction could trigger a sharp pullback in spending.</p>
+<hr />
+<h2>The AI CapEx boom and its fragility</h2>
+<p>Nearly 50% of U.S. GDP growth in Q1 2026 is attributed to AI-related capital expenditures (computers and peripheral equipment investment). Seven companies account for 90% of this spending; the top five account for 80%. However, Meta announced in July 2026 that it has excess compute capacity and will sell it to competitors—signalling potential overbuilding. Google entered negative free cash flow territory in Q2 2026 for the first time in two decades, spending $45 billion on CapEx against $39 billion in operating cash flow.</p>
+<p>Anthropic and OpenAI have seen explosive revenue growth (estimated $70 billion and $37 billion annualized revenue respectively), but the Wall Street Journal reported that corporate America is "mixing models" and shifting to cheaper alternatives, including open-source and Chinese models. Michael Burry warned that Nvidia (the world's largest company by market cap, valued at $5+ trillion) derives 64% of accounts receivable from three customers, creating extreme concentration risk.</p>
+<p>If this CapEx boom slows—as the videos suggest is likely—GDP growth could turn negative, unemployment could rise, and the stock market could correct sharply, undermining consumer spending and housing demand.</p>
+<hr />
+<h2>The Federal Reserve's pivot and mortgage rates</h2>
+<p>New Fed Chair Kevin Warsh signalled in mid-2026 that the central bank will maintain independence and prioritise fighting inflation (4.3% year-over-year in May 2026). The Fed's dot plot showed roughly half of board members expecting rates to be higher by end-2026. Mortgage rates have remained stuck in the 6.2–6.6% range despite Fed rate cuts from 5.3% to 3.6% over 2024–2025, suggesting long-term rates are driven by fiscal deficits and market expectations rather than Fed policy alone.</p>
+<p>Morgan Stanley warned that housing affordability is unlikely to return to pre-2022 levels and advised buyers to "jump in now"—a claim the videos dispute, given that debt-to-income ratios for new buyers are at 40%, exceeding the 2006–2007 bubble peak of 39%.</p>
+<hr />
+<h2>Migration reversal and regional divergence</h2>
+<p>Bank of America's Q1 2026 migration data shows a historic reversal. Miami, Orlando, Tampa, and Atlanta—pandemic boom towns—are now experiencing net outflows. Jacksonville investor purchases fell 77%; Atlanta 73%; Charlotte 70%; Nashville 67%. Conversely, Indianapolis, Salt Lake City, Raleigh, Columbus, and Louisville are gaining population, driven by affordability (rent-to-income ratios). Migration into the South has collapsed 80% from its 2022 peak; the Midwest saw its first positive net migration in 35 years in 2025.</p>
+<p>This shift is not yet fully reflected in prices. Sellers in Florida and other Sunbelt markets remain anchored to pandemic-era expectations, but inventory is building and prices are beginning to decline. The videos note that migration lags typically precede price declines by 12–24 months.</p>
+<hr />
+<h2>Demographic headwinds</h2>
+<p>Bloomberg and the Mortgage Bankers Association warn that the U.S. birth rate has plummeted 60% over 35 years to 1% of population, while death rates have risen. The MBA projects more deaths than births by 2030; ReVenture estimates 2034. This will structurally reduce household formation and home demand for the next 10–20 years.</p>
+<p>Japan experienced a 53% nominal home price decline from 1991 to 2010 following demographic collapse. China's residential property prices are down 23% from 2021 peaks amid population decline. Canada's population fell in Q4 2025 for the first time since WWII; home prices are down 23%.</p>
+<p>Seventeen U.S. states already have birth-to-death ratios below 1.0, meaning organic population decline. Florida, in particular, has 40% more deaths than births in some metro areas. The videos emphasise that immigration could offset this, but immigration levels are at 50-year lows and are declining across the developed world.</p>
+<hr />
+<h2>Apartment market collapse and rental deflation</h2>
+<p>Apartment concessions (free rent offers) reached their highest level since 2010. Austin rents are down 21% from mid-2022; Fort Myers, Colorado Springs, Phoenix, and Tampa all show double-digit declines. The apartment vacancy rate in Austin exceeds 9%, the highest in a decade; San Francisco's has dropped to a 10-year low.</p>
+<p>This rental deflation is spreading from Sunbelt boom towns to the broader market. Rents in San Antonio are down 6% year-over-year; Denver, Austin, Tampa, and Phoenix all show 4%+ declines. Conversely, San Francisco rents are up 11%, Chicago up 6.2%, and Midwest markets show 3–5% growth.</p>
+<p>The rental market is a leading indicator of housing demand. Where rents fall, home prices follow. Fannie Mae and Freddie Mac multifamily delinquencies are at 2009–2010 levels, signalling landlord distress and potential forced sales.</p>
+<hr />
+<h2>Investor exodus and cap rate compression</h2>
+<p>Investor home purchases have fallen to their lowest level since 2020, down 50% from their 2022 peak. In Jacksonville, Atlanta, Charlotte, Orlando, and Nashville, investor purchases are down 65–77%. This reversal is driven by cap rate compression: the 30-year mortgage rate (6.5%) now exceeds the typical rental cap rate (4.8%), making leveraged rental purchases unprofitable.</p>
+<p>From 2010 to 2022, mortgage rates were artificially suppressed below cap rates, incentivising investor purchases. That regime has ended. The videos note that this investor exodus is a "boots-on-the-ground" signal of market weakness; investors see the math doesn't work and are exiting.</p>
+<p>Congress has passed legislation (the 21st Century Road to Housing Act) banning institutional investors owning 350+ homes from purchasing additional properties. This ban, if signed into law, would prevent Wall Street from buying distressed inventory at discounts, as occurred in 2012–2013.</p>
+<hr />
+<h2>Loudest specific warnings</h2>
+<p><strong>D.R. Horton and Lennar</strong> (Videos 1319, 1333): America's two largest builders report contract cancellation rates of 20%, revenue guidance cuts, and price reductions of 12–25%. They are shifting to FHA and VA mortgages (now 63% of originations at D.R. Horton), financing 82% of their own sales, and supporting sales with risky lending practices.</p>
+<p><strong>Michael Burry</strong> (Video 1331): The investor who predicted 2008 warns that Nvidia's stock is vulnerable to "aggressive fall," noting that 64% of Nvidia's revenue comes from three customers. He warns of "token maxing" excess and unsustainable AI CapEx. He compares current valuations to 1929 and 1999.</p>
+<p><strong>Morgan Stanley</strong> (Video 1328): Warns of an "unprecedented housing market reset" and that affordability is unlikely to improve, contradicting its own advice to buyers to "jump in now." The firm acknowledges that mortgage rates will remain elevated and home price growth will slow.</p>
+<p><strong>Bloomberg</strong> (Videos 1323, 1329): Reports demographic crash (birth-to-death ratio converging), builder inventory at 2009 levels, and new home sales at unexpected lows. Warns of a "housing glut" for the next decade.</p>
+<p><strong>Federal Reserve (Kevin Warsh)</strong> (Video 1327): Signals higher-for-longer rates and independence from political pressure, disappointing those betting on rate cuts to save the market.</p>
+<p><strong>Bank of America</strong> (Videos 1321, 1334): Reports credit card delinquencies at 2008–2009 levels, credit spending surging despite weak income growth, and a historic migration reversal away from Sunbelt boom towns.</p>
+<hr />
+<h2>Points of agreement and divergence</h2>
+<p><strong>Agreement across sources:</strong>
+- Home prices are declining in roughly half the U.S., concentrated in the Sunbelt and Mountain West.
+- Buyer demand is at historic lows (4.17 million annualized existing sales, lowest in 40 years by some metrics).
+- Mortgage stress is rising, particularly in FHA and recent vintage mortgages.
+- Inventory is building, especially for new construction.
+- Migration patterns have reversed; Sunbelt boom towns are losing population.
+- Demographic trends (aging, low birth rates) will suppress housing demand for 10–20 years.</p>
+<p><strong>Divergence:</strong>
+- <strong>Redfin vs. Realtor.com</strong>: Redfin reports median sale prices up 1.3% year-over-year; Realtor.com reports median list prices down 2.5%. The videos attribute this to a skew in sales toward luxury properties, masking weakness in the broader market.
+- <strong>Morgan Stanley vs. the videos</strong>: Morgan Stanley advises buyers to purchase now, arguing affordability won't improve. The videos counter that prices must fall further to align with incomes and rents.
+- <strong>Official narratives vs. ground truth</strong>: Mainstream media headlines (CNBC, Reuters, WSJ) trumpet a "surge" in May home sales (up 3.2% year-over-year), but the videos note this is noise within a four-year depression and represents only a 0.13 million unit increase.</p>
+<hr />
+<h2>Overstatement and nuance</h2>
+<p>The videos occasionally overstate the case:
+- Calling the current market a "depression" is technically accurate by sales volume, but prices remain elevated, creating a paradoxical situation (low sales, high prices) that is unusual.
+- Some listings shown (40–48% losses) are outliers; national median prices remain near record highs, though trending down.
+- The claim that "AI is a bubble" is presented as established fact, though the underlying CapEx boom is real and its sustainability is genuinely uncertain.</p>
+<p>The videos also acknowledge nuance:
+- Northeast and Midwest markets remain strong; prices are forecast to rise 5–11% in some cities.
+- Luxury segments (homes &gt;$1M) are still transacting and appreciating.
+- Foreclosure levels, while rising, remain well below 2008–2009 peaks.
+- Some markets (San Francisco, parts of New York) show rental and price strength tied to AI/tech concentration.</p>
+<hr />
+<h2>Conclusion</h2>
+<p>The 18-video series presents a coherent, data-driven argument that the U.S. housing market is undergoing a structural correction from a multi-decade bubble. The correction is uneven: coastal, high-income, and demographic-growth markets (Northeast, Midwest, parts of California) are resilient; Sunbelt and Mountain West boom towns face sustained pressure. The correction is driven by affordability collapse (mortgage-to-income at 38%, exceeding 2006–2007 peaks), demographic headwinds (organic population decline in 17 states), investor exodus (cap rates below mortgage rates), and a demand depression lasting four years with no clear recovery catalyst. The AI CapEx boom, which accounts for 50% of GDP growth, is showing signs of strain and may not be sustainable. Consumer spending, which props up the broader economy, is increasingly dependent on stock market wealth effects and declining savings rates—a fragile foundation if equity valuations correct.</p>
+<hr />
+<hr />
+<h2>Evidence — key claims and their sources</h2>
+<p><em>Each key claim is paired with the source the video attributes it to — linked to the actual report or reputable coverage — and a screenshot of the on-screen source at the moment the claim is made. </em><em>✓</em><em> = specific source page verified; </em><em>○</em><em> = the attributed organisation's page, but the exact figure shown could not be independently confirmed.</em></p>
+<h3>D.R. Horton issues CANCELLATION warning (Fannie mortgages collapse 50%)</h3>
+<p><strong>Builder Online</strong> ✓ — According to Builder Online, D.R. Horton had 87,000 home closings in 2025 and Lennar had 82,000, making them the number one and number two homebuilders. <a target="_blank" rel="noopener" href="https://www.builderonline.com/builder-100/the-5-home-builders-leading-the-nation-in-closings">Builder Online ↗</a></p>
+<p><img alt="Builder Online — on-screen source at time of claim" src="re-v_assets/1319_1.jpg" /></p>
+<p><strong>Fannie Mae's National Mortgage Database</strong> ○ — According to Fannie Mae's National Mortgage Database, the debt-to-income ratio for government-backed mortgage originations was 44% as of the third quarter of 2025. <a target="_blank" rel="noopener" href="https://www.fhfa.gov/data/dashboard/nmdb-new-residential-mortgage-statistics">Fannie Mae's National Mortgage Database ↗</a></p>
+<p><img alt="Fannie Mae's National Mortgage Database — on-screen source at time of claim" src="re-v_assets/1319_2.jpg" /></p>
+<h3>Meta CEO warns of AI bubble. it's like 1999, but worse.</h3>
+<p><strong>Axios</strong> ✓ — Google went into negative free cash flow territory in the second quarter of 2026, the first time in two decades. <a target="_blank" rel="noopener" href="https://www.axios.com/2026/07/27/debt-data-center-oracle-goole">Axios ↗</a></p>
+<p><img alt="Axios — on-screen source at time of claim" src="re-v_assets/1320_1.jpg" /></p>
+<p><strong>Wall Street Journal</strong> ○ — Companies big and small are mixing AI models and switching to cheaper alternatives, changing the economics of the industry. <a target="_blank" rel="noopener" href="https://www.wsj.com/tech/ai">Wall Street Journal ↗</a></p>
+<p><img alt="Wall Street Journal — on-screen source at time of claim" src="re-v_assets/1320_2.jpg" /></p>
+<h3>Bank of America issues CREDIT MAXXING warning. 2006 all over again.</h3>
+<p><strong>Bank of America</strong> ✓ — Credit card and debit card spending in America surged 6.3% year-over-year in June, the biggest jump in over four years. <a target="_blank" rel="noopener" href="https://institute.bankofamerica.com/content/dam/economic-insights/consumer-checkpoint-july-2026.pdf">Bank of America ↗</a></p>
+<p><img alt="Bank of America — on-screen source at time of claim" src="re-v_assets/1321_1.jpg" /></p>
+<p><strong>New York Federal Reserve</strong> ✓ — The percentage of credit card balances over 90 days delinquent has spiked to 13%, the highest level since the 2008-2009 financial recession. <a target="_blank" rel="noopener" href="https://www.newyorkfed.org/newsevents/news/research/2026/20260512">New York Federal Reserve ↗</a></p>
+<p><img alt="New York Federal Reserve — on-screen source at time of claim" src="re-v_assets/1321_2.jpg" /></p>
+<h3>WSJ drops major warning. Six-figure losses emerge.</h3>
+<p><strong>The Wall Street Journal</strong> ○ — The Wall Street Journal reported that pending home sales in America fell in June 2026, marking the biggest monthly drop in contract signings that year. <a target="_blank" rel="noopener" href="https://www.nar.realtor/research-and-statistics/housing-statistics/pending-home-sales">The Wall Street Journal ↗</a></p>
+<p><img alt="The Wall Street Journal — on-screen source at time of claim" src="re-v_assets/1322_1.jpg" /></p>
+<p><strong>Mortgage Bankers Association</strong> ✓ — The Mortgage Bankers Association reported that mortgage delinquencies rose to 4.4% of all mortgages in the first quarter of 2026, the highest rate in seven to eight years. <a target="_blank" rel="noopener" href="https://www.mba.org/news-and-research/newsroom/news/2026/05/14/mortgage-delinquencies-increase-in-the-first-quarter-of-2026">Mortgage Bankers Association ↗</a></p>
+<p><img alt="Mortgage Bankers Association — on-screen source at time of claim" src="re-v_assets/1322_2.jpg" /></p>
+<h3>Bloomberg warns of Demographic CRASH. 1929 all over.</h3>
+<p><strong>Bloomberg</strong> ✓ — Bloomberg reports that the plummeting birth rate in America will completely reshape the housing market over the next 10 to 20 years. <a target="_blank" rel="noopener" href="https://www.bloomberg.com/news/articles/2026-07-08/low-birth-rate-risks-creating-us-housing-glut-over-coming-decade">Bloomberg ↗</a></p>
+<p><img alt="Bloomberg — on-screen source at time of claim" src="re-v_assets/1323_1.jpg" /></p>
+<p><strong>Mortgage Bankers Association</strong> ○ — The Mortgage Bankers Association argues that by 2030, America will have more deaths than births. <a target="_blank" rel="noopener" href="https://www.mba.org/news-and-research">Mortgage Bankers Association ↗</a></p>
+<p><img alt="Mortgage Bankers Association — on-screen source at time of claim" src="re-v_assets/1323_2.jpg" /></p>
+<h3>Fannie Mae warns of MASS bankruptcies. (80% migration collapse)</h3>
+<p><strong>Fannie Mae and Freddie Mac</strong> ✓ — According to Fannie Mae and Freddie Mac, the default rate on multifamily mortgages has hit its highest level since 2009-2010. <a target="_blank" rel="noopener" href="https://mises.org/power-market/multifamily-delinquencies-rise-again-hit-new-post-great-recession-high">Fannie Mae and Freddie Mac ↗</a></p>
+<p><img alt="Fannie Mae and Freddie Mac — on-screen source at time of claim" src="re-v_assets/1324_1.jpg" /></p>
+<p><strong>Apartment List</strong> ✓ — According to ApartmentList data, rents in Austin, Texas are down 21% from the middle of 2022 for apartments. <a target="_blank" rel="noopener" href="https://www.kvue.com/article/money/economy/boomtown-2040/austin-rent-apartment-decrease-apartmentlist/269-8e602123-91ea-4a3c-8f73-0981c356195d">Apartment List ↗</a></p>
+<p><img alt="Apartment List — on-screen source at time of claim" src="re-v_assets/1324_2.jpg" /></p>
+<h3>J.P. Morgan drops BOMBSHELL report. America's map just flipped.</h3>
+<p><strong>J.P. Morgan</strong> ✓ — Home sales relative to the U.S. household population are now at the lowest level going back to 1988. <a target="_blank" rel="noopener" href="https://privatebank.jpmorgan.com/nam/en/insights/markets-and-investing/ideas-and-insights/is-the-frozen-housing-market-starting-to-thaw">J.P. Morgan ↗</a></p>
+<p><img alt="J.P. Morgan — on-screen source at time of claim" src="re-v_assets/1325_1.jpg" /></p>
+<p><strong>J.P. Morgan</strong> ○ — Over 20 percent of U.S. homeowners have a mortgage rate between 2.5 to 3 percent. <a target="_blank" rel="noopener" href="https://privatebank.jpmorgan.com/nam/en/insights/markets-and-investing/ideas-and-insights/is-the-frozen-housing-market-starting-to-thaw">J.P. Morgan ↗</a></p>
+<p><img alt="J.P. Morgan — on-screen source at time of claim" src="re-v_assets/1325_2.jpg" /></p>
+<h3>The Dam has broken. Biggest losses since 2010.</h3>
+<p><strong>Realtor.com</strong> ✓ — Realtor.com reports that median list prices are down 2.5% year-over-year, the biggest drop since 2017. <a target="_blank" rel="noopener" href="https://www.prnewswire.com/news-releases/list-prices-post-steep-drop-and-buyers-are-showing-up-realtorcom-may-housing-report-302789132.html">Realtor.com ↗</a></p>
+<p><img alt="Realtor.com — on-screen source at time of claim" src="re-v_assets/1326_1.jpg" /></p>
+<p><strong>National Association of Realtors</strong> ✓ — The NAR reports existing home sales at 4.17 million annualized in May 2026, close to the lowest level ever. <a target="_blank" rel="noopener" href="https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-3-2-increase-in-may">National Association of Realtors ↗</a></p>
+<p><img alt="National Association of Realtors — on-screen source at time of claim" src="re-v_assets/1326_2.jpg" /></p>
+<h3>Fed reveals shocking U-TURN. ("largest sell signal in years")</h3>
+<p><strong>Morgan Stanley</strong> ✓ — Morgan Stanley projects that mortgage rates will likely be volatile and stick around their current elevated levels under the Warsh effect. <a target="_blank" rel="noopener" href="https://www.aol.com/articles/warsh-effect-housing-fed-chair-160324000.html">Morgan Stanley ↗</a></p>
+<p><img alt="Morgan Stanley — on-screen source at time of claim" src="re-v_assets/1327_1.jpg" /></p>
+<p><strong>Business Insider</strong> ✓ — Business Insider reports that Kevin Warsh likely isn't coming to the housing market's rescue. <a target="_blank" rel="noopener" href="https://www.aol.com/articles/warsh-effect-housing-fed-chair-160324000.html">Business Insider ↗</a></p>
+<p><img alt="Business Insider — on-screen source at time of claim" src="re-v_assets/1327_2.jpg" /></p>
+<h3>Morgan Stanley drops FINAL warning. The reset has begun.</h3>
+<p><strong>Morgan Stanley</strong> ✓ — Morgan Stanley concluded that housing affordability is unlikely to return to more favorable levels of the past, with many owners locked into low rates. <a target="_blank" rel="noopener" href="https://www.morganstanley.com/insights/articles/housing-affordability-new-normal-homebuyers">Morgan Stanley ↗</a></p>
+<p><img alt="Morgan Stanley — on-screen source at time of claim" src="re-v_assets/1328_1.jpg" /></p>
+<p><strong>Fannie Mae</strong> ○ — According to Fannie Mae, the debt-to-income ratio for homebuyers closing on or refinancing mortgages in the U.S. is now 40 percent. <a target="_blank" rel="noopener" href="https://www.fhfa.gov/data/dashboard/nmdb-new-residential-mortgage-statistics">Fannie Mae ↗</a></p>
+<p><img alt="Fannie Mae — on-screen source at time of claim" src="re-v_assets/1328_2.jpg" /></p>
+<h3>Bloomberg CANCELS U.S. Housing Market. (45% Losses Emerge)</h3>
+<p><strong>Bloomberg</strong> ✓ — Bloomberg reported an unexpected drop in new home sales in May 2026. <a target="_blank" rel="noopener" href="https://www.bloomberg.com/news/articles/2026-06-24/us-new-home-sales-unexpectedly-fall-as-mortgage-rates-stay-high">Bloomberg ↗</a></p>
+<p><img alt="Bloomberg — on-screen source at time of claim" src="re-v_assets/1329_1.jpg" /></p>
+<p><strong>U.S. Census Bureau</strong> ✓ — According to the U.S. Census Bureau, there was 10.3 months of supply on builder lots in May 2026. <a target="_blank" rel="noopener" href="https://www.census.gov/construction/nrs/pdf/newressales_202605.pdf">U.S. Census Bureau ↗</a></p>
+<p><img alt="U.S. Census Bureau — on-screen source at time of claim" src="re-v_assets/1329_2.jpg" /></p>
+<h3>Zillow reports shocking housing U-TURN. 40% losses emerge.</h3>
+<p><strong>ShowingTime</strong> ○ — Home tours have dropped by almost 35 to 40% in the last month and a half according to Showing Time data. <a target="_blank" rel="noopener" href="https://www.showingtime.com/showing-index">ShowingTime ↗</a></p>
+<p><img alt="ShowingTime — on-screen source at time of claim" src="re-v_assets/1330_1.jpg" /></p>
+<p><strong>Wall Street Journal</strong> ○ — House payments for existing owners have increased 40% in the last six years, from approximately $1,700 per month in 2019 to $2,400 per month at the end of 2025, according to Wall Street Journal analysis. <a target="_blank" rel="noopener" href="https://247wallst.com/personal-finance/2026/06/25/mortgage-payments-hit-2134-a-month-five-years-ago-they-were-1525/">Wall Street Journal ↗</a></p>
+<p><img alt="Wall Street Journal — on-screen source at time of claim" src="re-v_assets/1330_2.jpg" /></p>
+<h3>Michael Burry issues FINAL warning. ("it's like 1929 all over")</h3>
+<p><strong>Business Insider</strong> ✓ — Michael Burry warned that Nvidia's stock losses look vulnerable and that AI token maxing trends won't last into the future. <a target="_blank" rel="noopener" href="https://finance.yahoo.com/markets/stocks/articles/big-short-investor-michael-burry-125855200.html">Business Insider ↗</a></p>
+<p><img alt="Business Insider — on-screen source at time of claim" src="re-v_assets/1331_1.jpg" /></p>
+<p><strong>Michael Burry</strong> ✓ — The top three of Nvidia's customers are 64% of Nvidia's accounts receivable, meaning almost two-thirds of Nvidia's revenue comes from three customers. <a target="_blank" rel="noopener" href="https://cryptobriefing.com/burry-nvidia-customer-concentration-risk/">Michael Burry ↗</a></p>
+<p><img alt="Michael Burry — on-screen source at time of claim" src="re-v_assets/1331_2.jpg" /></p>
+<h3>ICE issues massive foreclosure warning ($150,000 short sales in Florida)</h3>
+<p><strong>Realtor.com</strong> ✓ — Foreclosure filings rose 14% nationwide, the biggest spike since the pandemic started. <a target="_blank" rel="noopener" href="https://www.floridatrend.com/articles/2026/06/15/florida-leads-foreclosures-filings-rise-14-nationwide/">Realtor.com ↗</a></p>
+<p><img alt="Realtor.com — on-screen source at time of claim" src="re-v_assets/1332_1.jpg" /></p>
+<p><strong>Fannie Mae</strong> ○ — According to Fannie Mae's National Mortgage Database, 22% of U.S. mortgages are over 6% rate while 19% are below 3% rate. <a target="_blank" rel="noopener" href="https://www.fhfa.gov/data/dashboard/nmdb-outstanding-residential-mortgage-statistics">Fannie Mae ↗</a></p>
+<p><img alt="Fannie Mae — on-screen source at time of claim" src="re-v_assets/1332_2.jpg" /></p>
+<h3>U.S. Housing Market DOWNGRADED (Lennar reports biggest drop since 2007)</h3>
+<p><strong>Lennar</strong> ○ — Lennar cut their net price on new home deliveries by 25% in the last four years. <a target="_blank" rel="noopener" href="https://newsroom.lennar.com/2026-06-11-Lennar-Reports-Second-Quarter-2026-Results">Lennar ↗</a></p>
+<p><img alt="Lennar — on-screen source at time of claim" src="re-v_assets/1333_1.jpg" /></p>
+<p><strong>HUD / Census New Residential Sales</strong> ○ — As of April 2026, the new home builder market had 9.1 months of supply, the highest inventory level since the 2008-2009 financial crisis. <a target="_blank" rel="noopener" href="https://www.hud.gov/news/hud-no-26-039">HUD / Census New Residential Sales ↗</a></p>
+<p><img alt="HUD / Census New Residential Sales — on-screen source at time of claim" src="re-v_assets/1333_2.jpg" /></p>
+<h3>Bank of America just reported a massive MIGRATION COLLAPSE (the U.S. Map flips again)</h3>
+<p><strong>Bank of America Institute</strong> ✓ — In the first quarter of 2026, metros like Miami, Orlando, and Tampa had some of the biggest net move-outs and population loss of any cities in the US. <a target="_blank" rel="noopener" href="https://institute.bankofamerica.com/content/dam/economic-insights/on-the-move-closer-to-home.pdf">Bank of America Institute ↗</a></p>
+<p><img alt="Bank of America Institute — on-screen source at time of claim" src="re-v_assets/1334_1.jpg" /></p>
+<p><strong>Bank of America Institute</strong> ✓ — The turnover rate of renters and homeowners moving has dropped by about 10 to 15% in the last two years. <a target="_blank" rel="noopener" href="https://institute.bankofamerica.com/content/dam/economic-insights/on-the-move-closer-to-home.pdf">Bank of America Institute ↗</a></p>
+<p><img alt="Bank of America Institute — on-screen source at time of claim" src="re-v_assets/1334_2.jpg" /></p>
+<h3>The U.S. Housing Market just FLIPPED (NAR reports new buyer statistics)</h3>
+<p><strong>CNBC</strong> ✓ — Home sales surged in May to the highest level since December, up 3.2% year over year, according to CNBC. <a target="_blank" rel="noopener" href="https://www.cnbc.com/2026/06/09/home-sales-surged-in-may-to-the-highest-level-since-december.html">CNBC ↗</a></p>
+<p><img alt="CNBC — on-screen source at time of claim" src="re-v_assets/1335_1.jpg" /></p>
+<p><strong>National Association of Realtors</strong> ✓ — The National Association of Realtors reported that existing home prices were up 1.3% year over year to around $429,000 for the median sale price. <a target="_blank" rel="noopener" href="https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-3-2-increase-in-may">National Association of Realtors ↗</a></p>
+<p><img alt="National Association of Realtors — on-screen source at time of claim" src="re-v_assets/1335_2.jpg" /></p>
+<h3>The Biggest Exodus since 2008 is happening now (Redfin reports 70% drop in FL)</h3>
+<p><strong>Politico</strong> ✓ — According to Politico, lawmakers voted to crack down on Wall Street landlords with a blanket prohibition on purchases by large institutional investors who own at least 350 single-family homes. <a target="_blank" rel="noopener" href="https://www.cnn.com/2026/05/20/economy/congress-passes-housing-affordability-investor-ban-bill">Politico ↗</a></p>
+<p><img alt="Politico — on-screen source at time of claim" src="re-v_assets/1336_1.jpg" /></p>
+<p><strong>RealPage</strong> ✓ — According to RealPage, San Francisco has the highest apartment rent growth at 11% year over year. <a target="_blank" rel="noopener" href="https://www.realpage.com/analytics/san-francisco-rent-growth-solid/">RealPage ↗</a></p>
+<p><img alt="RealPage — on-screen source at time of claim" src="re-v_assets/1336_2.jpg" /></p>
+<hr />
+<h2>External sources</h2>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apartment List</td>
+<td><a target="_blank" rel="noopener" href="https://www.apartmentlist.com">apartmentlist.com</a></td>
+</tr>
+<tr>
+<td>Axios</td>
+<td><a target="_blank" rel="noopener" href="https://www.axios.com">axios.com</a></td>
+</tr>
+<tr>
+<td>Bank of America</td>
+<td><a target="_blank" rel="noopener" href="https://www.bankofamerica.com">bankofamerica.com</a></td>
+</tr>
+<tr>
+<td>Bloomberg</td>
+<td><a target="_blank" rel="noopener" href="https://www.bloomberg.com">bloomberg.com</a></td>
+</tr>
+<tr>
+<td>Bureau of Economic Analysis</td>
+<td><a target="_blank" rel="noopener" href="https://www.bea.gov">bea.gov</a></td>
+</tr>
+<tr>
+<td>Business Insider</td>
+<td><a target="_blank" rel="noopener" href="https://www.businessinsider.com">businessinsider.com</a></td>
+</tr>
+<tr>
+<td>Calculated Risk</td>
+<td><a target="_blank" rel="noopener" href="https://www.calculatedriskblog.com">calculatedriskblog.com</a></td>
+</tr>
+<tr>
+<td>Census Bureau</td>
+<td><a target="_blank" rel="noopener" href="https://www.census.gov">census.gov</a></td>
+</tr>
+<tr>
+<td>CNBC</td>
+<td><a target="_blank" rel="noopener" href="https://www.cnbc.com">cnbc.com</a></td>
+</tr>
+<tr>
+<td>FactSet</td>
+<td><a target="_blank" rel="noopener" href="https://www.factset.com">factset.com</a></td>
+</tr>
+<tr>
+<td>Fannie Mae</td>
+<td><a target="_blank" rel="noopener" href="https://www.fanniemae.com">fanniemae.com</a></td>
+</tr>
+<tr>
+<td>Federal Reserve</td>
+<td><a target="_blank" rel="noopener" href="https://www.federalreserve.gov">federalreserve.gov</a></td>
+</tr>
+<tr>
+<td>Fortune</td>
+<td><a target="_blank" rel="noopener" href="https://fortune.com">fortune.com</a></td>
+</tr>
+<tr>
+<td>Fox News</td>
+<td><a target="_blank" rel="noopener" href="https://www.foxnews.com">foxnews.com</a></td>
+</tr>
+<tr>
+<td>Freddie Mac</td>
+<td><a target="_blank" rel="noopener" href="https://www.freddiemac.com">freddiemac.com</a></td>
+</tr>
+<tr>
+<td>Google Trends</td>
+<td><a target="_blank" rel="noopener" href="https://trends.google.com">trends.google.com</a></td>
+</tr>
+<tr>
+<td>Harvard Joint Center for Housing Studies</td>
+<td><a target="_blank" rel="noopener" href="https://www.jchs.harvard.edu">jchs.harvard.edu</a></td>
+</tr>
+<tr>
+<td>ICE Mortgage Technology</td>
+<td><a target="_blank" rel="noopener" href="https://www.icemortgagetechnology.com">icemortgagetechnology.com</a></td>
+</tr>
+<tr>
+<td>Investopedia</td>
+<td><a target="_blank" rel="noopener" href="https://www.investopedia.com">investopedia.com</a></td>
+</tr>
+<tr>
+<td>Invitation Homes</td>
+<td><a target="_blank" rel="noopener" href="https://www.invitationhomes.com">invitationhomes.com</a></td>
+</tr>
+<tr>
+<td>J.P. Morgan</td>
+<td><a target="_blank" rel="noopener" href="https://www.jpmorgan.com">jpmorgan.com</a></td>
+</tr>
+<tr>
+<td>Morgan Stanley</td>
+<td><a target="_blank" rel="noopener" href="https://www.morganstanley.com">morganstanley.com</a></td>
+</tr>
+<tr>
+<td>Mortgage Bankers Association</td>
+<td><a target="_blank" rel="noopener" href="https://www.mba.org">mba.org</a></td>
+</tr>
+<tr>
+<td>National Association of Realtors</td>
+<td><a target="_blank" rel="noopener" href="https://www.nar.realtor">nar.realtor</a></td>
+</tr>
+<tr>
+<td>NPR</td>
+<td><a target="_blank" rel="noopener" href="https://www.npr.org">npr.org</a></td>
+</tr>
+<tr>
+<td>Pew Research Center</td>
+<td><a target="_blank" rel="noopener" href="https://www.pewresearch.org">pewresearch.org</a></td>
+</tr>
+<tr>
+<td>Politico</td>
+<td><a target="_blank" rel="noopener" href="https://www.politico.com">politico.com</a></td>
+</tr>
+<tr>
+<td>RealPage</td>
+<td><a target="_blank" rel="noopener" href="https://www.realpage.com">realpage.com</a></td>
+</tr>
+<tr>
+<td>Realtor.com</td>
+<td><a target="_blank" rel="noopener" href="https://www.realtor.com">realtor.com</a></td>
+</tr>
+<tr>
+<td>Redfin</td>
+<td><a target="_blank" rel="noopener" href="https://www.redfin.com">redfin.com</a></td>
+</tr>
+<tr>
+<td>Reuters</td>
+<td><a target="_blank" rel="noopener" href="https://www.reuters.com">reuters.com</a></td>
+</tr>
+<tr>
+<td>ShowingTime</td>
+<td><a target="_blank" rel="noopener" href="https://www.showingtime.com">showingtime.com</a></td>
+</tr>
+<tr>
+<td>The Wall Street Journal</td>
+<td><a target="_blank" rel="noopener" href="https://www.wsj.com">wsj.com</a></td>
+</tr>
+<tr>
+<td>Zillow</td>
+<td><a target="_blank" rel="noopener" href="https://www.zillow.com">zillow.com</a></td>
+</tr>
+</tbody>
+</table>
+<p><em>Also referenced (no authoritative link mapped): Adam Data, Robert Shiller, Substack (Cassandra Unchained), Ticker Trends Research, U.N..</em></p>
+<h2>Source videos</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Watch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1319</td>
+<td>RE-V | D.R. Horton issues CANCELLATION warning (Fannie mortgages collapse 50%)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PY3E4l4AeY8">watch</a></td>
+</tr>
+<tr>
+<td>1320</td>
+<td>RE-V | Meta CEO warns of AI bubble. it's like 1999, but worse.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HvgjGiNm5Rk">watch</a></td>
+</tr>
+<tr>
+<td>1321</td>
+<td>RE-V | Bank of America issues CREDIT MAXXING warning. 2006 all over again.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=aiPbz-ikEwQ">watch</a></td>
+</tr>
+<tr>
+<td>1322</td>
+<td>RE-V | WSJ drops major warning. Six-figure losses emerge.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NstJsXpTOlk">watch</a></td>
+</tr>
+<tr>
+<td>1323</td>
+<td>RE-V | Bloomberg warns of Demographic CRASH. 1929 all over.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ncSSRsWxWEc">watch</a></td>
+</tr>
+<tr>
+<td>1324</td>
+<td>RE-V | Fannie Mae warns of MASS bankruptcies. (80% migration collapse)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NpJa_gMY5T0">watch</a></td>
+</tr>
+<tr>
+<td>1325</td>
+<td>RE-V | J.P. Morgan drops BOMBSHELL report. America's map just flipped.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=xQoDFKIcVKE">watch</a></td>
+</tr>
+<tr>
+<td>1326</td>
+<td>RE-V | The Dam has broken. Biggest losses since 2010.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=iZYIS1saDeA">watch</a></td>
+</tr>
+<tr>
+<td>1327</td>
+<td>RE-V | Fed reveals shocking U-TURN. ("largest sell signal in years")</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=rYBUui6YcPY">watch</a></td>
+</tr>
+<tr>
+<td>1328</td>
+<td>RE-V | Morgan Stanley drops FINAL warning. The reset has begun.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Atf8I82zFog">watch</a></td>
+</tr>
+<tr>
+<td>1329</td>
+<td>RE-V | Bloomberg CANCELS U.S. Housing Market. (45% Losses Emerge)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=53Tt5DqONNM">watch</a></td>
+</tr>
+<tr>
+<td>1330</td>
+<td>RE-V | Zillow reports shocking housing U-TURN. 40% losses emerge.</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dYZK9Ix4mog">watch</a></td>
+</tr>
+<tr>
+<td>1331</td>
+<td>RE-V | Michael Burry issues FINAL warning. ("it's like 1929 all over")</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=KTKjKmn2MYI">watch</a></td>
+</tr>
+<tr>
+<td>1332</td>
+<td>RE-V | ICE issues massive foreclosure warning ($150,000 short sales in Florida)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=5a4AL4QE7iE">watch</a></td>
+</tr>
+<tr>
+<td>1333</td>
+<td>RE-V | U.S. Housing Market DOWNGRADED (Lennar reports biggest drop since 2007)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=rkHR1uUtLc0">watch</a></td>
+</tr>
+<tr>
+<td>1334</td>
+<td>RE-V | Bank of America just reported a massive MIGRATION COLLAPSE (the U.S. Map flips again)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=hkazXt2ryCE">watch</a></td>
+</tr>
+<tr>
+<td>1335</td>
+<td>RE-V | The U.S. Housing Market just FLIPPED (NAR reports new buyer statistics)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=CKBUpSFFWYo">watch</a></td>
+</tr>
+<tr>
+<td>1336</td>
+<td>RE-V | The Biggest Exodus since 2008 is happening now (Redfin reports 70% drop in FL)</td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=r4z0cSwdsTM">watch</a></td>
+</tr>
+</tbody>
+</table>
+</article></div>
+<footer class="source-footer"><p>Synthesized by AI from 18 source transcripts (RE-V series) &middot; sources linked/screenshotted above &middot; for informational purposes only</p></footer>
+</body></html>
