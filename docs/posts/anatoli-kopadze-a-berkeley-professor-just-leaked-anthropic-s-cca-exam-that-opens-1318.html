@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Anatoli Kopadze - A Berkeley professor just leaked Anthropic’s CCA exam that opens the ...</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>Anatoli Kopadze - A Berkeley professor just leaked Anthropic’s CCA exam that opens the ...</h1>
+        <p class="hero-subtitle">UC Berkeley computer science instructor Frank Coyle breaks down Anthropic&#x27;s Claude Certified Architect exam, sharing critical design patterns and anti-patterns for building robust agentic AI systems.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+
+        <article class="content">
+<h2>UC berkeley's Frank Coyle on the Claude Certified Architect exam</h2>
+<p>Frank Coyle, a computer science instructor at UC Berkeley with over 30 years of teaching experience, shares his insights on preparing students for a world of agentic AI. To help developers navigate this shift, Coyle breaks down the structure and core concepts of Anthropic's <strong>Claude Certified Architect (CCA)</strong> exam, focusing on practical design patterns and critical anti-patterns.</p>
+<h3>Overview of the CCA exam</h3>
+<p>Released in March, the CCA exam is a timed, proctored, scenario-based test. While designed for companies within the Anthropic ecosystem, individuals can take it for $99 once every six months. The exam evaluates five core domains:</p>
+<ul>
+<li><strong>Agentic architecture (27%)</strong></li>
+<li><strong>Claude code and workflow configuration (20%)</strong></li>
+<li><strong>Prompt engineering and structured JSON output</strong></li>
+<li><strong>Tool design and Model Context Protocol (MCP) integration</strong></li>
+<li><strong>Context management and reliability</strong></li>
+</ul>
+<p>The exam draws from six production scenarios, randomly selecting four for any given test session. Coyle uses these scenarios to highlight how to build—and how not to build—agentic systems.</p>
+<h3>Key agentic design patterns and anti-patterns</h3>
+<h4>Scenario 1: customer support and the stop reason loop</h4>
+<p>When building customer support agents, a common mistake is letting an agent execute tasks without monitoring its state. </p>
+<ul>
+<li><strong>The anti-pattern:</strong> Treating the LLM as an active execution engine. LLMs are probabilistic next-word predictors; they cannot execute tools directly. They can only output the parameters required for your local code to run them.</li>
+<li><strong>The pattern:</strong> Implement a <code>while true</code> loop that monitors the model's <code>stop_reason</code>. If the model stops because of a <code>tool_use</code> request, your code executes the tool, feeds the result back into the message history, and continues the loop. Developers must also monitor for stop reasons like token limit exhaustion to handle partial outputs safely, and implement human-in-the-loop escalation when confidence scores are low.</li>
+</ul>
+<h4>Scenario 2 &amp; 3: multi-agent specialization and context isolation</h4>
+<p>In complex research or workflows, developers often struggle with coordinating multiple agents.</p>
+<ul>
+<li><strong>The anti-pattern:</strong> Creating a single "super-agent" overloaded with dozens of tools, or letting all sub-agents dump their entire thought processes and histories into a shared primary context window.</li>
+<li><strong>The pattern:</strong> Build specialized, single-purpose agents equipped with only one or two tools. To prevent "groupthink" and context bloat, isolate each agent's context. For example, when using a critic agent to evaluate a claim, pass only the claim and the evidence—do not pass the entire chain of thought that generated them. Keeping contexts small reduces token costs, improves model accuracy, and prevents agents from devolving into a single consensus.</li>
+</ul>
+<h4>Scenario 4 &amp; 5: developer productivity and continuous integration</h4>
+<p>Managing long developer sessions and automated pipelines requires strict boundary control.</p>
+<ul>
+<li><strong>The anti-pattern:</strong> Allowing context windows to grow unbounded, or running interactive permission prompts inside automated continuous integration (CI) pipelines.</li>
+<li><strong>The pattern:</strong> Use "context forking" to run subtasks (like scanning logs for errors) in independent threads. Once complete, pass only the summarized result back to the main thread. If token counts exceed thresholds (e.g., 150,000 tokens), apply compaction or compression algorithms to shrink the history. For CI pipelines, disable interactive modes entirely. For non-urgent, high-volume tasks, leverage Anthropic's batch mode to run queries at a 50% cost reduction with a 24-hour turnaround.</li>
+</ul>
+<h3>Conclusion and philosophy</h3>
+<p>Coyle closes with a philosophy of active experimentation, quoting artist Sister Corita Kent: <em>"Nothing is a mistake. There's no win and no fail. There's only make."</em> Understanding what <em>not</em> to do through anti-patterns is often the fastest path to designing highly reliable, agentic systems.</p>
+<hr />
+<p><a target="_blank" rel="noopener" href="https://x.com/AnatoliKopadze/status/2086435146173948038?s=20">Anatoli Kopadze - A Berkeley professor just leaked Anthropic’s CCA exam that opens the ...</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://x.com/AnatoliKopadze/status/2086435146173948038?s=20" target="_blank" rel="noopener">Anatoli Kopadze - A Berkeley professor just leaked Anthropic’s CCA exam that opens the ...</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
