@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>The Strange Math That Predicts (Almost) Anything</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>The Strange Math That Predicts (Almost) Anything</h1>
+        <p class="hero-subtitle">How a bitter ideological feud between two Russian mathematicians birthed the memoryless probability chains that now power nuclear simulations, Google search, and large language models.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+        <img class="hero-thumb" src="https://img.youtube.com/vi/KZeIEiBrT_w/maxresdefault.jpg" alt="The Strange Math That Predicts (Almost) Anything">
+
+        <article class="content">
+<h1>The ideological feud that birthed the chain</h1>
+<p>In 1905, Russia was deeply divided between Tsarist defenders of the status quo and socialist reformers. This division extended into the mathematical community, sparking a bitter feud between Pavel Nekrasov—a deeply religious Tsarist mathematician known as the "Tsar of Probability"—and Andrei Markov, an atheist socialist. </p>
+<p>Nekrasov argued that the law of large numbers (the mathematical principle that independent trials converge on an expected average) proved the existence of free will. He reasoned that because social statistics like marriage and crime rates converged to stable averages, the individual human decisions behind them must be independent acts of free will. </p>
+<p>Markov found this theological application of mathematics absurd. To prove Nekrasov wrong, he set out to demonstrate that dependent events—where one outcome directly influences the next—could also obey the law of large numbers. </p>
+<p>To prove his theory, Markov analyzed the first 20,000 letters of Alexander Pushkin's poem <em>Eugene Onegin</em>. He stripped the text of punctuation and spaces, classifying each letter as a vowel or consonant. He discovered that the probability of a letter being a vowel or consonant was heavily dependent on the preceding letter. By mapping these transition probabilities, Markov created a predictive "chain" of events. Despite this dependency, the system still converged to a stable ratio of 43% vowels and 57% consonants. This proved that mathematical independence—and by extension, free will—was not necessary to achieve statistical convergence.</p>
+<h1>The Monte Carlo method: simulating the atomic bomb</h1>
+<p>Markov viewed his chains as pure analysis and cared little for practical applications. However, in the 1940s, his mathematics became vital to the Manhattan Project. </p>
+<p>While recovering from a severe brain infection in 1946, mathematician Stanislav Ulam passed the time playing Solitaire. He wondered about the exact probability of winning a randomly dealt game. Because calculating the 52-factorial combinations analytically was impossible, Ulam realized he could simply play hundreds of games and record the win rate to find a statistical approximation. </p>
+<p>When he returned to Los Alamos, Ulam realized this same approach could simulate the behavior of neutrons inside a nuclear core. Trillions of neutrons interact in a core, scattering, absorbing, or causing fission. John von Neumann recognized the brilliance of Ulam's idea but noted that neutron behavior is dependent on prior states. To simulate this, Von Neumann realized they needed a Markov chain. </p>
+<p>Using the ENIAC, the world's first electronic computer, they simulated thousands of neutron paths using randomly generated starting conditions and transition probabilities. This allowed them to calculate the multiplication factor ($k$) and determine the critical mass needed for a nuclear bomb without solving impossible differential equations. They named this statistical sampling technique the Monte Carlo method.</p>
+<h1>PageRank: how Markov chains organized the internet</h1>
+<p>By the mid-1990s, early search engines like Yahoo! indexed the rapidly expanding web by counting keyword frequency. This system was easily manipulated by webmasters who hid repeated keywords in white text on white backgrounds. </p>
+<p>At Stanford, PhD students Sergey Brin and Larry Page realized they could measure web page quality by treating links as endorsements. They modeled the entire internet as a massive Markov chain, where each web page was a state and each link was a transition. </p>
+<p>In their "PageRank" model, a random web surfer moves from page to page by clicking links. The algorithm ranks pages based on the percentage of time the surfer spends on them. To prevent the surfer from getting stuck in infinite loops on disconnected pages, Brin and Page introduced a "damping factor": 85% of the time the surfer follows a link, and 15% of the time they jump to a completely random page. This memoryless model formed the foundation of Google, which quickly overthrew Yahoo! to become a multi-trillion-dollar company.</p>
+<h1>From shannon's tokens to modern language models</h1>
+<p>In the late 1940s, Claude Shannon, the father of information theory, applied Markov's text-prediction concept to individual letters and words. He demonstrated that by looking back at the previous two or three words, a Markov chain could generate sequences of text that began to resemble coherent English. </p>
+<p>Today's large language models (LLMs) are sophisticated descendants of this concept. Instead of simple letters, they predict the probability of the next "token" (words, punctuation, or word fragments) based on a massive context window of preceding tokens. </p>
+<p>Unlike basic Markov chains, modern LLMs use an "attention" mechanism to dynamically weight which past tokens are most relevant to the current prediction. However, this feedback loop presents a new challenge: as AI-generated text is published on the internet, future models risk being trained on their own outputs, which can collapse the system into a dull, repetitive state.</p>
+<h1>The mathematics of a perfect shuffle</h1>
+<p>Markov chains also answer Ulam's original question about card randomness. Card shuffling can be modeled as a Markov chain where each deck arrangement is a state and each shuffle is a step. </p>
+<p>Mathematical analysis shows that it takes exactly seven riffle shuffles to make a standard 52-card deck truly random. If a player uses a simpler overhand shuffle instead, they would need to shuffle the deck more than 2,000 times to achieve the same level of randomness.</p>
+<p><a target="_blank" rel="noopener" href="https://youtu.be/KZeIEiBrT_w?si=">The Strange Math That Predicts (Almost) Anything</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://youtu.be/KZeIEiBrT_w?si=" target="_blank" rel="noopener">The Strange Math That Predicts (Almost) Anything</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>

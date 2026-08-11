@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Vikas gupta - Anthropic pays $750,000+ a year for engineers who can build LLM archi...</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>Vikas gupta - Anthropic pays $750,000+ a year for engineers who can build LLM archi...</h1>
+        <p class="hero-subtitle">In this lecture, Vikas Gupta provides a comprehensive survey of modern large language model (LLM) architectures, hyperparameters, and stability tricks.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+
+        <article class="content">
+<h1>Modern LLM architectures and hyperparameters</h1>
+<p>In this lecture, Vikas Gupta provides a comprehensive survey of modern large language model (LLM) architectures, hyperparameters, and stability tricks. By analyzing the design choices of prominent open and closed models, Gupta maps out the consensus configurations, the areas of active experimentation, and the underlying trade-offs between mathematical expressiveness and hardware efficiency.</p>
+<h2>The evolution of layer normalization</h2>
+<p>One of the few structural choices universally agreed upon in modern LLM design is the placement of layer normalization. </p>
+<ul>
+<li><strong>Pre-norm vs. post-norm:</strong> The original Transformer architecture placed layer normalization in the residual path (post-norm). Modern architectures have universally shifted to pre-norm, placing the normalization outside the residual stream and before the attention or feed-forward network (FFN) computations. Gupta explains that this keeps the "residual stream clean," allowing gradients to propagate directly through the network during the backward pass, which dramatically improves training stability and signal propagation.</li>
+<li><strong>RMS norm:</strong> Traditional layer norm performs mean subtraction, variance division, and rescaling. Modern models have almost entirely transitioned to Root Mean Square Normalization (RMS norm), which drops the mean subtraction and bias terms. While layer norm is theoretically more expressive, RMS norm performs equally well in practice while eliminating memory-intensive operations. Gupta notes that while normalization operations account for a tiny fraction of total floating-point operations (FLOPs), they can consume up to 25% of runtime on certain hardware due to memory movement bottlenecks.</li>
+<li><strong>Dropping biases:</strong> In line with the RMS norm philosophy, most modern implementations drop bias terms from linear layers entirely to simplify systems optimization.</li>
+</ul>
+<h2>Activation functions and the rise of gated linear units</h2>
+<p>Activation functions have evolved from simple thresholding operations to complex gated structures.</p>
+<ul>
+<li><strong>The GLU family:</strong> Standard ReLU and GELU activations have been largely replaced by Gated Linear Units (GLUs), specifically SwiGLU (used in LLaMA-style models) and GEGLU (favored by Google). </li>
+<li><strong>The parameter-matching correction:</strong> Gated units require three projection matrices instead of two, which increases parameter count. To maintain a fair comparison, designers apply Noam Shazier's 2/3 parameter-matching adjustment, shrinking the feed-forward hidden dimension to keep the total parameter count identical to non-gated counterparts. Empirical sweeps consistently show that GLU variants outperform non-gated activations under parameter-matched conditions.</li>
+<li><strong>Serial vs. parallel blocks:</strong> Some models (like GPT-J and PaLM) experimented with parallelizing the attention and MLP blocks to allow fused matrix multiplies and faster execution. However, Gupta notes this approach has fallen out of favor because it effectively reduces the model's depth by half, leading to representation capacity losses that outweigh the systems-level speedups.</li>
+</ul>
+<h2>Position embeddings and the geometry of RoPE</h2>
+<p>Because attention is inherently position-independent, models require a mechanism to encode token order. Rotary Position Embedding (RoPE) has emerged as the dominant standard.</p>
+<ul>
+<li><strong>The relative formulation:</strong> RoPE is a relative position embedding. It satisfies a strict mathematical constraint: the inner product of two token embeddings must only depend on their relative distance, not their absolute positions.</li>
+<li><strong>The rotation mechanism:</strong> RoPE achieves this by dividing a high-dimensional semantic vector into 2D slices and rotating each slice in the complex plane by an angle proportional to the token's position index. </li>
+<li><strong>Frequencies:</strong> The rotation angles (thetas) vary across dimensions. Low-frequency dimensions rotate slowly to capture long-range dependencies, while high-frequency dimensions rotate quickly to capture local context.</li>
+</ul>
+<h2>Demystifying LLM hyperparameters</h2>
+<p>While searching the high-dimensional space of hyperparameters is daunting, Gupta highlights several highly stable rules of thumb that have emerged across the industry.</p>
+<ul>
+<li><strong>Feed-forward ratio:</strong> The ratio of the FFN hidden dimension to the model dimension is traditionally 4x. For GLU variants, applying the 2/3 correction brings this ratio to roughly 2.67x. LLaMA-style models arbitrarily bumped this to 3.5x to emphasize the MLP blocks. Gupta references Kaplan et al.'s scaling laws to show that performance is highly forgiving within a flat basin between 1x and 10x.</li>
+<li><strong>Aspect ratio (width vs. depth):</strong> Most modern models maintain an aspect ratio of roughly 100 (model width divided by the number of layers). Extremely deep models are difficult to parallelize across GPUs because they require pipeline parallelization, which introduces idle "bubble" time. Extremely wide models are much easier to split using tensor parallelization.</li>
+<li><strong>Vocabulary size:</strong> Early English-centric models used vocabularies of around 32,000 tokens. Modern multilingual and multimodal models utilize much larger vocabularies, ranging from 100,000 to over 250,000 tokens.</li>
+<li><strong>Weight decay as an optimizer:</strong> Gupta highlights a counterintuitive property of weight decay in single-pass training: it does not function as a traditional regularizer to prevent overfitting. Instead, weight decay interacts with learning rate schedulers to help the optimizer navigate to superior local minima.</li>
+</ul>
+<h2>Stability tricks for large-scale training</h2>
+<p>As models scale, training runs become highly sensitive to catastrophic gradient explosions. Modern architectures incorporate explicit mathematical constraints to prevent these failures.</p>
+<ul>
+<li><strong>The z-loss trick:</strong> The output softmax calculation can become unstable if the normalizer term (Z) grows too large or too small. The z-loss trick adds a auxiliary regularization term that penalizes the squared log of Z, keeping the calculation numerically stable.</li>
+<li><strong>QK norm:</strong> To prevent attention dot-products from producing massive values that saturate the softmax, QK norm applies an RMS norm directly to the Query and Key vectors before they are multiplied. This has become a standard industry safeguard.</li>
+<li><strong>Logit soft capping:</strong> Popularized by Google's Gemma series, this technique uses a tanh function to hard-bound the attention logits, ensuring they never exceed a specified maximum value. While this can slightly degrade representation quality, it provides a highly robust safety net against training instability.</li>
+</ul>
+<h2>Optimizing attention for inference and long context</h2>
+<p>While training efficiency is critical, modern models must also be optimized for high-throughput, low-latency deployment.</p>
+<ul>
+<li><strong>The KV cache bottleneck:</strong> During autoregressive generation, the model must store the Key and Value states of all past tokens in memory (the KV cache). This makes inference heavily memory-bandwidth bound.</li>
+<li><strong>Grouped Query Attention (GQA):</strong> Multi-Query Attention (MQA) uses a single Key and Value head shared across all Query heads, which drastically reduces the KV cache size but hurts model expressiveness. Grouped Query Attention (GQA) groups query heads together to share a smaller number of KV heads (e.g., 8 KV heads for 32 Query heads), capturing nearly all the expressiveness of full multi-head attention while delivering massive inference speedups.</li>
+<li><strong>Sliding window attention:</strong> To handle long contexts without paying quadratic attention costs, modern models like LLaMA 4 and Gemma 4 alternate between cheap, local sliding window attention layers and global attention layers (e.g., one global layer every four layers). This hybrid approach aggregates local information into global context without requiring exotic non-attention architectures.</li>
+</ul>
+<p>Source: <a target="_blank" rel="noopener" href="https://x.com/vicky_grok/status/2067837249912528995?s=20">Vikas gupta - Anthropic pays $750,000+ a year for engineers who can build LLM archi...</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://x.com/vicky_grok/status/2067837249912528995?s=20" target="_blank" rel="noopener">Vikas gupta - Anthropic pays $750,000+ a year for engineers who can build LLM archi...</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
