@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Jeff Dean: The 1% Rule for Building in AI</title>
+    <meta name="description" content="conversation">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Conversation</div>
+        <h1>Jeff Dean: The 1% Rule for Building in AI</h1>
+        <p class="hero-subtitle">Google&#x27;s chief scientist shares his predictions for automated machine learning, the physics of inference bottlenecks, and how startups can outmaneuver frontier models.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+        <img class="hero-thumb" src="https://img.youtube.com/vi/CxXgV54KzpQ/maxresdefault.jpg" alt="Jeff Dean: The 1% Rule for Building in AI">
+
+        <article class="content">
+<p>In this conversation, Google Chief Scientist Jeff Dean discusses the rapid evolution of artificial intelligence, evaluating his past prediction that AI has reached the level of a junior engineer and forecasting a future of fully automated machine learning experimentation loops by 2027. Dean highlights the critical physics of modern computing—where moving data costs 1,000 times more energy than computing on it—and explains why low-latency, specialized inference hardware is the next major frontier. He offers strategic advice for founders, emphasizing that while tech giants build massive general-purpose models, startups can win by focusing on specialized domains, personal data orchestration, and "context engineering" to build robust, multi-agent systems.</p>
+<h2>Key insights</h2>
+<ol>
+<li><strong>The next wave of AI is self-automating ML</strong>: Dean predicts that by 2027, machine learning systems will automate their own development by decomposing high-level objectives, running tight experimentation loops, and integrating the results.</li>
+<li><strong>Data movement is the ultimate energy bottleneck</strong>: Computing on data costs roughly one picojoule, but moving data from high-bandwidth memory (HBM) to the processor costs 1,000 times more, making batching and specialized inference hardware critical.</li>
+<li><strong>Startups can win on data access and specialization</strong>: While general models are rapidly improving, startups can find durable advantages in highly specialized domains (similar to AlphaFold) or by building products that organize private, personal data that general models cannot access.</li>
+<li><strong>"Context engineering" democratizes AI development</strong>: Unlike training massive foundational models, context engineering—designing guidelines, retrieval systems, and tool-use skills for existing models—allows small teams to build highly capable agentic workflows.</li>
+<li><strong>Breakthroughs require questioning fundamental assumptions</strong>: Dean suggests valuable systems can be built by challenging industry dogmas, such as imagining computer architectures built from highly unreliable transistors that use redundant pathways, mimicking the human brain.</li>
+</ol>
+<hr />
+<h2>The shift toward automated ML and agentic systems</h2>
+<p>Reflecting on his prediction from a year prior that AI is at the level of a "junior engineer," Dean notes that agent-based, longer-running coding tasks have progressed even faster than he anticipated. Looking ahead to 2027, he predicts a major shift toward the automation of machine learning systems themselves. In this future, ML systems will improve their own capabilities by automatically decomposing complex problems into sub-problems, running automated experimentation loops, and assembling the results into improved systems. Dean believes this automation loop will accelerate progress not just in ML, but across science and engineering fields with measurable objectives.</p>
+<p>Furthermore, Dean points out that agents are transitioning from running for just an hour or two to executing highly complex tasks over days or weeks. For example, an agent can be tasked with translating an entire software system into a different programming language (such as Python to Go) to improve safety or performance. Because the source code acts as an incredibly detailed specification, the agent can translate the code, convert tests, and iteratively resolve behavioral differences until the port is complete.</p>
+<h2>The physics of hardware: energy, latency, and the I/O bottleneck</h2>
+<p>Dean emphasizes that modern system design is increasingly dictated by energy constraints rather than raw compute power. While performing a mathematical calculation costs about one picojoule, moving the data from high-bandwidth memory (HBM) to the processor costs 1,000 times more. This massive gap forces developers to use large batch sizes during training to amortize the energy cost of data movement, even though batching is detrimental to low-latency applications.</p>
+<p>To address this, Dean advocates for highly specialized inference hardware designed to minimize data movement and support low-precision operations. By building chips dedicated strictly to dense linear algebra—similar to the original design philosophy behind Google's Tensor Processing Units (TPUs)—hardware designers can achieve 50x latency improvements and dramatic energy efficiency gains over general-purpose processors.</p>
+<h2>Where startups can win against frontier models</h2>
+<p>While organizations like Google focus on building highly capable, general-purpose models, Dean outlines two distinct paths where small startup teams can establish durable advantages:</p>
+<ul>
+<li><strong>Private data orchestration</strong>: Startups can build products that help users organize and leverage their personal or proprietary information—data that general frontier models do not have access to.</li>
+<li><strong>Niche domain specialization</strong>: Teams can train highly accurate, specialized models for specific scientific or engineering challenges. Dean points to AlphaFold as a prime example of a highly successful, non-general model that revolutionized protein folding. Similar opportunities exist in material science, chip design, and other specialized fields.</li>
+</ul>
+<p>When choosing a problem, Dean advises founders to target areas where general models currently succeed 0% to 1% of the time, rather than 20%, as the latter indicates the capability is already emerging in general-purpose models.</p>
+<h2>The art of context engineering and agent orchestration</h2>
+<p>Because training foundational models requires immense resources, Dean highlights "context engineering" as an accessible and powerful domain for developers. This involves teaching models how to use tools, retrieve relevant information, and decompose tasks through APIs.</p>
+<p>To illustrate this, Dean shares a workflow he developed with his long-time collaborator, Sanjay Ghemawat. To optimize low-level software libraries, they wrote a "skill" that taught an agent to run microbenchmarks, analyze performance, make code modifications, and measure the resulting cache footprint and latency. By codifying their human optimization methodology into guidelines and tools, they enabled the model to perform self-improving performance tuning. Dean notes that they published a 30-page document called <em>Performance Hints</em> containing these tricks, which developers can feed to models to improve their performance reasoning.</p>
+<h2>Questioning assumptions and embracing resilience</h2>
+<p>Dean encourages engineers to cultivate "taste" in selecting research problems by running radical thought experiments and questioning industry dogmas. He shares a current thought experiment: for 60 years, the silicon industry has strived to build identical, error-free transistors. However, distributed systems are designed to build reliable file systems out of unreliable hardware. Dean poses the question: <em>What if we designed chips using highly unreliable transistors that fail 20 times a day instead of once every million years?</em> While perhaps impractical today, such first-principles thinking can lead to neuromorphic computing breakthroughs that mimic the redundant pathways of the human brain.</p>
+<p>Finally, Dean shares a lesson in persistence, recalling that the seminal 2014 paper on model distillation—co-authored with Geoffrey Hinton and Oriol Vinyals—was initially rejected by NeurIPS because a reviewer claimed it was "unlikely to have significant impact." Rather than stopping, they published it on arXiv. Today, distillation is a foundational industry technique used to train highly capable, efficient "flash" models from larger teacher models.</p>
+<p>Source: <a target="_blank" rel="noopener" href="https://youtu.be/CxXgV54KzpQ">Jeff Dean: The 1% Rule for Building in AI</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://youtu.be/CxXgV54KzpQ" target="_blank" rel="noopener">Jeff Dean: The 1% Rule for Building in AI</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
