@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Roan - My friend applied to 250 tech jobs in two years. No MIT. No Stanford....</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>Roan - My friend applied to 250 tech jobs in two years. No MIT. No Stanford....</h1>
+        <p class="hero-subtitle">Google&#x27;s Chief Scientist traces the fifteen-year evolution of modern artificial intelligence, detailing the hardware, algorithmic breakthroughs, and organizational strategies behind the Gemini models.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+
+        <article class="content">
+<h2>The evolution of modern AI: from early neural nets to Gemini</h2>
+<p>In a comprehensive lecture at Princeton University, Google Chief Scientist Jeff Dean traces the trajectory of machine learning over the past fifteen years. He details how the convergence of massive compute scale, custom hardware, and architectural innovations led from early unsupervised experiments to Google's state-of-the-art multimodal Gemini models.</p>
+<h3>The early days of scale and unsupervised learning</h3>
+<p>Jeff Dean's interest in neural networks began during his undergraduate studies in 1990, where he wrote a senior thesis on parallelizing neural network training with Vipin Kumar. At the time, computers were too weak to train large models, and the field largely stagnated for the next two decades.</p>
+<p>In 2011, a chance meeting with Stanford faculty member Andrew Ng in a Google microkitchen reignited Dean's focus. This encounter led to the creation of <strong>DistBelief</strong>, Google's first large-scale software system for model- and data-parallel neural network training. </p>
+<p>Using DistBelief, Google trained a massive, locally connected unsupervised model on 10 million random YouTube frames. Without any labels or explicit training instructions, the model's bottleneck layers naturally developed high-level abstractions, including neurons sensitive to human faces and cat faces. This experiment demonstrated that scale was the key to unlocking advanced computer vision capabilities, leading to a 70% relative improvement on the 22,000-category ImageNet dataset.</p>
+<h3>Hardware acceleration: the genesis and evolution of tpus</h3>
+<p>By 2013, Google's speech recognition models had improved dramatically using deep neural networks. However, Dean performed a back-of-the-envelope calculation: if Google's one billion users spoke to their phones for just three minutes a day, Google would have to double its entire global server footprint just to run inference. </p>
+<p>This existential computing bottleneck birthed the <strong>Tensor Processing Unit (TPU)</strong> program. </p>
+<ul>
+<li><strong>TPUv1 (2015):</strong> Designed strictly for inference, this chip exploited the fact that neural networks do not require high-precision floating-point math (8-bit precision was sufficient) and rely on a narrow set of linear algebra operations. It ran 15x to 30x faster and 30x to 80x more energy-efficiently than contemporary CPUs and GPUs.</li>
+<li><strong>TPUv2 to TPUv6 ("Ironwood"):</strong> Google shifted focus to training supercomputers. Modern TPU pods connect thousands of chips via a custom optical switch interconnect. This allows racks of chips to communicate with ultra-low latency across the data center floor. The sixth-generation Ironwood pod delivers roughly 3,600 times the performance per pod of TPUv2, with a 30x improvement in energy efficiency (flops per watt).</li>
+</ul>
+<h3>Algorithmic breakthroughs: LSTMs, Transformers, and sparse models</h3>
+<p>While hardware provided the raw compute, algorithmic shifts dramatically increased efficiency:</p>
+<ul>
+<li><strong>Sequence-to-Sequence (2014):</strong> Ilya Sutskever, Oriol Vinyals, and Quoc Le introduced LSTM-based encoder-decoder architectures, which allowed neural networks to map variable-length input sequences to variable-length output sequences—revolutionizing machine translation.</li>
+<li><strong>The Transformer (2017):</strong> Google researchers replaced sequential LSTMs with a parallelizable, learnable attention mechanism. Transformers reduced the compute required to achieve a given test loss by 10x to 100x compared to LSTMs, enabling massive self-supervised pre-training on raw text.</li>
+<li><strong>Vision Transformers (ViT) (2021):</strong> Researchers successfully applied the Transformer architecture to computer vision, outperforming traditional convolutional neural networks (CNNs) with lower training budgets.</li>
+<li><strong>Sparse Models (Mixture of Experts):</strong> Instead of activating every parameter for every token (dense models), sparse models route tokens to specific "expert" sub-networks. This approach yields up to an 8x reduction in training compute for the same target accuracy.</li>
+</ul>
+<h3>Orchestrating scale and managing hardware failures</h3>
+<p>To train models at this scale, Google developed <strong>Pathways</strong>, a system built on top of the <strong>JAX</strong> framework. Pathways abstracts thousands of physical chips into a single virtual supercomputer, allowing researchers to drive training from a single Python process.</p>
+<p>At this scale, hardware failures are inevitable. A major challenge is <strong>silent data corruption (SDC)</strong>—non-deterministic hardware faults that do not crash the system but silently corrupt computations (e.g., flipping a bit in a gradient exponent, causing it to spike to $10^{20}$). </p>
+<p>To combat SDC, Pathways runs continuous background checkers on idle chips and monitors the norm of the gradient at every layer. If a gradient spike is detected, the system triggers a deterministic replay of the last few steps. If the replay yields a different result, the system identifies the faulty hardware slice, evicts it, hot-swaps in a spare rack, and resumes training transparently.</p>
+<h3>The Gemini project: native multimodality and reasoning</h3>
+<p>In February 2023, Dean unified Google's fragmented AI research groups across Google DeepMind and Google Research into a single effort: <strong>Gemini</strong>. The goal was to build a natively multimodal model capable of processing and generating text, audio, images, video, and robotic control data within a single unified architecture.</p>
+<h4>Key Gemini features</h4>
+<ul>
+<li><strong>Scale hierarchy:</strong> Every Gemini generation is released in a "Pro" scale (highest quality) and a "Flash" scale (optimized for speed and cost). Google uses <strong>distillation</strong> to transfer the capabilities of the larger Pro model into the Flash model, ensuring that each generation's Flash model outperforms the previous generation's Pro model.</li>
+<li><strong>Large context windows:</strong> Gemini natively supports millions of tokens of context, allowing users to query hours of video or thousands of pages of text with high retrieval fidelity.</li>
+<li><strong>Advanced mathematical reasoning:</strong> In July 2024, a general-purpose Gemini Pro model achieved a gold-medal-equivalent score at the International Mathematical Olympiad (IMO), solving five out of six highly complex proof-based problems by utilizing a high inference-time "thinking" budget.</li>
+</ul>
+<h4>Organizational dynamics</h4>
+<p>Managing a project of Gemini's scale requires coordinating over 1,000 authors across time zones (primarily the Bay Area, London, and Zurich). Google coordinates this via a highly structured "Request for Comments" (RFC) process. To date, Google researchers have generated over 5,000 internal RFCs to propose, test, and integrate algorithmic tweaks into candidate baselines.</p>
+<h3>Future horizons and audience Q&amp;A</h3>
+<p>Looking forward, Dean anticipates a shift toward <strong>human-agent collaboration</strong>, where humans weakly specify goals to teams of dozens of cooperating virtual assistants. He also emphasizes the need for trillion-token context retrieval, personalized AI models, and AI-assisted chip design to automate the creation of next-generation inference hardware.</p>
+<h4>Q&amp;A session</h4>
+<p><strong>What is your biggest fear regarding AI?</strong><br />
+Dean views existential risk fears as somewhat overblown, arguing that careful engineering and safe deployment practices will mitigate them. His immediate concerns are <strong>misinformation</strong>—specifically highly realistic, deepfaked video and audio—and managing the societal transition as certain tasks are automated, ensuring the workforce is prepared to use these tools productively.</p>
+<p><strong>How is Gemini addressing hallucinations in long-context and agentic workflows?</strong><br />
+Dean explains that Google is prioritizing <strong>inference-time compute</strong> (or "thinking time"). Instead of generating a single immediate response, the model generates multiple rollouts of potential answers, self-evaluates them, and selects the most robust path. While highly effective at reducing hallucinations, this approach increases the demand for highly efficient inference hardware.</p>
+<p><strong>What are the emerging "world models" and how do they compare to LLMs?</strong><br />
+Dean argues that advanced LLMs like Gemini are already functioning as world models. For example, Google's <strong>Genie</strong> can generate consistent, interactive 3D worlds from text prompts. Google is also collaborating with <strong>Waymo</strong> to generate long-tail driving simulations (e.g., simulating an elephant in the road) and synthesize corresponding LIDAR data to train autonomous vehicles safely.</p>
+<p><strong>What research should academics focus on if they do not have access to thousands of TPU/GPU clusters?</strong><br />
+Dean advises researchers without massive compute budgets to focus on highly unique, small-scale architectural concepts rather than chasing state-of-the-art benchmarks. He notes that Google's own teams evaluate new ideas by looking at the <em>slope</em> of performance scaling at extremely small scales. If an idea scales exceptionally well at small volumes, it is highly promising, even if its absolute performance is initially below the baseline.</p>
+<hr />
+<p>Source: <a target="_blank" rel="noopener" href="https://x.com/RohOnChain/status/2093411698766147606?s=20">Roan - My friend applied to 250 tech jobs in two years. No MIT. No Stanford....</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://x.com/RohOnChain/status/2093411698766147606?s=20" target="_blank" rel="noopener">Roan - My friend applied to 250 tech jobs in two years. No MIT. No Stanford....</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
