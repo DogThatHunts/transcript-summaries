@@ -1494,15 +1494,6 @@
     "published_at": "2026-08-10T21:37:21.450581+00:00"
   },
   {
-    "slug": "re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333",
-    "title": "RE-V | U.S. Housing Market DOWNGRADED (Lennar reports biggest drop since 2007)",
-    "content_type": "conversation",
-    "word_count": 3793,
-    "thumbnail_url": "https://img.youtube.com/vi/rkHR1uUtLc0/maxresdefault.jpg",
-    "source_url": "https://www.youtube.com/watch?v=rkHR1uUtLc0",
-    "published_at": "2026-08-10T21:37:22.078102+00:00"
-  },
-  {
     "slug": "re-v-bank-of-america-just-reported-a-massive-migration-collapse-the-u-s-map-flip-1334",
     "title": "RE-V | Bank of America just reported a massive MIGRATION COLLAPSE (the U.S. Map flips again)",
     "content_type": "reading",
@@ -3049,5 +3040,14 @@
     "thumbnail_url": "https://img.youtube.com/vi/3J2Gwk91Q4A/maxresdefault.jpg",
     "source_url": "https://www.youtube.com/watch?v=3J2Gwk91Q4A",
     "published_at": "2026-09-04T00:20:45.804489+00:00"
+  },
+  {
+    "slug": "re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333",
+    "title": "RE-V | U.S. Housing Market DOWNGRADED (Lennar reports biggest drop since 2007)",
+    "content_type": "reading",
+    "word_count": 3793,
+    "thumbnail_url": "https://img.youtube.com/vi/rkHR1uUtLc0/maxresdefault.jpg",
+    "source_url": "https://www.youtube.com/watch?v=rkHR1uUtLc0",
+    "published_at": "2026-09-04T02:24:13.281012+00:00"
   }
 ]
