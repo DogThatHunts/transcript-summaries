@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real estate investing &amp; wholesaling — a second real-estate cluster outside the RE-V series</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* style.css — shared template for all published summaries.
+   Generalized from the original dry_fasting_summary.css prototype: same
+   palette and hero/footer treatment, but built around plain markdown-derived
+   content (h2/h3/p/ul/ol/blockquote/strong) instead of bespoke per-post divs,
+   so it applies to every summary without hand design.
+
+   Phase-1 polish (2026-08-02): the markup is still exactly what the markdown
+   library emits — no new classes, no renderer/test changes — but the .content
+   body now reads like an edited article (lead paragraph, drop-cap, accent
+   section ticks, pull-quote blockquotes, custom list markers) rather than
+   plain prose. */
+
+:root {
+    --bg: #faf9f6;
+    --bg-warm: #f5f0e8;
+    --insight-bg: #fff8f0;
+    --text: #2c2c2c;
+    --text-light: #6b6b6b;
+    --accent: #c17f4e;
+    --accent-dark: #a06a3f;
+    --accent-soft: #e8d5c0;
+    --border: #e0d8ce;
+    --shadow: rgba(0, 0, 0, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 17px;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 50%, #3a2e22 100%);
+    color: #fff;
+    padding: 100px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(193, 127, 78, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(193, 127, 78, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(193, 127, 78, 0.4);
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 30px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-thumb {
+    width: 100%;
+    max-width: 760px;
+    border-radius: 12px;
+    display: block;
+    margin: 40px auto 0;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Layout */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.back-link {
+    padding-top: 32px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.back-link a {
+    color: var(--accent-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover { text-decoration: underline; }
+
+/* --------------------------------------------------------------------------
+   Markdown-derived article body
+   Every rule below targets a plain element the markdown library emits, so the
+   styling applies to any summary with no per-post work.
+   -------------------------------------------------------------------------- */
+.content {
+    padding: 40px 0 60px;
+}
+
+/* Section headings get a short accent tick above them — echoes the prototype's
+   hand-built .section-label without needing that markup. */
+.content h1, .content h2, .content h3, .content h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+    margin: 48px 0 18px;
+}
+
+.content h2::before {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 16px;
+}
+
+.content h1:first-child, .content h2:first-child,
+.content h3:first-child, .content h4:first-child {
+    margin-top: 0;
+}
+
+.content h1 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); }
+.content h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); }
+.content h3 { font-size: 1.25rem; }
+.content h4 { font-size: 1.08rem; color: var(--text-light); }
+
+.content p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+/* Lead paragraph + drop-cap: the first paragraph reads as an intro. */
+.content > p:first-of-type {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.content > p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 0.82;
+    float: left;
+    margin: 6px 12px 0 0;
+    color: var(--accent);
+}
+
+.content strong { color: var(--text); font-weight: 600; }
+.content em { color: var(--text); }
+
+/* Custom list markers in the accent colour. */
+.content ul, .content ol {
+    margin: 12px 0 24px;
+    padding-left: 0;
+    list-style: none;
+    color: var(--text-light);
+}
+
+.content li {
+    position: relative;
+    padding-left: 1.6em;
+    margin-bottom: 12px;
+}
+
+.content ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0.15em;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.content ol { counter-reset: item; }
+
+.content ol > li {
+    counter-increment: item;
+}
+
+.content ol > li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--accent);
+}
+
+.content li > ul, .content li > ol { margin: 10px 0 6px; }
+
+/* Blockquote as a pull-quote callout with an oversized opening mark. */
+.content blockquote {
+    position: relative;
+    background: var(--insight-bg);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px 24px 30px;
+    margin: 32px 0;
+    border-radius: 0 14px 14px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.content blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.15em;
+    left: 0.12em;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    line-height: 1;
+    color: var(--accent-soft);
+    pointer-events: none;
+}
+
+.content blockquote p { color: var(--text); }
+.content blockquote p:last-child { margin-bottom: 0; }
+
+.content a {
+    color: var(--accent-dark);
+    text-decoration-color: var(--accent-soft);
+    text-underline-offset: 3px;
+}
+
+.content a:hover { text-decoration-color: var(--accent); }
+
+.content code {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-size: 0.9em;
+}
+
+.content pre {
+    background: #1e1e1e;
+    color: #f5f0e8;
+    padding: 20px 22px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 26px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.content pre code { background: none; border: none; padding: 0; color: inherit; }
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 30px auto;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 26px 0;
+    font-size: 0.95rem;
+}
+
+.content th, .content td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.content th {
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 2px solid var(--accent-soft);
+}
+
+.content td { color: var(--text-light); }
+
+/* Horizontal rule as a centred ornament rather than a bare line. */
+.content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    margin: 48px 0;
+    position: relative;
+}
+
+.content hr::after {
+    content: '\00A7';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    padding: 0 14px;
+    color: var(--accent-soft);
+    font-size: 1rem;
+}
+
+/* Source footer */
+.source-footer {
+    background: #1a1a1a;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 48px 24px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.source-footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.source-footer a:hover { text-decoration: underline; }
+
+.source-footer .meta {
+    font-size: 0.85rem;
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Index page
+   -------------------------------------------------------------------------- */
+.hero-index { padding-bottom: 70px; }
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 56px 0 80px;
+}
+
+@media (min-width: 640px) {
+    .posts-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 44px var(--shadow);
+    border-color: var(--accent-soft);
+}
+
+.post-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.post-card-body { padding: 22px 22px 24px; }
+
+.post-card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.post-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.post-card .meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .hero { padding: 70px 20px 56px; }
+    body { font-size: 16px; }
+    .content > p:first-of-type { font-size: 1.12rem; }
+    .content > p:first-of-type::first-letter { font-size: 3rem; }
+}
+
+</style></head>
+<body>
+<header class="hero"><div class="hero-tag">Digest</div><h1>Real estate investing &amp; wholesaling — a second real-estate cluster outside the RE-V series</h1>
+<p class="hero-subtitle">A synthesis of 14 transcribed videos (Queue rows 1372, 1466, 1468–1471, 1474, 1478–1479, 1481, 1508, 1588, 1602, 1608) that are real-estate-related but distinct from the &quot;RE-V&quot; macro-housing-market series (see `re-v_index.md`). Twelve of the fourteen are from a single creator, &quot;RTaylor&quot; (Richard Taylor / Grandin Taylor LLC), whose channel documents live wholesaling deal calls, creative-finance negotiation, and business-building content for his &quot;Hold My Hand Wholesale&quot; education community. The other two are a commercial-multifamily investor interview (&quot;Real Estate Insider,&quot; row 1372) and a short legal-doctrine explainer on landlord-tenant law (&quot;LegaliBus,&quot; row 1508). Where the RE-V series is macro/forecasting content aimed at buyers and passive observers, this cluster is practitioner content aimed at active investors — deal mechanics, negotiation scripts, financing structures, and business-operations detail. Numbers and claims are reproduced as stated in the transcripts; none are independently verified.</p><div class="hero-line"></div></header>
+<div class="container"><article class="content">
+<hr />
+<h2>What this content is, and how it differs from RE-V</h2>
+<p>RTaylor's videos are a mix of: (1) live cold-calls to sellers and listing agents, negotiating wholesale assignments and creative-finance (subject-to, seller-finance) deals in real time; (2) group livestreams/podcasts with fellow wholesalers (Zach Ginn, Max Dier) debating strategy and reviewing deals phoned in by students; and (3) business-narrative/promotional content (a YouTube-ban recovery story, a "Buy Box Cartel" marketplace pitch, a rent-payment giveaway). The throughline across nearly all of it is <strong>wholesaling real estate</strong> — locking a property under contract (often at $0 down, via mortgage-takeover/subject-to structures) and assigning that contract to an end buyer for a fee, typically $1,500–$50,000, occasionally higher on creative-finance deals.</p>
+<p>This is a genuinely different market segment from RE-V's housing-market-macro framing: RE-V describes <em>why</em> prices are falling and forecasts <em>where</em>; RTaylor's content describes <em>how to transact</em> inside a soft, high-inventory, high-cancellation market — and several of his own on-camera remarks (falling on-market margins, a new Ohio wholesale-disclosure law, buyers walking from cash-flow-negative deals) are consistent with, and implicitly corroborate, the macro correction RE-V documents.</p>
+<hr />
+<h2>Core business model: wholesaling mechanics</h2>
+<p><strong>The basic trade.</strong> Lock a property under a short option/marketing agreement (sometimes just 5–7 days) before it's fully contracted, shop it to a buyer list, and assign the contract for a fee — the buyer closes directly with the seller (or, in a double-close, the wholesaler briefly takes title using lender-funded proof-of-funds before immediately reselling). Fees across the transcripts range from $1,500–$3,000 on thin on-market deals up to $13,000–$50,000+ on off-market or creative-finance deals (rows 1468, 1469, 1470, 1471, 1481, 1602, 1608).</p>
+<p><strong>On-market vs. off-market.</strong> On-market (MLS/Zillow-sourced) wholesaling is repeatedly described as <em>dying</em> as a standalone business by mid-2026: the "Zillow Rule of 30" (need a deal at least $30,000 below list to be assignable) and "Rule of 100" (buyers pay roughly $100,000 under ARV on sub-$250K properties) are cited as the viability bar, and one host (row 1471) states rejection rates on submitted on-market deals run 50–99%. Off-market (door-knocking, sticky notes, cold-calling pre-foreclosure/absentee-owner lists, text-blasting) is presented as the scalable, durable core of the business — cheaper to start (near-zero capital via sticky notes/door-knocking) and less exposed to new legal disclosure requirements (row 1468, 1469, 1470, 1471).</p>
+<p><strong>Reverse wholesaling.</strong> Several videos describe finding a buyer's specific "buy box" first (via Facebook investor groups like "BRRRR Invest," 325,000 members, searching "just closed" posts, or a proprietary tool called <strong>BuyBoxCartel.com</strong>), then sourcing a matching on-market listing — argued to work better on-market (large inventory to match against) than off-market (rows 1470, 1474, 1602).</p>
+<p><strong>Cash-on-cash return formula</strong> used repeatedly to price deals for rental-investor buyers: <code>(monthly rent × 0.8 − PITI) × 12 ÷ total cost of entry</code>. Buyer thresholds cited range 20–30%, with 20% treated as the Midwest/Detroit-market floor (rows 1468, 1602, 1608).</p>
+<hr />
+<h2>Creative finance: subject-to and seller financing</h2>
+<p>A large share of the higher-value deals use <strong>subject-to</strong> (the buyer takes title and continues paying the seller's existing mortgage, which stays in the seller's name/credit) rather than a cash purchase:</p>
+<ul>
+<li>Mechanism explained via the "HUD statement" (closing disclosure) subject-to line items and an inheritance/next-of-kin analogy; property placed in a trust, with the closing attorney as trust beneficiary; a 45+ day missed-payment default lets the seller reclaim the property via quitclaim rather than formal foreclosure (row 1479).</li>
+<li>Positive vs. negative liens matter: assistance-program/solar/HOA-approved liens can be taken subject-to; mechanic's/contractor liens must be paid off at sale (row 1602).</li>
+<li>Deal examples: a Florida VA-purchaser seller ($218K balance + $12K assistance lien) sold subject-to for $0 down, assigned same-livestream for a $3,000 fee (row 1602); a San Antonio rental bought subject-to at 6.5%, $0 down, now cash-flow negative against a proposed "dueño a dueño" (owner-to-owner) refinance wrap (row 1470); a subject-to flip assuming a 3% mortgage at $271,000, resold at $365,000 for a $94,000 spread (row 1471).</li>
+<li><strong>Seller financing</strong> is treated more cautiously on distressed properties: buyer capital tied up in a large down payment plus separate rehab funding is judged worse than 100%-financed hard/private money, <em>unless</em> the seller-finance terms carry no balloon (indefinite term) — the one scenario the host says justifies bending the "no seller-finance on distressed inventory" rule (row 1608). On turnkey/rent-ready properties, seller financing at low-to-no interest is described as attractive and increasingly common as buyers shy from negative-cash-flow subject-to deals (rows 1470, 1471, 1474).</li>
+<li><strong>Assignable seller-finance listing example</strong>: a fully renovated San Antonio-area home offered at $0 down, $2,300/month, no credit check or qualification (row 1469).</li>
+</ul>
+<hr />
+<h2>Legal and regulatory friction (a recurring, escalating theme)</h2>
+<ul>
+<li><strong>Ohio's new wholesale-disclosure law</strong> (effective ~January 2026): title companies now require a signed seller disclosure that the buyer is wholesaling before an MLS/realtor-involved deal can close; off-market (no-realtor) deals are unaffected, which the host cites as accelerating his shift away from on-market wholesaling toward flipping and off-market creative finance (rows 1466, 1468, 1471).</li>
+<li><strong>Memorandums of contract vs. suing for specific performance</strong>: memos (a lien-like recording tool) are described as legally weak, especially in Texas (short statute of limitations); the host says he strongly prefers threatening/filing a specific-performance lawsuit when a seller tries to back out, and reports a near-100% settlement/capitulation rate once served (rows 1469, 1470).</li>
+<li><strong>TCPA/cold-calling exposure</strong>: low-volume personal cold-calling from an individual cell phone is treated as materially lower legal risk than mass text-blasting, which the host says carries theoretical $500–1,500-per-violation exposure (rarely litigated given the cost of suing over a small claim) (rows 1468, 1469).</li>
+<li><strong>Fraud-adjacent flashpoints</strong>: a "mass reporting" campaign got the host's original ~100,000-subscriber YouTube channel banned for making documented-but-explicit dollar-figure income claims (row 1481); separately he was accused of fraud for paying uncredentialed "finders" fees and for using a proof-of-funds-generator service tied to a real lender (row 1478) — both defended on camera as long-standing, disclosed industry practices.</li>
+<li><strong>21st Century Road to Housing Act</strong> (also covered from the buy-side in the RE-V series): a federal ban on entities owning 350+ homes from further purchases is referenced as reshaping the institutional-investor buyer pool wholesalers sell into (cross-reference RE-V rows 1326, 1336, 1360, 1518).</li>
+</ul>
+<hr />
+<h2>The commercial/multifamily distress angle (row 1372)</h2>
+<p>A separate, higher-altitude interview (host "Jeff" with multifamily operator Ken Macro, ~10,000 units under management) describes institutional-scale distress consistent with RE-V's macro narrative but from the lender/operator side:</p>
+<ul>
+<li>Commercial assets trading at roughly <strong>80 cents on the dollar</strong> despite otherwise-sound fundamentals; some properties show debt-service coverage of only 0.6–0.7.</li>
+<li>A 100%-vacant Texas property near a military base offered at $8,000/unit (below land replacement cost), with an estimated $20,000–30,000/unit renovation cost and ~$60,000/unit stabilized value — a cash-only, non-financeable distressed-asset trade.</li>
+<li>Multifamily new-construction supply hit a <strong>50-year high in 2025</strong>; the supply/demand crossover (and expected rent-growth "value creation" phase) is forecast for <strong>2028–2029</strong>.</li>
+<li>Three drivers of CRE distress cited: rent softness from oversupply, rising operating expenses (utilities, insurance, property taxes), and rising rates on floating-rate debt — fixed-rate holders can "weather the storm" to maturity; floating-rate holders face forced sales.</li>
+<li>Framed as a "not yet, but soon" buying window: the advice is to assemble capital, team, and target markets now, not to strike yet.</li>
+</ul>
+<h2>The landlord-tenant legal doctrine clip (row 1508)</h2>
+<p>A short explainer on the equitable doctrine of "relief against forfeiture" — using a hypothetical of a 20-year tenant whose rent arrives one day late due to a bank error, triggering a lease-forfeiture clause. Core point: equity can restrain a landlord from <em>unconscionably</em> enforcing a strict contractual right, but does not rescue a party from a genuinely bad bargain — a doctrinal note rather than an investing tactic.</p>
+<hr />
+<h2>Notable individual deals cited (representative sample)</h2>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Deal</th>
+<th>Structure / outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1466</td>
+<td>17th Street, Ohio</td>
+<td>Re-wholesale of a house Grandin Taylor LLC sold 2 years earlier for $10,000; new offer $125,900, non-cash/debt-assumption</td>
+</tr>
+<tr>
+<td>1468</td>
+<td>16176 Tracy St, Detroit</td>
+<td>Bought $70,000 (listed $90,000), resold same-day at a $40,000 reduction off list, no cold-calling — pure realtor/buyer-network match</td>
+</tr>
+<tr>
+<td>1469</td>
+<td>2573 Sonia Dr, Clearwater FL</td>
+<td>Seller-financed: $45,000 down, 0% interest, buyer assumes seller's 2.7% mortgage; $13,000 assignment fee</td>
+</tr>
+<tr>
+<td>1469</td>
+<td>Tampa partition-suit deal</td>
+<td>Buys a 25% fractional heir interest in a $250,000 property for $8,000, planning to force a partition sale; ~$130,000 projected profit</td>
+</tr>
+<tr>
+<td>1470</td>
+<td>Cleveland/Newark, OH</td>
+<td>$55,000 tax/HOA auction deal closed same-day, stopping the auction with ~1 business day left</td>
+</tr>
+<tr>
+<td>1471</td>
+<td>433 Allen St, Akron, OH</td>
+<td>Bought $125,000, sold ~$138,000, $13,000 fee, sourced off-market</td>
+</tr>
+<tr>
+<td>1478</td>
+<td>Omaha, NE 5-unit</td>
+<td>0% interest, low down payment financing; $10,000 finder's fee paid</td>
+</tr>
+<tr>
+<td>1479</td>
+<td>6743 Covert Ave &amp; 15848 Eastburn St, Detroit</td>
+<td>Two subject-to takeovers negotiated down to $8,000/side (or $10,000/side straight fee) against ~$60,000 seller asks</td>
+</tr>
+<tr>
+<td>1481</td>
+<td>242 W Main St, Meriden, CT</td>
+<td>$70,000 total deal profit; the video referencing it (an income claim) triggered the host's YouTube ban</td>
+</tr>
+<tr>
+<td>1481</td>
+<td>222 Rose Ave, Burlington, CO</td>
+<td>A 12-year-old student's independently-sourced deal, $48,000 fee (parents co-signed)</td>
+</tr>
+<tr>
+<td>1588</td>
+<td>2417 Magdalena (triplex)</td>
+<td>$900,000 ask, negative cash flow vs. financing cost; seller-financing pitch flatly refused by listing agent</td>
+</tr>
+<tr>
+<td>1602</td>
+<td>1887 Lampson Rd, Cleveland</td>
+<td>Section-8 duplex, $200K list contracted at $150K, assigned at $168K for an $18,000 fee (60/40 JV split)</td>
+</tr>
+<tr>
+<td>1608</td>
+<td>3731 Tyler St, Detroit</td>
+<td>Host's own flip: bought $65,000, ~$32-38K rehab budget, projected $45,000–75,000 profit depending on exit (buyer-network vs. MLS)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>How this complements the RE-V macro picture</h2>
+<p>Several details in this cluster corroborate, from ground level, the demand-recession and financing-stress themes documented across the RE-V series (see <code>re-v_index.md</code>):</p>
+<ul>
+<li><strong>Falling on-market wholesale margins</strong> and the shift to off-market/creative-finance deals mirrors RE-V's documentation of rising cancellation rates, falling contract-signing volume, and buyer walk-aways on cash-flow-negative purchases.</li>
+<li><strong>Buyer resistance to negative-cash-flow subject-to deals</strong> (row 1471: buyers who took over 3% loans 1–2 years ago on cash-flow-negative terms have since lost properties to foreclosure) is a street-level echo of RE-V's FHA/DTI-stress findings.</li>
+<li><strong>The institutional-investor pullback</strong> RE-V documents (Wall Street landlords net-selling, the 350-home ownership ban) directly shrinks one of RTaylor's core wholesale-buyer pools, which several 2026 videos explicitly reference when explaining why deal terms are getting harder to place.</li>
+<li><strong>Regional overlap</strong>: RTaylor's Detroit/Ohio/Tennessee/Florida deal geography overlaps heavily with RE-V's most-distressed metros, though the wholesaling content treats that distress as opportunity (steep discounts to lock up) rather than a risk to forecast.</li>
+</ul>
+</article></div>
+<footer class="source-footer"><p>Synthesized by AI from 14 source transcripts (RTaylor / other real-estate-investing content) &middot; for informational purposes only</p></footer>
+</body></html>
