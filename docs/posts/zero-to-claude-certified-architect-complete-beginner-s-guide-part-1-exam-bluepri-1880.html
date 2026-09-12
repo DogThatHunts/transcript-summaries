@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Zero to Claude Certified Architect — Complete Beginner&#x27;s Guide ｜ Part 1： Exam Blueprint &amp; Study Plan</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>Zero to Claude Certified Architect — Complete Beginner&#x27;s Guide ｜ Part 1： Exam Blueprint &amp; Study Plan</h1>
+        <p class="hero-subtitle">A comprehensive breakdown of Anthropic&#x27;s official credential, detailing the core technology pillars, exam domains, scenario-based questions, and a practical eight-step study plan to pass.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+        <img class="hero-thumb" src="https://img.youtube.com/vi/QvUzlql-v9I/maxresdefault.jpg" alt="Zero to Claude Certified Architect — Complete Beginner&#x27;s Guide ｜ Part 1： Exam Blueprint &amp; Study Plan">
+
+        <article class="content">
+<p>The Anthropic Claude Certified Architect Foundations exam is the official credential validating the skills required to build production-grade AI applications using Claude. Rather than testing theoretical concepts, this exam focuses on practical, scenario-based engineering challenges. Candidates are expected to have at least six months of hands-on experience across Anthropic's developer ecosystem.</p>
+<h2>The four core technology pillars</h2>
+<p>The certification evaluates working knowledge across four interconnected technologies:</p>
+<ul>
+<li><strong>Claude Code:</strong> Anthropic's command-line interface for code generation, refactoring, and debugging, configured using <code>claude.md</code> files, custom skills, and Model Context Protocol (MCP) integrations.</li>
+<li><strong>Agent SDK:</strong> The framework used to build multi-agent applications, manage agentic loops, handle sub-agent orchestration, trigger tool calling, and implement lifecycle hooks.</li>
+<li><strong>Claude API:</strong> The foundational HTTP API for programmatic access, specifically focusing on <code>messages.create</code>, tool use, structured JSON output, and the Message Batches API.</li>
+<li><strong>Model Context Protocol (MCP):</strong> The open standard for connecting Claude to databases, APIs, and external services via tool and resource interfaces.</li>
+</ul>
+<h2>Exam format and scoring mechanics</h2>
+<p>The exam is structured to test deep, practical understanding rather than rote memorization:</p>
+<ul>
+<li><strong>Question style:</strong> Multiple-choice questions feature one correct answer and three highly plausible distractors designed to catch incomplete knowledge or a lack of familiarity with architectural trade-offs.</li>
+<li><strong>Scoring:</strong> The passing score is 720 on a scaled range of 100 to 1000. </li>
+<li><strong>No negative marking:</strong> There is no penalty for incorrect answers, so candidates should answer every question.</li>
+<li><strong>Scenario-based pool:</strong> The exam randomly selects four scenarios from a pool of six. These scenarios drive the context for the questions.</li>
+</ul>
+<h2>Exam domains and weightings</h2>
+<p>Preparation should be prioritized according to the weight of the five core domains:</p>
+<ol>
+<li><strong>Agentic Architecture and Orchestration (27%):</strong> Covers agentic loops, multi-agent patterns, sub-agent delegation, hooks, and task decomposition.</li>
+<li><strong>Claude Code Configuration and Workflows (20%):</strong> Focuses on <code>claude.md</code> hierarchy, custom skills, plan mode, and CI/CD integration.</li>
+<li><strong>Prompt Engineering and Structured Output (20%):</strong> Covers few-shot prompting, tool use patterns, JSON schema design, batch API usage, and validation retry loops.</li>
+<li><strong>Tool Design and MCP Integration (18%):</strong> Focuses on MCP server design, tool descriptions, <code>tool_choice</code> configuration, and built-in tools.</li>
+<li><strong>Context Management and Reliability (15%):</strong> Covers escalation decisions, human-in-the-loop triggers, information provenance, and error propagation.</li>
+</ol>
+<h2>Scenario-based question bank</h2>
+<p>The exam draws from six distinct production scenarios. Because four are selected at random, candidates must prepare for all of them. Scenarios 1, 3, and 4 are particularly high-density as they span three domains each:</p>
+<ul>
+<li><strong>Scenario 1 (Customer support resolution agent):</strong> Tests agentic architecture, tool design, and reliability.</li>
+<li><strong>Scenario 2 (Code generation with Claude Code):</strong> Tests Claude Code configuration and context management.</li>
+<li><strong>Scenario 3 (Multi-agent research system):</strong> Tests agentic architecture, tool design, and reliability.</li>
+<li><strong>Scenario 4 (Developer productivity tools):</strong> Tests tool design, Claude Code configuration, and agentic architecture.</li>
+<li><strong>Scenario 5 (Claude Code for CI/CD):</strong> Tests Claude Code configuration and prompt engineering.</li>
+<li><strong>Scenario 6 (Structured data extraction):</strong> Tests prompt engineering and context management.</li>
+</ul>
+<h2>What is and is not on the exam</h2>
+<p>To optimize study time, candidates should distinguish between in-scope topics and out-of-scope concepts:</p>
+<h3>In scope</h3>
+<ul>
+<li>Agentic loop implementations (handling <code>stop_reason</code>, processing tool results, and termination conditions).</li>
+<li>Multi-agent coordinator and sub-agent patterns with proper context passing.</li>
+<li>The <code>claude.md</code> hierarchy, <code>@import</code> syntax, and path-specific rules using glob patterns.</li>
+<li>MCP tool and resource design, server configuration, and structured error responses.</li>
+<li>Structured output via <code>tool_use</code>, schema design, and validation loops.</li>
+<li>Escalation decisions, human review triggers, and information provenance.</li>
+</ul>
+<h3>Out of scope</h3>
+<ul>
+<li>Fine-tuning or custom model training.</li>
+<li>API billing or authentication protocols.</li>
+<li>Deploying or hosting physical MCP server infrastructure.</li>
+<li>Constitutional AI or RLHF methodologies.</li>
+<li>Embedding models or vector database implementations.</li>
+<li>Computer use, vision analysis, or streaming API implementation details.</li>
+</ul>
+<h2>An eight-step study plan</h2>
+<ol>
+<li><strong>Build an agent with the SDK:</strong> Write a complete agentic loop featuring tool calling, error handling, sub-agent delegation, and session management.</li>
+<li><strong>Configure Claude Code:</strong> Practice setting up a full <code>claude.md</code> hierarchy, writing path-specific rules in <code>.clauderules</code>, and creating custom skills with Frontmatter options.</li>
+<li><strong>Design and test MCP tools:</strong> Practice writing precise tool descriptions that differentiate between similar tools, and implement structured error responses.</li>
+<li><strong>Build an extraction pipeline:</strong> Use <code>tool_use</code> with JSON schemas, implement validation retry loops, and practice using the Message Batches API.</li>
+<li><strong>Practice prompt engineering:</strong> Focus on writing few-shot examples for ambiguous scenarios, defining explicit review criteria, and designing multi-pass architectures.</li>
+<li><strong>Study context management:</strong> Practice extracting structured facts from verbose outputs, using scratchpad files effectively, and managing context during sub-agent delegation.</li>
+<li><strong>Review escalation patterns:</strong> Learn to identify exactly when a policy gap, a customer request, or an inability to make progress should trigger human review versus autonomous resolution.</li>
+<li><strong>Take the practice exam:</strong> Complete the practice exam under realistic conditions to familiarize yourself with the scenario-driven question format.</li>
+</ol>
+<hr />
+<p>Source: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=QvUzlql-v9I&amp;list=PLFz7SvAnfqLpjPCPJBkUy077BC5ecuE8c&amp;index=1">Zero to Claude Certified Architect — Complete Beginner's Guide ｜ Part 1： Exam Blueprint &amp; Study Plan</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://www.youtube.com/watch?v=QvUzlql-v9I&amp;list=PLFz7SvAnfqLpjPCPJBkUy077BC5ecuE8c&amp;index=1" target="_blank" rel="noopener">Zero to Claude Certified Architect — Complete Beginner&#x27;s Guide ｜ Part 1： Exam Blueprint &amp; Study Plan</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
