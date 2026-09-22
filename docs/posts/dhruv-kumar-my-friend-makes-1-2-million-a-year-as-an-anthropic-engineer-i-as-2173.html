@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dhruv kumar - My friend makes $1.2 million a year as an Anthropic engineer.    I as...</title>
+    <meta name="description" content="conversation">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Conversation</div>
+        <h1>Dhruv kumar - My friend makes $1.2 million a year as an Anthropic engineer.    I as...</h1>
+        <p class="hero-subtitle">Two Anthropic engineers demonstrate how to build production-grade prompts using a real-world Swedish insurance claim scenario to show the power of iterative design and structured context.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+
+        <article class="content">
+<p>In this presentation, Hannah and Christian from Anthropic's Applied AI team demonstrate prompt engineering best practices using a real-world car insurance claims scenario. They guide the audience through the iterative process of refining a prompt—moving from a naive, context-poor query that hallucinates a skiing accident to a highly structured, system-prompt-backed query that accurately determines fault from a Swedish accident report and a hand-drawn sketch. Along the way, they share Anthropic's internal framework for structuring prompts, leveraging system prompts for caching, and using XML tags to guide Claude's reasoning.</p>
+<h2>Key insights</h2>
+<ul>
+<li><strong>Prompt engineering is an empirical, iterative science.</strong> Getting the best results from an LLM requires starting with a simple prompt, identifying failure modes, and iteratively baking domain intuition and constraints into the instructions.</li>
+<li><strong>Structure prompts systematically for API use.</strong> For single-turn API calls, Anthropic recommends a structured layout: task description first, followed by dynamic content, detailed instructions, examples, and a final repetition of critical constraints.</li>
+<li><strong>Leverage system prompts for static context.</strong> Background information that never changes (such as the structure of a standard insurance form) should live in the system prompt. This is highly efficient and ideal for prompt caching to reduce latency and cost.</li>
+<li><strong>Use XML tags for clear boundaries.</strong> Claude is fine-tuned to recognize XML tags, making them highly effective delimiters for separating user preferences, document structures, and few-shot examples.</li>
+<li><strong>Enforce factual confidence.</strong> Instructing the model to stay factual and avoid guessing when uncertain prevents hallucinated claims, which is critical in high-stakes environments like insurance adjustment.</li>
+</ul>
+<hr />
+<h2>The anatomy of a structured prompt</h2>
+<p>Hannah outlines Anthropic's recommended structure for building robust prompts, particularly when deploying Claude via an API where you need the model to nail the task on the first attempt without back-and-forth conversation. </p>
+<p>A great prompt should be organized into distinct components:
+1. <strong>Task description:</strong> Define Claude's role and the objective up front.
+2. <strong>Tone context:</strong> Specify how Claude should behave (e.g., remaining factual, confident, and refusing to guess if information is missing).
+3. <strong>Dynamic content:</strong> Provide the input data, such as images, documents, or retrieved context.
+4. <strong>Detailed instructions:</strong> Lay out a step-by-step guide on how Claude should reason through the task.
+5. <strong>Examples (few-shot):</strong> Provide mock inputs and desired outputs to demonstrate edge cases.
+6. <strong>Precise reminders:</strong> Repeat critical constraints at the very end to keep them top-of-mind for the model.</p>
+<h2>Iterative refinement: from skiing to car accidents</h2>
+<p>To demonstrate the necessity of context, Christian walks through three versions of a prompt analyzing a Swedish car accident report and a hand-drawn sketch.</p>
+<ul>
+<li><strong>Version 1 (The naive prompt):</strong> When given the images with a simple instruction to "review the accident report," Claude mistakenly guesses that the incident involves a skiing accident on a street called Chapmangatan. Because the prompt lacked context, the model made an incorrect assumption based on visual features.</li>
+<li><strong>Version 2 (Adding task and tone context):</strong> Christian refines the prompt by explicitly stating that Claude is assisting a human claims adjuster reviewing Swedish car accident forms. He also instructs Claude not to make an assessment unless it is fully confident. With this change, Claude correctly identifies the vehicular context but notes it lacks the confidence to determine fault.</li>
+<li><strong>Version 3 (Providing structural background):</strong> Christian and Hannah move the static details of the Swedish insurance form (explaining the 17 checkboxes, the two vehicle columns, and how humans might imperfectly fill it out) into the system prompt. With this complete context, Claude successfully and confidently determines that Vehicle B was at fault.</li>
+</ul>
+<h2>Maximizing performance with system prompts and caching</h2>
+<p>Hannah highlights that because the structure of the insurance form remains identical across every query, it is the perfect candidate for the system prompt and prompt caching. </p>
+<p>By caching the static form structure, developers can significantly reduce API latency and cost. Claude no longer has to spend time deciphering the form's layout from scratch with every new image; instead, it immediately focuses on the dynamic handwritten markings and sketches provided in the user prompt.</p>
+<h2>The power of few-shot examples</h2>
+<p>For complex or ambiguous scenarios, Christian strongly recommends incorporating few-shot examples into the system prompt. By encoding visual examples (using Base64-encoded images) and pairing them with human-verified reasoning steps inside XML tags, developers can guide Claude through highly subjective "gray-area" decisions. This empirical tuning allows developers to push the limits of what the LLM can accurately automate.</p>
+<p><a target="_blank" rel="noopener" href="https://x.com/dhruvkumar16797/status/2101128296025203132?s=46&amp;t=gMbnMzsC_N3cIyW_hyNxpQ">Dhruv kumar - My friend makes $1.2 million a year as an Anthropic engineer.    I as...</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://x.com/dhruvkumar16797/status/2101128296025203132?s=46&amp;t=gMbnMzsC_N3cIyW_hyNxpQ" target="_blank" rel="noopener">Dhruv kumar - My friend makes $1.2 million a year as an Anthropic engineer.    I as...</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
