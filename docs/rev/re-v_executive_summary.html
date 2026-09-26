@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Housing market roundup — executive summary for homebuilders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* Cool corporate palette for the RE-V set's shared pages (roundup, executive
+   summary, investing & wholesaling). Self-contained: does not import the
+   publisher's warm stylesheet, so published posts are untouched. */
+:root {
+  --navy: #0f1f33; --navy-2: #1b3350; --steel: #2f6db3; --steel-dark: #1f4f87;
+  --ink: #1b2430; --paper: #f4f6f9; --card: #e9eef5; --line: #d6dde7; --muted: #5f6b7a;
+  --accent: #8fb4e3; --ok: #116048; --ok-bg: #dcebe2;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.nav { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-in { max-width: 920px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 4px 22px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.nav a { color: #b7c7dc; text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.nav a:hover, .nav a.current { color: #fff; border-bottom-color: var(--accent); }
+.hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #eef2f7;
+  padding: 56px 24px 44px; border-bottom: 5px solid var(--steel); }
+.hero-in { max-width: 920px; margin: 0 auto; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700;
+  letter-spacing: .17em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.hero-tag::before { content: ""; width: 26px; height: 2px; background: var(--accent); }
+.hero h1 { font-weight: 800; font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+.hero-subtitle { font-size: 1.02rem; color: #c3cfdd; max-width: 76ch; line-height: 1.65; font-weight: 400; }
+.hero-subtitle a { color: #e6eef8; }
+.hero-meta { margin-top: 20px; font-size: 12px; color: #8ea2b8; text-transform: uppercase; letter-spacing: .05em; }
+.container { max-width: 920px; margin: 0 auto; padding: 48px 24px 80px; }
+.content h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); margin: 44px 0 14px;
+  padding-top: 18px; border-top: 1px solid var(--line); }
+.content h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.content h3 { font-size: 1.08rem; font-weight: 700; color: var(--steel-dark); margin: 28px 0 10px; }
+.content p { margin-bottom: 16px; }
+.content ul, .content ol { margin: 0 0 20px 1.25em; }
+.content li { margin-bottom: 10px; }
+.content strong { color: var(--navy); font-weight: 700; }
+.content em { color: var(--muted); }
+.content hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+.content a { color: var(--steel-dark); }
+.content a.rowref { font-size: 0.82em; font-weight: 600; text-decoration: none; color: var(--steel-dark);
+  border-bottom: 1.5px dotted var(--steel); }
+.content a.rowref:hover { background: var(--card); }
+.content a.sref, .content a.gref { font-size: 11.5px; font-weight: 600; background: var(--card); border: 1px solid var(--line);
+  border-radius: 4px; padding: 1px 6px; text-decoration: none; color: var(--steel-dark); margin: 0 1px; white-space: nowrap; }
+.content img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; margin: .4em 0 1.2em; }
+.content table { width: 100%; border-collapse: collapse; margin: 20px 0 30px; font-size: .86rem; }
+.content th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  text-align: left; padding: 9px 10px; border-bottom: 2px solid var(--navy-2); }
+.content td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
+.content td:first-child { white-space: nowrap; }
+.content tr:hover td { background: #eef2f7; }
+.findings { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--steel); border-radius: 0 6px 6px 0;
+  padding: 22px 28px 8px; margin: 0 0 36px; }
+.findings h2 { border-top: none; padding-top: 0; margin-top: 0; font-size: 1.15rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--steel-dark); }
+.findings ul { margin-left: 1.1em; }
+.findings li { margin-bottom: 14px; }
+.findings em { color: var(--ok); font-style: normal; font-weight: 600; }
+.source-footer { background: var(--navy); color: #93a3b8; padding: 36px 24px; text-align: center; font-size: 12.5px; }
+.source-footer a { color: var(--accent); }
+.source-footer .meta { margin-top: 10px; color: #7b8ca3; }
+@media (max-width: 700px) { .content table { font-size: .78rem; } .findings { padding: 18px 18px 4px; } }
+
+    </style>
+</head>
+<body>
+    <nav class="nav"><div class="nav-in">
+        <a href="index.html">Roundup</a>
+        <a href="re-v_executive_summary.html" class="current">Executive summary</a>
+        <a href="re-v_factcheck_report.html">Fact-check</a>
+        <a href="re-v_homebuilder_briefing.html">Homebuilder briefing</a>
+        <a href="re-v_investing_wholesaling.html">Investing &amp; wholesaling</a>
+    </div></nav>
+    <header class="hero"><div class="hero-in">
+        <div class="hero-tag">Executive summary &middot; homebuilders</div>
+        <h1>Housing market roundup — executive summary for homebuilders</h1>
+        <p class="hero-subtitle">One page for a homebuilder audience, distilled from 228 transcribed videos on the U.S. housing market (Queue rows 1319–2626, August 2026 → September 2026). Each finding cites its source videos; where a claim has been independently verified against primary sources, the <em>verified</em> marker links to that group in the <a target="_blank" rel="noopener" href="re-v_factcheck_report.html">fact-check &amp; verification report</a>. The full picture is in the <a target="_blank" rel="noopener" href="index.html">housing market roundup</a> and the <a target="_blank" rel="noopener" href="re-v_homebuilder_briefing.html">homebuilder briefing</a>.</p>
+    </div></header>
+
+    <div class="container">
+        <article class="content">
+<p>Builders are now the price setters in U.S. housing: new homes are cheaper than existing homes for the first time on record, builder months' supply sits near 9–10 months, and demand is stuck at roughly 4 million annualised existing sales (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-census-bureau-releases-biggest-housing-warning-in-15-years-contracts-plumme-1359.html" target="_blank" rel="noopener">1359</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-crash-of-all-time-is-underway-2026-price-wars-have-begun-1366.html" target="_blank" rel="noopener">1366</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-huge-warning-cancellations-spike-18-1774.html" target="_blank" rel="noopener">1774</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-issues-wake-up-call-it-s-the-most-severe-debt-crisis-in-19-years-2098.html" target="_blank" rel="noopener">2098</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>). Price cuts and rate buydowns are working at the volume level but at severe margin cost, and the captive-lender channel that makes them work is concentrated in FHA/VA credit that is deteriorating (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-cancellation-warning-fannie-mortgages-collapse-50-1319.html" target="_blank" rel="noopener">1319</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-census-bureau-releases-biggest-housing-warning-in-15-years-contracts-plumme-1359.html" target="_blank" rel="noopener">1359</a>). The buyer geography has flipped: Sun Belt and Mountain West inventory surpluses sit alongside Midwest and Northeast scarcity and price growth (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-j-p-morgan-drops-bombshell-report-america-s-map-just-flipped-1325.html" target="_blank" rel="noopener">1325</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-trucks-are-turning-around-the-exodus-is-over-1343.html" target="_blank" rel="noopener">1343</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-broke-in-two-1355.html" target="_blank" rel="noopener">1355</a>). Institutional demand is being legislated and priced out simultaneously (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-it-s-a-depression-biggest-housing-market-crash-since-2009-underway-1361.html" target="_blank" rel="noopener">1361</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-2027-lockout-begins-90-of-wall-street-banned-1518.html" target="_blank" rel="noopener">1518</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/upside-home-sales-just-hit-their-slowest-pace-in-over-a-year-and-prices-still-se-2589.html" target="_blank" rel="noopener">2589</a>).</p>
+<h2>Key findings</h2>
+<ul>
+<li><strong>Builder inventory is at recession-grade levels and is the single biggest pricing constraint.</strong> Builder lots carried 9.1–10.3 months of supply through 2026 versus a 5.8-month long-term average, with 21 months of supply on homes not yet started (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-cancellation-warning-fannie-mortgages-collapse-50-1319.html" target="_blank" rel="noopener">1319</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bloomberg-cancels-u-s-housing-market-45-losses-emerge-1329.html" target="_blank" rel="noopener">1329</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-census-bureau-releases-biggest-housing-warning-in-15-years-contracts-plumme-1359.html" target="_blank" rel="noopener">1359</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-ny-times-issues-pre-recession-warning-prices-already-down-40-1621.html" target="_blank" rel="noopener">1621</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-c">verified (c)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-ad">verified (ad)</a>).</li>
+<li><strong>The two largest builders have already repriced hard, resetting the whole comp set.</strong> Lennar cut net prices 25% from the 2022 peak — $491,000 to $370,000 — with construction costs down 12% and cycle time at 122 days, while D.R. Horton is down 12% and reporting 20% cancellations (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-cancellation-warning-fannie-mortgages-collapse-50-1319.html" target="_blank" rel="noopener">1319</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-census-bureau-releases-biggest-housing-warning-in-15-years-contracts-plumme-1359.html" target="_blank" rel="noopener">1359</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-huge-warning-cancellations-spike-18-1774.html" target="_blank" rel="noopener">1774</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-b">verified (b)</a>).</li>
+<li><strong>New homes now undercut existing homes, an inversion without precedent.</strong> Builder median $394,000 versus existing $434,000 in July 2026, a $40,000 gap against a 25-year norm of builders being 17% more expensive (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-crash-of-all-time-is-underway-2026-price-wars-have-begun-1366.html" target="_blank" rel="noopener">1366</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-huge-warning-cancellations-spike-18-1774.html" target="_blank" rel="noopener">1774</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-new-houses-are-now-40-000-cheaper-than-old-houses-first-time-ever-2420.html" target="_blank" rel="noopener">2420</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-d">verified (d)</a>).</li>
+<li><strong>The captive-mortgage engine carries real credit risk.</strong> D.R. Horton's capture rate hit 82% in Q3 2026 with 63% FHA/VA at 0–5% down, while FHA delinquency reached 11.88% in Q1 2026 (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-cancellation-warning-fannie-mortgages-collapse-50-1319.html" target="_blank" rel="noopener">1319</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-chaos-in-florida-foreclosures-spike-300-1600.html" target="_blank" rel="noopener">1600</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-a">verified (a)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-e">verified (e)</a>).</li>
+<li><strong>Rate relief will not rescue affordability; price does the work.</strong> Mortgage rates held 6.5–7% for four years, and a $100,000 cut on a $480,000 house saves $770/month versus $200 for a 1% rate cut (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-fed-reveals-shocking-u-turn-largest-sell-signal-in-years-1327.html" target="_blank" rel="noopener">1327</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-a-p-news-issues-mass-layoff-alert-40-collapse-in-mortgages-already-1485.html" target="_blank" rel="noopener">1485</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-hits-panic-button-10yr-yield-spikes-to-2008-highs-2023.html" target="_blank" rel="noopener">2023</a>); Morgan Stanley concludes affordability will not return to pre-2022 levels (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-morgan-stanley-drops-final-warning-the-reset-has-begun-1328.html" target="_blank" rel="noopener">1328</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-w">verified (w)</a>).</li>
+<li><strong>Land risk is now regional, not national.</strong> Fourteen states hold inventory above 2019 levels and Tennessee, Colorado and Washington show 50–60% surpluses, while Midwest and Northeast markets such as Milwaukee (+5.2%) and Albany (+5.5%) lead price growth (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-trucks-are-turning-around-the-exodus-is-over-1343.html" target="_blank" rel="noopener">1343</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-broke-in-two-1355.html" target="_blank" rel="noopener">1355</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-rust-belt-northeast-town-now-going-through-crazy-housing-boom-1404.html" target="_blank" rel="noopener">1404</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-new-1-housing-market-in-u-s-is-in-wisconsin-1643.html" target="_blank" rel="noopener">1643</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-issues-wake-up-call-it-s-the-most-severe-debt-crisis-in-19-years-2098.html" target="_blank" rel="noopener">2098</a>).</li>
+<li><strong>Institutional single-family demand is exiting as law and math both turn.</strong> The 21st Century ROAD to Housing Act bans buyers owning 350+ homes effective January 2027, and cap rates of 4.8% sit below mortgage rates (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-exodus-since-2008-is-happening-now-redfin-reports-70-drop-in-fl-1336.html" target="_blank" rel="noopener">1336</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-it-s-a-depression-biggest-housing-market-crash-since-2009-underway-1361.html" target="_blank" rel="noopener">1361</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-2027-lockout-begins-90-of-wall-street-banned-1518.html" target="_blank" rel="noopener">1518</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-g">verified (g)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-h">verified (h)</a>).</li>
+<li><strong>Sun Belt migration, the demand thesis behind most land banks, has collapsed.</strong> Florida net migration was 22,000 in 2025, down 93% from peak; Texas hit a 20-year low (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bank-of-america-drops-bombshell-migration-report-the-u-s-map-just-flipped-1347.html" target="_blank" rel="noopener">1347</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-mortgage-collapse-in-u-s-history-just-got-worse-1367.html" target="_blank" rel="noopener">1367</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-i">verified (i)</a>).</li>
+</ul>
+<h2>What it implies for a builder</h2>
+<ul>
+<li>Lead with headline price, not buydowns, where supply exceeds nine months — the payment math favours price cuts roughly four-to-one (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-fed-reveals-shocking-u-turn-largest-sell-signal-in-years-1327.html" target="_blank" rel="noopener">1327</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>).</li>
+<li>Cap FHA/VA share and down-payment-assistance volume in your captive lender; 63% government-backed at 0–5% down is the exposure that converts a price decline into cancellations and repurchase risk (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-cancellation-warning-fannie-mortgages-collapse-50-1319.html" target="_blank" rel="noopener">1319</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-chaos-in-florida-foreclosures-spike-300-1600.html" target="_blank" rel="noopener">1600</a>).</li>
+<li>Reprice or walk option contracts in Sun Belt land where surpluses run 50–60% and migration is down 70–93%; take takedowns in Midwest/Northeast scarcity markets instead (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-trucks-are-turning-around-the-exodus-is-over-1343.html" target="_blank" rel="noopener">1343</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-broke-in-two-1355.html" target="_blank" rel="noopener">1355</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bank-of-america-drops-bombshell-migration-report-the-u-s-map-just-flipped-1347.html" target="_blank" rel="noopener">1347</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>).</li>
+<li>Shift mix toward smaller, lower-price product: median new-home size is back to ~2,100 sq ft and sub-$250,000 resale sales fell 10% while $1M+ grew 4% (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/upside-home-sales-just-hit-their-slowest-pace-in-over-a-year-and-prices-still-se-2589.html" target="_blank" rel="noopener">2589</a>).</li>
+<li>Treat build-to-rent as a sale-to-operator channel with a seven-year clock, not a bulk-buyer backstop, given the 350-home ban and Wall Street net selling of 3,000+ homes in 2026 (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-it-s-a-depression-biggest-housing-market-crash-since-2009-underway-1361.html" target="_blank" rel="noopener">1361</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-2027-lockout-begins-90-of-wall-street-banned-1518.html" target="_blank" rel="noopener">1518</a>).</li>
+</ul>
+<h2>Watch list</h2>
+<ul>
+<li>Census new-home sales and months' supply: a move below 9 months would confirm the price cuts are clearing inventory (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bloomberg-cancels-u-s-housing-market-45-losses-emerge-1329.html" target="_blank" rel="noopener">1329</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-census-bureau-releases-biggest-housing-warning-in-15-years-contracts-plumme-1359.html" target="_blank" rel="noopener">1359</a>).</li>
+<li>D.R. Horton and Lennar quarterly capture rate, cancellations and incentive load — the earliest read on whether discounting is still buying volume (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-cancellation-warning-fannie-mortgages-collapse-50-1319.html" target="_blank" rel="noopener">1319</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-huge-warning-cancellations-spike-18-1774.html" target="_blank" rel="noopener">1774</a>).</li>
+<li>FHA and ICE delinquency/foreclosure prints; Florida already leads at 1 in 2,300 units (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-ice-issues-massive-foreclosure-warning-150-000-short-sales-in-florida-1332.html" target="_blank" rel="noopener">1332</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-chaos-in-florida-foreclosures-spike-300-1600.html" target="_blank" rel="noopener">1600</a>).</li>
+<li>January 2027 implementation of the investor ban, plus any 50-year mortgage legislation, which would require changes to Dodd-Frank (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-2027-lockout-begins-90-of-wall-street-banned-1518.html" target="_blank" rel="noopener">1518</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/pboyle-the-50-year-mortgage-what-you-must-know-1845.html" target="_blank" rel="noopener">1845</a>).</li>
+</ul>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>One-page distillation for a homebuilder audience; verified markers link to the <a href="re-v_factcheck_report.html">fact-check &amp; verification report</a> &middot; <a href="index.html">full roundup</a> &middot; <a href="re-v_homebuilder_briefing.html">homebuilder briefing</a></p>
+        <p class="meta">Row-number references are research document and video Queue sheet rows and link to each source video's published summary &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>

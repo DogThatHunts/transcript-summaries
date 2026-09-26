@@ -4,484 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>RE-V series — thematic index</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Housing market roundup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-/* style.css — shared template for all published summaries.
-   Generalized from the original dry_fasting_summary.css prototype: same
-   palette and hero/footer treatment, but built around plain markdown-derived
-   content (h2/h3/p/ul/ol/blockquote/strong) instead of bespoke per-post divs,
-   so it applies to every summary without hand design.
-
-   Phase-1 polish (2026-08-02): the markup is still exactly what the markdown
-   library emits — no new classes, no renderer/test changes — but the .content
-   body now reads like an edited article (lead paragraph, drop-cap, accent
-   section ticks, pull-quote blockquotes, custom list markers) rather than
-   plain prose. */
-
+/* Cool corporate palette for the RE-V set's shared pages (roundup, executive
+   summary, investing & wholesaling). Self-contained: does not import the
+   publisher's warm stylesheet, so published posts are untouched. */
 :root {
-    --bg: #faf9f6;
-    --bg-warm: #f5f0e8;
-    --insight-bg: #fff8f0;
-    --text: #2c2c2c;
-    --text-light: #6b6b6b;
-    --accent: #c17f4e;
-    --accent-dark: #a06a3f;
-    --accent-soft: #e8d5c0;
-    --border: #e0d8ce;
-    --shadow: rgba(0, 0, 0, 0.06);
+  --navy: #0f1f33; --navy-2: #1b3350; --steel: #2f6db3; --steel-dark: #1f4f87;
+  --ink: #1b2430; --paper: #f4f6f9; --card: #e9eef5; --line: #d6dde7; --muted: #5f6b7a;
+  --accent: #8fb4e3; --ok: #116048; --ok-bg: #dcebe2;
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.75;
-    font-size: 17px;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
-
-/* Hero */
-.hero {
-    background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 50%, #3a2e22 100%);
-    color: #fff;
-    padding: 100px 24px 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(193, 127, 78, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(193, 127, 78, 0.05) 0%, transparent 40%);
-    pointer-events: none;
-}
-
-.hero-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid rgba(193, 127, 78, 0.4);
-    padding: 6px 18px;
-    border-radius: 30px;
-    margin-bottom: 28px;
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.1rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.15;
-    max-width: 800px;
-    margin: 0 auto 20px;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-line {
-    width: 60px;
-    height: 2px;
-    background: var(--accent);
-    margin: 30px auto 0;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-thumb {
-    width: 100%;
-    max-width: 760px;
-    border-radius: 12px;
-    display: block;
-    margin: 40px auto 0;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
-}
-
-/* Layout */
-.container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.back-link {
-    padding-top: 32px;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.back-link a {
-    color: var(--accent-dark);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.back-link a:hover { text-decoration: underline; }
-
-/* --------------------------------------------------------------------------
-   Markdown-derived article body
-   Every rule below targets a plain element the markdown library emits, so the
-   styling applies to any summary with no per-post work.
-   -------------------------------------------------------------------------- */
-.content {
-    padding: 40px 0 60px;
-}
-
-/* Section headings get a short accent tick above them — echoes the prototype's
-   hand-built .section-label without needing that markup. */
-.content h1, .content h2, .content h3, .content h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.25;
-    margin: 48px 0 18px;
-}
-
-.content h2::before {
-    content: '';
-    display: block;
-    width: 34px;
-    height: 2px;
-    background: var(--accent);
-    margin-bottom: 16px;
-}
-
-.content h1:first-child, .content h2:first-child,
-.content h3:first-child, .content h4:first-child {
-    margin-top: 0;
-}
-
-.content h1 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); }
-.content h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); }
-.content h3 { font-size: 1.25rem; }
-.content h4 { font-size: 1.08rem; color: var(--text-light); }
-
-.content p {
-    margin-bottom: 20px;
-    color: var(--text-light);
-}
-
-/* Lead paragraph + drop-cap: the first paragraph reads as an intro. */
-.content > p:first-of-type {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: var(--text);
-}
-
-.content > p:first-of-type::first-letter {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.6rem;
-    font-weight: 700;
-    line-height: 0.82;
-    float: left;
-    margin: 6px 12px 0 0;
-    color: var(--accent);
-}
-
-.content strong { color: var(--text); font-weight: 600; }
-.content em { color: var(--text); }
-
-/* Custom list markers in the accent colour. */
-.content ul, .content ol {
-    margin: 12px 0 24px;
-    padding-left: 0;
-    list-style: none;
-    color: var(--text-light);
-}
-
-.content li {
-    position: relative;
-    padding-left: 1.6em;
-    margin-bottom: 12px;
-}
-
-.content ul > li::before {
-    content: '';
-    position: absolute;
-    left: 0.15em;
-    top: 0.7em;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-}
-
-.content ol { counter-reset: item; }
-
-.content ol > li {
-    counter-increment: item;
-}
-
-.content ol > li::before {
-    content: counter(item);
-    position: absolute;
-    left: 0;
-    top: 0.05em;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 0.95em;
-    color: var(--accent);
-}
-
-.content li > ul, .content li > ol { margin: 10px 0 6px; }
-
-/* Blockquote as a pull-quote callout with an oversized opening mark. */
-.content blockquote {
-    position: relative;
-    background: var(--insight-bg);
-    border-left: 3px solid var(--accent);
-    padding: 24px 28px 24px 30px;
-    margin: 32px 0;
-    border-radius: 0 14px 14px 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-style: italic;
-    line-height: 1.6;
-    color: var(--text);
-}
-
-.content blockquote::before {
-    content: '\201C';
-    position: absolute;
-    top: -0.15em;
-    left: 0.12em;
-    font-family: 'Playfair Display', serif;
-    font-size: 3.4rem;
-    line-height: 1;
-    color: var(--accent-soft);
-    pointer-events: none;
-}
-
-.content blockquote p { color: var(--text); }
-.content blockquote p:last-child { margin-bottom: 0; }
-
-.content a {
-    color: var(--accent-dark);
-    text-decoration-color: var(--accent-soft);
-    text-underline-offset: 3px;
-}
-
-.content a:hover { text-decoration-color: var(--accent); }
-
-.content code {
-    background: var(--bg-warm);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 1px 6px;
-    font-size: 0.9em;
-}
-
-.content pre {
-    background: #1e1e1e;
-    color: #f5f0e8;
-    padding: 20px 22px;
-    border-radius: 12px;
-    overflow-x: auto;
-    margin: 26px 0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.content pre code { background: none; border: none; padding: 0; color: inherit; }
-
-.content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-    margin: 30px auto;
-}
-
-.content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 26px 0;
-    font-size: 0.95rem;
-}
-
-.content th, .content td {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 14px;
-    text-align: left;
-}
-
-.content th {
-    font-weight: 600;
-    color: var(--text);
-    border-bottom: 2px solid var(--accent-soft);
-}
-
-.content td { color: var(--text-light); }
-
-/* Horizontal rule as a centred ornament rather than a bare line. */
-.content hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
-    margin: 48px 0;
-    position: relative;
-}
-
-.content hr::after {
-    content: '\00A7';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--bg);
-    padding: 0 14px;
-    color: var(--accent-soft);
-    font-size: 1rem;
-}
-
-/* Source footer */
-.source-footer {
-    background: #1a1a1a;
-    color: rgba(255, 255, 255, 0.6);
-    padding: 48px 24px;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.source-footer a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.source-footer a:hover { text-decoration: underline; }
-
-.source-footer .meta {
-    font-size: 0.85rem;
-    margin-top: 12px;
-    color: rgba(255, 255, 255, 0.4);
-}
-
-/* --------------------------------------------------------------------------
-   Index page
-   -------------------------------------------------------------------------- */
-.hero-index { padding-bottom: 70px; }
-
-.posts-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 26px;
-    padding: 56px 0 80px;
-}
-
-@media (min-width: 640px) {
-    .posts-grid { grid-template-columns: 1fr 1fr; }
-}
-
-.post-card {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.post-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 44px var(--shadow);
-    border-color: var(--accent-soft);
-}
-
-.post-card img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-}
-
-.post-card-body { padding: 22px 22px 24px; }
-
-.post-card-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.post-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 10px;
-    color: var(--text);
-}
-
-.post-card .meta {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-top: auto;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-    .hero { padding: 70px 20px 56px; }
-    body { font-size: 16px; }
-    .content > p:first-of-type { font-size: 1.12rem; }
-    .content > p:first-of-type::first-letter { font-size: 3rem; }
-}
-
-/* RE-V pages rendered with the shared publisher stylesheet: additions only,
-   so publisher/assets/style.css (used by every published post) stays untouched. */
-.content a.rowref { font-family: 'Inter', sans-serif; font-size: 0.82em; font-weight: 600;
-  text-decoration: none; border-bottom: 1.5px dotted currentColor; }
-.content a.rowref:hover { background: rgba(0,0,0,0.05); }
-.content h3 { margin-top: 1.6em; }
-.content img { max-width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.12); border-radius: 4px; margin: 0.4em 0 1.2em; }
-.content table { font-size: 0.9em; }
-.content table td:first-child { white-space: nowrap; }
-.hero-subtitle a { color: inherit; }
+body { background: var(--paper); color: var(--ink); font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.nav { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-in { max-width: 920px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 4px 22px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.nav a { color: #b7c7dc; text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.nav a:hover, .nav a.current { color: #fff; border-bottom-color: var(--accent); }
+.hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #eef2f7;
+  padding: 56px 24px 44px; border-bottom: 5px solid var(--steel); }
+.hero-in { max-width: 920px; margin: 0 auto; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700;
+  letter-spacing: .17em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.hero-tag::before { content: ""; width: 26px; height: 2px; background: var(--accent); }
+.hero h1 { font-weight: 800; font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+.hero-subtitle { font-size: 1.02rem; color: #c3cfdd; max-width: 76ch; line-height: 1.65; font-weight: 400; }
+.hero-subtitle a { color: #e6eef8; }
+.hero-meta { margin-top: 20px; font-size: 12px; color: #8ea2b8; text-transform: uppercase; letter-spacing: .05em; }
+.container { max-width: 920px; margin: 0 auto; padding: 48px 24px 80px; }
+.content h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); margin: 44px 0 14px;
+  padding-top: 18px; border-top: 1px solid var(--line); }
+.content h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.content h3 { font-size: 1.08rem; font-weight: 700; color: var(--steel-dark); margin: 28px 0 10px; }
+.content p { margin-bottom: 16px; }
+.content ul, .content ol { margin: 0 0 20px 1.25em; }
+.content li { margin-bottom: 10px; }
+.content strong { color: var(--navy); font-weight: 700; }
+.content em { color: var(--muted); }
+.content hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+.content a { color: var(--steel-dark); }
+.content a.rowref { font-size: 0.82em; font-weight: 600; text-decoration: none; color: var(--steel-dark);
+  border-bottom: 1.5px dotted var(--steel); }
+.content a.rowref:hover { background: var(--card); }
+.content a.sref, .content a.gref { font-size: 11.5px; font-weight: 600; background: var(--card); border: 1px solid var(--line);
+  border-radius: 4px; padding: 1px 6px; text-decoration: none; color: var(--steel-dark); margin: 0 1px; white-space: nowrap; }
+.content img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; margin: .4em 0 1.2em; }
+.content table { width: 100%; border-collapse: collapse; margin: 20px 0 30px; font-size: .86rem; }
+.content th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  text-align: left; padding: 9px 10px; border-bottom: 2px solid var(--navy-2); }
+.content td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
+.content td:first-child { white-space: nowrap; }
+.content tr:hover td { background: #eef2f7; }
+.findings { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--steel); border-radius: 0 6px 6px 0;
+  padding: 22px 28px 8px; margin: 0 0 36px; }
+.findings h2 { border-top: none; padding-top: 0; margin-top: 0; font-size: 1.15rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--steel-dark); }
+.findings ul { margin-left: 1.1em; }
+.findings li { margin-bottom: 14px; }
+.findings em { color: var(--ok); font-style: normal; font-weight: 600; }
+.source-footer { background: var(--navy); color: #93a3b8; padding: 36px 24px; text-align: center; font-size: 12.5px; }
+.source-footer a { color: var(--accent); }
+.source-footer .meta { margin-top: 10px; color: #7b8ca3; }
+@media (max-width: 700px) { .content table { font-size: .78rem; } .findings { padding: 18px 18px 4px; } }
 
     </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-tag">Thematic index</div>
-        <h1>RE-V series — thematic index</h1>
+    <nav class="nav"><div class="nav-in">
+        <a href="index.html" class="current">Roundup</a>
+        <a href="re-v_executive_summary.html">Executive summary</a>
+        <a href="re-v_factcheck_report.html">Fact-check</a>
+        <a href="re-v_homebuilder_briefing.html">Homebuilder briefing</a>
+        <a href="re-v_investing_wholesaling.html">Investing &amp; wholesaling</a>
+    </div></nav>
+    <header class="hero"><div class="hero-in">
+        <div class="hero-tag">Housing market intelligence</div>
+        <h1>Housing market roundup</h1>
         <p class="hero-subtitle">A synthesized digest of 228 transcribed videos on the U.S. housing market and economy (Queue rows 1319–2626, transcribed August 2026 → September 2026): 112 from the RE-V series (ReVenture), 96 from the Richard Taylor wholesaling cluster, and 20 from other channels providing macro-credit context. Warnings and forecasts below are attributed claims from the videos and the outlets they cite, not verified predictions; the load-bearing RE-V claims are checked separately in the <a target="_blank" rel="noopener" href="re-v_factcheck_report.html">fact-check &amp; verification report</a>. Row-number references are Queue sheet rows and link to each source video's published summary.</p>
-        <div class="hero-line"></div>
-    </header>
+    </div></header>
 
     <div class="container">
         <article class="content">
+<div class="findings"><h2>Five key findings — and what they imply</h2>
+<ul>
+<li><strong>Builder inventory has reached recession-grade levels, and the two biggest builders are buying volume with price cuts the resale market has not yet matched.</strong> Builder months' supply sits at roughly 9–10.3 months, a level seen only in recessions, while Lennar cut net prices ~25% from the 2022 peak and D.R. Horton ~12%, with cancellations near 20% (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-cancellation-warning-fannie-mortgages-collapse-50-1319.html" target="_blank" rel="noopener">1319</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bloomberg-cancels-u-s-housing-market-45-losses-emerge-1329.html" target="_blank" rel="noopener">1329</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-census-bureau-releases-biggest-housing-warning-in-15-years-contracts-plumme-1359.html" target="_blank" rel="noopener">1359</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-ny-times-issues-pre-recession-warning-prices-already-down-40-1621.html" target="_blank" rel="noopener">1621</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-huge-warning-cancellations-spike-18-1774.html" target="_blank" rel="noopener">1774</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-b">verified (b)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-c">verified (c)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-a">verified (a)</a>). <em>Implied action:</em> Underwrite resale acquisitions against builder net prices plus rate buy-downs in the same submarket, not against stale existing-home comps.</li>
+<li><strong>New homes are now cheaper than existing homes — a first — which caps resale pricing wherever builders are active.</strong> New-build medians fell to roughly $392,000–$394,000 against $410,000–$434,000 for existing homes, reversing a decades-long premium of 17–20% (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-reset-since-2009-is-starting-national-association-of-builders-w-1344.html" target="_blank" rel="noopener">1344</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-crash-of-all-time-is-underway-2026-price-wars-have-begun-1366.html" target="_blank" rel="noopener">1366</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-d-r-horton-issues-huge-warning-cancellations-spike-18-1774.html" target="_blank" rel="noopener">1774</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-new-houses-are-now-40-000-cheaper-than-old-houses-first-time-ever-2420.html" target="_blank" rel="noopener">2420</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-d">verified (d)</a>). <em>Implied action:</em> Avoid resale flips in high-permit Sunbelt submarkets unless your basis sits below builder price-per-foot.</li>
+<li><strong>Transaction volume is at generational lows even as inventory hits a decade-plus high, so exits are slow and price-sensitive.</strong> Existing sales ran near 4 million annualised through 2026, with months' supply at 4.88, an 11-year high, and pending sales falling sharply in June (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-dam-has-broken-biggest-losses-since-2010-1326.html" target="_blank" rel="noopener">1326</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-morgan-stanley-drops-final-warning-the-reset-has-begun-1328.html" target="_blank" rel="noopener">1328</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-flipped-nar-reports-new-buyer-statistics-1335.html" target="_blank" rel="noopener">1335</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-issues-wake-up-call-it-s-the-most-severe-debt-crisis-in-19-years-2098.html" target="_blank" rel="noopener">2098</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/upside-home-sales-just-hit-their-slowest-pace-in-over-a-year-and-prices-still-se-2589.html" target="_blank" rel="noopener">2589</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-wsj-drops-major-warning-six-figure-losses-emerge-1322.html" target="_blank" rel="noopener">1322</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-home-depot-cfo-triggers-alarm-biggest-crisis-in-30-years-1646.html" target="_blank" rel="noopener">1646</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-m">verified (m)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-ad">verified (ad)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-t">verified (t)</a>). <em>Implied action:</em> Budget 120–250 days on market and price to the second-cheapest comp, not the average.</li>
+<li><strong>The rate-lock advantage has flipped: 6%+ mortgages now outnumber sub-3% ones, and Morgan Stanley argues affordability will not return to pre-2022 levels.</strong> Roughly 22% of mortgages exceed 6% versus about 19% below 3%, with payment-to-income near 38% (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-ice-issues-massive-foreclosure-warning-150-000-short-sales-in-florida-1332.html" target="_blank" rel="noopener">1332</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-mortgage-bubble-has-popped-wsj-reports-26-spike-in-repos-1342.html" target="_blank" rel="noopener">1342</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-reset-since-2009-is-starting-national-association-of-builders-w-1344.html" target="_blank" rel="noopener">1344</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-census-bureau-releases-biggest-housing-warning-in-15-years-contracts-plumme-1359.html" target="_blank" rel="noopener">1359</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-issues-wake-up-call-it-s-the-most-severe-debt-crisis-in-19-years-2098.html" target="_blank" rel="noopener">2098</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-morgan-stanley-drops-final-warning-the-reset-has-begun-1328.html" target="_blank" rel="noopener">1328</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-k">verified (k)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-w">verified (w)</a>). <em>Implied action:</em> Model deals on today's 6.5–7% rates with no refinance assumption.</li>
+<li><strong>Geography, not the national average, decides outcomes: Sunbelt declines versus Midwest/Northeast gains.</strong> Austin and Cape Coral posted confirmed double-digit declines, Bank of America Institute reported Florida values down 3.7% with roughly 14–15 states falling, while Chicago led four-year rent growth (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-reset-since-2009-is-starting-national-association-of-builders-w-1344.html" target="_blank" rel="noopener">1344</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-top-10-cities-where-home-prices-will-crash-in-2026-1364.html" target="_blank" rel="noopener">1364</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-1-housing-crash-in-the-u-s-just-turned-into-a-buyer-s-market-1380.html" target="_blank" rel="noopener">1380</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bank-of-america-just-reported-a-massive-migration-collapse-the-u-s-map-flip-1334.html" target="_blank" rel="noopener">1334</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-fannie-mae-warns-of-mass-bankruptcies-80-migration-collapse-1324.html" target="_blank" rel="noopener">1324</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-this-secret-city-is-now-the-1-rental-market-in-u-s-1386.html" target="_blank" rel="noopener">1386</a>) (<a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-j">verified (j)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-ac">verified (ac)</a>, <a target="_blank" rel="noopener" href="re-v_factcheck_report.html#group-u">verified (u)</a>). <em>Implied action:</em> Reallocate acquisition budgets toward low-supply Midwest and Northeast metros and demand deeper discounts in Florida, Texas and Mountain West.</li>
+</ul></div>
+<hr />
 <h2>Summary &amp; conclusion</h2>
 <p>Across 228 videos, the corpus makes one core argument with remarkable consistency: the U.S. housing market has entered a demand depression rather than a price crash, and the two are separating. Existing-home sales run at roughly 3.9–4.2 million annualised through 2026 — levels the RE-V series repeatedly compares to 2008–2009, and in relative terms calls the worst in five decades (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-dam-has-broken-biggest-losses-since-2010-1326.html" target="_blank" rel="noopener">1326</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-morgan-stanley-drops-final-warning-the-reset-has-begun-1328.html" target="_blank" rel="noopener">1328</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-housing-collapse-in-u-s-history-just-got-worse-nar-warning-1351.html" target="_blank" rel="noopener">1351</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-it-s-a-depression-biggest-housing-market-crash-since-2009-underway-1361.html" target="_blank" rel="noopener">1361</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-mortgage-collapse-in-u-s-history-just-got-worse-1367.html" target="_blank" rel="noopener">1367</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>). Yet median prices have barely moved: NAR's May 2026 median was $429,000, up 1.3% year over year, and August set a record for that month (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-flipped-nar-reports-new-buyer-statistics-1335.html" target="_blank" rel="noopener">1335</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/upside-home-sales-just-hit-their-slowest-pace-in-over-a-year-and-prices-still-se-2589.html" target="_blank" rel="noopener">2589</a>). The RE-V channel's resolution of this paradox is mix and inventory: sales above $1 million rose 11% while the bottom of the market collapsed (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-flipped-nar-reports-new-buyer-statistics-1335.html" target="_blank" rel="noopener">1335</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/upside-home-sales-just-hit-their-slowest-pace-in-over-a-year-and-prices-still-se-2589.html" target="_blank" rel="noopener">2589</a>), and the pain is concentrated in the South, Mountain West and West Coast, where inventory surpluses of 50–64% have pushed values down, while Northeast and Midwest supply remains 40–70% below normal and prices still rise (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-trucks-are-turning-around-the-exodus-is-over-1343.html" target="_blank" rel="noopener">1343</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bills-are-piling-up-realtors-issue-warning-1348.html" target="_blank" rel="noopener">1348</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-broke-in-two-1355.html" target="_blank" rel="noopener">1355</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-mortgage-collapse-in-u-s-history-just-got-worse-1367.html" target="_blank" rel="noopener">1367</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-issues-wake-up-call-it-s-the-most-severe-debt-crisis-in-19-years-2098.html" target="_blank" rel="noopener">2098</a>).</p>
 <p>Where the sources diverge is on cause and severity. The RE-V series builds a structural bear case — overvaluation of 13–22% nationally, a mortgage-payment-to-income ratio near 38%, and a demographic overhang that it argues will produce a decade-long glut (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-morgan-stanley-drops-final-warning-the-reset-has-begun-1328.html" target="_blank" rel="noopener">1328</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-flipped-nar-reports-new-buyer-statistics-1335.html" target="_blank" rel="noopener">1335</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-a-deflation-vortex-is-underway-2026-wall-street-selloff-1368.html" target="_blank" rel="noopener">1368</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-issues-wake-up-call-it-s-the-most-severe-debt-crisis-in-19-years-2098.html" target="_blank" rel="noopener">2098</a>). The Richard Taylor wholesaling cluster, transacting daily in the same market, corroborates the mechanics but not the apocalypse: he reports that on-market listings sit long enough to accept 20–30% discounts, that sellers are increasingly underwater and willing to hand over deeds, and that cheap Midwest rentals still clear at 20%+ cash-on-cash returns (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/rtaylor-what-s-the-best-method-to-making-10k-month-wholesaling-real-estate-podca-1468.html" target="_blank" rel="noopener">1468</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/rtaylor-give-me-30-minutes-i-ll-teach-you-how-to-make-10k-month-as-soon-as-possi-1480.html" target="_blank" rel="noopener">1480</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/rtaylor-free-house-q-a-1618.html" target="_blank" rel="noopener">1618</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/rtaylor-watch-me-wholesale-houses-in-real-time-1652.html" target="_blank" rel="noopener">1652</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/rtaylor-single-family-or-multi-what-s-the-best-investment-2100.html" target="_blank" rel="noopener">2100</a>). His world is one of illiquidity and seller distress at the margin, not collapsing values everywhere. The third group — Patrick Boyle, Eurodollar University, Felix, and a commercial-real-estate insider — supplies credit context that is in some ways darker than either: record private-credit default rates, a mortgage originator cutting its dividend to zero, and commercial assets trading at 8–80 cents on the dollar (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/real-estate-insider-banks-are-now-dumping-buildings-at-80-cents-on-the-dollar-1372.html" target="_blank" rel="noopener">1372</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/eurodollaru-breaking-private-credit-defaults-just-hit-a-record-high-2039.html" target="_blank" rel="noopener">2039</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/eurodollaru-breaking-blue-owl-just-took-a-100-loss-signaling-a-lot-more-stress-a-2044.html" target="_blank" rel="noopener">2044</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/eurodollaru-breaking-the-biggest-private-mortgage-lender-just-crashed-49-2066.html" target="_blank" rel="noopener">2066</a>).</p>
@@ -2601,8 +2216,8 @@ body {
     </div>
 
     <footer class="source-footer">
-        <p>Synthesized by AI from the transcript corpus &middot; <a href="re-v_factcheck_report.html">fact-check &amp; verification report</a> &middot; <a href="re-v_homebuilder_briefing.html">homebuilder briefing</a> &middot; <a href="re-v_investing_wholesaling.html">investing &amp; wholesaling</a></p>
-        <p class="meta">Row-number references are Queue sheet rows and link to each source video's published summary &middot; for informational purposes only</p>
+        <p>Synthesized by AI from the transcript corpus &middot; <a href="re-v_executive_summary.html">executive summary</a> &middot; <a href="re-v_factcheck_report.html">fact-check &amp; verification report</a> &middot; <a href="re-v_homebuilder_briefing.html">homebuilder briefing</a> &middot; <a href="re-v_investing_wholesaling.html">investing &amp; wholesaling</a></p>
+        <p class="meta">Row-number references are research document and video Queue sheet rows and link to each source video's published summary &middot; for informational purposes only</p>
     </footer>
 </body>
 </html>

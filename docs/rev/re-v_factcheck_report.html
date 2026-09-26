@@ -2,29 +2,33 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>RE-V fact-check &amp; market verification report</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper:#f7f6f2; --ink:#1c2321; --deep:#0f2e2b; --deep2:#174b45;
-  --teal:#127a6d; --teal-dark:#0d5a50; --amber:#b98a1e; --red:#a53f2b;
-  --line:#dcd8cd; --muted:#68706c; --card:#eeece4;
+  --paper:#f4f6f9; --ink:#1b2430; --deep:#0f1f33; --deep2:#1b3350;
+  --teal:#2f6db3; --teal-dark:#1f4f87; --amber:#9a7b2f; --red:#a3402f;
+  --line:#d6dde7; --muted:#5f6b7a; --card:#e9eef5;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17.5px;line-height:1.75}
-.mast{background:linear-gradient(150deg,var(--deep),var(--deep2));color:#eef2ef;padding:60px 24px 46px;border-bottom:5px solid var(--teal)}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.nav{background:var(--deep);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-in{max-width:900px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;gap:4px 22px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.nav a{color:#b7c7dc;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a.current{color:#fff;border-bottom-color:#8fb4e3}
+.mast{background:linear-gradient(150deg,var(--deep),var(--deep2));color:#eef2f7;padding:60px 24px 46px;border-bottom:5px solid var(--teal)}
 .mast-in{max-width:900px;margin:0 auto}
-.kick{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#7fd0c3;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.kick::before{content:"";width:26px;height:2px;background:#7fd0c3}
-.mast h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.1;margin-bottom:20px}
-.mast .dek{font-size:1.05rem;color:#bacdc6;max-width:70ch;line-height:1.65}
-.mast .dek a{color:#dfe8e4}
-.mast .meta{margin-top:22px;font-family:'Inter',sans-serif;font-size:12px;color:#7d948c;text-transform:uppercase;letter-spacing:.04em}
+.kick{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#8fb4e3;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.kick::before{content:"";width:26px;height:2px;background:#8fb4e3}
+.mast h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(2rem,4.6vw,3rem);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
+.mast .dek{font-size:1.02rem;color:#c3cfdd;max-width:76ch;line-height:1.65}
+.mast .dek a{color:#e6eef8}
+.mast .meta{margin-top:22px;font-family:'Inter',sans-serif;font-size:12px;color:#8ea2b8;text-transform:uppercase;letter-spacing:.05em}
 .wrap{max-width:900px;margin:0 auto;padding:56px 24px 90px}
 .sec{display:flex;align-items:baseline;gap:16px;margin:52px 0 20px}
 .sec:first-child{margin-top:0}
-.secnum{font-family:'Fraunces',serif;font-weight:600;color:var(--teal);border:1.5px solid var(--teal);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
-.sec h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
-.wrap h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.13rem;margin:34px 0 12px;color:var(--deep2)}
+.secnum{font-family:'Inter',sans-serif;font-weight:600;color:var(--teal);border:1.5px solid var(--teal);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.sec h2{font-family:'Inter',sans-serif;font-weight:600;font-size:1.5rem;color:var(--ink)}
+.wrap h3{font-family:'Inter',sans-serif;font-weight:600;font-size:1.13rem;margin:34px 0 12px;color:var(--deep2)}
 .wrap>hr{border:none;border-top:1px solid var(--line);margin:44px 0}
 .wrap p{margin-bottom:18px}
 .wrap ul,.wrap ol{margin:0 0 22px 1.25em}
@@ -44,14 +48,21 @@ a.rowref:hover{background:var(--card)}
 table{width:100%;border-collapse:collapse;margin:22px 0 30px;font-size:.85rem;font-family:'Inter',sans-serif}
 th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:2px solid var(--deep2)}
 td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
-tr:hover td{background:#f0eee6}
+tr:hover td{background:#eef2f7}
 .tablewrap{overflow-x:auto}
-.foot{background:var(--deep);color:#8fa39c;padding:36px 24px;text-align:center;font-family:'Inter',sans-serif;font-size:12.5px}
-.foot a{color:#7fd0c3}
+.foot{background:var(--deep);color:#93a3b8;padding:36px 24px;text-align:center;font-family:'Inter',sans-serif;font-size:12.5px}
+.foot a{color:#8fb4e3}
 @media(max-width:700px){table{font-size:.78rem}}
 </style>
 </head>
 <body>
+<nav class="nav"><div class="nav-in">
+<a href="index.html">Roundup</a>
+<a href="re-v_executive_summary.html">Executive summary</a>
+<a href="re-v_factcheck_report.html" class="current">Fact-check</a>
+<a href="re-v_homebuilder_briefing.html">Homebuilder briefing</a>
+<a href="re-v_investing_wholesaling.html">Investing &amp; wholesaling</a>
+</div></nav>
 <header class="mast"><div class="mast-in">
 <div class="kick">Verification Report &middot; Deep Research</div>
 <h1>RE-V fact-check &amp; market verification report</h1>
@@ -96,7 +107,7 @@ tr:hover td{background:#f0eee6}
 </table></div>
 <hr />
 <div class="sec"><span class="secnum">02</span><h2>Part 1 — Claim-by-claim verdicts</h2></div>
-<h3>(a) D.R. Horton / DHI Mortgage <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (5 of 6 sub-claims exact; one figure corrected)</span></h3>
+<h3 id="group-a">(a) D.R. Horton / DHI Mortgage <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (5 of 6 sub-claims exact; one figure corrected)</span></h3>
 <p>The block the first pass couldn't verify turns out to be almost entirely accurate, confirmed against SEC filings and federal HMDA regulatory data:</p>
 <ul>
 <li><strong>82% capture rate: CONFIRMED exactly.</strong> The fiscal Q3 2026 10-Q: DHI Mortgage handled financing for 82% of homes closed in the quarter (19,729 first-lien loans against 23,983 closings); 81% on a trailing-twelve-month basis per the investor presentation. The "~50% a decade ago" baseline also checks out — the FY2016 10-K reports capture rates of 55%/51%/50% for fiscal 2016/2015/2014. <a class="sref" href="#src-41">S41</a> <a class="sref" href="#src-42">S42</a> <a class="sref" href="#src-43">S43</a></li>
@@ -107,17 +118,17 @@ tr:hover td{background:#f0eee6}
 <li><strong>87,000 closings in 2025: PARTIALLY TRUE / OVERSTATED.</strong> Actual fiscal-2025 closings were <strong>84,863</strong> — the ~87,000 figure was D.R. Horton's <em>earlier</em> FY2026 guidance (86,000–87,500, issued April 2026), which the company subsequently cut to 83,800–84,300. "#1 builder by volume since 2002" is confirmed. <a class="sref" href="#src-48">S48</a> <a class="sref" href="#src-37">S37</a></li>
 </ul>
 <p>One context figure the verification surfaced that sharpens the briefing's credit-risk point: 64-65% of DHI Mortgage's FY2026 closings were to first-time buyers, at an average LTV of 90% and average household income of $94,800. <a class="sref" href="#src-42">S42</a></p>
-<h3>(b) Lennar price cuts, costs, cycle time <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-b">(b) Lennar price cuts, costs, cycle time <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <ul>
 <li><strong>Average sales price</strong>: $371,000–$372,000 in Q2 2026 (vs. $389,000 a year earlier and a 2022 peak of ~$491,000 per SEC filings) — a <strong>−24.4%</strong> decline. The series claimed ~$370k vs ~$491k and "25–27%"; the dollar figures are exact, the percentage slightly overstated. Verified 3-0. <a class="sref" href="#src-1">S1</a> <a class="sref" href="#src-2">S2</a></li>
 <li><strong>Construction costs</strong>: down 13% over two years, to $81/sq ft (−7% YoY) per the earnings release and call — the series said 12%. Verified 3-0. <a class="sref" href="#src-1">S1</a> <a class="sref" href="#src-2">S2</a></li>
 <li><strong>Cycle time</strong>: a record-low 121 days in Q2 2026 (122 the prior quarter, 132 a year ago) — the series' 122-day figure matches the prior quarter exactly. Nuance: Lennar's metric is construction start-to-completion, not contract-to-close. Verified 3-0. <a class="sref" href="#src-1">S1</a> <a class="sref" href="#src-2">S2</a></li>
 </ul>
-<h3>(c) Builder months-of-supply at 9–10+ months <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (core figure)</span></h3>
+<h3 id="group-c">(c) Builder months-of-supply at 9–10+ months <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (core figure)</span></h3>
 <p>Census/HUD's August 25, 2026 release puts new single-family months-of-supply at <strong>9.6 months</strong> (July 2026, seasonally adjusted), with 2026 monthly readings ranging 8.5–9.9 — squarely supporting the series' "9–10+" claim. Verified 3-0. The companion claims (5.8-month long-run average; comparable only to 2008-09, 1981-82, 1973-74) were <strong>not independently verified</strong> — plausible but unchecked. Caveat: July is preliminary and the month-over-month change's confidence interval includes zero. <a class="sref" href="#src-3">S3</a></p>
-<h3>(d) New homes cheaper than existing homes <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (direction); magnitude is time-dependent</span></h3>
+<h3 id="group-d">(d) New homes cheaper than existing homes <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (direction); magnitude is time-dependent</span></h3>
 <p>The inversion is real and NAHB itself calls it a reversal of the historical pattern: existing-home median prices have exceeded new-home medians for <strong>four consecutive quarters</strong> through Q1 2026 (six of the past eight), against a 2010–2019 norm of a ~$66,000 <em>new-home premium</em>. July 2026 monthly data: new median $393,800 vs. NAR existing median $434,100 — a ~9.3% gap. But the series' fixed "~5.5%" figure was refuted as a point estimate (the Q1 2026 quarterly gap was only ~0.3%): <strong>cite the inversion, not a fixed percentage</strong>. The inversion is also partly compositional — builders are delivering smaller homes with a Southern mix skew. Inversion verified 3-0; the 5.5% figure voted down 1-2. <a class="sref" href="#src-3">S3</a> <a class="sref" href="#src-4">S4</a> <a class="sref" href="#src-5">S5</a></p>
-<h3>(e) FHA delinquency "11.9–15.2%, highest since 2011-12" <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">PARTIALLY TRUE / OVERSTATED</span></h3>
+<h3 id="group-e">(e) FHA delinquency "11.9–15.2%, highest since 2011-12" <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">PARTIALLY TRUE / OVERSTATED</span></h3>
 <ul>
 <li>The <strong>11.9% end is exact</strong>: MBA's Q1 2026 National Delinquency Survey shows the FHA seasonally adjusted delinquency rate at <strong>11.88%</strong> (+126 bps YoY). The 15.2% end is wrong for the present — the recent FHA high was 15.7% in Q2 2020 (pandemic), not now.</li>
 <li>The historical framing is overstated: MBA's own characterization is the <strong>widest FHA-vs-conventional spread since 2021</strong>, not the highest delinquency since 2011-12.</li>
@@ -125,10 +136,10 @@ tr:hover td{background:#f0eee6}
 <li>The 44%-DTI-above-2006-peak sub-claim remains unverified. Verified 3-0 (as stated here). <a class="sref" href="#src-6">S6</a> <a class="sref" href="#src-7">S7</a></li>
 </ul>
 <p><strong>Re-checked 2026-09-25 against MBA's Q2 2026 National Delinquency Survey:</strong> the FHA delinquency rate eased 9 bps to <strong>11.79%</strong> (overall delinquency 4.37%, −7 bps q/q but +44 bps y/y), while FHA <em>serious</em> delinquencies rose more than 225 bps year over year — the core '11.9%' figure and the concentration-in-FHA reading both hold. <a class="sref" href="#src-68">S68</a></p>
-<h3>(f) Investor purchases "down ~50% from 2022 peak" <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">PARTIALLY TRUE / OVERSTATED</span></h3>
+<h3 id="group-f">(f) Investor purchases "down ~50% from 2022 peak" <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">PARTIALLY TRUE / OVERSTATED</span></h3>
 <p>Redfin's Q1 2026 investor report confirms the <strong>direction</strong> — purchases fell 6% YoY to the lowest level since 2020 — but publishes no comparison to the 2022 peak, and investor <strong>market share barely moved</strong> (19% vs. 20% a year earlier). A counter-datapoint cuts directly against the "Wall Street net-selling exodus" framing: investor-owned homes were just <strong>7.8% of U.S. listings in Q1 2026, the smallest share in five years</strong> — shrinking, not growing, listing exposure. The cap-rate-below-debt-cost sub-claim was not verified. Verified 3-0 on the pullback; the exodus framing weakened 1-2. <a class="sref" href="#src-10">S10</a></p>
 <p><strong>Re-checked 2026-09-25:</strong> Redfin had published no Q2 2026 investor report as of this date — the Q1 2026 edition (May 28) remains the latest — so the verdict stands unchanged. <a class="sref" href="#src-70">S70</a></p>
-<h3>(g) The "21st Century ROAD to Housing Act" <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED, and it's now law</span></h3>
+<h3 id="group-g">(g) The "21st Century ROAD to Housing Act" <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED, and it's now law</span></h3>
 <p>The least-plausible-sounding claim in the series checks out almost entirely:</p>
 <ul>
 <li><strong>H.R. 6644, 119th Congress</strong> — the "21st Century ROAD to Housing Act" — is real. Title X prohibits for-profit entities with direct or indirect control of <strong>350+ single-family homes</strong> from purchasing more, with civil penalties up to <strong>$1 million per violation or 3× purchase price</strong> (whichever is greater), effective ~January 7, 2027 and sunsetting 15 years later. <a class="sref" href="#src-18">S18</a> <a class="sref" href="#src-19">S19</a> <a class="sref" href="#src-20">S20</a></li>
@@ -136,67 +147,67 @@ tr:hover td{background:#f0eee6}
 <li><strong>Carve-outs confirmed</strong>: newly constructed homes, build-to-rent programs, renovated/rehabilitated properties, lease-to-own, 55+ senior housing, investor-to-investor sales — validating the homebuilder briefing's point that the law structurally favors build-to-rent construction over buying existing stock.</li>
 <li><strong>Status update the series didn't have</strong>: it <strong>became law on July 11, 2026 without the President's signature</strong> (neither signed nor timely vetoed). <a class="sref" href="#src-19">S19</a> <a class="sref" href="#src-21">S21</a></li>
 </ul>
-<h3>(h) Invitation Homes/ResiBuilt and AH4R as builder <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-h">(h) Invitation Homes/ResiBuilt and AH4R as builder <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <ul>
 <li><strong>Invitation Homes acquired ResiBuilt Homes, LLC</strong> — announced January 16, 2026, ~$89M plus up to $7.5M earn-out, confirmed in its FY2025 10-K. The framing matters: INVH presents it as expansion <em>into</em> homebuilding/BTR ("increase housing supply through new construction"), which cuts against a simple "Wall Street exiting housing" narrative. Verified 3-0. <a class="sref" href="#src-14">S14</a> <a class="sref" href="#src-15">S15</a> <a class="sref" href="#src-16">S16</a> <a class="sref" href="#src-17">S17</a></li>
 <li><strong>American Homes 4 Rent (AMH) is a top-40 builder</strong>: #39 on Builder Magazine's 2024 Builder 100 (2,317 homes completed in 2023), named a 2025 Top U.S. Homebuilder in its own investor materials. The "2,000+ in the last year" figure aligns with 2025 delivery guidance (2,200–2,400) but the final actual wasn't verified — and 2026 guidance drops to 1,700–2,100, so the claim is borderline going forward. <a class="sref" href="#src-31">S31</a> <a class="sref" href="#src-32">S32</a> <a class="sref" href="#src-33">S33</a></li>
 </ul>
-<h3>(i) Migration claims <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">MIXED</span></h3>
+<h3 id="group-i">(i) Migration claims <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">MIXED</span></h3>
 <ul>
 <li><strong>Florida: CONFIRMED.</strong> Net domestic migration collapsed from 310,892 (2022) to 22,517 (2025) — <strong>−92.8%</strong>, matching the series' "~90% down from peak." <a class="sref" href="#src-11">S11</a> <a class="sref" href="#src-13">S13</a></li>
 <li><strong>California: CONFIRMED exactly.</strong> −229,077 net domestic migrants (July 2024–July 2025), the largest state loss in the country (New York second at −137,586), per Census Vintage 2025 estimates. <a class="sref" href="#src-12">S12</a></li>
 <li><strong>Midwest: PARTIALLY TRUE.</strong> The region did post positive net domestic migration (+16,000 through June 2025) — but the Census frames it as the first time <strong>"this decade,"</strong> not the series' "first in ~35 years." The magnitude of the turnaround is real (Ohio swung from −32,482 in 2021 to +11,926) but the historical superlative is overstated. Verified 3-0. <a class="sref" href="#src-11">S11</a></li>
 </ul>
-<h3>(j) Austin and Cape Coral price declines <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (Austin arguably understated)</span></h3>
+<h3 id="group-j">(j) Austin and Cape Coral price declines <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (Austin arguably understated)</span></h3>
 <ul>
 <li><strong>Austin</strong>: down <strong>−23.8%</strong> on MLS median sold price ($538,000 May-2022 peak → $410,000), <strong>−26.4%</strong> on price per sq ft, and <strong>−27.2%</strong> below peak on Zillow's metro-level ZHVI per ResiClub — bracketing the series' 24-26% and arguably exceeding it. The series' specific "$553k → $420k" pairing matches no published source (a paraphrase). <a class="sref" href="#src-26">S26</a> <a class="sref" href="#src-27">S27</a></li>
 <li><strong>Cape Coral/Fort Myers</strong>: down <strong>~19.3%</strong> from the April 2022 peak ($437,000 → ~$352-375,000), within the claimed 15-20%. The WSJ "worst housing market in America" designation is real but dates to <strong>June 2025</strong>, not 2026; local Realtors publicly disputed the framing as "transition, not collapse." Still the national decline leader in Q1 2026 (−9% YoY per ATTOM). <a class="sref" href="#src-28">S28</a> <a class="sref" href="#src-29">S29</a> <a class="sref" href="#src-30">S30</a></li>
 </ul>
-<h3>(k) Mortgages above 6% now outnumber those below 3% <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-k">(k) Mortgages above 6% now outnumber those below 3% <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>Realtor.com (January 14, 2026, using FHFA National Mortgage Database Q3 2025 data): <strong>21.2% of outstanding mortgages above 6% vs. 20.0% below 3%</strong> — the first such crossover, which the release itself calls "a turning point in the rate-lock-in era." The series' claim is exact. <a class="sref" href="#src-22">S22</a></p>
-<h3>(l) Savings rate and credit cards <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED FIGURES, ONE CONFLATION</span></h3>
+<h3 id="group-l">(l) Savings rate and credit cards <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED FIGURES, ONE CONFLATION</span></h3>
 <ul>
 <li><strong>Savings rate: figures confirmed.</strong> BEA 2026 monthly readings: 3.6% (Mar), <strong>2.6% (Apr)</strong>, 3.0% (May), 2.7% (Jun), 3.0% (Jul) — the April reading was the lowest since March 2008. "Near record low" is a mild overstatement (the record is 1.4%, July 2005); <strong>"lowest since 2008" is the accurate framing.</strong> <a class="sref" href="#src-23">S23</a> <a class="sref" href="#src-24">S24</a> <a class="sref" href="#src-25">S25</a></li>
 <li><strong>Credit cards: the 13% figure conflates two metrics.</strong> The NY Fed's <em>flow</em> into serious delinquency was <strong>6.97%</strong> in Q2 2026 — essentially flat YoY (6.93%). The ~13% figure is the <em>stock</em> of balances 90+ days delinquent (~12.9%) — a different measure the NY Fed published a Liberty Street Economics post specifically to disambiguate. Comparing today's stock against 2008-09 flow-based narratives overstates the deterioration. <a class="sref" href="#src-8">S8</a> <a class="sref" href="#src-9">S9</a></li>
 </ul>
 <p><strong>Re-checked 2026-09-25 against BEA's July 2026 release:</strong> the personal saving rate was <strong>3.0%</strong> in July (release of August 26, 2026), consistent with the readings above; the August figure had not yet been published. <a class="sref" href="#src-69">S69</a></p>
-<h3>(m) Existing-home sales at roughly 4 million annualised <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (core figure)</span></h3>
+<h3 id="group-m">(m) Existing-home sales at roughly 4 million annualised <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (core figure)</span></h3>
 <p>The May 2026 print is exact: NAR reported existing-home sales up 3.2% to a seasonally adjusted annual rate of <strong>4.17 million</strong>, the highest since December 2025, with 1.55 million units of inventory (4.5 months' supply) and a median price of $429,300. <a class="sref" href="#src-49">S49</a> NAR's August 2026 release then showed sales falling back with months' supply reaching <strong>4.9</strong> — the highest in over ten years — consistent with the series' later '3.93 million, second-worst August in thirty years' reading, though that exact August SAAR was not independently pinned here. <a class="sref" href="#src-71">S71</a> The March 2026 '3.98 million, nine-month low' figure was not separately verified.</p>
-<h3>(n) Zillow cut its forecast into negative territory <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (endpoint); intermediate steps approximate</span></h3>
+<h3 id="group-n">(n) Zillow cut its forecast into negative territory <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (endpoint); intermediate steps approximate</span></h3>
 <p>Zillow's 12-month national home-value forecast went from <strong>+0.5%</strong> (March 2026) to <strong>0.0%</strong> (April, covering March 2026–March 2027) to <strong>−0.1%</strong> (May, covering April 2026–April 2027) — the first negative print of the year, as the series says. <a class="sref" href="#src-51">S51</a> <a class="sref" href="#src-50">S50</a> The series' fuller sequence ('1.9% → 0.5% → 0.3% → −0.1%') matches at the two ends; the 1.9% starting point predates the tracked revisions and the 0.3% step was not found. The '27 of the top 50 metros negative' count was not verified.</p>
-<h3>(o) Freddie Mac: 'nearly 10 million' boomer homes over the next decade <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">PARTIALLY TRUE / OVERSTATED</span></h3>
+<h3 id="group-o">(o) Freddie Mac: 'nearly 10 million' boomer homes over the next decade <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">PARTIALLY TRUE / OVERSTATED</span></h3>
 <p>Freddie Mac's research (February 2024) put the figure at <strong>'more than 9 million'</strong> homes coming to market over the decade as boomers downsize — and explicitly rejected the 'silver tsunami' framing: 'the tsunami is more like a tide, bringing a gradual exit that will mostly be offset by new entrants', with a net decline of ~300,000 boomer homeowner households in the first year accelerating thereafter. <a class="sref" href="#src-52">S52</a> The series rounds up to 10 million and drops the offset. The companion claim that ~70% of inherited homes are sold (attributed to a Charles Schwab study and the WSJ) was not verified.</p>
-<h3>(p) May 2026 payrolls +172,000 <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-p">(p) May 2026 payrolls +172,000 <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>Exact. BLS reported total nonfarm payroll employment up <strong>172,000</strong> in May 2026 (April: 179,000), far above the ~80,000 consensus, with unemployment steady at 4.3% and gains led by leisure and hospitality, local government and health care; financial-activities employment fell 22,000. <a class="sref" href="#src-53">S53</a> The series' claim that the print triggered a 4.2% NASDAQ decline was not verified.</p>
-<h3>(q) JOLTS: hires fell below 5.1 million in July <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (figure); framing overstated</span></h3>
+<h3 id="group-q">(q) JOLTS: hires fell below 5.1 million in July <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (figure); framing overstated</span></h3>
 <p>Hires slipped to <strong>5.1 million</strong> in July 2026 from 5.3 million in June, and the hires rate fell from 3.4% to 3.2% — but BLS/Indeed characterise that as the weakest hiring month <strong>since February</strong>, not 'among the weakest of the entire cycle'. Openings were little changed at 7.3 million and layoffs fell to a six-month low of 1.7 million: a 'low fire, low hire' market. <a class="sref" href="#src-54">S54</a></p>
-<h3>(r) Social Security's retirement fund runs dry in 2031/2032 <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (2032; one video said 2031)</span></h3>
+<h3 id="group-r">(r) Social Security's retirement fund runs dry in 2031/2032 <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (2032; one video said 2031)</span></h3>
 <p>The 2026 Trustees Report projects the OASI trust fund depleted in the <strong>fourth quarter of 2032</strong>, one year earlier than the prior report (the 2025 tax changes lowered beneficiaries' tax liability), after which continuing income covers ~78% of scheduled benefits; combining the funds would push depletion to 2034 but requires an act of Congress. <a class="sref" href="#src-55">S55</a> Row 2011's '2032' is exact; row 1649's '2031' is a year early.</p>
-<h3>(s) Alphabet's Q2 2026 capex ~$45 billion and negative free cash flow <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-s">(s) Alphabet's Q2 2026 capex ~$45 billion and negative free cash flow <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>Alphabet reported Q2 2026 capital expenditures of <strong>$44.9 billion</strong> and free cash flow of <strong>−$5.9 billion</strong>, and raised 2026 capex guidance from $180–190 billion to <strong>$195–205 billion</strong>, with ~60% of infrastructure spend going to servers and ~40% to data centers and networking. <a class="sref" href="#src-56">S56</a></p>
-<h3>(t) Pending home sales fell sharply in June 2026 <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-t">(t) Pending home sales fell sharply in June 2026 <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>NAR's Pending Home Sales Index dropped <strong>5.4%</strong> in June to 72.5 — its first decline in five months and the steepest of 2026 to that point, against expectations of −0.5%; all four regions fell, the Midwest by 8.9%. <a class="sref" href="#src-57">S57</a> The series attributes the figure to the Wall Street Journal's coverage; the underlying NAR number is confirmed.</p>
-<h3>(u) Rents: Austin down ~21% from peak; Chicago up 13.6% over four years <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">Confirmed with caveats (direction; magnitudes unverified)</span></h3>
+<h3 id="group-u">(u) Rents: Austin down ~21% from peak; Chicago up 13.6% over four years <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">Confirmed with caveats (direction; magnitudes unverified)</span></h3>
 <p>Apartment List's reports do identify Austin as the softest major market (−6.3% year over year in February 2026, with some trackers showing steeper one-bedroom declines) and Chicago among the fastest-growing (≈4% year over year through August 2026). <a class="sref" href="#src-58">S58</a> The series' figures are cumulative — a decline from the 2022 peak and a four-year gain — and neither the −21% nor the +13.6% was found in a published release; treat the direction as verified and the magnitudes as the series' own arithmetic.</p>
-<h3>(v) GSE multifamily delinquencies at a post-2010 high <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-v">(v) GSE multifamily delinquencies at a post-2010 high <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>Fannie Mae's multifamily serious-delinquency rate rose to <strong>0.78%</strong> in Q1 2026 (0.75% in November 2025), the highest since 2010 excluding the pandemic spike, though still below the Great-Recession peak of 0.80%; Freddie Mac's 0.48% is the highest in decades and above its prior 0.39% peak. <a class="sref" href="#src-59">S59</a></p>
-<h3>(w) Morgan Stanley: affordability will not return to pre-2022 levels <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-w">(w) Morgan Stanley: affordability will not return to pre-2022 levels <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>Exact, including the date: a <strong>June 16, 2026</strong> Morgan Stanley Wealth Management analysis by senior economist Sarah Wolfe modelled mortgage rates settling at 4%, 5% and 6% and found monthly carrying costs stay well above the pre-2022 norm in every case; the base case has payments easing from ~24% of household income (2025) to ~21% over a decade — still far above the ~15% post-2009 average — with gains stalling around 2027. <a class="sref" href="#src-60">S60</a></p>
-<h3>(x) Burry: three customers are 64% of Nvidia's receivables <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (as Burry's claim)</span></h3>
+<h3 id="group-x">(x) Burry: three customers are 64% of Nvidia's receivables <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (as Burry's claim)</span></h3>
 <p>Michael Burry's Substack posts of May 25–26, 2026 state that three customers account for <strong>64%</strong> of Nvidia's accounts receivable, up from 56% the prior quarter — a concentration he called 'off the charts' — and disclosed put options against the stock. <a class="sref" href="#src-61">S61</a> The 64% figure was not independently recomputed from Nvidia's 10-Q here; the claim is verified as Burry's, which is how the series attributes it.</p>
-<h3>(y) Private-credit defaults at a record <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-y">(y) Private-credit defaults at a record <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>Fitch put the trailing-12-month U.S. private-credit default rate at <strong>6.3%</strong> through August 2026, up from 6.1% in July and a record; the model-based component rose to 5.6% while the privately-monitored series eased to 8.5% after peaking at 10.0% in March. Health-care providers and industrials led at 9.9%; issuers under $25 million EBITDA ran at 12.0%. <a class="sref" href="#src-62">S62</a></p>
-<h3>(z) The Fed hiked in September 2026; inflation 'at 4.1%' <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (the hike); REFUTED (the 4.1% figure)</span></h3>
+<h3 id="group-z">(z) The Fed hiked in September 2026; inflation 'at 4.1%' <span class="badge badge-partial">PARTIAL</span> <span class="badgenote">CONFIRMED (the hike); REFUTED (the 4.1% figure)</span></h3>
 <p>The hike is real: on <strong>September 16, 2026</strong> the Fed raised rates for the first time since July 2023 under Chair Kevin Warsh, and projections showed a majority of officials expecting another this year. <a class="sref" href="#src-63">S63</a> The inflation figure is not: August 2026 CPI ran <strong>3.4%</strong> year over year (core <strong>2.4%</strong>, the lowest since March 2021), not 4.1%. <a class="sref" href="#src-64">S64</a> The series' 'double the Fed's mandate' framing rests on the wrong number.</p>
-<h3>(aa) 'Trump kills housing bill' <span class="badge badge-refuted">REFUTED</span> <span class="badgenote">REFUTED — the bill became law</span></h3>
+<h3 id="group-aa">(aa) 'Trump kills housing bill' <span class="badge badge-refuted">REFUTED</span> <span class="badgenote">REFUTED — the bill became law</span></h3>
 <p>The 21st Century ROAD to Housing Act was <strong>not</strong> killed: Trump declined to sign it in protest over a stalled voter-ID bill and let it <strong>become law without his signature on July 11, 2026</strong>, exactly as group (g) records. <a class="sref" href="#src-65">S65</a> <a class="sref" href="#src-19">S19</a> The 'communist' language came from House conservatives objecting to rent-control and forced-sale provisions, not from a veto. Row 2208 (September 21) is therefore two months stale on this point.</p>
-<h3>(ab) ShowingTime: tours down 35–40% in six weeks <span class="badge badge-pending">UNVERIFIED</span> <span class="badgenote">NOT VERIFIED</span></h3>
+<h3 id="group-ab">(ab) ShowingTime: tours down 35–40% in six weeks <span class="badge badge-pending">UNVERIFIED</span> <span class="badgenote">NOT VERIFIED</span></h3>
 <p>ShowingTime's public Showing Index for the United States showed buyer showings down <strong>5.2%</strong> year over year in January 2026. <a class="sref" href="#src-66">S66</a> No release supporting a 35–40% decline over a six-week window was found; the figure may be a local or anecdotal reading the series generalised.</p>
-<h3>(ac) Bank of America Institute: Florida home values −3.7%; ~14–15 states declining <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (via secondary coverage)</span></h3>
+<h3 id="group-ac">(ac) Bank of America Institute: Florida home values −3.7%; ~14–15 states declining <span class="badge badge-confirmed">CONFIRMED</span> <span class="badgenote">CONFIRMED (via secondary coverage)</span></h3>
 <p>Coverage of the Bank of America Institute report reproduces both figures — Florida home values down <strong>3.7%</strong> over the past year and roughly <strong>14 or 15 states</strong> already seeing year-over-year declines — alongside its finding that Miami, Orlando and Tampa posted some of the largest net move-outs in Q1 2026. <a class="sref" href="#src-67">S67</a> The Institute's own page was not fetched; the figures are confirmed as reported.</p>
-<h3>(ad) Months' supply at a decade-plus high <span class="badge badge-confirmed">CONFIRMED</span></h3>
+<h3 id="group-ad">(ad) Months' supply at a decade-plus high <span class="badge badge-confirmed">CONFIRMED</span></h3>
 <p>NAR's August 2026 data put existing-home inventory at <strong>4.9 months'</strong> supply, the highest in over ten years (July: 4.6). <a class="sref" href="#src-71">S71</a> The series quotes 4.88 months and 'an 11-year high' via ABC News — the same reading, unrounded.</p>
-<h3>(ae) Zillow: investors fell from 21% to 15% of buyers <span class="badge badge-pending">UNVERIFIED</span> <span class="badgenote">NOT VERIFIED; conflicts with Redfin</span></h3>
+<h3 id="group-ae">(ae) Zillow: investors fell from 21% to 15% of buyers <span class="badge badge-pending">UNVERIFIED</span> <span class="badgenote">NOT VERIFIED; conflicts with Redfin</span></h3>
 <p>No Zillow release with a 21%→15% investor-share series was found. Redfin's investor reports — the standard source, latest edition Q1 2026 — show investor <strong>market share roughly flat</strong> (~19–20% a year earlier vs. now) even as purchase counts fell to the lowest level since 2020. <a class="sref" href="#src-70">S70</a> Read the series' figure as unconfirmed and in tension with the best available data.</p>
 <hr />
 <div class="sec"><span class="secnum">03</span><h2>Part 2 — What the independent survey found, including the counter-case</h2></div>
