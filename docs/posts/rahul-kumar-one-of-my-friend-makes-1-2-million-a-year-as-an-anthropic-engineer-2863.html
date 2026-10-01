@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Rahul Kumar - One of my friend makes $1.2 million a year as an Anthropic engineer. ...</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>Rahul Kumar - One of my friend makes $1.2 million a year as an Anthropic engineer. ...</h1>
+        <p class="hero-subtitle">An applied AI engineer at Anthropic walks through practical prompting techniques for maintaining production systems and building new agentic use cases from scratch.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+
+        <article class="content">
+<h2>The prompting playbook: best practices for LLM systems</h2>
+<p>Margot van Laar, an applied AI engineer at Anthropic, presents a comprehensive guide to prompting best practices through two practical scenarios: maintaining existing production prompts during model migrations, and building new agentic systems from the ground up.</p>
+<h3>General principles for prompt maintenance</h3>
+<p><strong>Start with evaluations.</strong> Before making any changes, establish a rigorous evaluation suite to measure whether prompt modifications actually improve performance. Different models have different capabilities and behaviors, so degradation after migration can stem from either behavioral differences (fixable through prompting) or capability gaps (requiring a different model). A good eval suite should include three types of test cases: control cases that should always pass, edge cases where the model has previously failed, and cases that test the model's understanding of its own limitations.</p>
+<p><strong>Apply general hygiene first.</strong> Before targeting specific failure modes, clean up the prompt structure. Remove contradictory or outdated instructions, separate concerns using XML tags (role, guidelines, policy, tone), and eliminate redundant information. Van Laar notes that "if you're reading a prompt and you can't tell guidelines from policy from data, most likely the model isn't able to either." This foundational cleanup often produces immediate performance improvements.</p>
+<h3>Debugging production prompts: the customer support example</h3>
+<p>Van Laar walks through optimizing a customer support bot for a fictional telco company, Meridian Mobile, demonstrating how to systematically address three failing test cases.</p>
+<p><strong>The hotspot data problem.</strong> The model was deflecting customers to a URL rather than providing available information about hotspot allowances. The root cause: an overly defensive instruction ("never give a customer the wrong plan details") that was likely a patch for an earlier model's hallucination issues. As models improve at instruction following, such defensive patches become counterproductive. The fix was reframing the instruction to acknowledge that grandfathered customers have different allowances <em>and</em> that the customer's actual data is the source of truth. <strong>Key insight:</strong> Models can withhold information they have access to, not just invent false information.</p>
+<p><strong>The proration calculation failure.</strong> The model was giving vague answers about billing changes rather than exact calculations. The prompt told it to "always calculate prorated amounts correctly," but gave it no capability to do so. <strong>Key insight:</strong> Instructions don't add capability. The solution was introducing a tool—a <code>calculate_proration</code> function—that the model could call. This separated the reasoning task from the calculation task, allowing reliable outputs.</p>
+<p><strong>The billing error escalation problem.</strong> The model was trying to diagnose billing conflicts instead of escalating to a human. The original instruction stated the cost of escalation ($8) without mentioning the cost of getting it wrong (refunds, lost trust). The model optimized for minimizing escalation costs. The fix was presenting both sides of the trade-off. <strong>Key insight:</strong> As models become more capable, they need balanced information to make good trade-offs, not one-sided directives.</p>
+<h3>Building new systems from scratch: the scheduling agent</h3>
+<p>When building a new agentic use case, Van Laar compares multiple approaches to creating a weekly staff schedule that respects hard constraints (minimum headcount per shift, employee availability, etc.).</p>
+<p><strong>Model selection matters.</strong> Starting with Sonnet 4.6 and a simple prompt produced many constraint violations. Upgrading to Opus 4.7 significantly reduced violations (though still failing). Adding adaptive thinking to Opus made it reliably generate compliant schedules but tripled token usage and latency.</p>
+<p><strong>Prompt optimization has limits.</strong> Improving the prompt for Sonnet 4.6 (adding reasoning steps and a "check your work" instruction) helped but still failed on some cases due to output length limits. Increasing max tokens made the problem worse, not better.</p>
+<p><strong>The agentic approach wins.</strong> Rather than trying to solve everything in one prompt, Van Laar split the task into three separate prompts: a generator (create initial schedule), an evaluator (identify specific violations with evidence), and a repairer (fix violations). This generate-evaluate-repair loop achieved 100% compliance with fewer tokens and lower latency than the single-prompt approaches. An additional benefit: soft constraints (e.g., "avoid scheduling Harry with Sally") can be added at runtime in the evaluator prompt, without modifying the underlying evaluation logic.</p>
+<h3>Key takeaways</h3>
+<ol>
+<li>
+<p><strong>Evaluations provide rigor.</strong> You can't improve what you don't measure. Build eval suites early and use them to validate every change.</p>
+</li>
+<li>
+<p><strong>Structure matters.</strong> Use XML tags to separate concerns. Unclear prompts lead to unclear model behavior.</p>
+</li>
+<li>
+<p><strong>Beware of defensive patches.</strong> Instructions added to fix one model's weaknesses often become liabilities with newer, more capable models. Use version control to track <em>why</em> defensive instructions exist so you can revisit them.</p>
+</li>
+<li>
+<p><strong>Give capability, not just instructions.</strong> Telling a model to do something well doesn't make it capable of doing it. Use tools, structured outputs, or other mechanisms to enable the behavior you want.</p>
+</li>
+<li>
+<p><strong>Split complex tasks.</strong> For agentic systems, breaking work into separate prompts (generate, evaluate, repair) often outperforms trying to do everything in one prompt.</p>
+</li>
+<li>
+<p><strong>Balance trade-offs explicitly.</strong> Modern models are good at weighing competing priorities if you present both sides. One-sided directives lead to overfitting.</p>
+</li>
+</ol>
+<hr />
+<p><em><a target="_blank" rel="noopener" href="https://x.com/RahulTechX/status/2104868241873268850?s=20">Rahul Kumar - One of my friend makes $1.2 million a year as an Anthropic engineer. ...</a></em></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://x.com/RahulTechX/status/2104868241873268850?s=20" target="_blank" rel="noopener">Rahul Kumar - One of my friend makes $1.2 million a year as an Anthropic engineer. ...</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
