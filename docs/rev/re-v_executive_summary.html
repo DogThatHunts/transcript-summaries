@@ -68,11 +68,20 @@ body { background: var(--paper); color: var(--ink); font-family: 'Inter', system
 .source-footer { background: var(--navy); color: #93a3b8; padding: 36px 24px; text-align: center; font-size: 12.5px; }
 .source-footer a { color: var(--accent); }
 .source-footer .meta { margin-top: 10px; color: #7b8ca3; }
-@media (max-width: 700px) { .content table { font-size: .78rem; } .findings { padding: 18px 18px 4px; } }
+.tablewrap { overflow-x: auto; margin: 20px 0 30px; }
+.tablewrap table { margin: 0; }
+/* Texas "checked" table: long claim text in column 1, so let it wrap (the generic rule
+   above keeps first columns on one line for the short labels other tables use). */
+.content table.checked td:first-child { white-space: normal; }
+.content table.checked th:nth-child(1), .content table.checked td:nth-child(1) { width: 40%; }
+.content table.checked th:nth-child(2), .content table.checked td:nth-child(2) { width: 13%; white-space: nowrap; font-weight: 600; color: var(--navy); }
+.content table.checked th:nth-child(3), .content table.checked td:nth-child(3) { width: 47%; }
+@media (max-width: 700px) { .content table { font-size: .78rem; } .findings { padding: 18px 18px 4px; }
+  .content table.checked { min-width: 640px; } }
 
     </style>
 </head>
-<body>
+<body class="page-exec">
     <nav class="nav"><div class="nav-in">
         <a href="index.html">Roundup</a>
         <a href="re-v_executive_summary.html" class="current">Executive summary</a>
