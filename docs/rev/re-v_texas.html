@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Texas housing: the state against the nation, and its five biggest cities compared</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* Cool corporate palette for the RE-V set's shared pages (roundup, executive
+   summary, investing & wholesaling). Self-contained: does not import the
+   publisher's warm stylesheet, so published posts are untouched. */
+:root {
+  --navy: #0f1f33; --navy-2: #1b3350; --steel: #2f6db3; --steel-dark: #1f4f87;
+  --ink: #1b2430; --paper: #f4f6f9; --card: #e9eef5; --line: #d6dde7; --muted: #5f6b7a;
+  --accent: #8fb4e3; --ok: #116048; --ok-bg: #dcebe2;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.nav { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-in { max-width: 920px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 4px 22px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.nav a { color: #b7c7dc; text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.nav a:hover, .nav a.current { color: #fff; border-bottom-color: var(--accent); }
+.hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #eef2f7;
+  padding: 56px 24px 44px; border-bottom: 5px solid var(--steel); }
+.hero-in { max-width: 920px; margin: 0 auto; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700;
+  letter-spacing: .17em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.hero-tag::before { content: ""; width: 26px; height: 2px; background: var(--accent); }
+.hero h1 { font-weight: 800; font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+.hero-subtitle { font-size: 1.02rem; color: #c3cfdd; max-width: 76ch; line-height: 1.65; font-weight: 400; }
+.hero-subtitle a { color: #e6eef8; }
+.hero-meta { margin-top: 20px; font-size: 12px; color: #8ea2b8; text-transform: uppercase; letter-spacing: .05em; }
+.container { max-width: 920px; margin: 0 auto; padding: 48px 24px 80px; }
+.content h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); margin: 44px 0 14px;
+  padding-top: 18px; border-top: 1px solid var(--line); }
+.content h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.content h3 { font-size: 1.08rem; font-weight: 700; color: var(--steel-dark); margin: 28px 0 10px; }
+.content p { margin-bottom: 16px; }
+.content ul, .content ol { margin: 0 0 20px 1.25em; }
+.content li { margin-bottom: 10px; }
+.content strong { color: var(--navy); font-weight: 700; }
+.content em { color: var(--muted); }
+.content hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+.content a { color: var(--steel-dark); }
+.content a.rowref { font-size: 0.82em; font-weight: 600; text-decoration: none; color: var(--steel-dark);
+  border-bottom: 1.5px dotted var(--steel); }
+.content a.rowref:hover { background: var(--card); }
+.content a.sref, .content a.gref { font-size: 11.5px; font-weight: 600; background: var(--card); border: 1px solid var(--line);
+  border-radius: 4px; padding: 1px 6px; text-decoration: none; color: var(--steel-dark); margin: 0 1px; white-space: nowrap; }
+.content img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; margin: .4em 0 1.2em; }
+.content table { width: 100%; border-collapse: collapse; margin: 20px 0 30px; font-size: .86rem; }
+.content th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  text-align: left; padding: 9px 10px; border-bottom: 2px solid var(--navy-2); }
+.content td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
+.content td:first-child { white-space: nowrap; }
+.content tr:hover td { background: #eef2f7; }
+.findings { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--steel); border-radius: 0 6px 6px 0;
+  padding: 22px 28px 8px; margin: 0 0 36px; }
+.findings h2 { border-top: none; padding-top: 0; margin-top: 0; font-size: 1.15rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--steel-dark); }
+.findings ul { margin-left: 1.1em; }
+.findings li { margin-bottom: 14px; }
+.findings em { color: var(--ok); font-style: normal; font-weight: 600; }
+.source-footer { background: var(--navy); color: #93a3b8; padding: 36px 24px; text-align: center; font-size: 12.5px; }
+.source-footer a { color: var(--accent); }
+.source-footer .meta { margin-top: 10px; color: #7b8ca3; }
+@media (max-width: 700px) { .content table { font-size: .78rem; } .findings { padding: 18px 18px 4px; } }
+
+    </style>
+</head>
+<body>
+    <nav class="nav"><div class="nav-in">
+        <a href="index.html">Roundup</a>
+        <a href="re-v_executive_summary.html">Executive summary</a>
+        <a href="re-v_factcheck_report.html">Fact-check</a>
+        <a href="re-v_homebuilder_briefing.html">Homebuilder briefing</a>
+        <a href="re-v_investing_wholesaling.html">Investing &amp; wholesaling</a>
+        <a href="re-v_texas.html" class="current">Texas</a>
+    </div></nav>
+    <header class="hero"><div class="hero-in">
+        <div class="hero-tag">Texas &middot; investors &amp; wholesalers</div>
+        <h1>Texas housing: the state against the nation, and its five biggest cities compared</h1>
+        <p class="hero-subtitle">Texas is cooling faster than the US. Prices are flat to falling while the nation edges up, migration is at a 20-year low, and the state leads the country in both new permits and bank repossessions. Inside Texas, Fort Worth is the tightest market, Austin is the deepest correction, and San Antonio is the most oversupplied.</p>
+        <p class="hero-meta">Data-led report for investors &amp; wholesalers &middot; outside data as of Jul–Sep 2026 (Census population Jul 2025) &middot; every figure links to its source</p>
+    </div></header>
+
+    <div class="container">
+        <article class="content">
+<p><strong>How to read this report.</strong> Every number links to the outside source it came from; the full list is in <strong>Data sources</strong> at the end. Claims made in the RE-V videos appear only where outside data was checked against them, and the result of each check is in <strong>What the videos said, checked</strong>. The sources cover different months (the newest is September 2026, Redfin's is May 2026) and different areas (a city, a county, a metro area, or Redfin's separate Dallas and Fort Worth metro divisions). The tables label which one each figure uses.</p>
+<h2>Five things investors should know</h2>
+<ul>
+<li><strong>Texas prices are flat to down while US prices rise.</strong> The Texas median sale price was $339,000 in July, unchanged from a year earlier, and the typical Texas home value is down 1.6% year over year. The US median sale price is up 1.6% and the US typical value is up 1.2% <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a> <a target="_blank" rel="noopener" href="https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-0-decrease-in-august">D6</a>. Texas home values are 6.1% below their August 2022 peak <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V3</a>.</li>
+<li><strong>The migration engine has stalled.</strong> Texas gained only 67,299 net domestic migrants in the year to July 2025. That is the smallest gain since 2005 and 69% below the 2022 peak of 218,840 <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv">V12</a> <a target="_blank" rel="noopener" href="https://texas.credaily.com/p/texas-growth-slows-as-inbound-migration-hits-20-year-low">V14</a>. Harris County (Houston) and Dallas County each lost more than 43,000 people to other parts of the US <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv">D10</a>.</li>
+<li><strong>Supply keeps coming.</strong> Texas issued 199,258 building permits (all unit types) in the 12 months to August 2026, the most of any state, ahead of Florida's 164,496 <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/State/">V10</a>. The state has 5.5 months of supply against 4.9 nationally <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a> <a target="_blank" rel="noopener" href="https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-0-decrease-in-august">D6</a>.</li>
+<li><strong>Distress is concentrated here.</strong> In August 2026 Texas had more bank repossessions (REOs, 1,835) than any other state, and Houston, Dallas and San Antonio were the top three large metros for REOs nationally. Texas also had the most foreclosure starts in the first half of 2026 and the shortest average foreclosure timeline, at 155 days <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/august-2026-foreclosure-market-report/">D13</a> <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/2026-mid-year-foreclosure-market-report/">D14</a>.</li>
+<li><strong>Carrying costs are higher than the national norm.</strong> Effective property-tax rates in the five big counties run from 1.31% to 1.55%, against about 0.90% nationally on ATTOM's (different) method. The average Texas homeowners premium was $3,489 in 2025. The 30-year mortgage rate is 7.28%, up from 6.34% a year ago <a target="_blank" rel="noopener" href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/">D15</a> <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report">D16</a> <a target="_blank" rel="noopener" href="https://agate.tdi.texas.gov/general/texas-homeowners-insurance-market-overview.html">D17</a> <a target="_blank" rel="noopener" href="https://www.freddiemac.com/pmms">D7</a>.</li>
+</ul>
+<h2>Texas against the nation</h2>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>United States</th>
+<th>Texas</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median sale price (YoY)</td>
+<td>$429,100 (+1.6%), Aug 2026</td>
+<td>$339,000 (0.0%), Jul 2026</td>
+<td><a target="_blank" rel="noopener" href="https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-0-decrease-in-august">D6</a>, <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a></td>
+</tr>
+<tr>
+<td>Median list price (YoY), Sep 2026</td>
+<td>$419,250 (−1.35%)</td>
+<td>$355,765 (−2.5%)</td>
+<td><a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_State.csv">D2</a></td>
+</tr>
+<tr>
+<td>Typical home value, Zillow (YoY), Aug 2026</td>
+<td>$368,697 (+1.2%)</td>
+<td>$299,367 (−1.6%)</td>
+<td><a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a></td>
+</tr>
+<tr>
+<td>Months of supply</td>
+<td>4.9 (Aug)</td>
+<td>5.5 (Jul)</td>
+<td><a target="_blank" rel="noopener" href="https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-0-decrease-in-august">D6</a>, <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a></td>
+</tr>
+<tr>
+<td>Active listings (YoY), Sep 2026</td>
+<td>1,161,615 (+5.4%)</td>
+<td>137,129 (+0.9%)</td>
+<td><a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_State.csv">D2</a></td>
+</tr>
+<tr>
+<td>Days on market (listings), Sep 2026</td>
+<td>61</td>
+<td>66</td>
+<td><a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_State.csv">D2</a></td>
+</tr>
+<tr>
+<td>Share of listings with a price cut, Sep 2026</td>
+<td>20.8%</td>
+<td>22.6%</td>
+<td><a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_State.csv">D2</a></td>
+</tr>
+<tr>
+<td>Population growth, year to Jul 2025</td>
+<td>+0.52%</td>
+<td>+1.25%</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv">D9</a></td>
+</tr>
+<tr>
+<td>Single-family permits, Jan–Aug 2026 (YoY)</td>
+<td>620,558 (−2.6%)</td>
+<td>98,378 (−3.4%)</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/State/">D11</a></td>
+</tr>
+<tr>
+<td>Foreclosure filings, H1 2026 (YoY)</td>
+<td>227,548 (+21.3%)</td>
+<td>22,000 (+19.7%)</td>
+<td><a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/2026-mid-year-foreclosure-market-report/">D14</a></td>
+</tr>
+<tr>
+<td>Effective property-tax rate</td>
+<td>about 0.90% (ATTOM, 2025)</td>
+<td>1.40% (ACS 2024)</td>
+<td><a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report">D16</a>, <a target="_blank" rel="noopener" href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/">D15</a></td>
+</tr>
+<tr>
+<td>Outstanding mortgages at 6%+ vs under 3%, Q2 2026</td>
+<td>6%+ passed under-3% in Q3 2025 (21.2% vs 20.0%)</td>
+<td>24.5% vs 15.9%</td>
+<td><a target="_blank" rel="noopener" href="https://www.fhfa.gov/document/d/nmdb/nmdb-outstanding-mortgage-statistics-states-quarterly.zip">V19</a></td>
+</tr>
+</tbody>
+</table>
+<p>Texas is still growing faster than the country: its population grew 1.25% against 0.52% nationally. But that growth now leans on international arrivals (+167,475) more than on moves from other states (+67,299) <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv">D9</a>. Texas also crossed the rate "lock-in" line earlier than the nation: a larger share of its mortgages now carry rates of 6% or more than carry rates under 3% <a target="_blank" rel="noopener" href="https://www.fhfa.gov/document/d/nmdb/nmdb-outstanding-mortgage-statistics-states-quarterly.zip">V19</a>.</p>
+<h2>The five cities compared</h2>
+<h3>Prices and values</h3>
+<table>
+<thead>
+<tr>
+<th>City</th>
+<th>Typical value, Zillow, Aug 2026 (YoY) <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a></th>
+<th>Median list price, Sep 2026 (YoY), county <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a></th>
+<th>Zillow 12-month forecast to Aug 2027, metro <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvf_growth/Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V5</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Houston</td>
+<td>$261,740 (−2.3%)</td>
+<td>$329,450 (−1.7%), Harris</td>
+<td>−0.2%</td>
+</tr>
+<tr>
+<td>San Antonio</td>
+<td>$247,453 (−2.2%)</td>
+<td>$289,950 (−3.0%), Bexar</td>
+<td>−0.7%</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td>$305,765 (−1.7%)</td>
+<td>$383,575 (+0.2%), Dallas Co.</td>
+<td>−0.3%</td>
+</tr>
+<tr>
+<td>Austin</td>
+<td>$497,418 (−3.7%)</td>
+<td>$499,000 (−9.3%), Travis</td>
+<td>−2.1%</td>
+</tr>
+<tr>
+<td>Fort Worth</td>
+<td>$295,800 (−1.8%)</td>
+<td>$364,995 (−1.2%), Tarrant</td>
+<td>(included in Dallas–Fort Worth)</td>
+</tr>
+<tr>
+<td><em>United States</em></td>
+<td><em>$368,697 (+1.2%)</em></td>
+<td><em>$419,250 (−1.35%)</em></td>
+<td><em>+1.4%</em></td>
+</tr>
+</tbody>
+</table>
+<p>Zillow forecasts small declines for all four Texas metros it covers, while forecasting a gain for the US. Austin's is the largest, at −2.1% <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvf_growth/Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V5</a>. These are forecasts, not data. On Redfin's split of Dallas–Fort Worth, the May median sale price was $425,000 (+2.4%) in the Dallas division and $363,500 (+0.1%) in the Fort Worth division <a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">D3</a>. Texas A&amp;M reports that the Fort Worth–Arlington area posted its fourth straight month of year-over-year price gains in July <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a>.</p>
+<h3>Supply and speed</h3>
+<table>
+<thead>
+<tr>
+<th>City</th>
+<th>Months of supply</th>
+<th>Active listings (YoY)</th>
+<th>Days on market, Sep 2026, county <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a></th>
+<th>Price-cut share, Sep 2026, county <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Houston</td>
+<td>5.5 (metro, Jul) <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a></td>
+<td>35,898 (+5.3%), metro, Sep <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_Metro.csv">D2</a></td>
+<td>53</td>
+<td>19.8%</td>
+</tr>
+<tr>
+<td>San Antonio</td>
+<td><strong>6.2</strong> (metro, Jul) <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a></td>
+<td>14,105 (+6.0%), metro, Sep <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_Metro.csv">D2</a></td>
+<td>67</td>
+<td>25.3%</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td>4.2 (Dallas division, May) <a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">D3</a></td>
+<td>7,494 (−0.75%), Dallas Co., Sep <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a></td>
+<td>59</td>
+<td>26.1%</td>
+</tr>
+<tr>
+<td>Austin</td>
+<td>5.5 (metro, Jul) <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a></td>
+<td>12,083 (+1.5%), metro, Sep <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_Metro.csv">D2</a></td>
+<td><strong>80</strong></td>
+<td>26.2%</td>
+</tr>
+<tr>
+<td>Fort Worth</td>
+<td><strong>3.4</strong> (Fort Worth division, May) <a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">D3</a></td>
+<td>5,976 (−4.1%), Tarrant Co., Sep <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a></td>
+<td>57</td>
+<td><strong>27.6%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Houston's metro listings reached 35,920 in August 2026, the highest in Realtor.com's series, which goes back to 2016 <a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOU26420">V17</a>. The sources disagree on which way Dallas–Fort Worth inventory is moving: Redfin (May) shows it down 12–16% year over year, while Texas A&amp;M (July) and Realtor.com (September) show −2% to −4% <a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">D3</a> <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a> <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a>. All three agree that it is the tightest of the big Texas markets.</p>
+<p><strong>Deals are falling apart more often.</strong> In May 2026, 18.1% of pending sales in Fort Worth and 17.8% in San Antonio were cancelled, ranking second and fourth among US metros, against 13.6% nationally <a target="_blank" rel="noopener" href="https://www.redfin.com/news/contract-cancellations-may-2026/">V21</a>.</p>
+<h3>Rents and gross yield</h3>
+<table>
+<thead>
+<tr>
+<th>City</th>
+<th>Median rent, Zillow, Aug 2026 (YoY) <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">D5</a></th>
+<th>Gross yield: annual rent ÷ typical value (calculated)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Houston</td>
+<td>$1,542 (−0.1%)</td>
+<td><strong>7.1%</strong></td>
+</tr>
+<tr>
+<td>San Antonio</td>
+<td>$1,386 (−1.4%)</td>
+<td>6.7%</td>
+</tr>
+<tr>
+<td>Fort Worth</td>
+<td>$1,615 (+0.5%)</td>
+<td>6.6%</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td>$1,591 (+0.6%)</td>
+<td>6.2%</td>
+</tr>
+<tr>
+<td>Austin</td>
+<td>$1,586 (−0.3%)</td>
+<td><strong>3.8%</strong></td>
+</tr>
+<tr>
+<td><em>United States</em></td>
+<td><em>$1,948 (+2.5%)</em></td>
+<td><em>6.3%</em></td>
+</tr>
+</tbody>
+</table>
+<p>The gross yield is a simple calculation: twelve months of Zillow's typical rent divided by Zillow's typical home value <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">D5</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a>. It ignores the high Texas taxes and insurance covered below. Rents are falling or flat in all five cities while US rents rise 2.5%. San Antonio apartment rents fell 6% in the year to March 2026, a record cut for the city, and Austin's fell 7.5% <a target="_blank" rel="noopener" href="https://www.realpage.com/analytics/san-antonio-rent-cuts-march-2026/">V22</a>. By June, San Antonio's decline had eased to −3.5% <a target="_blank" rel="noopener" href="https://www.dallasfed.org/research/indicators/sa/2026/sa2607">V23</a>.</p>
+<h3>People and new building</h3>
+<table>
+<thead>
+<tr>
+<th>City</th>
+<th>Population, Jul 2025 (change) <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv">D8</a></th>
+<th>Net domestic migration, county <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv">D10</a></th>
+<th>Single-family permits, Jan–Aug 2026 (YoY), city <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/Place/South%20Region/">D12</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Houston</td>
+<td>2,397,315 (+0.48%)</td>
+<td>Harris −43,377</td>
+<td>2,920 (−16.5%)</td>
+</tr>
+<tr>
+<td>San Antonio</td>
+<td>1,548,422 (+0.94%)</td>
+<td>Bexar +2,505</td>
+<td>2,771 (−8.6%)</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td>1,329,491 (<strong>−0.14%</strong>)</td>
+<td>Dallas Co. −46,226</td>
+<td>1,365 (−11.7%)</td>
+</tr>
+<tr>
+<td>Austin</td>
+<td>1,002,632 (+0.40%)</td>
+<td>Travis −6,590</td>
+<td>1,528 (−0.6%)</td>
+</tr>
+<tr>
+<td>Fort Worth</td>
+<td>1,028,117 (<strong>+1.93%</strong>)</td>
+<td>Tarrant −6,978</td>
+<td>4,474 (<strong>+8.9%</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p>Fort Worth added 19,512 residents while Dallas lost 1,808 <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv">D8</a>. Fort Worth is also the only one of the five where single-family permits are up this year, and it permitted more single-family homes in 2025 than Houston (5,887 against 4,774) <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/Place/South%20Region/">D12</a>. For the Houston metro, net domestic migration fell from 40,015 in 2023 to 7,308 in 2025, a drop of 82% in two years <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/metro/totals/cbsa-est2025-alldata.csv">V15</a>.</p>
+<h3>Distress and holding costs</h3>
+<table>
+<thead>
+<tr>
+<th>City</th>
+<th>Bank repossessions (REOs), Aug 2026 <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/august-2026-foreclosure-market-report/">D13</a></th>
+<th>Effective property-tax rate, county <a target="_blank" rel="noopener" href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/">D15</a></th>
+<th>Median tax bill, county <a target="_blank" rel="noopener" href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/">D15</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Houston</td>
+<td>448 (most of any large US metro)</td>
+<td>1.50% (Harris)</td>
+<td>$4,489</td>
+</tr>
+<tr>
+<td>San Antonio</td>
+<td>256 (3rd)</td>
+<td>1.55% (Bexar)</td>
+<td>$4,535</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td>402 (2nd; ATTOM's Dallas metro, likely all of Dallas–Fort Worth)</td>
+<td>1.45% (Dallas Co.)</td>
+<td>$4,798</td>
+</tr>
+<tr>
+<td>Austin</td>
+<td>not published</td>
+<td>1.31% (Travis)</td>
+<td>$7,727</td>
+</tr>
+<tr>
+<td>Fort Worth</td>
+<td>not published separately</td>
+<td>1.54% (Tarrant)</td>
+<td>$5,334</td>
+</tr>
+</tbody>
+</table>
+<p>Insurance pressure is easing at the margin: average filed homeowners rate requests in Texas are negative (−6.6% over 30 days and −4.3% over 90 days, as of September 2026), after the average annual premium reached $3,489 in 2025 <a target="_blank" rel="noopener" href="https://agate.tdi.texas.gov/general/texas-homeowners-insurance-market-overview.html">D17</a>.</p>
+<h2>City profiles</h2>
+<p><strong>Houston: the biggest volume and the best yield.</strong> Houston has the most listings in Texas (35,898 in the metro) and the highest gross yield of the five (7.1%) <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_Metro.csv">D2</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">D5</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a>. It also has the most bank repossessions of any large US metro (448 in August) <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/august-2026-foreclosure-market-report/">D13</a>. Net arrivals from other states have shrunk to 7,308 in 2025, down from 40,015 in 2023, and builders are pulling back: city single-family permits are down 16.5% this year <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/metro/totals/cbsa-est2025-alldata.csv">V15</a> <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/Place/South%20Region/">D12</a>.</p>
+<p><strong>San Antonio: the most oversupplied, and the weakest rents.</strong> San Antonio has the most months of supply of the five (6.2), listings up 6.0% year over year, the steepest rent decline (−1.4%), a pending-sale cancellation rate of 17.8%, and the third-most REOs of any large metro <a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">D1</a> <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_Metro.csv">D2</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">D5</a> <a target="_blank" rel="noopener" href="https://www.redfin.com/news/contract-cancellations-may-2026/">V21</a> <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/august-2026-foreclosure-market-report/">D13</a>. It is also the cheapest of the five, with a typical value of $247,453, and its gross yield is 6.7% <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a>.</p>
+<p><strong>Dallas: tight supply, but people are leaving.</strong> The Dallas division has 4.2 months of supply, and Dallas County's median list price is roughly flat (+0.2%) <a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">D3</a> <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a>. But the city's population shrank, and Dallas County had the largest domestic out-migration of the five counties (−46,226) <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv">D8</a> <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv">D10</a>. In the suburbs, Collin County's typical value is 11.0% below its July 2022 peak, and some Collin ZIP codes are down 21–26% <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V4</a>.</p>
+<p><strong>Austin: the deepest correction in large-metro America.</strong> Austin metro values are 26.8% below their June 2022 peak, the largest decline among the 100 biggest US metros <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V1</a>. Travis County's median list price is down 9.3% year over year, homes take 80 days to sell, and the gross yield is only 3.8% <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">D5</a>. Austin metro rents are more than 20% below their 2022 peak <a target="_blank" rel="noopener" href="https://www.mtsinsights.com/summaries/8118/">V7</a>. Buyers are returning: pending sales were up 17.0% year over year in the four weeks to July 5, 2026, the largest gain of any metro Redfin tracks <a target="_blank" rel="noopener" href="https://www.mpamag.com/us/mortgage-industry/market-updates/a-brief-rate-retreat-pushes-us-pending-home-sales-to-a-six-week-peak/581874">V30</a>.</p>
+<p><strong>Fort Worth: the strongest of the five.</strong> Fort Worth has the fastest population growth (+1.93%), the tightest supply (3.4 months in its division), Tarrant County listings down 4.1%, and the only rise in single-family permits (+8.9%) <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv">D8</a> <a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">D3</a> <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a> <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/Place/South%20Region/">D12</a>. Even so, sellers there cut prices most often (27.6% of listings), and 18.1% of pending sales were cancelled, the second-highest rate in the US <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a> <a target="_blank" rel="noopener" href="https://www.redfin.com/news/contract-cancellations-may-2026/">V21</a>.</p>
+<h2>What the numbers mean for investors and wholesalers</h2>
+<p>These are readings of the figures above, not forecasts.</p>
+<ul>
+<li><strong>The most distressed supply is in Houston, Dallas–Fort Worth and San Antonio.</strong> Those three led the nation's large metros in August REOs. Texas leads the country in foreclosure starts and has the shortest foreclosure timeline, so distressed properties move through the process here faster than in most states <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/august-2026-foreclosure-market-report/">D13</a> <a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/2026-mid-year-foreclosure-market-report/">D14</a>.</li>
+<li><strong>Motivated sellers are easy to find.</strong> Between one listing in five and more than one in four carries a price cut, from 19.8% in Harris County to 27.6% in Tarrant County. Fort Worth and San Antonio also rank second and fourth in the country for cancelled contracts, so homes that were already under contract keep returning to the market <a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">D2</a> <a target="_blank" rel="noopener" href="https://www.redfin.com/news/contract-cancellations-may-2026/">V21</a>.</li>
+<li><strong>For buy-and-hold, Houston and San Antonio have the best gross yields and Austin the worst.</strong> Houston is at 7.1% and San Antonio at 6.7%; Austin is at 3.8%. With property taxes of 1.31–1.55% of value, an average insurance premium of $3,489 and mortgages at 7.28%, gross yield overstates the net return everywhere in Texas <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">D4</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">D5</a> <a target="_blank" rel="noopener" href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/">D15</a> <a target="_blank" rel="noopener" href="https://agate.tdi.texas.gov/general/texas-homeowners-insurance-market-overview.html">D17</a> <a target="_blank" rel="noopener" href="https://www.freddiemac.com/pmms">D7</a>.</li>
+<li><strong>Rent growth won't rescue a thin deal.</strong> Rents are flat to negative in all five cities, against +2.5% nationally <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">D5</a>.</li>
+<li><strong>Austin is where prices have reset furthest, and its buyers are coming back.</strong> Values are 26.8% off the peak and pending sales were up 17% in early July. But Zillow still forecasts a further 2.1% decline, and its yield remains the lowest of the five <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V1</a> <a target="_blank" rel="noopener" href="https://www.mpamag.com/us/mortgage-industry/market-updates/a-brief-rate-retreat-pushes-us-pending-home-sales-to-a-six-week-peak/581874">V30</a> <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvf_growth/Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V5</a>.</li>
+<li><strong>Fort Worth has the strongest fundamentals: population, permits and tight supply.</strong> Even so, Tarrant County has the highest price-cut share of the five counties (27.6% of listings), and 18.1% of Fort Worth's pending sales were cancelled, the second-highest rate in the US <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv">D8</a> <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/Place/South%20Region/">D12</a> <a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">D3</a>.</li>
+</ul>
+<h2>What the videos said, checked</h2>
+<p>Eighteen Texas claims from the RE-V videos were checked against outside data. The table lists each claim as made, the verdict, and the current figure. Partly right means the direction is right but the number, timeframe or area differs.</p>
+<table>
+<thead>
+<tr>
+<th>Claim in the videos</th>
+<th>Verdict</th>
+<th>What the data shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Austin values down about 24–27% from the 2022 peak, the biggest metro decline (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-top-10-cities-where-home-prices-will-crash-in-2026-1364.html" target="_blank" rel="noopener">1364</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-housing-collapse-in-u-s-history-just-got-worse-nar-warning-1351.html" target="_blank" rel="noopener">1351</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-reset-since-2009-is-starting-national-association-of-builders-w-1344.html" target="_blank" rel="noopener">1344</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
+<td>Partly right</td>
+<td>−26.8% from the June 2022 peak (Aug 2026), the largest of the 100 biggest metros; the dollar levels quoted ($553K → $420K) don't match Zillow's current, revised series <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V1</a></td>
+</tr>
+<tr>
+<td>Austin rents down about 21–22% from the 2022 peak, the biggest cut among major markets (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-fannie-mae-warns-of-mass-bankruptcies-80-migration-collapse-1324.html" target="_blank" rel="noopener">1324</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-1-housing-crash-in-the-u-s-just-turned-into-a-buyer-s-market-1380.html" target="_blank" rel="noopener">1380</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
+<td>Partly right</td>
+<td>More than 20% below the peak and the softest large rental market (Apartment List, March 2026); now −2.1% to −2.3% year over year <a target="_blank" rel="noopener" href="https://www.mtsinsights.com/summaries/8118/">V7</a> <a target="_blank" rel="noopener" href="https://www.apartmentlist.com/rent-report/tx/austin">V9</a></td>
+</tr>
+<tr>
+<td>Texas values down about 4% from the peak and 3% year over year (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-wall-street-ceos-are-liquidating-houses-1360.html" target="_blank" rel="noopener">1360</a>)</td>
+<td>Partly right</td>
+<td>−6.1% from the August 2022 peak and −1.6% year over year (Aug 2026) <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V3</a></td>
+</tr>
+<tr>
+<td>Texas had about 200,000 permits in a year, the most of any state, ahead of Florida (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>)</td>
+<td>Confirmed</td>
+<td>199,258 against Florida's 164,496 (12 months to Aug 2026) <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/State/">V10</a></td>
+</tr>
+<tr>
+<td>Texas domestic migration at a 20-year low, down about 70% from the peak (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bank-of-america-drops-bombshell-migration-report-the-u-s-map-just-flipped-1347.html" target="_blank" rel="noopener">1347</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-issues-mass-migration-warning-in-2026-housing-market-just-flipped-1365.html" target="_blank" rel="noopener">1365</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
+<td>Confirmed</td>
+<td>67,299 in 2025, −69% from 218,840 in 2022, the lowest since 2005 <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv">V12</a> <a target="_blank" rel="noopener" href="https://texas.credaily.com/p/texas-growth-slows-as-inbound-migration-hits-20-year-low">V14</a></td>
+</tr>
+<tr>
+<td>Houston domestic migration about 7,000, down more than 75% in two years (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-last-affordable-big-city-in-the-u-s-is-starting-to-correct-1620.html" target="_blank" rel="noopener">1620</a>)</td>
+<td>Confirmed</td>
+<td>7,308 in 2025, −82% from 2023 <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/metro/totals/cbsa-est2025-alldata.csv">V15</a></td>
+</tr>
+<tr>
+<td>Houston has more than 35,000 listings (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-last-affordable-big-city-in-the-u-s-is-starting-to-correct-1620.html" target="_blank" rel="noopener">1620</a>)</td>
+<td>Confirmed</td>
+<td>35,898 (Sep 2026); the series high was 35,920 in August <a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOU26420">V17</a></td>
+</tr>
+<tr>
+<td>Texas inventory at a decade high (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-trucks-are-turning-around-the-exodus-is-over-1343.html" target="_blank" rel="noopener">1343</a>)</td>
+<td>Partly right</td>
+<td>The record (since 2016) was July 2025; August 2026 is just below it <a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOUTX">V17</a></td>
+</tr>
+<tr>
+<td>Texas inventory about 52% above pre-pandemic (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-broke-in-two-1355.html" target="_blank" rel="noopener">1355</a>)</td>
+<td><strong>Not supported</strong></td>
+<td>About 31–39% above the same months of 2017–19; no month in 2025–26 approaches 52% <a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOUTX">V17</a></td>
+</tr>
+<tr>
+<td>More Texas mortgages at 6%+ than under 3%, about double (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-mortgage-bubble-has-popped-wsj-reports-26-spike-in-repos-1342.html" target="_blank" rel="noopener">1342</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-reset-since-2009-is-starting-national-association-of-builders-w-1344.html" target="_blank" rel="noopener">1344</a>)</td>
+<td>Partly right</td>
+<td>More, but about 1.5×, not double: 24.5% against 15.9% (Q2 2026) <a target="_blank" rel="noopener" href="https://www.fhfa.gov/document/d/nmdb/nmdb-outstanding-mortgage-statistics-states-quarterly.zip">V19</a></td>
+</tr>
+<tr>
+<td>About 1 in 5 pending sales failing in San Antonio and Fort Worth, against about 1 in 7 nationally (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-this-has-never-happened-before-1-in-7-houses-terminated-1357.html" target="_blank" rel="noopener">1357</a>)</td>
+<td>Confirmed</td>
+<td>17.8% and 18.1% against 13.6% (May 2026) <a target="_blank" rel="noopener" href="https://www.redfin.com/news/contract-cancellations-may-2026/">V21</a></td>
+</tr>
+<tr>
+<td>San Antonio apartment rents −6% year over year; Austin down more than 4% (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-exodus-since-2008-is-happening-now-redfin-reports-70-drop-in-fl-1336.html" target="_blank" rel="noopener">1336</a>)</td>
+<td>Confirmed, dated</td>
+<td>−6% and −7.5% in the year to March 2026; San Antonio had eased to −3.5% by June <a target="_blank" rel="noopener" href="https://www.realpage.com/analytics/san-antonio-rent-cuts-march-2026/">V22</a> <a target="_blank" rel="noopener" href="https://www.dallasfed.org/research/indicators/sa/2026/sa2607">V23</a></td>
+</tr>
+<tr>
+<td>Zillow forecasts declines for Dallas, Houston and San Antonio (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-releases-2026-forecast-avoid-these-cities-1349.html" target="_blank" rel="noopener">1349</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-cancelled-zillow-cuts-forecast-1358.html" target="_blank" rel="noopener">1358</a>)</td>
+<td>Confirmed</td>
+<td>−0.3%, −0.2% and −0.7% to August 2027; the declines are small <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvf_growth/Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V5</a></td>
+</tr>
+<tr>
+<td>Collin County down about 10% from the peak, some ZIP codes down as much as 19% (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
+<td>Partly right</td>
+<td>−11.0%; the worst ZIP codes are down 21–26%, more than claimed <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V4</a></td>
+</tr>
+<tr>
+<td>Frisco prices down 26% in two years (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
+<td><strong>Not supported</strong></td>
+<td>Zillow shows −7.9% over two years and −9.8% from the peak <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V4</a></td>
+</tr>
+<tr>
+<td>U-Haul ranks Texas the top destination, with Dallas, Houston and Austin leading (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-issues-mass-migration-warning-in-2026-housing-market-just-flipped-1365.html" target="_blank" rel="noopener">1365</a>)</td>
+<td>Confirmed</td>
+<td>Texas is the #1 state; Dallas–Fort Worth, Houston and Austin are the #1–3 metros (2025) <a target="_blank" rel="noopener" href="https://www.fox7austin.com/news/uhaul-top-moving-destinations-2025">V24</a></td>
+</tr>
+<tr>
+<td>Oracle is moving its world headquarters from Austin to Nashville (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-ceos-reveal-what-s-about-to-happen-to-your-job-1356.html" target="_blank" rel="noopener">1356</a>)</td>
+<td>Partly right</td>
+<td>Announced in April 2024, but Oracle's 10-K for the year to May 2026 still lists Austin as its principal office <a target="_blank" rel="noopener" href="https://fortune.com/2026/01/15/oracle-nashville-world-headquarters-reported-recruitment-struggles-tech/">V26</a> <a target="_blank" rel="noopener" href="https://fortune.com/company-assets/1744/quartr/annual-report-10-k-13b73e9da8dc7704ee6eb61cab54860c-2026-06-22-20-13-49.pdf">V27</a></td>
+</tr>
+<tr>
+<td>Single-family rents in Dallas and Houston are falling (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-inflation-inversion-in-u-s-history-is-about-hit-prepare-for-def-1354.html" target="_blank" rel="noopener">1354</a>)</td>
+<td>Partly right</td>
+<td>Briefly negative in spring 2026; slightly positive by July–August <a target="_blank" rel="noopener" href="https://www.cotality.com/press-releases/annual-single-family-rent-strengthens-for-fourth-consecutive-month">V28</a> <a target="_blank" rel="noopener" href="https://www.cotality.com/press-releases/annual-single-family-rent-growth-returns-to-seasonal-norms">V29</a></td>
+</tr>
+<tr>
+<td>Austin pending sales up more than 15% year over year (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-no-one-expected-this-redfin-reports-shocking-2026-housing-market-flip-1346.html" target="_blank" rel="noopener">1346</a>)</td>
+<td>Confirmed</td>
+<td>+17.0% in the four weeks to July 5, 2026 <a target="_blank" rel="noopener" href="https://www.mpamag.com/us/mortgage-industry/market-updates/a-brief-rate-retreat-pushes-us-pending-home-sales-to-a-six-week-peak/581874">V30</a></td>
+</tr>
+<tr>
+<td>Dallas and Austin values falling 0.6–0.7% a month in May 2026 (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-reports-shocking-housing-u-turn-40-losses-emerge-1330.html" target="_blank" rel="noopener">1330</a>)</td>
+<td>Partly right</td>
+<td>Austin −0.70% matches; Dallas was −0.43% (seasonally adjusted) <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V1</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Limits of this report</h2>
+<ul>
+<li><strong>Mixed dates and areas.</strong> The figures run from May 2026 (Redfin) to September 2026 (Realtor.com), plus July 2025 for Census population. Some are for cities, some for counties, some for metros, and Redfin splits Dallas–Fort Worth into two divisions. The tables label each one.</li>
+<li><strong>Different price measures.</strong> List prices (Realtor.com), sale prices (Texas A&amp;M, Redfin, NAR) and modelled typical values (Zillow) are not interchangeable.</li>
+<li><strong>Zillow revises its series every month,</strong> so figures quoted in the videos at the time may not match the current series.</li>
+<li><strong>Not found:</strong> investor share of purchases for any Texas metro (Redfin's quarterly table has none), Texas statewide rent, REOs for Austin and Fort Worth separately, and a Houston-specific insurance premium.</li>
+<li><strong>The gross yield is calculated here,</strong> not published by Zillow, and ignores taxes, insurance, vacancy and maintenance.</li>
+</ul>
+<h2>Data sources</h2>
+<p>All accessed October 6, 2026.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td><a target="_blank" rel="noopener" href="https://trerc.tamu.edu/reports/texas-housing-insight-september-2026/">Texas A&amp;M Real Estate Research Center, <em>Texas Housing Insight</em>, September 2026 (July data)</a></td>
+<td>Texas and metro sale prices, months of supply, listings, permits</td>
+</tr>
+<tr>
+<td>D2</td>
+<td><a target="_blank" rel="noopener" href="https://econdata.s3-us-west-2.amazonaws.com/Reports/Core/RDC_Inventory_Core_Metrics_County.csv">Realtor.com Economic Research, Inventory Core Metrics (state, metro, county), September 2026</a></td>
+<td>List prices, listings, days on market, price-cut shares</td>
+</tr>
+<tr>
+<td>D3</td>
+<td><a target="_blank" rel="noopener" href="https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/redfin_metro_market_tracker.tsv000.gz">Redfin Data Center, metro market tracker, May 2026</a></td>
+<td>Dallas and Fort Worth division prices, supply, inventory</td>
+</tr>
+<tr>
+<td>D4</td>
+<td><a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">Zillow Research, Home Value Index (city, metro, state), August 2026</a></td>
+<td>Typical home values and year-over-year change</td>
+</tr>
+<tr>
+<td>D5</td>
+<td><a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zori/City_zori_uc_sfrcondomfr_sm_month.csv">Zillow Research, Observed Rent Index (city, metro), August 2026</a></td>
+<td>Median rents and year-over-year change</td>
+</tr>
+<tr>
+<td>D6</td>
+<td><a target="_blank" rel="noopener" href="https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-0-decrease-in-august">NAR, existing-home sales, August 2026</a></td>
+<td>US median sale price, supply, days on market</td>
+</tr>
+<tr>
+<td>D7</td>
+<td><a target="_blank" rel="noopener" href="https://www.freddiemac.com/pmms">Freddie Mac, Primary Mortgage Market Survey</a></td>
+<td>30-year rate, October 1, 2026</td>
+</tr>
+<tr>
+<td>D8</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv">US Census, Vintage 2025 city population estimates</a></td>
+<td>City populations</td>
+</tr>
+<tr>
+<td>D9</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv">US Census, Vintage 2025 state estimates</a></td>
+<td>US and Texas population and migration</td>
+</tr>
+<tr>
+<td>D10</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv">US Census, Vintage 2025 county estimates</a></td>
+<td>County domestic migration</td>
+</tr>
+<tr>
+<td>D11</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/State/">US Census, Building Permits Survey, state files</a></td>
+<td>US and Texas single-family permits</td>
+</tr>
+<tr>
+<td>D12</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/Place/South%20Region/">US Census, Building Permits Survey, South Region place files</a></td>
+<td>City single-family permits</td>
+</tr>
+<tr>
+<td>D13</td>
+<td><a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/august-2026-foreclosure-market-report/">ATTOM, August 2026 Foreclosure Market Report</a></td>
+<td>REOs and starts by state and metro</td>
+</tr>
+<tr>
+<td>D14</td>
+<td><a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/foreclosures/2026-mid-year-foreclosure-market-report/">ATTOM, 2026 Mid-Year Foreclosure Market Report</a></td>
+<td>First-half filings, starts, timelines</td>
+</tr>
+<tr>
+<td>D15</td>
+<td><a target="_blank" rel="noopener" href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/">Tax Foundation, Property Taxes by State and County, 2026</a></td>
+<td>Texas and county effective tax rates, median bills</td>
+</tr>
+<tr>
+<td>D16</td>
+<td><a target="_blank" rel="noopener" href="https://www.attomdata.com/news/market-trends/home-sales-prices/2025-annual-tax-report">ATTOM, 2025 property tax report</a></td>
+<td>US effective tax rate</td>
+</tr>
+<tr>
+<td>D17</td>
+<td><a target="_blank" rel="noopener" href="https://agate.tdi.texas.gov/general/texas-homeowners-insurance-market-overview.html">Texas Department of Insurance, homeowners insurance market overview</a></td>
+<td>Average premium, filed rate changes</td>
+</tr>
+<tr>
+<td>V1</td>
+<td><a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">Zillow Research, Home Value Index, metro</a></td>
+<td>Peak-to-current declines, monthly changes</td>
+</tr>
+<tr>
+<td>V3</td>
+<td><a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">Zillow Research, Home Value Index, state</a></td>
+<td>Texas peak and decline</td>
+</tr>
+<tr>
+<td>V4</td>
+<td><a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">Zillow Research, Home Value Index, county, city and ZIP code</a></td>
+<td>Collin County, its ZIP codes, Frisco</td>
+</tr>
+<tr>
+<td>V5</td>
+<td><a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvf_growth/Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">Zillow Research, home value forecast, metro (August 2026 base)</a></td>
+<td>12-month forecasts</td>
+</tr>
+<tr>
+<td>V7</td>
+<td><a target="_blank" rel="noopener" href="https://www.mtsinsights.com/summaries/8118/">Apartment List National Rent Report, March 2026 (MTS Insights summary)</a></td>
+<td>Austin rent decline from the peak</td>
+</tr>
+<tr>
+<td>V9</td>
+<td><a target="_blank" rel="noopener" href="https://www.apartmentlist.com/rent-report/tx/austin">Apartment List, Austin rent report</a></td>
+<td>Current Austin rent levels</td>
+</tr>
+<tr>
+<td>V10</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/State/">US Census, Building Permits Survey, state files</a></td>
+<td>Trailing 12-month permits, all units</td>
+</tr>
+<tr>
+<td>V12</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv">US Census, Vintage 2025 state estimates</a></td>
+<td>Texas domestic migration, 2020–2025</td>
+</tr>
+<tr>
+<td>V14</td>
+<td><a target="_blank" rel="noopener" href="https://texas.credaily.com/p/texas-growth-slows-as-inbound-migration-hits-20-year-low">CRE Daily Texas, "Texas Growth Slows as Inbound Migration Hits 20-Year Low"</a></td>
+<td>"Lowest since 2005"</td>
+</tr>
+<tr>
+<td>V15</td>
+<td><a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/metro/totals/cbsa-est2025-alldata.csv">US Census, Vintage 2025 metro estimates</a></td>
+<td>Houston metro domestic migration</td>
+</tr>
+<tr>
+<td>V17</td>
+<td><a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOUTX">FRED / Realtor.com active listing counts (Texas, Houston)</a></td>
+<td>Listing history since 2016</td>
+</tr>
+<tr>
+<td>V19</td>
+<td><a target="_blank" rel="noopener" href="https://www.fhfa.gov/document/d/nmdb/nmdb-outstanding-mortgage-statistics-states-quarterly.zip">FHFA, National Mortgage Database, outstanding mortgages by state (Q2 2026)</a></td>
+<td>Mortgage rate distribution</td>
+</tr>
+<tr>
+<td>V21</td>
+<td><a target="_blank" rel="noopener" href="https://www.redfin.com/news/contract-cancellations-may-2026/">Redfin, contract cancellations, May 2026</a></td>
+<td>Cancellation rates by metro</td>
+</tr>
+<tr>
+<td>V22</td>
+<td><a target="_blank" rel="noopener" href="https://www.realpage.com/analytics/san-antonio-rent-cuts-march-2026/">RealPage Analytics, San Antonio rent cuts (March 2026)</a></td>
+<td>Apartment rent changes</td>
+</tr>
+<tr>
+<td>V23</td>
+<td><a target="_blank" rel="noopener" href="https://www.dallasfed.org/research/indicators/sa/2026/sa2607">Dallas Fed, San Antonio Economic Indicators, July 2026</a></td>
+<td>San Antonio rent change, June</td>
+</tr>
+<tr>
+<td>V24</td>
+<td><a target="_blank" rel="noopener" href="https://www.fox7austin.com/news/uhaul-top-moving-destinations-2025">FOX 7 Austin, U-Haul top moving destinations of 2025</a></td>
+<td>State and metro ranks</td>
+</tr>
+<tr>
+<td>V26</td>
+<td><a target="_blank" rel="noopener" href="https://fortune.com/2026/01/15/oracle-nashville-world-headquarters-reported-recruitment-struggles-tech/">Fortune, Oracle's Nashville headquarters (January 2026)</a></td>
+<td>Status of the headquarters move</td>
+</tr>
+<tr>
+<td>V27</td>
+<td><a target="_blank" rel="noopener" href="https://fortune.com/company-assets/1744/quartr/annual-report-10-k-13b73e9da8dc7704ee6eb61cab54860c-2026-06-22-20-13-49.pdf">Oracle 10-K, fiscal year ended May 31, 2026</a></td>
+<td>Principal executive office</td>
+</tr>
+<tr>
+<td>V28</td>
+<td><a target="_blank" rel="noopener" href="https://www.cotality.com/press-releases/annual-single-family-rent-strengthens-for-fourth-consecutive-month">Cotality, single-family rent index (June data)</a></td>
+<td>Dallas and Houston single-family rents</td>
+</tr>
+<tr>
+<td>V29</td>
+<td><a target="_blank" rel="noopener" href="https://www.cotality.com/press-releases/annual-single-family-rent-growth-returns-to-seasonal-norms">Cotality, single-family rent index (July data)</a></td>
+<td>Dallas and Houston single-family rents</td>
+</tr>
+<tr>
+<td>V30</td>
+<td><a target="_blank" rel="noopener" href="https://www.mpamag.com/us/mortgage-industry/market-updates/a-brief-rate-retreat-pushes-us-pending-home-sales-to-a-six-week-peak/581874">MPA Mag, Redfin pending sales (July 2026)</a></td>
+<td>Austin pending sales</td>
+</tr>
+</tbody>
+</table>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Data-led: every figure links to its outside source in the data-sources table; video claims are included only where outside data supports them &middot; <a href="index.html">housing market roundup</a> &middot; <a href="re-v_investing_wholesaling.html">investing &amp; wholesaling</a></p>
+        <p class="meta">Row-number references are research document and video Queue sheet rows and link to each source video's published summary &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
