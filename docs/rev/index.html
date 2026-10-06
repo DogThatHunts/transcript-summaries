@@ -76,6 +76,10 @@ body { background: var(--paper); color: var(--ink); font-family: 'Inter', system
 .content table.checked th:nth-child(1), .content table.checked td:nth-child(1) { width: 40%; }
 .content table.checked th:nth-child(2), .content table.checked td:nth-child(2) { width: 13%; white-space: nowrap; font-weight: 600; color: var(--navy); }
 .content table.checked th:nth-child(3), .content table.checked td:nth-child(3) { width: 47%; }
+.verdict { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .8rem; font-weight: 700; line-height: 1.5; }
+.verdict-confirmed { background: #dcf3e2; color: #17643a; }
+.verdict-partly { background: #fde8cc; color: #8a4a08; }
+.verdict-refuted { background: #fbdde7; color: #9b1c46; }
 @media (max-width: 700px) { .content table { font-size: .78rem; } .findings { padding: 18px 18px 4px; }
   .content table.checked { min-width: 640px; } }
 

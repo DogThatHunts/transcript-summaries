@@ -76,6 +76,10 @@ body { background: var(--paper); color: var(--ink); font-family: 'Inter', system
 .content table.checked th:nth-child(1), .content table.checked td:nth-child(1) { width: 40%; }
 .content table.checked th:nth-child(2), .content table.checked td:nth-child(2) { width: 13%; white-space: nowrap; font-weight: 600; color: var(--navy); }
 .content table.checked th:nth-child(3), .content table.checked td:nth-child(3) { width: 47%; }
+.verdict { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .8rem; font-weight: 700; line-height: 1.5; }
+.verdict-confirmed { background: #dcf3e2; color: #17643a; }
+.verdict-partly { background: #fde8cc; color: #8a4a08; }
+.verdict-refuted { background: #fbdde7; color: #9b1c46; }
 @media (max-width: 700px) { .content table { font-size: .78rem; } .findings { padding: 18px 18px 4px; }
   .content table.checked { min-width: 640px; } }
 
@@ -464,102 +468,102 @@ body { background: var(--paper); color: var(--ink); font-family: 'Inter', system
 <tbody>
 <tr>
 <td>Austin values down about 24–27% from the 2022 peak, the biggest metro decline (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-top-10-cities-where-home-prices-will-crash-in-2026-1364.html" target="_blank" rel="noopener">1364</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-housing-collapse-in-u-s-history-just-got-worse-nar-warning-1351.html" target="_blank" rel="noopener">1351</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-reset-since-2009-is-starting-national-association-of-builders-w-1344.html" target="_blank" rel="noopener">1344</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>−26.8% from the June 2022 peak (Aug 2026), the largest of the 100 biggest metros; the dollar levels quoted ($553K → $420K) don't match Zillow's current, revised series <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V1</a></td>
 </tr>
 <tr>
 <td>Austin rents down about 21–22% from the 2022 peak, the biggest cut among major markets (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-fannie-mae-warns-of-mass-bankruptcies-80-migration-collapse-1324.html" target="_blank" rel="noopener">1324</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-1-housing-crash-in-the-u-s-just-turned-into-a-buyer-s-market-1380.html" target="_blank" rel="noopener">1380</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>More than 20% below the peak and the softest large rental market (Apartment List, March 2026); now −2.1% to −2.3% year over year <a target="_blank" rel="noopener" href="https://www.mtsinsights.com/summaries/8118/">V7</a> <a target="_blank" rel="noopener" href="https://www.apartmentlist.com/rent-report/tx/austin">V9</a></td>
 </tr>
 <tr>
 <td>Texas values down about 4% from the peak and 3% year over year (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-wall-street-ceos-are-liquidating-houses-1360.html" target="_blank" rel="noopener">1360</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>−6.1% from the August 2022 peak and −1.6% year over year (Aug 2026) <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/State_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V3</a></td>
 </tr>
 <tr>
 <td>Texas had about 200,000 permits in a year, the most of any state, ahead of Florida (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-downgraded-lennar-reports-biggest-drop-since-2007-1333.html" target="_blank" rel="noopener">1333</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>199,258 against Florida's 164,496 (12 months to Aug 2026) <a target="_blank" rel="noopener" href="https://www2.census.gov/econ/bps/State/">V10</a></td>
 </tr>
 <tr>
 <td>Texas domestic migration at a 20-year low, down about 70% from the peak (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-bank-of-america-drops-bombshell-migration-report-the-u-s-map-just-flipped-1347.html" target="_blank" rel="noopener">1347</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-issues-mass-migration-warning-in-2026-housing-market-just-flipped-1365.html" target="_blank" rel="noopener">1365</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>67,299 in 2025, −69% from 218,840 in 2022, the lowest since 2005 <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv">V12</a> <a target="_blank" rel="noopener" href="https://texas.credaily.com/p/texas-growth-slows-as-inbound-migration-hits-20-year-low">V14</a></td>
 </tr>
 <tr>
 <td>Houston domestic migration about 7,000, down more than 75% in two years (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-last-affordable-big-city-in-the-u-s-is-starting-to-correct-1620.html" target="_blank" rel="noopener">1620</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>7,308 in 2025, −82% from 2023 <a target="_blank" rel="noopener" href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/metro/totals/cbsa-est2025-alldata.csv">V15</a></td>
 </tr>
 <tr>
 <td>Houston has more than 35,000 listings (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-last-affordable-big-city-in-the-u-s-is-starting-to-correct-1620.html" target="_blank" rel="noopener">1620</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>35,898 (Sep 2026); the series high was 35,920 in August <a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOU26420">V17</a></td>
 </tr>
 <tr>
 <td>Texas inventory at a decade high (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-trucks-are-turning-around-the-exodus-is-over-1343.html" target="_blank" rel="noopener">1343</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>The record (since 2016) was July 2025; August 2026 is just below it <a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOUTX">V17</a></td>
 </tr>
 <tr>
 <td>Texas inventory about 52% above pre-pandemic (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-housing-market-just-broke-in-two-1355.html" target="_blank" rel="noopener">1355</a>)</td>
-<td><strong>Not supported</strong></td>
+<td><span class="verdict verdict-refuted">Not supported</span></td>
 <td>About 31–39% above the same months of 2017–19; no month in 2025–26 approaches 52% <a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/ACTLISCOUTX">V17</a></td>
 </tr>
 <tr>
 <td>More Texas mortgages at 6%+ than under 3%, about double (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-u-s-mortgage-bubble-has-popped-wsj-reports-26-spike-in-repos-1342.html" target="_blank" rel="noopener">1342</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-reset-since-2009-is-starting-national-association-of-builders-w-1344.html" target="_blank" rel="noopener">1344</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>More, but about 1.5×, not double: 24.5% against 15.9% (Q2 2026) <a target="_blank" rel="noopener" href="https://www.fhfa.gov/document/d/nmdb/nmdb-outstanding-mortgage-statistics-states-quarterly.zip">V19</a></td>
 </tr>
 <tr>
 <td>About 1 in 5 pending sales failing in San Antonio and Fort Worth, against about 1 in 7 nationally (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-this-has-never-happened-before-1-in-7-houses-terminated-1357.html" target="_blank" rel="noopener">1357</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>17.8% and 18.1% against 13.6% (May 2026) <a target="_blank" rel="noopener" href="https://www.redfin.com/news/contract-cancellations-may-2026/">V21</a></td>
 </tr>
 <tr>
 <td>San Antonio apartment rents −6% year over year; Austin down more than 4% (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-exodus-since-2008-is-happening-now-redfin-reports-70-drop-in-fl-1336.html" target="_blank" rel="noopener">1336</a>)</td>
-<td>Confirmed, dated</td>
+<td><span class="verdict verdict-confirmed">Confirmed, dated</span></td>
 <td>−6% and −7.5% in the year to March 2026; San Antonio had eased to −3.5% by June <a target="_blank" rel="noopener" href="https://www.realpage.com/analytics/san-antonio-rent-cuts-march-2026/">V22</a> <a target="_blank" rel="noopener" href="https://www.dallasfed.org/research/indicators/sa/2026/sa2607">V23</a></td>
 </tr>
 <tr>
 <td>Zillow forecasts declines for Dallas, Houston and San Antonio (rows <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-releases-2026-forecast-avoid-these-cities-1349.html" target="_blank" rel="noopener">1349</a>, <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-s-housing-market-cancelled-zillow-cuts-forecast-1358.html" target="_blank" rel="noopener">1358</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>−0.3%, −0.2% and −0.7% to August 2027; the declines are small <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvf_growth/Metro_zhvf_growth_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V5</a></td>
 </tr>
 <tr>
 <td>Collin County down about 10% from the peak, some ZIP codes down as much as 19% (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>−11.0%; the worst ZIP codes are down 21–26%, more than claimed <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/County_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V4</a></td>
 </tr>
 <tr>
 <td>Frisco prices down 26% in two years (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-abc-news-warns-of-mass-housing-exodus-h-1b-sale-collapse-2419.html" target="_blank" rel="noopener">2419</a>)</td>
-<td><strong>Not supported</strong></td>
+<td><span class="verdict verdict-refuted">Not supported</span></td>
 <td>Zillow shows −7.9% over two years and −9.8% from the peak <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V4</a></td>
 </tr>
 <tr>
 <td>U-Haul ranks Texas the top destination, with Dallas, Houston and Austin leading (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-u-haul-issues-mass-migration-warning-in-2026-housing-market-just-flipped-1365.html" target="_blank" rel="noopener">1365</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>Texas is the #1 state; Dallas–Fort Worth, Houston and Austin are the #1–3 metros (2025) <a target="_blank" rel="noopener" href="https://www.fox7austin.com/news/uhaul-top-moving-destinations-2025">V24</a></td>
 </tr>
 <tr>
 <td>Oracle is moving its world headquarters from Austin to Nashville (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-ceos-reveal-what-s-about-to-happen-to-your-job-1356.html" target="_blank" rel="noopener">1356</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>Announced in April 2024, but Oracle's 10-K for the year to May 2026 still lists Austin as its principal office <a target="_blank" rel="noopener" href="https://fortune.com/2026/01/15/oracle-nashville-world-headquarters-reported-recruitment-struggles-tech/">V26</a> <a target="_blank" rel="noopener" href="https://fortune.com/company-assets/1744/quartr/annual-report-10-k-13b73e9da8dc7704ee6eb61cab54860c-2026-06-22-20-13-49.pdf">V27</a></td>
 </tr>
 <tr>
 <td>Single-family rents in Dallas and Houston are falling (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-the-biggest-inflation-inversion-in-u-s-history-is-about-hit-prepare-for-def-1354.html" target="_blank" rel="noopener">1354</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>Briefly negative in spring 2026; slightly positive by July–August <a target="_blank" rel="noopener" href="https://www.cotality.com/press-releases/annual-single-family-rent-strengthens-for-fourth-consecutive-month">V28</a> <a target="_blank" rel="noopener" href="https://www.cotality.com/press-releases/annual-single-family-rent-growth-returns-to-seasonal-norms">V29</a></td>
 </tr>
 <tr>
 <td>Austin pending sales up more than 15% year over year (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-no-one-expected-this-redfin-reports-shocking-2026-housing-market-flip-1346.html" target="_blank" rel="noopener">1346</a>)</td>
-<td>Confirmed</td>
+<td><span class="verdict verdict-confirmed">Confirmed</span></td>
 <td>+17.0% in the four weeks to July 5, 2026 <a target="_blank" rel="noopener" href="https://www.mpamag.com/us/mortgage-industry/market-updates/a-brief-rate-retreat-pushes-us-pending-home-sales-to-a-six-week-peak/581874">V30</a></td>
 </tr>
 <tr>
 <td>Dallas and Austin values falling 0.6–0.7% a month in May 2026 (row <a class="rowref" href="https://DogThatHunts.github.io/transcript-summaries/posts/re-v-zillow-reports-shocking-housing-u-turn-40-losses-emerge-1330.html" target="_blank" rel="noopener">1330</a>)</td>
-<td>Partly right</td>
+<td><span class="verdict verdict-partly">Partly right</span></td>
 <td>Austin −0.70% matches; Dallas was −0.43% (seasonally adjusted) <a target="_blank" rel="noopener" href="https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv">V1</a></td>
 </tr>
 </tbody>
