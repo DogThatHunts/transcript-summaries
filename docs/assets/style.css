@@ -8,19 +8,24 @@
    library emits — no new classes, no renderer/test changes — but the .content
    body now reads like an edited article (lead paragraph, drop-cap, accent
    section ticks, pull-quote blockquotes, custom list markers) rather than
-   plain prose. */
+   plain prose.
+
+   Cool palette + heavier body text (2026-10-05): warm cream/copper swapped for
+   the navy/steel family used by the RE-V pages (summarizer/rev/templates/
+   corporate.css); body weight 300 -> 400 and the grey body colour darkened so
+   paragraphs and lists read more easily. */
 
 :root {
-    --bg: #faf9f6;
-    --bg-warm: #f5f0e8;
-    --insight-bg: #fff8f0;
-    --text: #2c2c2c;
-    --text-light: #6b6b6b;
-    --accent: #c17f4e;
-    --accent-dark: #a06a3f;
-    --accent-soft: #e8d5c0;
-    --border: #e0d8ce;
-    --shadow: rgba(0, 0, 0, 0.06);
+    --bg: #f4f6f9;
+    --bg-warm: #e9eef5;
+    --insight-bg: #eaf0f8;
+    --text: #1b2430;
+    --text-light: #36414f;
+    --accent: #2f6db3;
+    --accent-dark: #1f4f87;
+    --accent-soft: #c3d4ea;
+    --border: #d6dde7;
+    --shadow: rgba(15, 31, 51, 0.08);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,14 +38,14 @@ body {
     color: var(--text);
     line-height: 1.75;
     font-size: 17px;
-    font-weight: 300;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
 /* Hero */
 .hero {
-    background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 50%, #3a2e22 100%);
+    background: linear-gradient(160deg, #0f1f33 0%, #1b3350 55%, #22406a 100%);
     color: #fff;
     padding: 100px 24px 80px;
     text-align: center;
@@ -55,8 +60,8 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(193, 127, 78, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(193, 127, 78, 0.05) 0%, transparent 40%);
+    background: radial-gradient(circle at 30% 50%, rgba(143, 180, 227, 0.10) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(143, 180, 227, 0.06) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -66,8 +71,8 @@ body {
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid rgba(193, 127, 78, 0.4);
+    color: #8fb4e3;
+    border: 1px solid rgba(143, 180, 227, 0.45);
     padding: 6px 18px;
     border-radius: 30px;
     margin-bottom: 28px;
@@ -88,8 +93,8 @@ body {
 
 .hero-subtitle {
     font-size: 1.1rem;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.82);
     max-width: 600px;
     margin: 0 auto;
     position: relative;
@@ -99,7 +104,7 @@ body {
 .hero-line {
     width: 60px;
     height: 2px;
-    background: var(--accent);
+    background: #8fb4e3;
     margin: 30px auto 0;
     position: relative;
     z-index: 1;
@@ -290,8 +295,8 @@ body {
 }
 
 .content pre {
-    background: #1e1e1e;
-    color: #f5f0e8;
+    background: #0f1f33;
+    color: #e9eef5;
     padding: 20px 22px;
     border-radius: 12px;
     overflow-x: auto;
@@ -354,15 +359,15 @@ body {
 
 /* Source footer */
 .source-footer {
-    background: #1a1a1a;
-    color: rgba(255, 255, 255, 0.6);
+    background: #0f1f33;
+    color: rgba(255, 255, 255, 0.72);
     padding: 48px 24px;
     text-align: center;
     margin-top: 40px;
 }
 
 .source-footer a {
-    color: var(--accent);
+    color: #8fb4e3;
     text-decoration: none;
     font-weight: 500;
 }
@@ -372,7 +377,7 @@ body {
 .source-footer .meta {
     font-size: 0.85rem;
     margin-top: 12px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* --------------------------------------------------------------------------
