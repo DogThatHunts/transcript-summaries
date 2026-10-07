@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Anthropic Just Released 13 New Skills To Level Up Your Claude Setup</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>Anthropic Just Released 13 New Skills To Level Up Your Claude Setup</h1>
+        <p class="hero-subtitle">An analysis of Anthropic&#x27;s 13 new Claude skills, detailing how to structure utility and orchestration agents while keeping humans in the loop for critical decisions.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+        <img class="hero-thumb" src="https://img.youtube.com/vi/CNsP0mi1DLw/maxresdefault.jpg" alt="Anthropic Just Released 13 New Skills To Level Up Your Claude Setup">
+
+        <article class="content">
+<p>Anthropic recently expanded its small business plugin for Claude, increasing the toolset from 31 to 44 skills. This update signals a shift in how users should design and implement AI workflows, emphasizing the balance between specialized tasks and high-level coordination.</p>
+<h2>The two buckets: Utility vs. orchestration</h2>
+<p>To build an effective AI system, you must distinguish between two primary types of skills:</p>
+<ul>
+<li><strong>Utility skills:</strong> These perform a single, concrete task from start to finish (e.g., writing a specific email or retrieving a database record). They act like specialized crew members, such as an electrician or a plumber, who do not need the full picture to execute their job correctly.</li>
+<li><strong>Orchestration skills:</strong> These do not perform the underlying work themselves. Instead, they act like a general contractor, identifying which utility skills to call, in what order, and stitching their outputs together (e.g., an inbox manager routing incoming emails to specialized response skills).</li>
+</ul>
+<h2>Category 1: enhancement skills</h2>
+<p>These skills allow users to customize and extend the capabilities of their Claude setup:</p>
+<ul>
+<li><strong>Build Connector:</strong> Helps establish custom connections to external tools when native connectors are unavailable. Anthropic integrated this as a fallback mechanism across 42 other skills in the plugin.</li>
+<li><strong>Build Agent:</strong> Despite its name, this utility skill actually builds other custom skills. It reflects Anthropic's strategy of delivering structured skills to satisfy the user demand for "AI agents."</li>
+<li><strong>Brand Style:</strong> Captures brand guidelines so that every asset and output produced by the plugin automatically adheres to a consistent voice.</li>
+</ul>
+<h2>Category 2: sales, leads, and rapid iteration</h2>
+<p>Anthropic doubled its sales-focused skills from four to eight, responding to survey data indicating that 30% of small business owners want help with growth. Key additions include:</p>
+<ul>
+<li><strong>Grow Pipeline:</strong> Identifies and ranks prospects, drafts outreach in the user's brand voice, and logs data into a CRM.</li>
+<li><strong>Speed to Lead:</strong> Monitors inboxes, lead forms, and support tickets to ensure rapid follow-up for inbound inquiries.</li>
+</ul>
+<p>Notably, Anthropic removed older skills like "CRM cleanup" and "CRM maintenance" without replacement. The host notes that this willingness to delete imperfect features highlights a broader product development lesson: action produces information, and shipping quickly to gather user feedback is more valuable than waiting for perfection.</p>
+<h2>Category 3: Marketing and the challenge of routing collisions</h2>
+<p>Marketing skills in the plugin grew from six to eight. A key structural change was moving the "Customer Feedback" skill from the support category to marketing, indicating that customer reviews are increasingly treated as growth assets.</p>
+<p>This category also highlights the technical challenge of <strong>routing collisions</strong>—when multiple skills are capable of responding to the same prompt. For example, "Content Strategy" triggers on "what should I post," while "Social Content Engine" triggers on "what should we post this month." Because these prompts overlap, Claude can struggle to route the request to the correct skill, leading to wasted tokens and unexpected outputs. Users must carefully define boundaries between strategic and operational skills to prevent these overlaps.</p>
+<p>Additionally, the update introduces <strong>SEO AI Visibility</strong>, a skill designed to analyze how a business or public URL ranks within AI-generated search answers rather than traditional search engine results.</p>
+<h2>Category 4: customers and proposals</h2>
+<p>This category underwent a complete swap, removing four old skills and introducing four new ones, including:</p>
+<ul>
+<li><strong>Proposal Builder:</strong> Systematizes and accelerates the creation of client proposals.</li>
+<li><strong>Contract Review:</strong> Analyzes uploaded legal agreements to flag key clauses and terms.</li>
+</ul>
+<h2>Category 5: finance and the human-in-the-loop principle</h2>
+<p>In the finance category, Anthropic expanded depth but added strict guardrails. Notably, they removed the "Pricing Advice" skill entirely without a replacement. </p>
+<p>This removal illustrates a critical system design principle: for high-cost-of-error categories, systems should focus on <strong>middle-to-middle augmentation</strong> rather than end-to-end automation. AI should streamline preparation, data gathering, and drafting, but the final decision must stop at the edge of the workflow to be executed by a human.</p>
+<h2>Category 6: Operations and simplifying briefings</h2>
+<p>Operations skills grew from five to seven, but Anthropic consolidated its reporting tools. They deleted both the "Friday Brief" and "Quarterly Review" skills, leaving only the "Monday Brief."</p>
+<p>This consolidation reinforces the idea that "less is more" in system design. Rather than generating multiple automated reports that go unread, systems should focus on a single, high-signal report that users will actually act upon.</p>
+<h2>Core architectural patterns for AI systems</h2>
+<p>When building or optimizing a personal AI setup, three patterns from Anthropic's update should guide your design:</p>
+<ol>
+<li><strong>Separate utility from orchestration:</strong> Use narrow, specialized skills for specific tasks, and use a coordinator skill to manage complex, high-variance inputs like email inboxes.</li>
+<li><strong>Consolidate to reduce noise:</strong> Regularly audit your skill library to delete overlapping tools and prevent routing collisions.</li>
+<li><strong>Automate preparation, not decisions:</strong> Build automations that handle the heavy lifting of research and drafting, but always keep a human in the loop for financial, legal, or strategic decisions.</li>
+</ol>
+<hr />
+<p>Source: <a target="_blank" rel="noopener" href="https://youtu.be/CNsP0mi1DLw?si">Anthropic Just Released 13 New Skills To Level Up Your Claude Setup</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://youtu.be/CNsP0mi1DLw?si" target="_blank" rel="noopener">Anthropic Just Released 13 New Skills To Level Up Your Claude Setup</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
