@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Anatoli Kopadze - the engineer who built Claude Code just dropped a 28-minute video on ...</title>
+    <meta name="description" content="reading">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-tag">Reading</div>
+        <h1>Anatoli Kopadze - the engineer who built Claude Code just dropped a 28-minute video on ...</h1>
+        <p class="hero-subtitle">Anthropic engineer Boris shares practical tips, advanced workflows, and configuration secrets for mastering Claude Code, the agentic terminal-based AI coding assistant.</p>
+        <div class="hero-line"></div>
+    </header>
+
+    <div class="container">
+
+        <article class="content">
+<p>Boris, a member of the technical staff at Anthropic and the creator of Claude Code, presents a practical guide on leveraging the tool's agentic capabilities. Rather than focusing on line-by-line autocompletion, Claude Code is designed to build entire features, write functions, and fix bugs directly from the terminal. </p>
+<h2>What makes Claude Code different</h2>
+<p>Unlike traditional autocomplete tools, Claude Code operates as a fully agentic assistant. It integrates directly into any existing workflow, working locally over remote SSH, Tmux, and across all IDEs. </p>
+<p>Key architectural benefits include:
+* <strong>No remote indexing:</strong> Codebases are not uploaded to remote databases or used to train generative models; all processing remains local.
+* <strong>Zero setup delay:</strong> Because there is no indexing phase, developers can begin querying their codebase immediately after installation.</p>
+<h2>Accelerating onboarding with codebase Q&amp;A</h2>
+<p>Boris recommends that teams starting with Claude Code begin purely with codebase Q&amp;A before attempting automated code edits. This helps engineers learn the boundaries of the model's capabilities.</p>
+<p>At Anthropic, technical onboarding that previously took two to three weeks now takes only two to three days by having new hires query the codebase directly. Useful Q&amp;A patterns include:
+* <strong>Instantiation queries:</strong> Asking how specific classes or functions are instantiated and used across the codebase.
+* <strong>Git history exploration:</strong> Asking Claude to inspect git logs to explain why complex functions were designed a certain way, who introduced specific arguments, and which issues they link to.
+* <strong>Standup preparation:</strong> Querying Claude at the end of the week to summarize everything the developer shipped based on local git logs.</p>
+<h2>Code editing and planning workflows</h2>
+<p>Claude Code uses a minimal, highly effective set of tools to edit files, run bash commands, and search directories. Boris highlights several strategies to maximize editing efficiency:</p>
+<ul>
+<li><strong>The planning prompt:</strong> For large features, developers should instruct Claude to brainstorm and present a plan for approval before writing any code (e.g., "Before you write code, make a plan").</li>
+<li><strong>Automated Git operations:</strong> Claude can interpret high-level commands like "commit and push" to automatically create branches, format commits based on project history, and open pull requests.</li>
+<li><strong>Feedback loops:</strong> Claude performs best when given a tool to check its work. By providing access to unit tests, Puppeteer, or simulator screenshots, Claude can iteratively self-correct until the implementation is perfect.</li>
+</ul>
+<h2>Managing context with CLAUDE.md</h2>
+<p>To prevent repetitive prompting, developers can feed context to Claude hierarchically using configuration files:</p>
+<ul>
+<li><strong>Project-level context:</strong> A <code>CLAUDE.md</code> file placed in the project root is automatically read at the start of every session. This should contain common bash commands, style guides, and architectural decisions.</li>
+<li><strong>Local context:</strong> A local, untracked version of <code>CLAUDE.md</code> can be used for personal preferences without checking it into source control.</li>
+<li><strong>Directory-specific context:</strong> Nested <code>CLAUDE.md</code> files in child directories are pulled into the context window only when Claude is actively working within those specific folders.</li>
+<li><strong>Enterprise policies:</strong> Organizations can define global enterprise policies to auto-approve safe commands (like test runners) or block restricted actions (like fetching specific external URLs) across all employee machines.</li>
+</ul>
+<h2>Terminal shortcuts and power-user features</h2>
+<p>Boris shares several built-in terminal shortcuts designed to streamline interactive sessions:</p>
+<ul>
+<li><code>Shift-Tab</code>: Switches Claude into auto-accept edits mode, bypassing the need to manually approve every file modification while still requiring approval for bash commands.</li>
+<li><code>#</code> (Pound sign): Instructs Claude to remember a specific rule or tool usage, automatically appending it to the active memory file.</li>
+<li><code>!</code> (Exclamation mark): Drops the user directly into local bash mode. The command and its output are automatically appended to Claude's context window.</li>
+<li><code>Escape</code>: Safely interrupts Claude at any point without corrupting the active session.</li>
+<li><code>Escape</code> twice: Jumps backward in the session history.</li>
+<li><code>Control-R</code>: Displays the entire raw output currently held in Claude's context window.</li>
+</ul>
+<h2>The Claude Code SDK and pipeline integration</h2>
+<p>By using the <code>-p</code> flag, developers can access the Claude Code SDK, turning the assistant into a highly intelligent Unix utility. This allows engineers to pipe data in and out of Claude using standard command-line tools.</p>
+<p>Examples of SDK pipelines include:
+* Piping <code>git status</code> or Sentry CLI logs into Claude to diagnose errors.
+* Processing large log files from cloud storage buckets to extract anomalies.
+* Outputting structured streaming JSON to feed downstream automation pipelines.</p>
+<h2>Audience Q&amp;A</h2>
+<p><strong>How does Claude Code handle the safety risks of executing bash commands?</strong><br />
+Boris explains that Anthropic uses a complex, tiered permission system. Claude Code performs static analysis and read-only command detection to determine which bash commands are safe to run automatically, allowing developers to avoid constant manual approval prompts without sacrificing system security.</p>
+<p><strong>Does Claude Code support multimodal inputs?</strong><br />
+Yes. Claude Code is fully multimodal. Developers can drag and drop UI mockups, copy-paste images, or provide file paths directly into the terminal. Combined with a Puppeteer MCP server, Claude can visually inspect its own web output against a design mockup to iterate on frontend code.</p>
+<p><strong>Why did Anthropic build a CLI tool instead of a dedicated IDE?</strong><br />
+First, Anthropic's internal engineering team uses a highly diverse set of editors, including VS Code, Xcode, Vim, Emacs, and Zed; a terminal tool serves as the ultimate common denominator. Second, Boris notes that given the rapid pace of AI model improvements, traditional IDE interfaces may become obsolete by the end of the year, making heavy investments in custom IDE UI less practical than building robust agentic command-line tools.</p>
+<p>Source: <a target="_blank" rel="noopener" href="https://x.com/AnatoliKopadze/status/2056362875195686927?s=20">Anatoli Kopadze - the engineer who built Claude Code just dropped a 28-minute video on ...</a></p>
+        </article>
+    </div>
+
+    <footer class="source-footer">
+        <p>Source: <a href="https://x.com/AnatoliKopadze/status/2056362875195686927?s=20" target="_blank" rel="noopener">Anatoli Kopadze - the engineer who built Claude Code just dropped a 28-minute video on ...</a></p>
+        <p class="meta">Summary generated from the source transcript by AI &middot; for informational purposes only</p>
+    </footer>
+</body>
+</html>
