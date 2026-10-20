@@ -13,52 +13,43 @@
     <header class="hero">
         <div class="hero-tag">Reading</div>
         <h1>Jyoti - In 1986 a guy got kicked out of every casino in Vegas for counting ca...</h1>
-        <p class="hero-subtitle">A probability theory lecture covering sample spaces, axioms, and how to assign probabilities to events in both discrete and continuous settings.</p>
+        <p class="hero-subtitle">An introductory lecture unpacks the foundational axioms of probability, the art of framing sample spaces, and the mechanics of quantifying uncertainty across discrete and continuous domains.</p>
         <div class="hero-line"></div>
     </header>
 
     <div class="container">
 
         <article class="content">
-<h2>Probability theory fundamentals: sample spaces and axioms</h2>
-<p>This is a lecture on probability theory, delivered in Greek, that introduces the foundational concepts needed to build probabilistic models.</p>
-<h3>Why probability matters</h3>
-<p>The speaker opens by emphasizing that uncertainty exists everywhere in life. Whether you're managing risk in business, playing casino games, or making decisions in any domain, you need a systematic way to think about uncertainty. Probability theory provides the mathematical framework for handling these situations across different fields—from economics to technology to social sciences.</p>
-<h3>Building a probability model: three steps</h3>
-<p>To construct a probability model, you need:</p>
-<ol>
-<li><strong>A sample space (Ω)</strong>: the set of all possible outcomes of an experiment</li>
-<li><strong>A probability assignment</strong>: assigning probabilities to events (subsets of the sample space)</li>
-<li><strong>The axioms</strong>: rules that any valid probability assignment must follow</li>
-</ol>
-<h3>Sample spaces: discrete and continuous</h3>
-<p>The lecture uses two main examples:</p>
-<p><strong>Discrete example: rolling a die twice</strong></p>
-<p>When rolling a standard die twice, the sample space consists of 16 ordered pairs: (1,1), (1,2), ..., (4,4). Each outcome is equally likely with probability 1/16. From this, you can answer questions like: What is P(first roll = 2)? Or P(minimum of two rolls ≥ 2)? By identifying which outcomes satisfy the condition and summing their probabilities, you get the answer.</p>
-<p><strong>Continuous example: throwing a dart at a square</strong></p>
-<p>If you throw a dart at a unit square [0,1] × [0,1], the sample space is uncountably infinite. Here, probability is proportional to area. If you want P(x + y ≤ 1.5), you find the area of the region where this holds and use that as the probability.</p>
-<h3>The three axioms of probability</h3>
-<p>Any probability assignment must satisfy:</p>
-<ol>
-<li><strong>Non-negativity</strong>: P(A) ≥ 0 for any event A</li>
-<li><strong>Normalization</strong>: P(Ω) = 1 (the entire sample space has probability 1)</li>
-<li><strong>Additivity</strong>: If A and B are disjoint (mutually exclusive), then P(A ∪ B) = P(A) + P(B)</li>
-</ol>
-<p>From these three axioms, you can derive that P(A) ≤ 1 for any event A. The speaker walks through this derivation: since A and its complement partition Ω, we have P(A) + P(A^c) = 1. Since P(A^c) ≥ 0, it follows that P(A) ≤ 1.</p>
-<h3>Extending additivity to countable unions</h3>
-<p>The axioms above work for finite unions. However, for infinite sample spaces (like continuous ones), you need a stronger axiom: <strong>countable additivity</strong>. This states that if you have a countable collection of disjoint events A₁, A₂, A₃, ..., then:</p>
-<p>P(A₁ ∪ A₂ ∪ A₃ ∪ ...) = P(A₁) + P(A₂) + P(A₃) + ...</p>
-<p>This is essential for working with continuous probability models. The speaker notes that this axiom is stronger than the finite additivity axiom and is needed to handle cases like waiting for heads on a coin flip for the first time (where the outcome is any positive integer).</p>
-<h3>Choosing the right sample space</h3>
-<p>An important practical point: when defining a sample space, you have some freedom in how detailed to make it. For example, when flipping a coin, you could track just heads/tails, or you could track the exact angle and spin. The choice depends on what information is relevant to your problem. The sample space must be:</p>
+<h2>The foundations of probabilistic reasoning</h2>
+<h4>The universality of uncertainty and mathematical modeling</h4>
+<p>Every real-world discipline—from signal processing and engineering facing sensor noise to financial managers assessing market volatility—must systematically address randomness. While textbooks are often marketed separately to engineers, social scientists, or management students, the mathematical scaffolding remains identical across domains. Mastering probability requires building conceptual intuition through rigorous reading rather than merely referencing a formula sheet.</p>
+<h4>Defining the sample space</h4>
+<p>A probabilistic model begins by identifying an experiment and formalizing its sample space, the set of all potential outcomes. To construct a valid sample space, the elements must satisfy two structural criteria:</p>
 <ul>
-<li><strong>Collectively exhaustive</strong>: every possible outcome is included</li>
-<li><strong>Mutually exclusive</strong>: outcomes don't overlap</li>
+<li><strong>Collectively exhaustive</strong>: The set includes every conceivable outcome, ensuring that an experiment cannot produce a result outside the designated space.</li>
+<li><strong>Mutually exclusive</strong>: Distinct outcomes cannot occur simultaneously; completing an experiment must point to exactly one element.</li>
 </ul>
-<h3>Key insight: from outcomes to events</h3>
-<p>In continuous settings, individual outcomes have probability zero. This is why you must assign probabilities to events (sets of outcomes) rather than individual points. For a finite sample space with equally likely outcomes, the probability of an event is simply the number of favorable outcomes divided by the total number of outcomes.</p>
-<hr />
-<p><a target="_blank" rel="noopener" href="https://x.com/ai_with_jyoti/status/2099394879881466295?s=20">Original transcript from X</a></p>
+<p>Setting the appropriate level of detail involves practical judgment. An experiment flipping a coin could strictly record heads or tails, or hypothetically incorporate external ambient conditions such as whether it is raining. Modeling inherently demands discerning between meaningful factors and negligible real-world noise.</p>
+<p>Sequential experiments benefit from tree structures. In rolling a four-sided die twice, treating the two rolls as a single composite experiment yields 16 distinct ordered pairs. Distinguishing between ordered pairs—such as obtaining a 2 followed by a 3 versus a 3 followed by a 2—is critical for rigorous event tracking.</p>
+<h4>Events and the core axioms of probability</h4>
+<p>While sample spaces can be finite or uncountably infinite (such as landing a dart within a continuous unit square), assigning probabilities directly to individual points within infinite spaces collapses to zero. Consequently, probability theory defines a probability law by assigning numerical weights to events, which are formal subsets of the sample space.</p>
+<p>Every legitimate probability law must satisfy three foundational axioms:</p>
+<ol>
+<li><strong>Non-negativity</strong>: For any event $A$, the assigned probability is non-negative ($P(A) \ge 0$).</li>
+<li><strong>Normalization</strong>: The probability of the entire sample space $\Omega$ equals 1 ($P(\Omega) = 1$), reflecting absolute certainty that some outcome within the exhaustive set will happen.</li>
+<li><strong>Additivity</strong>: If two events $A$ and $B$ are disjoint (their intersection is the empty set), then $P(A \cup B) = P(A) + P(B)$.</li>
+</ol>
+<p>Mathematicians omit an explicit axiom capping probabilities at 1 because it naturally follows from these three rules: since $\Omega = A \cup A^c$ and $A$ and $A^c$ are disjoint, $P(A) = 1 - P(A^c) \le 1$.</p>
+<h4>Applications to discrete and continuous models</h4>
+<p>Once a sample space and probability law are fixed, evaluating any event reduces to systematic calculation:</p>
+<ul>
+<li><strong>Discrete uniform law</strong>: When a sample space consists of $N$ equally likely outcomes, the probability of an event containing $n$ elements is simply $n / N$. Problems under this law reduce to systematic combinatorial counting.</li>
+<li><strong>Continuous probability</strong>: For experiments over continuous domains, such as selecting points inside a unit square where probability corresponds to area, events are represented geometric regions. Individual exact coordinates hold zero probability, but bounded areas—such as regions under a line $x + y \le 1/2$—can be calculated through geometry or calculus.</li>
+</ul>
+<h4>Countable additivity and infinite sequences</h4>
+<p>Finite additivity extends inductively to any finite collection of disjoint events, but it fails to justify calculations involving infinite outcomes, such as counting the number of coin flips required until the first head appears. Because the coin could theoretically fail to produce a head indefinitely, the sample space spans the infinite set of positive integers.</p>
+<p>To evaluate events defined across infinite series, probability theory requires the <strong>countable additivity axiom</strong>. This principle asserts that if a countable sequence of events $A_1, A_2, A_3, \dots$ is pairwise disjoint, the probability of their union equals the infinite sum of their individual probabilities. This rule provides the mathematical foundation necessary to analyze infinite geometric series and long-tail probabilistic processes.</p>
+<p>Source: <a target="_blank" rel="noopener" href="https://x.com/ai_with_jyoti/status/2099394879881466295?s=20">Jyoti - In 1986 a guy got kicked out of every casino in Vegas for counting ca...</a></p>
         </article>
     </div>
 
