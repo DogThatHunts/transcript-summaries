@@ -1,0 +1,222 @@
+Topic,Month,Videos on topic,Videos that month,Share
+Home prices & inventory,2025-10,1,4,25%
+Home prices & inventory,2025-11,1,3,33%
+Home prices & inventory,2025-12,1,4,25%
+Home prices & inventory,2026-01,3,13,23%
+Home prices & inventory,2026-02,8,15,53%
+Home prices & inventory,2026-03,9,29,31%
+Home prices & inventory,2026-04,13,32,41%
+Home prices & inventory,2026-05,15,31,48%
+Home prices & inventory,2026-06,16,43,37%
+Home prices & inventory,2026-07,20,65,31%
+Home prices & inventory,2026-08,51,140,36%
+Home prices & inventory,2026-09,45,214,21%
+Home prices & inventory,2026-10,13,103,13%
+Homebuilders,2025-10,0,4,0%
+Homebuilders,2025-11,0,3,0%
+Homebuilders,2025-12,1,4,25%
+Homebuilders,2026-01,0,13,0%
+Homebuilders,2026-02,1,15,7%
+Homebuilders,2026-03,2,29,7%
+Homebuilders,2026-04,0,32,0%
+Homebuilders,2026-05,1,31,3%
+Homebuilders,2026-06,2,43,5%
+Homebuilders,2026-07,1,65,2%
+Homebuilders,2026-08,3,140,2%
+Homebuilders,2026-09,6,214,3%
+Homebuilders,2026-10,3,103,3%
+Mortgages,2025-10,0,4,0%
+Mortgages,2025-11,1,3,33%
+Mortgages,2025-12,0,4,0%
+Mortgages,2026-01,2,13,15%
+Mortgages,2026-02,2,15,13%
+Mortgages,2026-03,6,29,21%
+Mortgages,2026-04,6,32,19%
+Mortgages,2026-05,7,31,23%
+Mortgages,2026-06,9,43,21%
+Mortgages,2026-07,11,65,17%
+Mortgages,2026-08,12,140,9%
+Mortgages,2026-09,16,214,8%
+Mortgages,2026-10,9,103,9%
+Commercial real estate,2025-10,0,4,0%
+Commercial real estate,2025-11,0,3,0%
+Commercial real estate,2025-12,0,4,0%
+Commercial real estate,2026-01,6,13,46%
+Commercial real estate,2026-02,2,15,13%
+Commercial real estate,2026-03,2,29,7%
+Commercial real estate,2026-04,3,32,9%
+Commercial real estate,2026-05,0,31,0%
+Commercial real estate,2026-06,2,43,5%
+Commercial real estate,2026-07,4,65,6%
+Commercial real estate,2026-08,4,140,3%
+Commercial real estate,2026-09,6,214,3%
+Commercial real estate,2026-10,4,103,4%
+Fed & rates,2025-10,0,4,0%
+Fed & rates,2025-11,0,3,0%
+Fed & rates,2025-12,1,4,25%
+Fed & rates,2026-01,3,13,23%
+Fed & rates,2026-02,1,15,7%
+Fed & rates,2026-03,6,29,21%
+Fed & rates,2026-04,3,32,9%
+Fed & rates,2026-05,6,31,19%
+Fed & rates,2026-06,8,43,19%
+Fed & rates,2026-07,21,65,32%
+Fed & rates,2026-08,26,140,19%
+Fed & rates,2026-09,49,214,23%
+Fed & rates,2026-10,23,103,22%
+Inflation,2025-10,0,4,0%
+Inflation,2025-11,0,3,0%
+Inflation,2025-12,1,4,25%
+Inflation,2026-01,2,13,15%
+Inflation,2026-02,5,15,33%
+Inflation,2026-03,5,29,17%
+Inflation,2026-04,8,32,25%
+Inflation,2026-05,9,31,29%
+Inflation,2026-06,8,43,19%
+Inflation,2026-07,20,65,31%
+Inflation,2026-08,34,140,24%
+Inflation,2026-09,48,214,22%
+Inflation,2026-10,25,103,24%
+Jobs & growth,2025-10,0,4,0%
+Jobs & growth,2025-11,0,3,0%
+Jobs & growth,2025-12,0,4,0%
+Jobs & growth,2026-01,1,13,8%
+Jobs & growth,2026-02,1,15,7%
+Jobs & growth,2026-03,3,29,10%
+Jobs & growth,2026-04,9,32,28%
+Jobs & growth,2026-05,11,31,36%
+Jobs & growth,2026-06,8,43,19%
+Jobs & growth,2026-07,14,65,22%
+Jobs & growth,2026-08,30,140,21%
+Jobs & growth,2026-09,32,214,15%
+Jobs & growth,2026-10,20,103,19%
+Recession,2025-10,1,4,25%
+Recession,2025-11,1,3,33%
+Recession,2025-12,1,4,25%
+Recession,2026-01,2,13,15%
+Recession,2026-02,1,15,7%
+Recession,2026-03,1,29,3%
+Recession,2026-04,2,32,6%
+Recession,2026-05,5,31,16%
+Recession,2026-06,6,43,14%
+Recession,2026-07,12,65,18%
+Recession,2026-08,20,140,14%
+Recession,2026-09,29,214,14%
+Recession,2026-10,13,103,13%
+Credit & banking,2025-10,3,4,75%
+Credit & banking,2025-11,1,3,33%
+Credit & banking,2025-12,0,4,0%
+Credit & banking,2026-01,7,13,54%
+Credit & banking,2026-02,5,15,33%
+Credit & banking,2026-03,5,29,17%
+Credit & banking,2026-04,11,32,34%
+Credit & banking,2026-05,7,31,23%
+Credit & banking,2026-06,7,43,16%
+Credit & banking,2026-07,26,65,40%
+Credit & banking,2026-08,41,140,29%
+Credit & banking,2026-09,44,214,21%
+Credit & banking,2026-10,29,103,28%
+Bonds & debt,2025-10,1,4,25%
+Bonds & debt,2025-11,0,3,0%
+Bonds & debt,2025-12,0,4,0%
+Bonds & debt,2026-01,8,13,62%
+Bonds & debt,2026-02,3,15,20%
+Bonds & debt,2026-03,4,29,14%
+Bonds & debt,2026-04,6,32,19%
+Bonds & debt,2026-05,9,31,29%
+Bonds & debt,2026-06,7,43,16%
+Bonds & debt,2026-07,22,65,34%
+Bonds & debt,2026-08,45,140,32%
+Bonds & debt,2026-09,62,214,29%
+Bonds & debt,2026-10,33,103,32%
+Stock markets,2025-10,2,4,50%
+Stock markets,2025-11,0,3,0%
+Stock markets,2025-12,2,4,50%
+Stock markets,2026-01,4,13,31%
+Stock markets,2026-02,3,15,20%
+Stock markets,2026-03,8,29,28%
+Stock markets,2026-04,9,32,28%
+Stock markets,2026-05,9,31,29%
+Stock markets,2026-06,12,43,28%
+Stock markets,2026-07,20,65,31%
+Stock markets,2026-08,46,140,33%
+Stock markets,2026-09,101,214,47%
+Stock markets,2026-10,42,103,41%
+Dollar & currencies,2025-10,1,4,25%
+Dollar & currencies,2025-11,0,3,0%
+Dollar & currencies,2025-12,0,4,0%
+Dollar & currencies,2026-01,2,13,15%
+Dollar & currencies,2026-02,2,15,13%
+Dollar & currencies,2026-03,2,29,7%
+Dollar & currencies,2026-04,7,32,22%
+Dollar & currencies,2026-05,5,31,16%
+Dollar & currencies,2026-06,3,43,7%
+Dollar & currencies,2026-07,8,65,12%
+Dollar & currencies,2026-08,18,140,13%
+Dollar & currencies,2026-09,14,214,6%
+Dollar & currencies,2026-10,10,103,10%
+Commodities & energy,2025-10,0,4,0%
+Commodities & energy,2025-11,1,3,33%
+Commodities & energy,2025-12,0,4,0%
+Commodities & energy,2026-01,2,13,15%
+Commodities & energy,2026-02,6,15,40%
+Commodities & energy,2026-03,13,29,45%
+Commodities & energy,2026-04,13,32,41%
+Commodities & energy,2026-05,9,31,29%
+Commodities & energy,2026-06,8,43,19%
+Commodities & energy,2026-07,29,65,45%
+Commodities & energy,2026-08,35,140,25%
+Commodities & energy,2026-09,60,214,28%
+Commodities & energy,2026-10,32,103,31%
+Trade & tariffs,2025-10,0,4,0%
+Trade & tariffs,2025-11,1,3,33%
+Trade & tariffs,2025-12,0,4,0%
+Trade & tariffs,2026-01,2,13,15%
+Trade & tariffs,2026-02,2,15,13%
+Trade & tariffs,2026-03,2,29,7%
+Trade & tariffs,2026-04,2,32,6%
+Trade & tariffs,2026-05,2,31,6%
+Trade & tariffs,2026-06,3,43,7%
+Trade & tariffs,2026-07,6,65,9%
+Trade & tariffs,2026-08,8,140,6%
+Trade & tariffs,2026-09,10,214,5%
+Trade & tariffs,2026-10,5,103,5%
+Fiscal policy,2025-10,1,4,25%
+Fiscal policy,2025-11,0,3,0%
+Fiscal policy,2025-12,2,4,50%
+Fiscal policy,2026-01,4,13,31%
+Fiscal policy,2026-02,4,15,27%
+Fiscal policy,2026-03,7,29,24%
+Fiscal policy,2026-04,8,32,25%
+Fiscal policy,2026-05,9,31,29%
+Fiscal policy,2026-06,9,43,21%
+Fiscal policy,2026-07,15,65,23%
+Fiscal policy,2026-08,31,140,22%
+Fiscal policy,2026-09,42,214,20%
+Fiscal policy,2026-10,18,103,18%
+AI investment,2025-10,2,4,50%
+AI investment,2025-11,1,3,33%
+AI investment,2025-12,1,4,25%
+AI investment,2026-01,2,13,15%
+AI investment,2026-02,2,15,13%
+AI investment,2026-03,3,29,10%
+AI investment,2026-04,6,32,19%
+AI investment,2026-05,6,31,19%
+AI investment,2026-06,15,43,35%
+AI investment,2026-07,14,65,22%
+AI investment,2026-08,32,140,23%
+AI investment,2026-09,58,214,27%
+AI investment,2026-10,41,103,40%
+Regional,2025-10,1,4,25%
+Regional,2025-11,0,3,0%
+Regional,2025-12,1,4,25%
+Regional,2026-01,0,13,0%
+Regional,2026-02,2,15,13%
+Regional,2026-03,3,29,10%
+Regional,2026-04,6,32,19%
+Regional,2026-05,8,31,26%
+Regional,2026-06,8,43,19%
+Regional,2026-07,9,65,14%
+Regional,2026-08,27,140,19%
+Regional,2026-09,27,214,13%
+Regional,2026-10,4,103,4%
