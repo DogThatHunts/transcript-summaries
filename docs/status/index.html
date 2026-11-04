@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline status</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="page-header">
+    <h1>Transcription pipeline — live status</h1>
+    <p class="as-of" id="as-of">Loading…</p>
+  </header>
+
+  <section class="group" aria-labelledby="transcriber-h">
+    <h2 id="transcriber-h">Transcription</h2>
+    <div class="tiles" id="transcriber-tiles"></div>
+  </section>
+
+  <section class="group" aria-labelledby="summarizer-h">
+    <h2 id="summarizer-h">Summaries</h2>
+    <div class="tiles" id="summarizer-tiles"></div>
+  </section>
+
+  <p class="error" id="error" hidden></p>
+
+  <footer class="page-footer">
+    <p>Aggregated counts only — no video links, titles, or contact details are shown here.
+       Refreshes automatically every 90 seconds.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
