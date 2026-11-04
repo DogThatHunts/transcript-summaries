@@ -1,15 +1,14 @@
-// app.js — polls the Cloud Run pipeline-health endpoint and renders stat tiles.
-// DASHBOARD_PLAN_2026-11-03.md
+// app.js — polls the Cloud Run pipeline-health endpoint and renders stat
+// tiles, a 24h-progress headline + recent-trend sparklines (client-side
+// only, via localStorage — no backend history needed), and per-lane
+// open/closed/capacity cards. DASHBOARD_PLAN_2026-11-03.md.
 
-// Deployed 2026-11-04 — confirmed live and public (D-1 in the plan doc:
-// the service's IAM policy already grants allUsers -> roles/run.invoker).
 const ENDPOINT = "https://transcription-bot-880476731187.europe-west1.run.app/pipeline-health";
 
 const POLL_MS = 90_000; // within the requested 60-120s range
 
-// Fixed display order + status class per value, so tiles never reorder
-// between polls and a value this page has never seen before still renders
-// (falls back to "neutral") instead of silently disappearing.
+// ---- status tiles (unchanged shape from the first version) ---------------
+
 const TRANSCRIBER_ORDER = [
   ["pending", "Pending", "neutral"],
   ["processing", "Processing", "neutral"],
@@ -18,15 +17,29 @@ const TRANSCRIBER_ORDER = [
   ["failed", "Failed", "critical"],
 ];
 
+// "(empty)" (never claimed), "pending" (deferred, still eligible), and
+// "Revisit" (a truncated/incomplete summary waiting on a re-run) are all,
+// from a viewer's standpoint, "hasn't produced a finished summary yet."
+// Conflated into one "Pending" tile so this block reads congruently
+// against Transcription's own single "Pending" tile. "Generating" is
+// labeled "Processing" and "Passed" is labeled "Completed" to mirror
+// Transcription's own vocabulary -- same underlying sheet values
+// ("generating"/"Passed"), display label only.
 const SUMMARIZER_ORDER = [
-  ["(empty)", "Not started", "neutral"],
   ["pending", "Pending", "neutral"],
-  ["generating", "Generating", "neutral"],
-  ["Passed", "Passed", "good"],
-  ["Revisit", "Revisit", "warning"],
+  ["generating", "Processing", "neutral"],
+  ["Passed", "Completed", "good"],
   ["Skipped", "Skipped", "warning"],
   ["Failed", "Failed", "critical"],
 ];
+
+function mergeEmptyAndRevisitIntoPending(counts) {
+  const merged = { ...counts };
+  merged.pending = (merged.pending || 0) + (merged["(empty)"] || 0) + (merged.Revisit || 0);
+  delete merged["(empty)"];
+  delete merged.Revisit;
+  return merged;
+}
 
 function renderTiles(container, counts, order) {
   container.innerHTML = "";
@@ -35,13 +48,8 @@ function renderTiles(container, counts, order) {
     seen.add(key);
     container.appendChild(tile(label, counts[key] || 0, status));
   }
-  // Any key the fixed order didn't anticipate still shows, rather than
-  // being silently dropped — defaults to "neutral" since its meaning is
-  // unknown to this page.
   for (const key of Object.keys(counts)) {
-    if (!seen.has(key)) {
-      container.appendChild(tile(key, counts[key], "neutral"));
-    }
+    if (!seen.has(key)) container.appendChild(tile(key, counts[key], "neutral"));
   }
 }
 
@@ -55,14 +63,157 @@ function tile(label, count, status) {
   return el;
 }
 
+// ---- lane cards (open/closed, reopens-at, capacity) -----------------------
+
+const LANE_TIERS = ["small", "medium", "large"];
+
+function renderLaneSilos(lanes) {
+  const byTier = { small: [], medium: [], large: [] };
+  for (const lane of lanes || []) {
+    const tier = LANE_TIERS.includes(lane.tier) ? lane.tier : "small";
+    byTier[tier].push(lane);
+  }
+  for (const tier of LANE_TIERS) {
+    renderLaneSilo(document.getElementById(`lanes-${tier}`), byTier[tier]);
+  }
+}
+
+function renderLaneSilo(container, lanes) {
+  container.innerHTML = "";
+  if (!lanes.length) {
+    container.innerHTML = '<p class="muted">No lane data yet — the summarizer syncs this once per run.</p>';
+    return;
+  }
+  for (const lane of lanes) {
+    const open = lane.status !== "closed";
+    const card = document.createElement("div");
+    card.className = `lane-card status-${open ? "good" : "critical"}`;
+    const reopens = lane.reopens_at ? new Date(lane.reopens_at).toLocaleString() : "";
+    card.innerHTML = `
+      <div class="lane-name">${escapeHtml(lane.provider)}/${escapeHtml(lane.model)}</div>
+      <div class="lane-status"><span class="dot" aria-hidden="true"></span>${open ? "Open" : "Closed"}</div>
+      <div class="lane-meta">Capacity: ${escapeHtml(String(lane.capacity ?? "?"))} concurrent</div>
+      ${reopens ? `<div class="lane-meta">Reopens: ${escapeHtml(reopens)}</div>` : ""}
+    `;
+    container.appendChild(card);
+  }
+}
+
+function escapeHtml(s) {
+  const d = document.createElement("div");
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// ---- client-side history: 24h delta headline + recent-trend sparklines ---
+//
+// Entirely local (localStorage) — no backend persistence. Durable across
+// reloads on the SAME browser, but not shared between visitors/devices;
+// good enough for "is this moving," not a multi-viewer audit trail.
+
+const HISTORY_KEY = "pipelineHealthHistory";
+const HISTORY_MAX_AGE_MS = 7 * 24 * 3600 * 1000; // keep a week
+const HISTORY_MIN_GAP_MS = 15 * 60 * 1000;        // store at most 1 sample/15min
+const DELTA_WINDOW_MS = 24 * 3600 * 1000;
+const DELTA_TOLERANCE_MS = 2 * 3600 * 1000; // "near enough to 24h ago" to trust
+
+function loadHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function recordHistory(data) {
+  let hist = loadHistory();
+  const now = Date.now();
+  const last = hist[hist.length - 1];
+  if (!last || now - new Date(last.t).getTime() >= HISTORY_MIN_GAP_MS) {
+    hist.push({
+      t: data.as_of || new Date().toISOString(),
+      transcriber: data.transcriber || {},
+      summarizer: data.summarizer || {},
+    });
+  }
+  const cutoff = now - HISTORY_MAX_AGE_MS;
+  hist = hist.filter((h) => new Date(h.t).getTime() >= cutoff);
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(hist));
+  } catch {
+    // storage full/unavailable (private window etc.) -- fine, just no history
+  }
+  return hist;
+}
+
+function closestSample(hist, msAgo, toleranceMs) {
+  const target = Date.now() - msAgo;
+  let best = null;
+  let bestDiff = Infinity;
+  for (const h of hist) {
+    const diff = Math.abs(new Date(h.t).getTime() - target);
+    if (diff < bestDiff) {
+      bestDiff = diff;
+      best = h;
+    }
+  }
+  return bestDiff <= toleranceMs ? best : null;
+}
+
+function renderDelta(hist, current) {
+  const el = document.getElementById("delta");
+  const past = closestSample(hist, DELTA_WINDOW_MS, DELTA_TOLERANCE_MS);
+  if (!past) {
+    el.textContent = "Building 24h trend — this grows in over the first day of viewing.";
+    return;
+  }
+  const completedDelta = Math.max(0, (current.transcriber.completed || 0) - (past.transcriber.completed || 0));
+  const passedDelta = Math.max(0, (current.summarizer.Passed || 0) - (past.summarizer.Passed || 0));
+  el.textContent = `+${completedDelta.toLocaleString()} transcribed, +${passedDelta.toLocaleString()} summarized in the last ~24h`;
+}
+
+function sparklinePoints(hist, section, key, w, h) {
+  const vals = hist.map((entry) => (entry[section] || {})[key] || 0);
+  if (vals.length < 2) return null;
+  const min = Math.min(...vals);
+  const max = Math.max(...vals);
+  const range = max - min || 1;
+  const step = w / (vals.length - 1);
+  return vals
+    .map((v, i) => `${(i * step).toFixed(1)},${(h - ((v - min) / range) * h).toFixed(1)}`)
+    .join(" ");
+}
+
+function renderSparkline(containerId, hist, section, key) {
+  const container = document.getElementById(containerId);
+  const w = 160;
+  const h = 32;
+  const pts = sparklinePoints(hist, section, key, w, h);
+  if (!pts) {
+    container.innerHTML = '<p class="muted small">Not enough history yet.</p>';
+    return;
+  }
+  container.innerHTML = `<svg viewBox="0 0 ${w} ${h}" class="spark" aria-hidden="true"><polyline points="${pts}"></polyline></svg>`;
+}
+
+// ---- main poll loop --------------------------------------------------------
+
 async function refresh() {
   const errorEl = document.getElementById("error");
   try {
     const resp = await fetch(ENDPOINT, { cache: "no-store" });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
+
     renderTiles(document.getElementById("transcriber-tiles"), data.transcriber || {}, TRANSCRIBER_ORDER);
-    renderTiles(document.getElementById("summarizer-tiles"), data.summarizer || {}, SUMMARIZER_ORDER);
+    renderTiles(document.getElementById("summarizer-tiles"), mergeEmptyAndRevisitIntoPending(data.summarizer || {}), SUMMARIZER_ORDER);
+    renderLaneSilos(data.lanes || []);
+
+    const hist = recordHistory(data);
+    renderDelta(hist, data);
+    renderSparkline("spark-completed", hist, "transcriber", "completed");
+    renderSparkline("spark-passed", hist, "summarizer", "Passed");
+
     const asOf = data.as_of ? new Date(data.as_of) : new Date();
     document.getElementById("as-of").textContent = `As of ${asOf.toLocaleString()}`;
     errorEl.hidden = true;

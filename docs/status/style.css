@@ -116,6 +116,128 @@ main { max-width: 760px; margin: 0 auto; }
 .tile.status-neutral .label   { color: var(--status-neutral-fg); }
 .tile.status-neutral .dot     { background: var(--status-neutral-fg); }
 
+/* ---- progress: delta headline + sparklines ------------------------------ */
+
+.delta {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin-bottom: 14px;
+}
+
+.spark-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.spark-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 1px 2px var(--shadow);
+}
+
+.spark-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+}
+
+.spark {
+    width: 100%;
+    height: 32px;
+    display: block;
+}
+
+.spark polyline {
+    fill: none;
+    stroke: var(--status-good-fg);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.muted {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.muted.small { font-size: 0.78rem; }
+
+/* ---- summarizer lane cards ----------------------------------------------- */
+
+.lane-silo { margin-bottom: 18px; }
+
+.lane-silo h3 {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.lanes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.lane-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 1px 2px var(--shadow);
+}
+
+.lane-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    word-break: break-word;
+}
+
+.lane-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+}
+
+.lane-status .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: none;
+}
+
+.lane-meta {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* OPEN lanes: same background as the "Passed" tile (--status-good-bg) --
+   the user's explicit choice, so an open lane visually reads as "the good
+   outcome" the same way a completed/passed count does. CLOSED lanes keep
+   the unchanged critical (red) scheme. */
+.lane-card.status-good                   { background: var(--status-good-bg); }
+.lane-card.status-good .lane-status      { color: var(--status-good-fg); }
+.lane-card.status-good .dot              { background: var(--status-good-fg); }
+.lane-card.status-critical .lane-status  { color: var(--status-critical-fg); }
+.lane-card.status-critical .dot          { background: var(--status-critical-fg); }
+.lane-card.status-critical               { background: var(--status-critical-bg); }
+
 .error {
     color: var(--status-critical-fg);
     background: var(--status-critical-bg);

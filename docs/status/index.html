@@ -14,6 +14,21 @@
     <p class="as-of" id="as-of">Loading…</p>
   </header>
 
+  <section class="group trend" aria-labelledby="trend-h">
+    <h2 id="trend-h">Progress</h2>
+    <p class="delta" id="delta">Building trend history…</p>
+    <div class="spark-grid">
+      <div class="spark-item">
+        <div class="spark-label">Completed (transcription)</div>
+        <div id="spark-completed"></div>
+      </div>
+      <div class="spark-item">
+        <div class="spark-label">Passed (summaries)</div>
+        <div id="spark-passed"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="group" aria-labelledby="transcriber-h">
     <h2 id="transcriber-h">Transcription</h2>
     <div class="tiles" id="transcriber-tiles"></div>
@@ -22,6 +37,22 @@
   <section class="group" aria-labelledby="summarizer-h">
     <h2 id="summarizer-h">Summaries</h2>
     <div class="tiles" id="summarizer-tiles"></div>
+  </section>
+
+  <section class="group" aria-labelledby="lanes-h">
+    <h2 id="lanes-h">Summarizer lanes</h2>
+    <div class="lane-silo">
+      <h3>Small-capacity lanes</h3>
+      <div class="lanes" id="lanes-small"></div>
+    </div>
+    <div class="lane-silo">
+      <h3>Medium-capacity lanes</h3>
+      <div class="lanes" id="lanes-medium"></div>
+    </div>
+    <div class="lane-silo">
+      <h3>Large-capacity lanes</h3>
+      <div class="lanes" id="lanes-large"></div>
+    </div>
   </section>
 
   <p class="error" id="error" hidden></p>
