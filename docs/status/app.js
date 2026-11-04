@@ -41,6 +41,29 @@ function mergeEmptyAndRevisitIntoPending(counts) {
   return merged;
 }
 
+// Publishing is entirely opt-in per row (no automatic eligibility pass like
+// transcription/summarization have) -- a blank gh_publish_state means "never
+// entered this workflow," not "pending," so the backend already drops blanks
+// before this ever sees the data (get_column_counts). "withdraw"/"withdrawing"
+// (pulling a published page back down) fold into Processing -- both are a
+// transition in progress; "withdrawn" maps to Skipped -- an inert, no-longer-
+// active end state, not a failure.
+const PUBLISHER_ORDER = [
+  ["publish", "Pending", "neutral"],
+  ["publishing", "Processing", "neutral"],
+  ["published", "Completed", "good"],
+  ["withdrawn", "Skipped", "warning"],
+  ["failed", "Failed", "critical"],
+];
+
+function mergeWithdrawingIntoPublishing(counts) {
+  const merged = { ...counts };
+  merged.publishing = (merged.publishing || 0) + (merged.withdrawing || 0) + (merged.withdraw || 0);
+  delete merged.withdrawing;
+  delete merged.withdraw;
+  return merged;
+}
+
 function renderTiles(container, counts, order) {
   container.innerHTML = "";
   const seen = new Set();
@@ -207,6 +230,7 @@ async function refresh() {
 
     renderTiles(document.getElementById("transcriber-tiles"), data.transcriber || {}, TRANSCRIBER_ORDER);
     renderTiles(document.getElementById("summarizer-tiles"), mergeEmptyAndRevisitIntoPending(data.summarizer || {}), SUMMARIZER_ORDER);
+    renderTiles(document.getElementById("publisher-tiles"), mergeWithdrawingIntoPublishing(data.publisher || {}), PUBLISHER_ORDER);
     renderLaneSilos(data.lanes || []);
 
     const hist = recordHistory(data);
