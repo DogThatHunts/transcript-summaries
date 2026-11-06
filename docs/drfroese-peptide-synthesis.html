@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow"><title>Dr. Froese: the peptide channel, fact-checked</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1f33; --navy-2: #1b3350; --steel: #2f6db3; --steel-dark: #1f4f87;
+  --ink: #1b2430; --paper: #f4f6f9; --card: #e9eef5; --line: #d6dde7; --muted: #5f6b7a;
+  --accent: #8fb4e3;
+  --strong-bg: #dcebe2; --strong-fg: #116048; --strong-bd: #a9d3bc;
+  --medium-bg: #fcefd6; --medium-fg: #8a5a09; --medium-bd: #f0cf8e;
+  --weak-bg: #fbe0df; --weak-fg: #a3271f; --weak-bd: #f0b3af;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.nav { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 10; }
+.nav-in { max-width: 980px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 4px 22px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.nav a { color: #b7c7dc; text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.nav a:hover { color: #fff; border-bottom-color: var(--accent); }
+.hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #eef2f7;
+  padding: 56px 24px 44px; border-bottom: 5px solid var(--steel); }
+.hero-in { max-width: 980px; margin: 0 auto; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700;
+  letter-spacing: .17em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.hero-tag::before { content: ""; width: 26px; height: 2px; background: var(--accent); }
+.hero h1 { font-weight: 800; font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 18px; }
+.hero-subtitle { font-size: 1.02rem; color: #c3cfdd; max-width: 76ch; line-height: 1.65; font-weight: 400; }
+.hero-meta { margin-top: 20px; font-size: 12px; color: #8ea2b8; text-transform: uppercase; letter-spacing: .05em; }
+.legend { margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap; }
+.container { max-width: 980px; margin: 0 auto; padding: 48px 24px 90px; }
+.content h2 { font-size: 1.42rem; font-weight: 700; letter-spacing: -0.01em; color: var(--navy); margin: 46px 0 14px;
+  padding-top: 20px; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+.content h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.content h3 { font-size: 1.06rem; font-weight: 700; color: var(--steel-dark); margin: 28px 0 10px; }
+.content p { margin-bottom: 16px; }
+.content ul, .content ol { margin: 0 0 20px 1.25em; }
+.content li { margin-bottom: 10px; }
+.content strong { color: var(--navy); font-weight: 700; }
+.content em { color: var(--muted); }
+.content hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+.content a { color: var(--steel-dark); text-decoration-color: var(--line); }
+.content a:hover { text-decoration-color: var(--steel-dark); }
+.content code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-size: .88em; }
+.content table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: .85rem; }
+.content th { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted);
+  text-align: left; padding: 9px 10px; border-bottom: 2px solid var(--navy-2); white-space: nowrap; }
+.content td { padding: 10px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.55; }
+.content tr:hover td { background: #eef2f7; }
+.grade { display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: .04em; padding: 2px 7px;
+  border-radius: 4px; white-space: nowrap; }
+.grade-strong { background: var(--strong-bg); color: var(--strong-fg); border: 1px solid var(--strong-bd); }
+.grade-medium { background: var(--medium-bg); color: var(--medium-fg); border: 1px solid var(--medium-bd); }
+.grade-weak { background: var(--weak-bg); color: var(--weak-fg); border: 1px solid var(--weak-bd); }
+.callout { background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--steel); border-radius: 0 6px 6px 0;
+  padding: 18px 24px; margin: 0 0 30px; font-size: .95rem; }
+.section-divider { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+.section-divider .bigrule { border-top: 3px solid var(--navy-2); margin: 10px 0 0; }
+footer { text-align: center; font-size: 12px; color: var(--muted); padding: 30px 24px 50px; }
+.footnote { margin-top: 44px; padding-top: 18px; border-top: 2px solid var(--line); font-size: .86rem; color: var(--muted); }
+.footnote hr { display: none; }
+.footnote ol { margin-left: 1.2em; }
+.footnote li { margin-bottom: 14px; }
+.footnote-ref { font-size: .78em; font-weight: 700; color: var(--steel-dark); text-decoration: none; }
+.footnote-backref { margin-left: 4px; }
+@media (max-width: 640px) { body { font-size: 16px; } .content table { font-size: .78rem; } }
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a href="#summary">Executive summary</a>
+  <a href="#framework">Full synthesis</a>
+  <a href="#method">Method &amp; gaps</a>
+  <a href="#citations">Citations</a>
+</div></nav>
+
+<header class="hero"><div class="hero-in">
+  <div class="hero-tag">Fact-checked transcript synthesis</div>
+  <h1>Dr. Froese's peptide channel: what she claims, and what the evidence actually says</h1>
+  <p class="hero-subtitle">A cross-reading of 49 "DrFroese" YouTube transcripts on peptides, NAD+, TRT, and GLP-1 drugs,
+  with 65 of the channel's headline and recurring claims checked against PubMed, FDA.gov, ClinicalTrials.gov, and
+  regulations.gov, then graded strong, medium, or weak.</p>
+  <div class="legend">
+    <span class="grade grade-strong">STRONG</span>
+    <span class="grade grade-medium">MEDIUM</span>
+    <span class="grade grade-weak">WEAK</span>
+  </div>
+  <p class="hero-meta">35 strong · 22 medium · 8 weak, across 65 checked claims</p>
+</div></header>
+
+<main class="container content">
+
+<section id="summary" class="callout" style="border-left-color:var(--navy-2);">
+<h2 style="border-top:none;margin-top:0;padding-top:0;">Executive summary</h2>
+<p>The channel's core pitch: peptides and related compounds can repair injuries, restart aging mitochondria, boost growth hormone, treat obesity, sharpen cognition, and extend lifespan — mostly by working with the body's own signaling rather than replacing it outright. Checked against 65 of the channel's actual headline/recurring claims, that pitch holds up unevenly: some of it is well-supported, one specific claim is flatly false, and a cluster of "longevity" compounds rests on evidence far thinner than the confident tone suggests.</p>
+<h2>The one false claim</h2>
+<p><strong>SS-31 (elamipretide) is not FDA-approved for anything, despite being described as approved for Barth syndrome in at least six videos.</strong> FDA rejected the drug in 2025 and it's still under review; no treatment for Barth syndrome is approved by anyone, anywhere. Its actual human trial record is also weaker than implied — the two largest trials (heart failure, muscular disease) both missed their primary endpoints; only a small kidney-disease pilot showed a clean positive result.</p>
+<h2>What holds up well</h2>
+<ul>
+<li><strong>BPC-157 and TB-500</strong> ("the Wolverine stack," for tissue repair): correctly described as having real preclinical mechanisms (angiogenesis, cell migration) but almost no human evidence — a handful of tiny uncontrolled pilot studies, no completed RCTs. The "animal-only" caveat is accurate, not hedging for show.</li>
+<li><strong>Tesamorelin</strong> (an FDA-approved growth-hormone peptide for visceral fat): the specific numbers cited — ~15% visceral-fat reduction, 37% liver-fat reduction, an executive-function benefit in older adults — all match the real published trials closely.</li>
+<li><strong>GLP-1 weight-loss drugs</strong> (semaglutide, tirzepatide, retatrutide): weight-loss percentages cited for each match published trial data closely. The standard "75% fat / 25% lean mass" split on these drugs is also accurate, though a repeated "up to 40% lean mass" figure overstates how typical that upper bound actually is.</li>
+<li><strong>MOTS-c</strong> (a mitochondrial peptide): the core biology (2015 discovery, activates AMPK, produced by exercise/fasting/cold) and animal data (reverses diet-induced obesity and insulin resistance in mice, correlates with ovarian cancer tissue) are accurately summarized as animal/cellular-only.</li>
+<li><strong>The gray-market stories</strong> — a testing lab finding zero of four bodega-bought peptide vials contained what they claimed, a company that collapsed after a customer's drug-induced psychosis traced to contaminated product — are real, documented events, not exaggeration.</li>
+</ul>
+<h2>What's thin or wrong</h2>
+<p>A specific cluster of compounds — <strong>Semax, Selank, Epitalon, and DSIP</strong> (all of Soviet/Russian origin), plus the drug blend <strong>Cerebrolysin</strong> — are consistently the weakest material on the channel:</p>
+<ul>
+<li><strong>Semax</strong> and <strong>Selank</strong> (claimed to match or beat prescription stimulants/benzodiazepines for focus and anxiety) rest on small, non-blinded Russian trials that have never been independently replicated anywhere else.</li>
+<li><strong>Epitalon</strong> (claimed to activate telomerase and extend lifespan, citing a "12-year human study") actually blends three separate and much weaker findings — a lab-dish result on human cells, a rodent lifespan study, and an observational (not controlled) human cohort — into one overstated claim. No controlled trial has ever measured whether it does either thing in people.</li>
+<li><strong>DSIP's</strong> evidence for easing opioid withdrawal is real but is uncontrolled case-series data from the 1980s.</li>
+<li><strong>Cerebrolysin</strong> is presented as "researched for stroke/dementia recovery" without mentioning that the best current evidence — a 2023 review of 1,773 patients — found no benefit and <em>more</em> serious side effects than placebo.</li>
+</ul>
+<p>A few other claims are directionally right but tuned to look more favorable than the data support: a comparison claiming retatrutide clears 80% of liver fat versus tirzepatide's 30% is accurate on retatrutide but lowballs tirzepatide's real result (50–65%), making the gap look bigger than it is. And a cancer-risk figure for growth-hormone peptides ("20–50% relative risk increase") is accurate for prostate cancer but far overstates the risk shown for colorectal cancer in the same breath.</p>
+<h2>The bottom line</h2>
+<p>The channel is unusually willing to say "this is animal-only" or "I can't legally recommend this" compared to typical peptide-influencer content — that habit is real and should count in its favor. But it didn't catch the SS-31 approval error, and it doesn't distinguish evidence quality <em>within</em> the "research peptide" category: a drug with a real published human trial (tesamorelin, the GLP-1s) and a peptide whose only support is an unreplicated 1990s Russian study (Semax, Selank, Epitalon) get the same confident delivery. The actual evidence quality varies enormously, and that variation is the thing a viewer most needs to know and isn't told.</p>
+<p>Full claim-by-claim grading and sources: <code>DRFROESE_CITATIONS.md</code>. Longer thematic writeup: <code>DRFROESE_FRAMEWORK.md</code>. None of this is medical advice.</p>
+</section>
+
+<section id="framework">
+<p><em>A cross-reading of 49 "DrFroese" transcripts in the Queue sheet (rows 5092–5176, excluding three videos reclassified as outside the peptide/NAD+/TRT/GLP-1 scope<sup id="fnref:scope"><a class="footnote-ref" href="#fn:scope">1</a></sup>). Built from the transcripts themselves (per-video analytical briefs, then synthesis). Companion citations sidecar: <code>DRFROESE_CITATIONS.md</code>, which grades the corpus's headline/recurring claims strong/medium/weak against real sources found by live search. One-page version: <code>DRFROESE_EXECUTIVE_SUMMARY.md</code>.</em></p>
+<p>Dr. Froese is a physician who produces YouTube content explaining peptide therapeutics, growth-hormone secretagogues, GLP-1/weight-loss drugs, NAD+, and adjacent longevity compounds to a lay/biohacker audience. Across 49 videos she teaches a consistent six-bucket taxonomy (stated explicitly in row 5127): <strong>inflammation/repair</strong> peptides (BPC-157, TB-500, KPV, GHK-Cu), <strong>mitochondrial</strong> peptides (MOTS-c, SS-31/elamipretide, FOXO4-DRI, Urolithin A), <strong>growth-hormone-axis</strong> peptides (sermorelin, CJC-1295, ipamorelin, tesamorelin, IGF-1 LR3, follistatin), <strong>metabolic/GLP-1-class</strong> drugs (semaglutide, tirzepatide, retatrutide, cagrilintide, orforglipron), <strong>cognition/nootropic</strong> peptides (Semax, Selank, Dihexa, Cerebrolysin), and <strong>sleep/longevity</strong> peptides (DSIP, Epitalon) — plus a seventh de facto bucket of <strong>sexual-health/reproductive</strong> compounds (PT-141, melanotan II, kisspeptin, and TRT-adjacent HCG/gonadorelin/enclomiphene). The same named "stacks" — the <strong>Wolverine stack</strong> (BPC-157 + TB-500), the <strong>Glow stack</strong> (+ GHK-Cu, sometimes + KPV), and <strong>CJC-1295 + Ipamorelin</strong> — recur across a dozen-plus videos as the community's default combinations.</p>
+<p>What follows is organized by what she actually claims about each compound family, with the evidence verdict woven in. The regulatory/FDA-process backstory that threads through roughly a third of the corpus is real and mostly accurate, but it's compressed to footnotes<sup id="fnref:reg"><a class="footnote-ref" href="#fn:reg">2</a></sup> below so it doesn't crowd out the substance of the medical claims, which is the point of this document.</p>
+<hr />
+<h2>Inflammation/repair peptides: BPC-157, TB-500, KPV, GHK-Cu</h2>
+<p><strong>The claims.</strong> BPC-157 ("body protection compound," naturally occurring in gastric juice) is pitched as accelerating healing of tendons, ligaments, muscle, nerve, and gut tissue by boosting blood-vessel formation and nitric-oxide signaling, and as one of the only peptides stable enough to take orally. TB-500 (a thymosin beta-4 fragment) is pitched as directing cell migration to injury sites and is routinely stacked with BPC-157. KPV (an alpha-MSH fragment) is pitched as shutting down NF-κB-driven inflammation via a "Trojan horse" cell-entry mechanism, mainly for gut and skin inflammation. GHK-Cu (a copper-binding tripeptide) is pitched as reversing age-related decline in collagen/tissue repair and influencing thousands of genes.</p>
+<p><strong>The verdict.</strong> The mechanisms described for all four match the real preclinical (animal/cell) literature — this isn't invented biology. But the human evidence is consistently and explicitly flagged as thin: no completed placebo-controlled human trials exist for BPC-157 (a handful of tiny uncontrolled pilots are the entire human record) or for the TB-500 fragment specifically. KPV's strongest evidence is in animal gut-inflammation models; human data is anecdotal. GHK-Cu's human evidence is limited to small topical-skin studies. The "mostly animal, caveat accordingly" framing she uses for this whole bucket is accurate, not hedging for show. A real, literature-discussed (not invented) theoretical concern: both BPC-157 and TB-500 promote blood-vessel growth, which in principle could also feed an undetected tumor — no study has confirmed this happens, but it's a legitimate open question, not fringe speculation.</p>
+<h2>Mitochondrial peptides: MOTS-c, SS-31, FOXO4-DRI, Urolithin A</h2>
+<p><strong>The claims.</strong> MOTS-c (made from mitochondrial DNA itself) is pitched as "exercise in a vial" — activating the body's AMPK energy-sensing pathway, reversing diet-induced obesity and insulin resistance, and correlating with better outcomes in ovarian cancer. SS-31/elamipretide is pitched as a mitochondrial <em>stabilizer</em> (distinct from a "booster") that protects a key membrane component called cardiolipin, with claimed benefits for chronic fatigue, kidney function, and heart failure. FOXO4-DRI is pitched as a "senolytic" that selectively kills aged/senescent cells. Urolithin A is pitched as clearing out old, damaged mitochondria (mitophagy).</p>
+<p><strong>The verdict — one serious error here.</strong> MOTS-c's core biology and its mouse-level obesity/insulin-resistance reversal are real, peer-reviewed findings, correctly flagged as animal-only. FOXO4-DRI's senolytic mechanism and mouse results (improved kidney function, fur regrowth, fitness) are also real and correctly flagged as animal-only — no human trials exist. Urolithin A has genuine small human trials showing modest benefit.</p>
+<p><strong>But the repeated claim that SS-31 "is FDA-approved" for Barth syndrome — stated as settled fact across at least six separate videos — is false.</strong> FDA issued a formal rejection letter in 2025; the drug is still under review; there is currently no FDA- or EMA-approved treatment for Barth syndrome under any name. Her own human-trial claims for SS-31 are also more mixed than presented: its two largest, most rigorous trials (a Phase 2 heart-failure trial and a Phase 3 trial for a muscle disease) both <strong>failed to meet their primary endpoints</strong> — only a small kidney-disease pilot study showed a clean positive result. A secondary claim that "up to 10% of healthy people" carry antibodies linked to chronic fatigue syndrome via microvascular clotting also didn't match any source found; real prevalence of that antibody ranges from roughly 2% in younger adults to over 50% in the healthy elderly, a very different and much more nuanced picture.</p>
+<h2>Growth-hormone-axis peptides: sermorelin, CJC-1295, ipamorelin, tesamorelin, IGF-1 LR3, follistatin</h2>
+<p><strong>The claims.</strong> This family is pitched as nudging the pituitary to release more of the body's own growth hormone (rather than replacing it outright, the way synthetic HGH does), supporting recovery, sleep, body composition, and — for tesamorelin specifically — visceral-fat loss. Stacking a GHRH-type peptide (sermorelin/CJC-1295) with a ghrelin-mimetic (ipamorelin) is claimed to produce a much larger combined effect than either alone. IGF-1 LR3 and follistatin are pitched as more aggressive, less-tested options for muscle growth.</p>
+<p><strong>The verdict — the best-supported family in the corpus.</strong> Tesamorelin is a genuinely FDA-approved drug (Egrifta), and the specific numbers cited for it — roughly 15% visceral-fat reduction, a 37% liver-fat reduction documented in a real 2019–2020 clinical study, and a real placebo-controlled trial showing an executive-function benefit in older adults — all check out closely against the published trials. (The "via reduced neuroinflammation" mechanism she adds for that last point is her own plausible gloss, not something that trial actually measured.) Sermorelin's history as a since-discontinued FDA-approved drug and the real human pharmacology behind combining a GHRH peptide with a ghrelin-mimetic are both confirmed, though the specific combination of sermorelin/CJC-1295 with ipamorelin hasn't itself been directly trial-tested (only the closely related GHRH + GHRP-6 combination has). One overreach: a cited "21-day human study" showing ipamorelin resists the receptor desensitization that GHRH peptides can cause was actually conducted in rats, with a messier result than described. A related cancer-risk claim (chronically elevated IGF-1 raising cancer risk "20–50%") is real in direction but uneven in size — close to accurate for prostate cancer, several times too high for colorectal cancer, with no reliable figure found for pancreatic cancer at all.</p>
+<h2>GLP-1/metabolic drugs: semaglutide, tirzepatide, retatrutide, cagrilintide, orforglipron</h2>
+<p><strong>The claims.</strong> These drugs are pitched as working on gut-hormone receptors (GLP-1, and in the newer drugs also GIP and glucagon) to produce major, durable weight loss with fewer side effects as each new drug adds a receptor target — retatrutide (three receptors) is presented as the most powerful, with claims of dramatic liver-fat and visceral-fat clearance. A real safety concern she raises repeatedly: up to 40% of weight lost on these drugs can be muscle rather than fat, which she attributes to insufficient protein intake and recommends countering with resistance training and high protein intake.</p>
+<p><strong>The verdict — generally accurate, with a couple of numbers tuned favorably.</strong> Her weight-loss percentages for semaglutide (~12–15%), tirzepatide (~20–25%), and retatrutide ("up to 24%," rising to "unprecedented" in later videos) all match the real published trials closely — and a later trial result that postdates some of her videos (28.3% at the top retatrutide dose) actually supports her framing even more than she knew. The standard "75% fat/25% lean mass" split on these drugs is directly confirmed by a real body-composition sub-study — but her repeated "up to 40%" lean-mass-loss figure, while a real reported upper bound, gets cited as though it were typical, when the central estimate (~25%) matches her own "standard" framing much better. Her retatrutide-vs-tirzepatide liver-fat comparison ("80% vs. 30%") gets retatrutide right but understates tirzepatide's real published range (50–65%), exaggerating how much better retatrutide looks by comparison. The newer oral drug she calls "Foundeo" is really branded Foundayo — a minor misstatement of a real, newly approved drug whose mechanism and trial data she otherwise describes accurately.</p>
+<h2>Cognition, sleep, and "longevity" peptides: Semax, Selank, Dihexa, Epitalon, DSIP, Cerebrolysin</h2>
+<p><strong>The claims.</strong> This is the most confidently delivered bucket in the corpus, and the weakest-supported. Semax and Selank (both developed in Russia) are pitched as matching or beating prescription stimulants and benzodiazepines for focus and anxiety, respectively, without the downsides. Dihexa is pitched as a uniquely potent driver of new brain-cell connections. Epitalon is pitched as activating telomerase and genuinely extending lifespan. DSIP is pitched for deep sleep and easing opioid withdrawal. Cerebrolysin (a peptide blend, not discussed as extensively but referenced for stroke/dementia recovery) rounds out the group.</p>
+<p><strong>The verdict — the weakest evidence in the corpus, concentrated almost entirely in compounds of Soviet/Russian origin.</strong> Semax's and Selank's supporting trials are real but are small, non-blinded, Russian-only, and have never been independently replicated anywhere else — "comparable to a benzodiazepine" is roughly what the one real comparator trial shows; "better than" is not supported by anything found. Epitalon's "activates telomerase and extends lifespan, per a 12-year human study" claim actually stitches together three separate and much weaker findings — a lab-dish result on human cells, a rodent lifespan study, and a human <em>observational</em> cohort (not a controlled trial) — as if they were one coherent result; no controlled human trial has ever measured whether Epitalon lengthens telomeres or extends life in people. DSIP's opioid-withdrawal evidence is real human data but is uncontrolled 1980s case-series work, not a controlled trial. Cerebrolysin's framing as "researched for stroke/dementia recovery" omits that the best independent evidence — a 2023 review of 1,773 patients — found no survival benefit and a significant <em>increase</em> in serious side effects versus placebo. The one partial exception: Dihexa's headline "10 million times more potent than BDNF" figure traces accurately to a real 2013 lab study, though a related paper from the same research group was later retracted for data manipulation, which should discount confidence in the surrounding mechanistic story even though the original figure itself stands.</p>
+<h2>Sexual health, fertility, and TRT-adjacent compounds</h2>
+<p><strong>The claims.</strong> PT-141/bremelanotide is pitched for low libido; melanotan II for tanning (with libido as a side effect); kisspeptin for triggering the brain's own reproductive hormone cascade; and HCG/gonadorelin/enclomiphene as ways to support natural testosterone production alongside or instead of TRT.</p>
+<p><strong>The verdict — generally solid.</strong> PT-141 is a genuinely FDA-approved drug (Vyleesi) and her side-effect figures (nausea in roughly 40% of trial patients) match the label closely. Melanotan II's association with melanoma/mole changes is supported by real, published dermatology case reports — not proof of causation, but a real documented signal, not fringe alarmism. Kisspeptin's role in triggering the brain's reproductive-hormone cascade is well-established, with real (if early-stage) human fertility trials underway. TRT-related claims are directionally accurate but tend to round in a reassuring direction — e.g., "most men return to baseline testosterone after stopping TRT" is true for the majority but understates that a real minority (10–20% in the cited literature) don't fully recover, and specific sperm-count/testosterone-suppression figures mostly trace to combined-drug contraceptive studies rather than TRT used alone.</p>
+<hr />
+<h2>Internal dynamics worth noting</h2>
+<ul>
+<li><strong>Repeated, explicit self-caveat — a real and distinguishing habit.</strong> Far more than typical peptide-influencer content, she states "animal-only," "not FDA-approved," "I can't prescribe this," and "this is anecdotal" on nearly every video. The SS-31 error shows the habit isn't foolproof, but it is real and consistent, and it's the main reason most of this corpus grades out as accurate caveated speculation rather than false certainty.</li>
+<li><strong>The habit doesn't distinguish evidence quality <em>within</em> the caveated category.</strong> A peptide with a real published human trial (tesamorelin) and a peptide whose only support is a single unreplicated 1990s Russian study (Semax) get delivered with the same confident tone and the same "research peptide" disclaimer. The disclaimer is honest about regulatory status; it doesn't communicate how much the underlying evidence actually varies.</li>
+<li><strong>Commercial density.</strong> Nearly every video carries at least one paid sponsorship (electrolyte drinks, an at-home body-composition scanner, blood-testing kits, a dosing app) plus a constant upsell of her own paid course, and several videos link an oral supplement she personally endorses. This is disclosed, not hidden, but it's dense enough to be a structural feature of the channel.</li>
+<li><strong>One clear case of commercial framing shaping clinical advice.</strong> In a video comparing BPC-157 to platelet-rich plasma (PRP) injections, she states she "can't tell you to try" BPC-157 and isn't "even supposed to be recommending it," while promoting her own in-clinic PRP service — a procedure she can legally bill for — using her own case anecdotes as the supporting evidence. PRP does have real human trial data that BPC-157 lacks, so the recommendation isn't necessarily wrong — but the incentive alignment is worth flagging.</li>
+<li><strong>A consistent evidence gradient by compound origin.</strong> The strongest claims in this corpus cluster around FDA-regulated, Western-trialed drugs (tesamorelin, the GLP-1 drugs, PT-141) and verifiable US business/regulatory journalism. The weakest claims cluster almost entirely around compounds whose primary evidence is Soviet/Russian-era research never independently replicated in the West (Semax, Selank, Epitalon), or whose once-promising evidence has since turned negative (Cerebrolysin). For any peptide not covered in depth here, that's the single most useful question to ask: where does its primary evidence actually come from?</li>
+</ul>
+<hr />
+<p><em>Every claim referenced above — with the actual verification finding, strong/medium/weak grade, and real source links (PubMed, FDA.gov, ClinicalTrials.gov, regulations.gov, and reputable trade/science reporting) — is catalogued in <code>DRFROESE_CITATIONS.md</code>. A chatbot called "Brighteon.ai"/"Enoch" (Natural News/Mike Adams) was checked as a potential source per the original request and found not to be an independent or peer-reviewed reference; it was not used to support any grade in this synthesis.</em></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:scope">
+<p>Row 5103 (a general glycine/amino-acid nutrition video with only a passing peptide aside), row 5118 (the bacteriostatic-water supply-chain/payment-processor story — peptide-adjacent but not about peptide pharmacology), and row 5161 (over-the-counter testosterone supplements — Shilajit/Tongkat Ali/DHEA — not TRT or peptides) were excluded after reading the transcripts. Row 5158 (BPC-157 vs. PRP) was kept despite its PRP focus because BPC-157 is the direct comparison subject, and is flagged in "Internal dynamics" as a case where commercial incentive visibly shapes the recommendation.&#160;<a class="footnote-backref" href="#fnref:scope" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:reg">
+<p><strong>The regulatory backstory, compressed.</strong> FDA placed BPC-157, TB-500, and related peptides into "Category 2" (the informal do-not-compound list) in 2023 over safety-data gaps — confirmed. On April 15, 2026, FDA removed 12 peptides from Category 2 (BPC-157, TB-500, KPV, MOTS-c, Semax, Epitalon, LL-37, Dihexa, DSIP, PEG-MGF, GHK-Cu, melanotan II) under docket FDA-2025-N-6895 — she undercounts this as "11" in one video. On July 23–24, 2026, FDA's Pharmacy Compounding Advisory Committee reviewed seven of those peptides (BPC-157, KPV, TB-500, MOTS-c, DSIP, Semax, Epitalon — not the other four, despite her sometimes implying a broader list) for actual compounding eligibility. FDA's own staff recommended rejecting all seven; the committee itself voted to recommend six of seven (all but DSIP), with some votes close (BPC-157 passed 8–6–1) — a real, documented staff-vs-committee split, not editorializing on her part. Crucially, none of this makes any peptide legally compoundable yet — a favorable committee vote is advisory only, and actual rule changes require a separate process that hadn't concluded as of the most recent reporting found. Separately, on April 30, 2026, FDA proposed removing semaglutide, tirzepatide, and liraglutide from the <em>large-scale</em> (503B) compounding list — tightening access to approved GLP-1 drugs even as peptide compounding loosens — also confirmed accurately. The gray-market journalism she cites in this context (a lab called Finnrick — she says "Finric.com," a misspelling — finding zero of four bodega-bought peptide vials from a real WIRED investigation contained their labeled ingredient; a real compounding pharmacy called Empower Pharmacy; a real company, Paradigm Peptides, whose collapse after a customer's steroid-induced psychosis led to a criminal sentencing) all check out as described.&#160;<a class="footnote-backref" href="#fnref:reg" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</section>
+
+<section id="method" class="callout">
+<h2 style="border-top:none;margin-top:0;padding-top:0;">Method &amp; honest gaps</h2>
+<p>This page grades <em>headline and recurring</em> claims — the assertions repeated across multiple videos or
+central to a video's thesis — not every individual sentence in 49 transcripts. A handful of specific numbers
+and minor compound names could not be independently verified and are noted as such inline rather than guessed.
+A chatbot called "Brighteon.ai"/"Enoch" (Natural News/Mike Adams) was checked as a possible reference source and
+found not to be independent or peer-reviewed; it was not used to support any grade on this page. Nothing here is
+medical advice, and a "strong" grade means the evidence is well-supported — not that the underlying compound is
+safe, legal, or recommended for any particular person.</p>
+</section>
+
+<section id="citations">
+<p>Every headline/recurring claim checked across the 49-video "DrFroese" peptide/longevity corpus (see <code>DRFROESE_FRAMEWORK.md</code>), grouped by theme, graded <strong>STRONG / MEDIUM / WEAK</strong>, with the real finding and source link(s). Verification was done by live web search against PubMed/PMC, FDA.gov, ClinicalTrials.gov, regulations.gov, Federal Register/govinfo.gov, and reputable trade/science press — <strong>no fabricated URLs</strong>: every link below was returned by an actual search. A chatbot called "Brighteon.ai"/"Enoch" (Natural News/Mike Adams) was checked as a possible reference per the original request and found not to be an independent, peer-reviewed source; it was not used to support any grade here.</p>
+<p><strong>Grading rubric.</strong>
+- <span class="grade grade-strong">STRONG</span> — supported by human RCT(s)/peer-reviewed human clinical data, or a factual/regulatory claim directly confirmed from a primary source (FDA.gov, regulations.gov, drug label, peer-reviewed paper).
+- <span class="grade grade-medium">MEDIUM</span> — supported only by animal/cellular studies, small/uncontrolled human studies, or correlational data with a plausible mechanism but no RCT confirmation; or a regulatory claim that's directionally true but imprecise in detail/numbers.
+- <span class="grade grade-weak">WEAK</span> — no supporting literature found, contradicted by current evidence, exaggerated beyond what the cited studies show, or based only on disputed/non-independent/non-replicated sources.</p>
+<p><strong>Totals across 65 checked claims: 35 STRONG · 22 MEDIUM · 8 WEAK.</strong></p>
+<hr />
+<h2>A. BPC-157 / TB-500 / the gray market</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Finding</th>
+<th>Grade</th>
+<th>Source(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BPC-157 human evidence is "sparse," mostly animal/cellular</td>
+<td>No completed published placebo-controlled RCTs; a handful of small uncontrolled pilots (knee pain n=12, interstitial cystitis n=12); a planned 42-person Phase I trial (NCT02637284) was registered then cancelled with no results</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/39325560/">PubMed 39325560</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/24304574/">PubMed 24304574</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/40756949/">PubMed 40756949 (systematic review)</a></td>
+</tr>
+<tr>
+<td>BPC-157 mechanism (VEGFR2/angiogenesis, nitric oxide, "body protection compound")</td>
+<td>Accurate summary of the preclinical/animal literature; no human mechanistic confirmation</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12446177/">PMC12446177</a></td>
+</tr>
+<tr>
+<td>TB-500 mechanism (actin binding/cell migration) + human trial status</td>
+<td>Actin-binding mechanism is established cell biology for the parent molecule (thymosin β4); the shortened "TB-500" fragment specifically has no completed human trials (full-length Tβ4/RGN-259 trials exist but are a different molecule)</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td>no single authoritative TB-500-fragment-specific human-trial link exists — flagged rather than cited misleadingly</td>
+</tr>
+<tr>
+<td>BPC-157 &amp; TB-500 placed on FDA Category 2 "do not compound" list, 2023</td>
+<td>Confirmed</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.fda.gov/media/193342/download">FDA 503A Bulks list</a> · <a href="https://www.doctronic.ai/blog/peptide-category-2-fda/">regulatory explainer</a></td>
+</tr>
+<tr>
+<td>2026 FDA PCAC meeting reviewed BPC-157/TB-500/KPV/MOTS-c for compounding; voted favorably</td>
+<td>Confirmed: PCAC met July 23–24, 2026, reviewed 7 peptides (BPC-157, KPV, TB-500, MOTS-c, DSIP/Emideltide, Semax, Epitalon); voted to recommend 6 of 7 (not DSIP), several votes contested (e.g. 8-6-1); <strong>advisory only — does not itself authorize compounding</strong></td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.americanmedspa.org/news/fda-advisory-committee-recommends-adding-six-of-seven-peptides-to-compounding-list/">American Med Spa Assoc.</a> · <a href="https://ajmc.com/view/fda-panel-backs-6-peptides-for-compounding">AJMC</a> · <a href="https://www.orrick.com/en/Insights/2026/07/FDA-Peptide-Compounding-Vote-What-to-Watch-at-the-July-PCAC-Meeting">Orrick</a></td>
+</tr>
+<tr>
+<td>FDA removed 11/12 peptides from Category 2 ~April 15, 2026</td>
+<td>Confirmed; the correct figure is <strong>12</strong> peptides (she undercounts by one in some videos), via Federal Register notice April 15–16, 2026, docket FDA-2025-N-6895</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.govinfo.gov/content/pkg/FR-2026-04-16/html/2026-07361.htm">Federal Register, govinfo.gov</a> · <a href="https://www.orrick.com/en/Insights/2026/04/FDA-Announces-Removal-of-12-Peptides-from-Category-2-and-Schedules-PCAC-Meetings">Orrick</a> · <a href="https://www.frierlevitt.com/articles/fda-peptides-do-not-compound-list-update-2026/">Frier Levitt</a></td>
+</tr>
+<tr>
+<td>FDA public comment docket "FDA-2025-N-6895" exists, covers peptide compounding</td>
+<td>Confirmed directly on regulations.gov; ~2,641 public comments</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.regulations.gov/docket/FDA-2025-N-6895">regulations.gov/docket/FDA-2025-N-6895</a></td>
+</tr>
+<tr>
+<td>"Finric.com" is a real third-party peptide-testing company</td>
+<td>Real company, but misnamed — it's <strong>Finnrick</strong> (finnrick.com), an Austin-based independent lab with a public test-result database</td>
+<td><span class="grade grade-medium">MEDIUM</span> (substance correct, name wrong)</td>
+<td><a href="https://www.finnrick.com/blog/independent-peptide-testing">Finnrick</a></td>
+</tr>
+<tr>
+<td>"Empower Pharmacy" is a real, large FDA-registered compounding pharmacy</td>
+<td>Confirmed — largest 503A compounder in the US plus FDA-registered 503B facilities (TX, NJ)</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://prnewswire.com/news-releases/empower-appoints-bob-irwin-as-president-to-oversee-growth-of-the-worlds-largest-503a-compounding-pharmacy-and-fda-registered-503b-outsourcing-facilities-in-texas-and-new-jersey-302237002.html">PR Newswire</a></td>
+</tr>
+<tr>
+<td>"Paradigm Peptides" existed, shut down, customer developed steroid-induced psychosis from mislabeled product</td>
+<td>Confirmed via court-record reporting: owner Matthew Kawa criminally sentenced (~5 yrs 10 mo) after products were found spiked with undeclared testosterone; a named customer's documented steroid-induced psychosis tied to the contamination</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://ground.news/article/peptide-company-owner-sentenced-to-nearly-six-years-for-selling-adulterated-products">Ground News</a></td>
+</tr>
+<tr>
+<td>WIRED investigation: bodega peptides sent for lab testing, found mislabeled</td>
+<td>Confirmed real investigation (4 vials, Brooklyn bodega, tested via Finnrick); finding was <strong>no active ingredient detected</strong>, not "contamination" with an unwanted substance — a meaningfully different result than "contaminated" implies</td>
+<td><span class="grade grade-strong">STRONG</span> (precise framing matters)</td>
+<td><a href="https://futurism.com/health-medicine/chemical-analysis-bodega-retatrutide-peptides">Futurism coverage</a></td>
+</tr>
+<tr>
+<td>BPC-157/TB-500 theoretical cancer risk via angiogenesis</td>
+<td>A real, literature-discussed mechanistic concern (VEGF/angiogenesis could theoretically feed an undetected tumor), but no confirmed evidence of actual increased cancer incidence in available studies</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td>mechanism is standard angiogenesis/oncology biology; no single dedicated review article was captured with full confidence this pass</td>
+</tr>
+</tbody>
+</table>
+<h2>B. Mitochondrial peptides (MOTS-c, SS-31/elamipretide, FOXO4-DRI, Urolithin A)</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Finding</th>
+<th>Grade</th>
+<th>Source(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"SS-31/elamipretide is FDA-approved for Barth syndrome"</strong> (repeated across ≥6 videos)</td>
+<td><strong>FALSE.</strong> FDA issued a Complete Response Letter in May 2025; Stealth BioTherapeutics resubmitted Aug 2025, still under review. <strong>No therapy is currently FDA- or EMA-approved for Barth syndrome at all.</strong> "Xenity"/"Elamipratide" are not real approved product names.</td>
+<td><span class="grade grade-weak">WEAK</span> (factually false)</td>
+<td><a href="https://globalgenes.org/raredaily/stealth-resubmits-application-to-fda-for-approval-of-barth-syndrome-drug/">GlobalGenes</a> · <a href="https://www.biospace.com/press-releases/stealth-biotherapeutics-announces-fda-acceptance-of-elamipretide-nda-resubmission">BioSpace</a> · <a href="https://www.pharmaceutical-technology.com/news/fda-rejects-stealth-bios-barth-syndrome-treatment-after-16-5-month-review/">Pharmaceutical Technology</a></td>
+</tr>
+<tr>
+<td>MOTS-c: 16-aa mitochondrial-DNA-encoded peptide, discovered 2015, activates AMPK, exercise/fasting/cold-induced</td>
+<td>Confirmed — original Lee et al., <em>Cell Metabolism</em> 2015</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/25738453/">PubMed 25738453</a></td>
+</tr>
+<tr>
+<td>MOTS-c prevents/reverses diet-induced obesity &amp; insulin resistance in mice</td>
+<td>Confirmed against the original paper — mouse-only</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/25738453/">PubMed 25738453</a></td>
+</tr>
+<tr>
+<td>MOTS-c human levels decline ~21% with age</td>
+<td>Directionally confirmed for the oldest-vs-youngest comparison in one cross-sectional plasma study, but skeletal-muscle <em>expression</em> of MOTS-c actually <em>increased</em> with age in the same study — a nuance she omits</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7138593/">PMC7138593</a></td>
+</tr>
+<tr>
+<td>MOTS-c low in ovarian cancer tissue/serum; halts cancer-cell progression in vitro</td>
+<td>Confirmed — real 2024 <em>Advanced Science</em> paper (serum + tissue, 40 OC patients vs. 40 controls; in-vitro mechanism via USP7/LARS1)</td>
+<td><span class="grade grade-medium">MEDIUM</span> (correlational + in-vitro only)</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11578304/">PMC11578304</a></td>
+</tr>
+<tr>
+<td>MOTS-c not FDA-approved; was Category 2, removed April 2026, PCAC-reviewed July 2026</td>
+<td>Confirmed</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td>see Theme A sources above</td>
+</tr>
+<tr>
+<td>SS-31/elamipretide binds/stabilizes cardiolipin in the inner mitochondrial membrane</td>
+<td>Confirmed, well-established biochemical mechanism</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.biorxiv.org/content/10.1101/739128.full.pdf">bioRxiv interactome study</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7334473">PMC7334473</a></td>
+</tr>
+<tr>
+<td>SS-31 human trial data (heart failure, kidney disease, exercise endurance)</td>
+<td>Real RCTs exist in all three areas, but the <strong>pivotal trials failed their primary endpoints</strong> — Phase 2 heart failure (PROGRESS-HF) and Phase 3 myopathy (MMPOWER-3) both missed; only a small kidney pilot (EVOLVE) showed a clean positive signal</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10382259/">PMC10382259 (MMPOWER-3)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/37268435/">PubMed 37268435</a></td>
+</tr>
+<tr>
+<td>Anti-cardiolipin antibodies in "up to 10%" of healthy people, linked to microvascular clotting/CFS</td>
+<td>Not supported as stated — true prevalence is strongly age-dependent (~2–3% in younger healthy adults up to &gt;50% in the healthy elderly); no source matched the flat "10%" figure or the specific CFS-causation framing</td>
+<td><span class="grade grade-weak">WEAK</span></td>
+<td><a href="https://olympias2.lib.uoi.gr/items/89ed3ada-d673-43c6-9400-9c5270586288">healthy-elderly ACA prevalence study</a></td>
+</tr>
+<tr>
+<td>FOXO4-DRI: disrupts FOXO4-p53, kills senescent cells (senolytic)</td>
+<td>Confirmed against original 2017 <em>Cell</em> paper (Baar et al.) — restored fur density, improved kidney function, improved fitness in mice; <strong>no human trials exist</strong></td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5675609/">PMC5675609</a></td>
+</tr>
+<tr>
+<td>Urolithin A clears/promotes mitophagy of old mitochondria</td>
+<td>Directionally true; human RCT data shows molecular proxy signatures consistent with mitophagy and modest functional gains (e.g. +12% muscle strength in the ATLAS trial at 4 months), but mitophagy itself was never directly measured in living human muscle and effect sizes are small/inconsistent</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9133463/">PMC9133463</a> · <a href="https://www.businesswire.com/news/home/20220517005659/en">ATLAS trial</a></td>
+</tr>
+</tbody>
+</table>
+<h2>C. Growth-hormone-axis peptides</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Finding</th>
+<th>Grade</th>
+<th>Source(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tesamorelin (Egrifta) FDA-approved for HIV-associated lipodystrophy/visceral fat</td>
+<td>Confirmed, exact label indication</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf">FDA label</a></td>
+</tr>
+<tr>
+<td>Tesamorelin visceral fat reduction ~15–20% over 6–12 months</td>
+<td>Pivotal trials show ~15.2–15.4% at 26 weeks (6 months); the 12-month figure is less directly supported by the registration trials themselves</td>
+<td><span class="grade grade-strong">STRONG</span> (for the 6-month figure)</td>
+<td><a href="https://jamanetwork.com/journals/jama/article-abstract/1889139">JAMA pivotal trial</a></td>
+</tr>
+<tr>
+<td>"2020 MGH study": tesamorelin reduced liver fat 37% over 12 months</td>
+<td>Confirmed — the real study is a 2019 <em>Lancet HIV</em> RCT (61 participants) plus a 2020 <em>JCI Insight</em> mechanistic follow-up from an MGH-affiliated group; the 37%/12-month figure is accurate</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/31611038/">PubMed 31611038</a> · <a href="https://insight.jci.org/articles/view/140134/pdf">JCI Insight</a> · <a href="https://www.massgeneral.org/news/press-release/Mass-general-researchers-gain-insight-into-mechanism-of-promising-therapy-to-reduce-liver-fat-and-prevent-fibrosis-progression-in-common-form-of-liver-disease">MGH press release</a></td>
+</tr>
+<tr>
+<td>Tesamorelin improves executive function/memory in older adults via reduced neuroinflammation</td>
+<td>Real placebo-controlled RCT (Baker et al. 2012, 152 adults) found the cognitive benefit; the "via reduced neuroinflammation" mechanism was not what that trial measured — her own added gloss</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://sciencedaily.com/releases/2012/08/120806161820.htm">coverage of Baker et al. 2012</a> · <a href="https://alzforum.org/node/37659">Alzforum</a></td>
+</tr>
+<tr>
+<td>Sermorelin (Geref) FDA-approved historically, discontinued for commercial not safety reasons</td>
+<td>Confirmed (approved 1997, withdrawn 2009 per manufacturer's voluntary notice)</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://en.wikipedia.org/wiki/Sermorelin">Sermorelin regulatory history</a></td>
+</tr>
+<tr>
+<td>Ipamorelin never FDA-approved</td>
+<td>Confirmed; also now Category 2 for compounding</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://superpower.com/guides/peptides/ipamorelin">FDA 503A nomination summary</a></td>
+</tr>
+<tr>
+<td>CJC-1295 is WADA-prohibited for athletes</td>
+<td>Confirmed, WADA list category S2.2</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.bscg.org/blogs/single/cjc-1295-use-in-sports-and-military-rules-explained">BSCG summary</a></td>
+</tr>
+<tr>
+<td>GHRH + ghrelin-mimetic combination produces synergistic/amplified GH pulse</td>
+<td>Real, well-established human pharmacology for the classic GHRH + GHRP-6 combination (Bowers/Ghigo-era JCEM studies); no direct RCT found for the specific sermorelin/CJC-1295 + ipamorelin pairing she describes</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/9186261/">PubMed 9186261</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/7883854">PubMed 7883854</a></td>
+</tr>
+<tr>
+<td>Elevated IGF-1 correlates with 20–50% relative cancer-risk increase (breast/prostate/colon/pancreatic)</td>
+<td>Real association, inconsistent magnitude: prostate ~38–49% (in her range), premenopausal breast ~65% (above her range), colorectal only ~7% per SD (well below), no clean pancreatic figure found; overall cross-cancer meta-analysis found just 15%</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2987015">PMC2987015 (prostate)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/15110491/">PubMed 15110491 (meta-analysis)</a></td>
+</tr>
+<tr>
+<td>21-day human study: no pituitary desensitization to ipamorelin, unlike GHRH peptides</td>
+<td>Not confirmed as a human study — the matching 21-day desensitization study found was in <strong>rats</strong>, and its finding was messier than claimed (both ipamorelin and GHRH could desensitize under some conditions)</td>
+<td><span class="grade grade-weak">WEAK</span></td>
+<td><a href="https://www.researchgate.net/profile/Ramon-Canete/publication/28093664">rat study</a></td>
+</tr>
+<tr>
+<td>Long-term HGH use causes new-onset diabetes/insulin resistance</td>
+<td>Well-documented in GH-replacement literature; a surveillance cohort found diabetes incidence 2.6/100 patient-years, significantly elevated</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6907272">PMC6907272</a></td>
+</tr>
+</tbody>
+</table>
+<h2>D. GLP-1 / incretin drugs</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Finding</th>
+<th>Grade</th>
+<th>Source(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retatrutide weight loss "up to 24%" / "unprecedented"</td>
+<td>Matches 2023 NEJM phase 2 data almost exactly (24.2% at 12mg); phase 3 TRIUMPH-1 (2026) later showed 28.3% at top dose — supports her framing even more than she knew</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.bloomberg.com/news/articles/2023-06-26/lilly-s-lly-weight-loss-shot-gives-company-s-strongest-results-in-trial">Bloomberg on NEJM phase 2</a> · <a href="https://www.pharmacytimes.com/view/retatrutide-delivers-bariatric-level-weight-loss-pivotal-phase-3-triumph-1-trial">TRIUMPH-1 phase 3</a></td>
+</tr>
+<tr>
+<td>Tirzepatide weight loss ~20–25%</td>
+<td>Matches SURMOUNT-1 (22.5% top dose at 72 weeks) closely</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://investor.lilly.com/node/47141">Lilly investor release</a></td>
+</tr>
+<tr>
+<td>Semaglutide weight loss ~12–15%</td>
+<td>Matches STEP 1 (14.9%) and broader STEP program closely</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.springermedicine.com/en/obesity/semaglutide/quick-guide-step-trials/26979124">STEP trials guide</a></td>
+</tr>
+<tr>
+<td>Up to 40% of GLP-1 weight loss is lean mass; "standard" 75% fat/25% lean split</td>
+<td>The 75/25 split is directly confirmed (SURMOUNT-1 DXA substudy, n=160); "up to 40%" is a real reported upper bound, but central estimates (~25%) match the "standard" framing better than 40% does</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://www.news-medical.net/news/20230519/Tirzepatide-improves-body-composition-across-a-range-of-adult-age-groups-study-shows.aspx">SURMOUNT-1 DXA substudy coverage</a></td>
+</tr>
+<tr>
+<td>Cagrilintide + semaglutide ("CagriSema") exists, outperforms semaglutide alone</td>
+<td>Confirmed — real Novo Nordisk combination, Phase 3 REDEFINE/REIMAGINE programs; 22.7% vs. 16.1% weight loss in REDEFINE 1</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.drugs.com/clinical_trials/cagrisema-demonstrates-superior-weight-loss-adults-obesity-overweight-redefine-1-trial-21844.html">REDEFINE 1 trial</a></td>
+</tr>
+<tr>
+<td>Retatrutide "80% liver fat reduction" vs. tirzepatide's "30%"</td>
+<td>Retatrutide's figure checks out (86% mean reduction at 12mg, phase 2); tirzepatide's real published range (50–65%) is notably higher than the "30%" comparator she cites, exaggerating the gap between the two drugs</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://www.joinvoy.com/blog/retatrutide-fatty-liver">retatrutide liver fat data</a> · <a href="https://www.mdedge9-ma1.mdedge.com/fedprac/article/264638/obesity/triple-g-agonist-hits-new-weight-loss-heights/page/0/1">tirzepatide NASH/liver-fat data</a></td>
+</tr>
+<tr>
+<td>Orforglipron ("Foundeo"): oral small-molecule GLP-1, trial data, approval</td>
+<td>Real brand name is <strong>Foundayo</strong> (minor misstatement); correctly described as non-peptide/small-molecule; FDA-approved April 2026 via a fast-track priority voucher; trial weight loss clusters ~10–12% (ATTAIN-1: up to 11.2% at 36mg)</td>
+<td><span class="grade grade-strong">STRONG</span> (mechanism/approval); minor error on brand name</td>
+<td><a href="https://www.pulse.bot/biotech/news/eli-lilly-reports-us-fda-approval-of-foundayo-orforglipron-for-weight-loss-00ac5625-7e10-4fe3-b605-fa1741310b82">FDA approval coverage</a> · <a href="https://www.acc.org/Latest-in-Cardiology/Journal-Scans/2025/09/24/16/48/ATTAIN-1">ATTAIN-1</a></td>
+</tr>
+<tr>
+<td>FDA proposed (April 30, 2026) removing semaglutide/tirzepatide/liraglutide from 503B bulk list</td>
+<td>Confirmed, correct date and drugs</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.jdsupra.com/legalnews/fda-proposal-would-leave-semaglutide-7717865/">JD Supra</a> · <a href="https://www.orrick.com/en/Insights/2026/05/FDA-Moves-to-Shut-the-Door-on-Large-Scale-Compounding-of-GLP1-Drugs">Orrick</a></td>
+</tr>
+<tr>
+<td>Lilly Direct sells tirzepatide/Zepbound vials direct to patients, ~$400–500/month</td>
+<td>Confirmed — capped self-pay pricing $299–$499/month depending on dose</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.webull.com/news/13000462887789568">Zepbound self-pay pricing</a></td>
+</tr>
+<tr>
+<td>GLP-1 drugs under active research for dementia/Alzheimer's</td>
+<td>Real, active area (phase 2b ELAD trial, ongoing phase 3 EVOKE trial); not proven, appropriately framed as investigational</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://mdedge.com/content/promising-new-data-support-glp-1s-dementia-prevention">GLP-1/dementia research coverage</a></td>
+</tr>
+<tr>
+<td>Medullary thyroid carcinoma / MEN2 black-box warning on GLP-1 drugs</td>
+<td>Confirmed, including the nuance that the human risk is unconfirmed/rodent-derived</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://drugs.com/monograph/tirzepatide.html">Tirzepatide monograph</a></td>
+</tr>
+</tbody>
+</table>
+<h2>E. Nootropic, sleep, and "longevity" peptides</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Finding</th>
+<th>Grade</th>
+<th>Source(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semax: Russian-approved, used for stroke recovery</td>
+<td>Regulatory status confirmed (approved in Russia since 1994, no FDA approval); but the best human stroke trial is non-randomized/non-placebo-controlled, published non-Western-indexed, never independently replicated</td>
+<td><span class="grade grade-weak">WEAK</span></td>
+<td><a href="https://healingmaps.com/semax-peptide-cerebral-ischemia-migraine-trigeminal-neuralgia/">Semax regulatory/evidence summary</a></td>
+</tr>
+<tr>
+<td>Selank: anxiolytic effects "similar to or better than" benzodiazepines, no sedation/addiction</td>
+<td>The one comparator trial (62 patients, Zozulya et al.) is small, non-blinded, non-independently-replicated, and only supports "similar to," not "better than"</td>
+<td><span class="grade grade-weak">WEAK</span></td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/28280289/">PubMed 28280289</a></td>
+</tr>
+<tr>
+<td>Dihexa "10 million times more potent than BDNF"</td>
+<td>Traces accurately to a real 2013 peer-reviewed assay (McCoy et al.) — but a related paper from the same research program was retracted in 2025 for image falsification, weakening confidence in the surrounding literature</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3533412">PMC3533412</a></td>
+</tr>
+<tr>
+<td>Epitalon activates telomerase, extends lifespan (12-year human study)</td>
+<td>Conflates three separate, weaker findings: <em>in-vitro</em> human fibroblast telomerase activation, <em>rodent</em> lifespan extension, and a human <em>observational cohort</em> (not RCT) mortality correlation — no placebo-controlled human trial has measured telomere length or lifespan with Epitalon</td>
+<td><span class="grade grade-weak">WEAK</span></td>
+<td><a href="https://superpower.com/guides/peptides/epitalon">Epitalon evidence summary</a></td>
+</tr>
+<tr>
+<td>DSIP reduces opioid withdrawal symptoms (1980s-90s human studies)</td>
+<td>Real studies exist, but are small, uncontrolled, non-blinded 1980s open-label case series — not the controlled evidence the framing implies</td>
+<td><span class="grade grade-weak">WEAK</span></td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/6548969/">PubMed 6548969</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/6548967/">PubMed 6548967</a></td>
+</tr>
+<tr>
+<td>PT-141/bremelanotide FDA-approved as "Vyleesi" for HSDD in women; nausea common</td>
+<td>Fully confirmed, including side-effect rates (nausea ~40%, flushing ~20%)</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/210557Orig1s000Approv.pdf">FDA approval document</a></td>
+</tr>
+<tr>
+<td>Melanotan II not FDA-approved; case reports of melanoma/atypical nevi</td>
+<td>Both confirmed — real published dermatology case reports exist, though causation isn't established by case reports alone</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://cdn.ruarxive.org/public/webcollect2022/culture2022/knife.media/pubmed.ncbi.nlm.nih.gov/24355990">PMID 24355990</a></td>
+</tr>
+<tr>
+<td>Kisspeptin-10 triggers GnRH release; real IVF/fertility research interest</td>
+<td>Mechanism well-established; small early-phase human IVF trials are real (Imperial College London) but not an approved therapy</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://www.news-medical.net/news/20130618/kisspeptin-hormone-effectively-induces-egg-maturation-during-infertility-treatment-shows-study.aspx">Imperial College London study</a></td>
+</tr>
+<tr>
+<td>Thymosin Alpha-1 (Zadaxin) approved in 35+ countries for hepatitis B/C</td>
+<td>Confirmed; not FDA-approved in the US</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://superpower.com/guides/peptides/thymosin-alpha-1">Zadaxin regulatory summary</a></td>
+</tr>
+<tr>
+<td>Cerebrolysin researched for stroke/dementia, used outside US</td>
+<td>Regulatory status (50+ countries, not FDA/EMA/MHRA/TGA-approved) confirmed, but the framing omits that the best independent evidence (2023 Cochrane review, 1,773 patients) found <strong>no mortality benefit and a significant increase in serious adverse events</strong></td>
+<td><span class="grade grade-weak">WEAK</span></td>
+<td><a href="https://www.cochrane.org/CD008900/DEMENTIA_cerebrolysin-vascular-dementia">Cochrane CD008900</a></td>
+</tr>
+</tbody>
+</table>
+<h2>F. Peptide compounding regulation &amp; TRT</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Finding</th>
+<th>Grade</th>
+<th>Source(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDA Category 1/Category 2 bulk-substance distinction, legal meaning</td>
+<td>Confirmed; removal from Category 2 does <strong>not</strong> itself authorize compounding</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.bipc.com/peptides-at-the-crossroads-fda-tightens-the-line-as-category-2-pushes-toward-category-1">BIPC analysis</a></td>
+</tr>
+<tr>
+<td>503A (smaller, state-regulated) vs. 503B (FDA-registered, CGMP) distinction</td>
+<td>Confirmed, matches FDA's own published framework</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.fda.gov/news-events/fda-brief/fda-brief-fda-issues-new-policy-what-constitutes-outsourcing-facility-key-step-implementing-agencys">FDA brief</a></td>
+</tr>
+<tr>
+<td>PCAC exists, held a 2026 peptide meeting</td>
+<td>Confirmed for the 7 peptides actually reviewed (BPC-157, KPV, TB-500, MOTS-c, DSIP, Semax, Epitalon); GHK-copper, melanotan II, dihexa, LL-37 were <strong>not</strong> on this specific agenda despite sometimes being grouped in with it</td>
+<td><span class="grade grade-strong">STRONG</span> (partial gap on the 4 extra peptides)</td>
+<td><a href="https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026">FDA advisory committee calendar</a></td>
+</tr>
+<tr>
+<td>FDA staff briefing docs recommended against all 7 peptides; committee voted for 6</td>
+<td>Confirmed — a real, documented staff-vs-committee split</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.healthaffairs.org/content/forefront/fda-advisory-committee-s-vote-may-open-drug-compounding-back-door-unapproved-peptides">Health Affairs Forefront</a></td>
+</tr>
+<tr>
+<td>Docket FDA-2025-N-6895 is real</td>
+<td>Directly confirmed on regulations.gov</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.regulations.gov/docket/FDA-2025-N-6895">regulations.gov/docket/FDA-2025-N-6895</a></td>
+</tr>
+<tr>
+<td>TRT: 60–70% of men see near-zero sperm; intratesticular testosterone drops &gt;90% on TRT alone</td>
+<td>Directionally real, but the specific figures mostly trace to combined testosterone+progestin contraceptive studies, not TRT-monotherapy data</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7108987">PMC7108987</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4708215">PMC4708215</a></td>
+</tr>
+<tr>
+<td>HCG alongside TRT preserves fertility/testicular function</td>
+<td>Established clinical practice, evidence base is small clinical series rather than large RCTs</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://tau.amegroups.org/article/view/19649/html">Translational Andrology and Urology</a></td>
+</tr>
+<tr>
+<td>Stopping TRT, most men return to baseline testosterone</td>
+<td>Confirmed as majority-true, but omits that ~10–20% of men in the cited literature do not fully recover</td>
+<td><span class="grade grade-medium">MEDIUM</span></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10620455/">PMC10620455</a></td>
+</tr>
+<tr>
+<td>Enclomiphene never independently FDA-approved; SERM mechanism</td>
+<td>Confirmed — 2015 Complete Response Letter killed the standalone drug (Androxal); mechanism (hypothalamic estrogen-receptor blockade) confirmed</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://www.hims.com/blog/is-enclomiphene-fda-approved">FDA approval history summary</a></td>
+</tr>
+<tr>
+<td>Gonadorelin FDA approval history; ~10-minute half-life</td>
+<td>Confirmed — approved historically as Factrel (1982) and Lutrepulse (~1989), both discontinued, no current approved product; "~10 minutes" is a fair round figure within the documented 2–40-minute range</td>
+<td><span class="grade grade-strong">STRONG</span></td>
+<td><a href="https://wikipedia.com/wiki/Lutrepulse">Lutrepulse history</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Summary by theme</h2>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>STRONG</th>
+<th>MEDIUM</th>
+<th>WEAK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. BPC-157/TB-500/gray market</td>
+<td>8</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B. Mitochondrial peptides</td>
+<td>3</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>C. GH-axis peptides</td>
+<td>7</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>D. GLP-1 drugs</td>
+<td>8</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>E. Nootropic/sleep/longevity</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>F. Regulation &amp; TRT</td>
+<td>7</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>35</strong></td>
+<td><strong>22</strong></td>
+<td><strong>8</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The evidence floor is clearly lowest in theme E (nootropic/sleep/longevity peptides of Russian/Soviet origin, plus Cerebrolysin) and highest in themes A, D, and F (US regulatory fact-trail, gray-market journalism, and GLP-1 drug trial data). The single most consequential error in the corpus — repeated across at least six videos — is the false claim that SS-31/elamipretide is FDA-approved for Barth syndrome (Theme B).</p>
+</section>
+
+</main>
+<footer>Built from the Queue sheet transcripts (rows 5092–5176) · verification sources linked inline · not medical advice</footer>
+</body></html>
