@@ -121,6 +121,22 @@ main { max-width: 760px; margin: 0 auto; }
 .tile.status-neutral .label   { color: var(--status-neutral-fg); }
 .tile.status-neutral .dot     { background: var(--status-neutral-fg); }
 
+/* Stuck-claim badge on the Summaries "Processing" tile -- a claim stuck well
+   past the normal reclaim window (NEXT_ITERATION.md §21 fix #2), distinct
+   from the ordinary in-flight count the tile itself already shows. */
+.tile .stuck-badge {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+    background: var(--status-critical-bg);
+    color: var(--status-critical-fg);
+}
+
 /* ---- progress: delta headline + sparklines ------------------------------ */
 
 .delta {

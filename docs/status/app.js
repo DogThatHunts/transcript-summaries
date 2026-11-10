@@ -64,24 +64,25 @@ function mergeWithdrawingIntoPublishing(counts) {
   return merged;
 }
 
-function renderTiles(container, counts, order) {
+function renderTiles(container, counts, order, badges) {
   container.innerHTML = "";
   const seen = new Set();
   for (const [key, label, status] of order) {
     seen.add(key);
-    container.appendChild(tile(label, counts[key] || 0, status));
+    container.appendChild(tile(label, counts[key] || 0, status, (badges || {})[key]));
   }
   for (const key of Object.keys(counts)) {
     if (!seen.has(key)) container.appendChild(tile(key, counts[key], "neutral"));
   }
 }
 
-function tile(label, count, status) {
+function tile(label, count, status, badge) {
   const el = document.createElement("div");
   el.className = `tile status-${status}`;
   el.innerHTML = `
     <div class="count">${count.toLocaleString()}</div>
     <div class="label"><span class="dot" aria-hidden="true"></span>${label}</div>
+    ${badge ? `<span class="stuck-badge">${escapeHtml(badge)}</span>` : ""}
   `;
   return el;
 }
@@ -242,8 +243,11 @@ async function refresh() {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
 
+    const stuckCount = data.summarizer_stuck_claims || 0;
+    const summarizerBadges = stuckCount > 0 ? { generating: `${stuckCount.toLocaleString()} stuck` } : {};
+
     renderTiles(document.getElementById("transcriber-tiles"), data.transcriber || {}, TRANSCRIBER_ORDER);
-    renderTiles(document.getElementById("summarizer-tiles"), mergeEmptyAndRevisitIntoPending(data.summarizer || {}), SUMMARIZER_ORDER);
+    renderTiles(document.getElementById("summarizer-tiles"), mergeEmptyAndRevisitIntoPending(data.summarizer || {}), SUMMARIZER_ORDER, summarizerBadges);
     renderTiles(document.getElementById("publisher-tiles"), mergeWithdrawingIntoPublishing(data.publisher || {}), PUBLISHER_ORDER);
     renderLaneSilos(data.lanes || []);
 
