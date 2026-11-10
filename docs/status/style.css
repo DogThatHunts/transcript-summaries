@@ -21,6 +21,11 @@
     --status-critical-fg: #a7352c;
     --status-neutral-bg: #eceff3;
     --status-neutral-fg: #4a5464;
+
+    /* mac-mini Ollama lane only: host reachable but Ollama itself is down
+       (added 2026-11-09). "Unreachable" reuses --status-critical-* instead. */
+    --status-ollama-down-bg: #f0e9f7;
+    --status-ollama-down-fg: #6a3fa5;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -237,6 +242,11 @@ main { max-width: 760px; margin: 0 auto; }
 .lane-card.status-critical .lane-status  { color: var(--status-critical-fg); }
 .lane-card.status-critical .dot          { background: var(--status-critical-fg); }
 .lane-card.status-critical               { background: var(--status-critical-bg); }
+
+/* mac-mini Ollama lane only (2026-11-09): host reachable, Ollama down. */
+.lane-card.status-ollama-down                  { background: var(--status-ollama-down-bg); }
+.lane-card.status-ollama-down .lane-status     { color: var(--status-ollama-down-fg); }
+.lane-card.status-ollama-down .dot             { background: var(--status-ollama-down-fg); }
 
 .error {
     color: var(--status-critical-fg);

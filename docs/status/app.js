@@ -101,6 +101,20 @@ function renderLaneSilos(lanes) {
   }
 }
 
+// host_unreachable/ollama_down come from ollama_health.py's LAN probe of the
+// mac-mini Ollama lane only (2026-11-09) -- everything else still just has
+// open/closed from quota exhaustion. host_unreachable reuses the same
+// critical (red) styling as a quota-closed lane, by the user's explicit
+// choice: a dead host is at least as actionable as a closed lane, so it
+// gets no weaker a signal. ollama_down gets its own color (light purple) --
+// the host answered, Ollama itself didn't.
+const LANE_STATUS_META = {
+  host_unreachable: { cls: "critical", label: "Mac mini unreachable" },
+  ollama_down: { cls: "ollama-down", label: "Ollama down" },
+  closed: { cls: "critical", label: "Closed" },
+  open: { cls: "good", label: "Open" },
+};
+
 function renderLaneSilo(container, lanes) {
   container.innerHTML = "";
   if (!lanes.length) {
@@ -108,13 +122,13 @@ function renderLaneSilo(container, lanes) {
     return;
   }
   for (const lane of lanes) {
-    const open = lane.status !== "closed";
+    const meta = LANE_STATUS_META[lane.status] || LANE_STATUS_META.open;
     const card = document.createElement("div");
-    card.className = `lane-card status-${open ? "good" : "critical"}`;
+    card.className = `lane-card status-${meta.cls}`;
     const reopens = lane.reopens_at ? new Date(lane.reopens_at).toLocaleString() : "";
     card.innerHTML = `
       <div class="lane-name">${escapeHtml(lane.provider)}/${escapeHtml(lane.model)}</div>
-      <div class="lane-status"><span class="dot" aria-hidden="true"></span>${open ? "Open" : "Closed"}</div>
+      <div class="lane-status"><span class="dot" aria-hidden="true"></span>${escapeHtml(meta.label)}</div>
       <div class="lane-meta">Capacity: ${escapeHtml(String(lane.capacity ?? "?"))} concurrent</div>
       ${reopens ? `<div class="lane-meta">Reopens: ${escapeHtml(reopens)}</div>` : ""}
     `;
