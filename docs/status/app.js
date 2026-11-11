@@ -109,9 +109,20 @@ function renderLaneSilos(lanes) {
 // choice: a dead host is at least as actionable as a closed lane, so it
 // gets no weaker a signal. ollama_down gets its own color (light purple) --
 // the host answered, Ollama itself didn't.
+//
+// rate_limited (2026-11-11) is a run-scoped soft exclusion
+// (RotatingSummarizer.soft_exhausted_lanes(), orchestrator.py) -- a lane
+// that failed the same way (a 429 burst, a repeated structured-output
+// parse failure) on every row it was tried on this run, without ever
+// tripping a persisted daily-quota signal. It is NOT "closed" in the
+// quota sense -- it may well clear on the next run -- so it keeps the
+// red/closed convention reserved for a confirmed quota exclusion and
+// reuses ollama_down's same purple styling instead: open-but-unstable,
+// the same shape as "the host answered, [the thing itself] didn't".
 const LANE_STATUS_META = {
   host_unreachable: { cls: "critical", label: "Mac mini unreachable" },
   ollama_down: { cls: "ollama-down", label: "Ollama down" },
+  rate_limited: { cls: "ollama-down", label: "Rate limited this run" },
   closed: { cls: "critical", label: "Closed" },
   open: { cls: "good", label: "Open" },
 };
