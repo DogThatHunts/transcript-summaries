@@ -1,7 +1,7 @@
 // app.js — polls the Cloud Run pipeline-health endpoint and renders stat
-// tiles, a 24h-progress headline + recent-trend sparklines (client-side
-// only, via localStorage — no backend history needed), and per-lane
-// open/closed/capacity cards. DASHBOARD_PLAN_2026-11-03.md.
+// tiles, a 24h-progress headline + hourly throughput bar charts for the
+// past 24h (client-side only, via localStorage — no backend history
+// needed), and per-lane open/closed/capacity cards. DASHBOARD_PLAN_2026-11-03.md.
 
 const ENDPOINT = "https://transcription-bot-880476731187.europe-west1.run.app/pipeline-health";
 
@@ -154,7 +154,7 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
-// ---- client-side history: 24h delta headline + recent-trend sparklines ---
+// ---- client-side history: 24h delta headline + hourly throughput bars ----
 //
 // Entirely local (localStorage) — no backend persistence. Durable across
 // reloads on the SAME browser, but not shared between visitors/devices;
@@ -165,6 +165,9 @@ const HISTORY_MAX_AGE_MS = 7 * 24 * 3600 * 1000; // keep a week
 const HISTORY_MIN_GAP_MS = 15 * 60 * 1000;        // store at most 1 sample/15min
 const DELTA_WINDOW_MS = 24 * 3600 * 1000;
 const DELTA_TOLERANCE_MS = 2 * 3600 * 1000; // "near enough to 24h ago" to trust
+const HOUR_MS = 3600 * 1000;
+const HOURLY_BUCKETS = 24;
+const HOURLY_SAMPLE_TOLERANCE_MS = 20 * 60 * 1000; // > the 15min sample gap
 
 function loadHistory() {
   try {
@@ -221,28 +224,57 @@ function renderDelta(hist, current) {
   el.textContent = `+${completedDelta.toLocaleString()} transcribed, +${passedDelta.toLocaleString()} summarized in the last ~24h`;
 }
 
-function sparklinePoints(hist, section, key, w, h) {
-  const vals = hist.map((entry) => (entry[section] || {})[key] || 0);
-  if (vals.length < 2) return null;
-  const min = Math.min(...vals);
-  const max = Math.max(...vals);
-  const range = max - min || 1;
-  const step = w / (vals.length - 1);
-  return vals
-    .map((v, i) => `${(i * step).toFixed(1)},${(h - ((v - min) / range) * h).toFixed(1)}`)
-    .join(" ");
+// Nearest history sample to an absolute timestamp, within tolerance — used
+// to read the cumulative count as of each hour boundary in the past 24h.
+function sampleValueNear(hist, targetMs, section, key, toleranceMs) {
+  let best = null;
+  let bestDiff = Infinity;
+  for (const h of hist) {
+    const diff = Math.abs(new Date(h.t).getTime() - targetMs);
+    if (diff < bestDiff) {
+      bestDiff = diff;
+      best = (h[section] || {})[key] || 0;
+    }
+  }
+  return bestDiff <= toleranceMs ? best : null;
 }
 
-function renderSparkline(containerId, hist, section, key) {
+// Per-hour throughput (delta of the cumulative counter) for each of the
+// past 24 one-hour windows, oldest first. A bucket is null (not zero) when
+// either boundary has no history sample near enough to trust — distinct
+// from a real zero-activity hour.
+function hourlyDeltas(hist, section, key) {
+  const now = Date.now();
+  const buckets = [];
+  for (let i = HOURLY_BUCKETS; i >= 1; i--) {
+    const startVal = sampleValueNear(hist, now - i * HOUR_MS, section, key, HOURLY_SAMPLE_TOLERANCE_MS);
+    const endVal = sampleValueNear(hist, now - (i - 1) * HOUR_MS, section, key, HOURLY_SAMPLE_TOLERANCE_MS);
+    const delta = startVal == null || endVal == null ? null : Math.max(0, endVal - startVal);
+    buckets.push({ hourStart: now - i * HOUR_MS, delta });
+  }
+  return buckets;
+}
+
+function renderHourlyBars(containerId, hist, section, key) {
   const container = document.getElementById(containerId);
-  const w = 160;
-  const h = 32;
-  const pts = sparklinePoints(hist, section, key, w, h);
-  if (!pts) {
+  const buckets = hourlyDeltas(hist, section, key);
+  const known = buckets.map((b) => b.delta).filter((v) => v != null);
+  if (!known.length) {
     container.innerHTML = '<p class="muted small">Not enough history yet.</p>';
     return;
   }
-  container.innerHTML = `<svg viewBox="0 0 ${w} ${h}" class="spark" aria-hidden="true"><polyline points="${pts}"></polyline></svg>`;
+  const max = Math.max(1, ...known);
+  const bars = buckets
+    .map((b) => {
+      if (b.delta == null) {
+        return '<div class="bar nodata" title="no data this hour"></div>';
+      }
+      const pct = Math.max(2, Math.round((b.delta / max) * 100));
+      const label = new Date(b.hourStart).toLocaleTimeString([], { hour: "numeric" });
+      return `<div class="bar" style="height:${pct}%" title="${escapeHtml(`${label}: ${b.delta}`)}"></div>`;
+    })
+    .join("");
+  container.innerHTML = `<div class="bar-chart" aria-hidden="true">${bars}</div>`;
 }
 
 // ---- main poll loop --------------------------------------------------------
@@ -264,8 +296,8 @@ async function refresh() {
 
     const hist = recordHistory(data);
     renderDelta(hist, data);
-    renderSparkline("spark-completed", hist, "transcriber", "completed");
-    renderSparkline("spark-passed", hist, "summarizer", "Passed");
+    renderHourlyBars("spark-completed", hist, "transcriber", "completed");
+    renderHourlyBars("spark-passed", hist, "summarizer", "Passed");
 
     const asOf = data.as_of ? new Date(data.as_of) : new Date();
     document.getElementById("as-of").textContent = `As of ${asOf.toLocaleString()}`;
