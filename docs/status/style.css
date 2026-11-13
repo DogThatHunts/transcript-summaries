@@ -26,6 +26,12 @@
        (added 2026-11-09). "Unreachable" reuses --status-critical-* instead. */
     --status-ollama-down-bg: #f0e9f7;
     --status-ollama-down-fg: #6a3fa5;
+
+    /* Same hue/lightness as --status-good-fg, desaturated. A solid bar
+       fill of the exact tile-text green read noticeably more vivid than
+       the tile's own small bold text at the same color — this softened
+       value visually matches it. */
+    --status-good-fg-soft: hsl(150, 35%, 45%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -189,7 +195,7 @@ main { max-width: 760px; margin: 0 auto; }
 .bar {
     flex: 1;
     min-height: 2px;
-    background: var(--status-good-fg);
+    background: var(--status-good-fg-soft);
     border-radius: 2px 2px 0 0;
 }
 
