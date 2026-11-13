@@ -153,6 +153,8 @@ main { max-width: 760px; margin: 0 auto; }
 }
 
 .spark-item {
+    display: flex;
+    flex-direction: column;
     background: #fff;
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -167,6 +169,13 @@ main { max-width: 760px; margin: 0 auto; }
     text-transform: uppercase;
     letter-spacing: 0.03em;
     margin-bottom: 6px;
+}
+
+/* Pin the chart to the bottom of its card regardless of label height, so
+   the two cards' bar baselines line up even if one label wraps and the
+   other doesn't (grid stretches both cards to equal height already). */
+.spark-item > div:last-child {
+    margin-top: auto;
 }
 
 .bar-chart {
