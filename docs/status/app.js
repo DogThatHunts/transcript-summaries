@@ -167,7 +167,6 @@ const DELTA_WINDOW_MS = 24 * 3600 * 1000;
 const DELTA_TOLERANCE_MS = 2 * 3600 * 1000; // "near enough to 24h ago" to trust
 const HOUR_MS = 3600 * 1000;
 const HOURLY_BUCKETS = 24;
-const HOURLY_SAMPLE_TOLERANCE_MS = 20 * 60 * 1000; // > the 15min sample gap
 
 function loadHistory() {
   try {
@@ -224,32 +223,39 @@ function renderDelta(hist, current) {
   el.textContent = `+${completedDelta.toLocaleString()} transcribed, +${passedDelta.toLocaleString()} summarized in the last ~24h`;
 }
 
-// Nearest history sample to an absolute timestamp, within tolerance — used
-// to read the cumulative count as of each hour boundary in the past 24h.
-function sampleValueNear(hist, targetMs, section, key, toleranceMs) {
+// Most recent history sample at or before an absolute timestamp — used to
+// read the cumulative count as of each hour boundary in the past 24h.
+// Forward-fill (not nearest-within-tolerance): history is only sampled
+// while a browser tab has this page open, so real gaps between samples can
+// run hours wide. Forward-fill carries the last known total across a gap
+// instead of calling every unsampled hour "no data," which is what made
+// the bars mostly empty even on history the old sparkline was already
+// plotting fine. The tradeoff: a gap's whole delta lands in the one hour
+// where the next real sample fell, rather than being spread across the
+// hours it actually happened in -- unavoidable without server-side history.
+function sampleValueAtOrBefore(hist, targetMs, section, key) {
   let best = null;
-  let bestDiff = Infinity;
+  let bestT = -Infinity;
   for (const h of hist) {
-    const diff = Math.abs(new Date(h.t).getTime() - targetMs);
-    if (diff < bestDiff) {
-      bestDiff = diff;
+    const t = new Date(h.t).getTime();
+    if (t <= targetMs && t > bestT) {
+      bestT = t;
       best = (h[section] || {})[key] || 0;
     }
   }
-  return bestDiff <= toleranceMs ? best : null;
+  return best;
 }
 
 // Per-hour throughput (delta of the cumulative counter) for each of the
-// past 24 one-hour windows, oldest first. A bucket is null (not zero) when
-// either boundary has no history sample near enough to trust — distinct
-// from a real zero-activity hour.
+// past 24 one-hour windows, oldest first. A bucket is null (not zero) only
+// when history hadn't started yet by that hour's end.
 function hourlyDeltas(hist, section, key) {
   const now = Date.now();
   const buckets = [];
   for (let i = HOURLY_BUCKETS; i >= 1; i--) {
-    const startVal = sampleValueNear(hist, now - i * HOUR_MS, section, key, HOURLY_SAMPLE_TOLERANCE_MS);
-    const endVal = sampleValueNear(hist, now - (i - 1) * HOUR_MS, section, key, HOURLY_SAMPLE_TOLERANCE_MS);
-    const delta = startVal == null || endVal == null ? null : Math.max(0, endVal - startVal);
+    const startVal = sampleValueAtOrBefore(hist, now - i * HOUR_MS, section, key);
+    const endVal = sampleValueAtOrBefore(hist, now - (i - 1) * HOUR_MS, section, key);
+    const delta = endVal == null || startVal == null ? null : Math.max(0, endVal - startVal);
     buckets.push({ hourStart: now - i * HOUR_MS, delta });
   }
   return buckets;
