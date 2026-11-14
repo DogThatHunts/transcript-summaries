@@ -457,23 +457,6 @@ body {
     margin-top: auto;
 }
 
-.post-card-meta-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    margin-top: auto;
-}
-
-.post-card-meta-row .meta {
-    margin-top: 0;
-}
-
-.post-card-meta-row .meta-date {
-    opacity: 0.7;
-    white-space: nowrap;
-}
-
 /* Responsive */
 @media (max-width: 480px) {
     .hero { padding: 70px 20px 56px; }
