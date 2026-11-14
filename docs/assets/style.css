@@ -444,7 +444,12 @@ body {
     letter-spacing: 0.14em;
 }
 
-.post-card-body { padding: 22px 22px 24px; }
+.post-card-body {
+    padding: 22px 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 .post-card-tag {
     font-size: 10px;
