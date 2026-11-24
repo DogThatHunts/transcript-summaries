@@ -121,6 +121,9 @@ function renderLaneSilos(lanes) {
 // the same shape as "the host answered, [the thing itself] didn't".
 const LANE_STATUS_META = {
   host_unreachable: { cls: "critical", label: "Mac mini unreachable" },
+  // lan_blocked (2026-11-24): the mini is fine; the laptop's Python is denied
+  // the local network by macOS privacy settings. Same red: it needs a human.
+  lan_blocked: { cls: "critical", label: "Laptop blocked from LAN (Local Network permission)" },
   ollama_down: { cls: "ollama-down", label: "Ollama down" },
   rate_limited: { cls: "ollama-down", label: "Rate limited this run" },
   closed: { cls: "critical", label: "Closed" },
